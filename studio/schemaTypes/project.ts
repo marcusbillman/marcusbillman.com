@@ -7,12 +7,12 @@ export default {
   type: 'document',
   groups: [
     {
-      name: 'meta',
-      title: 'Meta information',
-    },
-    {
       name: 'caseStudy',
       title: 'Case study',
+    },
+    {
+      name: 'meta',
+      title: 'Metadata',
     },
   ],
   fields: [
@@ -20,15 +20,15 @@ export default {
       name: 'name',
       title: 'Name',
       type: 'string',
-      description: 'Short name for the project, e.g. "My cool project"',
+      description: 'Short, descriptive project name — just a few words',
       group: 'caseStudy',
-      validation: (Rule: Rule) => Rule.required(),
+      validation: (Rule: Rule) => Rule.required().max(50),
     },
     {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      description: 'Used for generating the URL of the project page',
+      description: 'Used for generating URLs, based on the name',
       options: {
         source: 'name',
         maxLength: 64,
@@ -40,17 +40,16 @@ export default {
       name: 'headline',
       title: 'Headline',
       type: 'string',
-      description:
-        'Impactful statement, preferrably in present tense, e.g. "Reinventing life, one cinnamon roll at a time"',
+      description: 'Impactful, attention-grabbing statement — one sentence',
       group: 'caseStudy',
-      validation: (Rule: Rule) => Rule.required(),
+      validation: (Rule: Rule) => Rule.required().max(100),
     },
     {
       name: 'preamble',
       title: 'Preamble',
-      type: 'string',
-      description:
-        'Introductory paragraph, e.g. "A collaboration with a local bakery to create a modern website that showcases their products and services"',
+      type: 'text',
+      description: 'Introductory paragraph summarizing the project — a few sentences',
+      rows: 4,
       group: 'caseStudy',
     },
     {
@@ -67,7 +66,6 @@ export default {
       type: 'array',
       of: [{type: 'string'}],
       group: 'meta',
-      validation: (Rule: Rule) => Rule.required(),
     },
     {
       name: 'date',
@@ -75,6 +73,7 @@ export default {
       type: 'string',
       description: "E.g. '2021' or 'Nov 2020–Feb 2021'",
       group: 'meta',
+      validation: (Rule: Rule) => Rule.max(25),
     },
     {
       name: 'coverImage',
@@ -94,7 +93,7 @@ export default {
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
-      description: 'Only for internal use, not shown on the front-end',
+      description: 'Only for internal use, not shown on the website',
       group: 'meta',
       validation: (Rule: Rule) => Rule.required(),
     },
