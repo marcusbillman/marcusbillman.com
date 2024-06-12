@@ -7,8 +7,8 @@ export default {
   type: 'document',
   groups: [
     {
-      name: 'caseStudy',
-      title: 'Case study',
+      name: 'main',
+      title: 'Main info',
     },
     {
       name: 'meta',
@@ -21,7 +21,7 @@ export default {
       title: 'Name',
       type: 'string',
       description: 'Short, descriptive project name — just a few words',
-      group: 'caseStudy',
+      group: 'main',
       validation: (Rule: Rule) => Rule.required().max(50),
     },
     {
@@ -41,7 +41,7 @@ export default {
       title: 'Headline',
       type: 'string',
       description: 'Impactful, attention-grabbing statement — one sentence',
-      group: 'caseStudy',
+      group: 'main',
       validation: (Rule: Rule) => Rule.required().max(100),
     },
     {
@@ -50,7 +50,7 @@ export default {
       type: 'text',
       description: 'Introductory paragraph summarizing the project — a few sentences',
       rows: 4,
-      group: 'caseStudy',
+      group: 'main',
     },
     {
       name: 'featured',
@@ -79,29 +79,45 @@ export default {
       name: 'coverImage',
       title: 'Cover image',
       type: 'imageWithAlt',
-      group: 'caseStudy',
+      group: 'main',
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
+      name: 'type',
+      title: 'Type',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Case study', value: 'CASE_STUDY'},
+          {title: 'Side project', value: 'SIDE_PROJECT'},
+        ],
+        layout: 'radio',
+        direction: 'horizontal',
+      },
+      group: 'main',
       validation: (Rule: Rule) => Rule.required(),
     },
     {
       name: 'caseStudyBlocks',
       title: 'Case study blocks',
       type: 'array',
-      group: 'caseStudy',
       of: [{type: 'textBlock'}, {type: 'galleryBlock'}],
+      group: 'main',
+      hidden: ({document}: {document: any}) => document?.type !== 'CASE_STUDY',
     },
     {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
-      description: 'Only for internal use, not shown on the website',
-      group: 'meta',
-      validation: (Rule: Rule) => Rule.required(),
+      name: 'linkUrl',
+      title: 'Link URL',
+      type: 'url',
+      description: 'URL to the live app, project repository, etc.',
+      group: 'main',
+      hidden: ({document}: {document: any}) => document?.type !== 'SIDE_PROJECT',
     },
     orderRankField({type: 'category'}),
   ],
   initialValue: () => ({
     featured: true,
-    publishedAt: new Date().toISOString(),
+    type: 'CASE_STUDY',
   }),
   orderings: [orderRankOrdering],
   preview: {
