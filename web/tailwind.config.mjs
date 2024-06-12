@@ -42,6 +42,10 @@ export default {
       white: '#ffffff',
       black: '#000000',
     },
+    fontFamily: {
+      sans: ['Manrope', 'system-ui', 'sans-serif'],
+      serif: ['"IBM Plex Serif"', 'serif'],
+    },
     extend: {
       textColor: {
         default: 'var(--text-default)',
