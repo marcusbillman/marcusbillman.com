@@ -1,4 +1,5 @@
 import {Rule} from 'sanity'
+import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list'
 
 export default {
   name: 'project',
@@ -53,15 +54,6 @@ export default {
       group: 'caseStudy',
     },
     {
-      name: 'sortingIndex',
-      title: 'Sorting index',
-      type: 'number',
-      description:
-        'Number used for sorting the projects on the front-end and in the Studio. 1 comes before 2, etc.',
-      group: 'meta',
-      validation: (Rule: Rule) => Rule.required(),
-    },
-    {
       name: 'featured',
       title: 'Featured',
       type: 'boolean',
@@ -106,23 +98,13 @@ export default {
       group: 'meta',
       validation: (Rule: Rule) => Rule.required(),
     },
+    orderRankField({type: 'category'}),
   ],
   initialValue: () => ({
     featured: true,
     publishedAt: new Date().toISOString(),
   }),
-  orderings: [
-    {
-      title: 'Sorting index',
-      name: 'sortingIndex',
-      by: [{field: 'sortingIndex', direction: 'asc'}],
-    },
-    {
-      title: 'Title',
-      name: 'title',
-      by: [{field: 'title', direction: 'asc'}],
-    },
-  ],
+  orderings: [orderRankOrdering],
   preview: {
     select: {
       title: 'name',
