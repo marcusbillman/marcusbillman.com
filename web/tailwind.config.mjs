@@ -69,6 +69,16 @@ export default {
         strong: 'var(--border-strong)',
         primary: 'var(--border-primary)',
       },
+      animation: {
+        float: 'float 2s ease-in-out infinite',
+      },
+      keyframes: {
+        float: {
+          '0%': { transform: 'translateY(8px)' },
+          '50%': { transform: 'translateY(-8px)' },
+          '100%': { transform: 'translateY(8px)' },
+        },
+      },
     },
   },
 };
