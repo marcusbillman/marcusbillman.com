@@ -61,8 +61,8 @@ export default {
         subtle: 'var(--bg-subtle)',
         primary: 'var(--bg-primary)',
         inverted: 'var(--bg-inverted)',
-        'overlay-image-light': 'var(--overlay-image-light)',
-        'overlay-image-medium': 'var(--overlay-image-medium)',
+        'overlay-dim-default': 'var(--overlay-dim-default)',
+        'overlay-dim-strong': 'var(--overlay-dim-strong)',
       },
       borderColor: {
         default: 'var(--border-default)',

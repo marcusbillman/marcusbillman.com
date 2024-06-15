@@ -48,8 +48,8 @@ const { title } = Astro.props;
       --border-primary: theme('colors.blueberry.500');
       --illustration-primary: theme('colors.blueberry.500');
       --illustration-secondary: theme('colors.blueberry.600');
-      --overlay-image-light: hsl(0 0 100% / 0.7);
-      --overlay-image-medium: hsl(0 0 100% / 0.8);
+      --overlay-dim-default: hsl(0 0 100% / 0.6);
+      --overlay-dim-strong: hsl(0 0 100% / 0.8);
     }
 
     /* Dark theme (system) */
@@ -69,8 +69,8 @@ const { title } = Astro.props;
         --border-primary: theme('colors.blueberry.300');
         --illustration-primary: theme('colors.blueberry.300');
         --illustration-secondary: theme('colors.blueberry.100');
-        --overlay-image-light: hsl(0 0 0% / 0.7);
-        --overlay-image-medium: hsl(0 0 0% / 0.6);
+        --overlay-dim-default: hsl(0 0 0% / 0.6);
+        --overlay-dim-strong: hsl(0 0 0% / 0.8);
       }
     }
 
@@ -91,8 +91,8 @@ const { title } = Astro.props;
       --border-primary: theme('colors.blueberry.300');
       --illustration-primary: theme('colors.blueberry.300');
       --illustration-secondary: theme('colors.blueberry.100');
-      --overlay-image-light: hsl(0 0 0% / 0.7);
-      --overlay-image-medium: hsl(0 0 0% / 0.6);
+      --overlay-dim-default: hsl(0 0 0% / 0.6);
+      --overlay-dim-strong: hsl(0 0 0% / 0.8);
     }
   }
 </style>
