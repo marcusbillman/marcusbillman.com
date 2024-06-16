@@ -71,13 +71,30 @@ export default {
       },
       animation: {
         float: 'float 2s ease-in-out infinite',
+        wiggle: 'wiggle 1s ease-in-out infinite',
       },
       keyframes: {
         float: {
-          '0%': { transform: 'translateY(8px)' },
+          '0%, 100%': { transform: 'translateY(8px)' },
           '50%': { transform: 'translateY(-8px)' },
-          '100%': { transform: 'translateY(8px)' },
         },
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-10deg)' },
+          '50%': { transform: 'rotate(10deg)' },
+        },
+      },
+      transitionTimingFunction: {
+        smooth: 'cubic-bezier(0.2, 0, 0, 1)',
+      },
+      borderRadius: {
+        '4xl': '2rem', // 32px
+        '5xl': '3rem', // 48px
+        '6xl': '4rem', // 64px
+        '7xl': '6rem', // 96px
+        '8xl': '8rem', // 128px
+      },
+      boxShadow: {
+        'main-container': '0px -4px 32px 0px rgba(0, 0, 0, 0.10)',
       },
     },
   },
