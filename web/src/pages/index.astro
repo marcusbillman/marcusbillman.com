@@ -1,11 +1,20 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '@/layouts/Layout.astro';
+import Hero from '@/components/Hero.tsx';
+import Bio from '@/components/Bio';
 ---
 
 <Layout>
   <main>
-    <h1 class="font-serif text-2xl font-bold italic text-primary">
-      Hello world! 👋
-    </h1>
+    <Hero />
+    <div
+      class="lg:rounded-t-6xl rounded-t-4xl shadow-main-container relative -mt-16 bg-default"
+    >
+      <div
+        class="absolute left-1/2 top-4 h-1 w-16 -translate-x-1/2 rounded-full bg-subtle lg:hidden"
+      >
+      </div>
+      <Bio />
+    </div>
   </main>
 </Layout>
