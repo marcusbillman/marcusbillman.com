@@ -72,7 +72,7 @@ export default {
       animation: {
         float: 'float 2s ease-in-out infinite',
         wiggle: 'wiggle 1s ease-in-out infinite',
-        'wave-line': 'wave-line 0.5s linear infinite',
+        'wave-line': 'wave-line 1s linear infinite',
       },
       keyframes: {
         float: {
@@ -85,7 +85,7 @@ export default {
         },
         'wave-line': {
           '0%': { maskPosition: '0 0' },
-          '100%': { maskPosition: '-38px 0' },
+          '100%': { maskPosition: '-2.38rem 0' },
         },
       },
       transitionTimingFunction: {
