@@ -5,7 +5,7 @@ import type React from 'react';
 interface Props {
   text: string;
   icon?: Icon;
-  iconSide?: 'left' | 'right';
+  iconSide?: 'left' | 'right' | 'none';
   size?: 'small' | 'medium' | 'large';
   style?: 'default' | 'primary' | 'subtle';
   href?: string;
@@ -30,6 +30,8 @@ export default function Button({
     IconComponent = icon;
   } else if (href) {
     IconComponent = href.startsWith('http') ? ArrowUpRight : ArrowRight;
+  } else {
+    iconSide = 'none';
   }
 
   if (!iconSide) iconSide = href ? 'right' : 'left';
@@ -58,7 +60,7 @@ export default function Button({
 
   function hoverOverlayClass() {
     if (iconSide === 'left') return 'translate-x-full';
-    if (iconSide === 'right') return '-translate-x-full';
+    return '-translate-x-full';
   }
 
   function iconSize() {
@@ -118,7 +120,7 @@ export default function Button({
 
   return (
     <Element
-      className={`${outerElementClass()} ${className} ease-smooth group relative isolate cursor-pointer overflow-hidden rounded-full border border-transparent transition-all duration-500 hover:border-default`}
+      className={`${outerElementClass()} ${className} ease-smooth group relative isolate inline-flex w-fit cursor-pointer overflow-hidden rounded-full border border-transparent transition-all duration-500 hover:border-default active:scale-75 active:opacity-50`}
       href={href}
       target={href?.startsWith('http') ? '_blank' : undefined}
       type={type}
@@ -128,7 +130,7 @@ export default function Button({
         className={`${hoverOverlayClass()} ease-smooth absolute inset-0 -z-10 rounded-full bg-default transition-transform duration-500 group-hover:translate-x-0`}
       />
       <div className={`${innerElementClass()} relative flex items-center`}>
-        {IconComponent && (
+        {IconComponent && iconSide !== 'none' && (
           <IconComponent
             size={iconSize()}
             className={`${leftIconClass()} ease-smooth transition-all duration-500`}
@@ -139,7 +141,7 @@ export default function Button({
         >
           {text}
         </span>
-        {IconComponent && (
+        {IconComponent && iconSide !== 'none' && (
           <IconComponent
             size={iconSize()}
             className={`${rightIconClass()} ease-smooth transition-all duration-500`}
