@@ -136,7 +136,7 @@ export default function Hero() {
       </div>
 
       {/* Backgrounds */}
-      <DotGrid />
+      <DotGrid dim="default" />
       <div className="absolute left-0 top-0 -z-20 h-full w-full bg-[url('/assets/images/hero-bg-still.jpg')] bg-cover bg-center">
         <video
           src="/assets/videos/hero-bg.mp4"
