@@ -2,7 +2,7 @@ import Button from '@/components/Button';
 
 export default function FeaturedWork() {
   return (
-    <section className="px-4 py-16 lg:px-16 lg:py-32">
+    <section className="px-4 lg:px-16">
       <h2 className="text-4xl font-medium lg:text-6xl">Featured work ✨</h2>
       <ul className="relative isolate mt-12 flex flex-col gap-32 pb-12 lg:mt-16 lg:pb-16">
         <div className="absolute left-12 -z-10 h-full w-px border-l-4 border-dotted border-l-default"></div>
