@@ -1,9 +1,9 @@
-interface Props {
-  transparent?: boolean;
-  className?: string;
-}
+import type { IllustrationProps } from './index';
 
-export default function Knob({ transparent = false, className }: Props) {
+export default function Knob({
+  transparent = false,
+  className,
+}: IllustrationProps) {
   return transparent ? (
     <svg
       width="67"

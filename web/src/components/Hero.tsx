@@ -1,16 +1,18 @@
-import AudioFile from '@/components/illustrations/AudioFile.tsx';
-import BezierCurve from '@/components/illustrations/BezierCurve.tsx';
-import Browser from '@/components/illustrations/Browser.tsx';
-import ButtonClick from '@/components/illustrations/ButtonClick.tsx';
-import Cable from '@/components/illustrations/Cable.tsx';
-import CodeBlock from '@/components/illustrations/CodeBlock.tsx';
-import Daw from '@/components/illustrations/Daw.tsx';
-import Dropdown from '@/components/illustrations/Dropdown.tsx';
-import Knob from '@/components/illustrations/Knob.tsx';
-import Metronome from '@/components/illustrations/Metronome.tsx';
-import Phone from '@/components/illustrations/Phone.tsx';
-import Piano from '@/components/illustrations/Piano.tsx';
-import Switch from '@/components/illustrations/Switch.tsx';
+import {
+  AudioFile,
+  BezierCurve,
+  Browser,
+  ButtonClick,
+  Cable,
+  CodeBlock,
+  Daw,
+  Dropdown,
+  Knob,
+  Metronome,
+  Phone,
+  Piano,
+  Switch,
+} from '@/components/illustrations';
 import WaveLine from '@/components/WaveLine.tsx';
 import DotGrid from '@/components/DotGrid';
 

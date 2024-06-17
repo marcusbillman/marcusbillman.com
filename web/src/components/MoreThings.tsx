@@ -8,9 +8,7 @@ import type React from 'react';
 import type { Icon as PhosphorIcon } from '@phosphor-icons/react/dist/lib/types';
 import type { CustomIcon } from '@/components/icons';
 import DotGrid from '@/components/DotGrid';
-import ButtonClick from './illustrations/ButtonClick';
-import Phone from './illustrations/Phone';
-import CodeBlock from './illustrations/CodeBlock';
+import { ButtonClick, CodeBlock, Phone } from '@/components/illustrations';
 
 export default function MoreThings() {
   return (
