@@ -1,18 +1,19 @@
 import { ArrowRight, ArrowUpRight } from '@phosphor-icons/react/dist/ssr';
 import { isExternalUrl } from '@/util';
-import type { Icon } from '@phosphor-icons/react/dist/lib/types';
+import type { Icon as PhosphorIcon } from '@phosphor-icons/react/dist/lib/types';
+import type { CustomIcon } from '@/components/icons';
 import type React from 'react';
 
 interface Props {
   text: string;
-  icon?: Icon;
+  icon?: PhosphorIcon | CustomIcon;
   iconSide?: 'left' | 'right' | 'none';
   size?: 'small' | 'medium' | 'large';
   style?: 'default' | 'primary' | 'subtle';
   href?: string;
   type?: 'submit' | 'reset';
   className?: string;
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<Element>;
 }
 
 export default function Button({
