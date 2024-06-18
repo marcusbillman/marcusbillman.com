@@ -5,14 +5,15 @@ import Bio from '@/components/sections/Bio';
 import FeaturedWork from '@/components/sections/FeaturedWork';
 import MoreThings from '@/components/sections/MoreThings';
 import Contact from '@/components/sections/Contact';
+import Footer from '@/components/sections/Footer';
 import WaveLine from '@/components/WaveLine';
 ---
 
 <Layout>
+  <Hero />
   <main>
-    <Hero />
     <div
-      class="relative -mt-16 rounded-t-4xl bg-default shadow-main-container lg:rounded-t-6xl"
+      class="relative -mt-16 rounded-4xl bg-default shadow-main-container lg:rounded-t-6xl"
     >
       <div
         class="absolute left-1/2 top-4 h-1 w-16 -translate-x-1/2 rounded-full bg-subtle lg:hidden"
@@ -33,4 +34,5 @@ import WaveLine from '@/components/WaveLine';
       <Contact client:load />
     </div>
   </main>
+  <Footer client:load />
 </Layout>
