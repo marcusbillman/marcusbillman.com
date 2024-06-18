@@ -8,6 +8,7 @@ export default function Bio() {
         <span className="inline-block origin-bottom-right animate-wiggle">
           👋
         </span>{' '}
+        <br className="md:hidden" />
         I'm Marcus.
       </h2>
       <p className="max-w-[40ch] text-balance text-center text-2xl text-subtle lg:text-6xl">
