@@ -4,6 +4,7 @@ import Hero from '@/components/Hero.tsx';
 import Bio from '@/components/Bio';
 import FeaturedWork from '@/components/FeaturedWork';
 import MoreThings from '@/components/MoreThings';
+import Contact from '@/components/Contact';
 import WaveLine from '@/components/WaveLine';
 ---
 
@@ -26,6 +27,10 @@ import WaveLine from '@/components/WaveLine';
         <WaveLine className="bg-subtle" />
       </div>
       <MoreThings />
+      <div class="px-4 py-16 lg:px-16 lg:py-32">
+        <WaveLine className="bg-subtle" />
+      </div>
+      <Contact client:load />
     </div>
   </main>
 </Layout>
