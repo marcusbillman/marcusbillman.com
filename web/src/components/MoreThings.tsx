@@ -4,6 +4,7 @@ import {
   Flask,
 } from '@phosphor-icons/react/dist/ssr';
 import { Dribbble, GitHub, LinkedIn, SoundCloud } from '@/components/icons';
+import { isExternalUrl } from '@/util';
 import type React from 'react';
 import type { Icon as PhosphorIcon } from '@phosphor-icons/react/dist/lib/types';
 import type { CustomIcon } from '@/components/icons';
@@ -102,9 +103,7 @@ function BentoCard({
   children,
 }: BentoCardProps) {
   const LeftIconComponent = icon;
-  const RightIconComponent = href.startsWith('http')
-    ? ArrowUpRight
-    : ArrowRight;
+  const RightIconComponent = isExternalUrl(href) ? ArrowUpRight : ArrowRight;
 
   return (
     <li

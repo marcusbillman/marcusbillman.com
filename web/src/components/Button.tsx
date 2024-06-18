@@ -1,4 +1,5 @@
 import { ArrowRight, ArrowUpRight } from '@phosphor-icons/react/dist/ssr';
+import { isExternalUrl } from '@/util';
 import type { Icon } from '@phosphor-icons/react/dist/lib/types';
 import type React from 'react';
 
@@ -29,7 +30,7 @@ export default function Button({
   if (icon) {
     IconComponent = icon;
   } else if (href) {
-    IconComponent = href.startsWith('http') ? ArrowUpRight : ArrowRight;
+    IconComponent = isExternalUrl(href) ? ArrowUpRight : ArrowRight;
   } else {
     iconSide = 'none';
   }
@@ -120,31 +121,31 @@ export default function Button({
 
   return (
     <Element
-      className={`${outerElementClass()} ${className} ease-smooth group relative isolate inline-flex w-fit cursor-pointer overflow-hidden rounded-full border border-transparent transition-all duration-500 hover:border-default active:scale-75 active:opacity-50`}
+      className={`${outerElementClass()} ${className} group relative isolate inline-flex w-fit cursor-pointer overflow-hidden rounded-full border border-transparent transition-all duration-500 ease-smooth hover:border-default active:scale-75 active:opacity-50`}
       href={href}
-      target={href?.startsWith('http') ? '_blank' : undefined}
+      target={href && isExternalUrl(href) ? '_blank' : undefined}
       type={type}
       onClick={onClick}
     >
       <div
-        className={`${hoverOverlayClass()} ease-smooth absolute inset-0 -z-10 rounded-full bg-default transition-transform duration-500 group-hover:translate-x-0`}
+        className={`${hoverOverlayClass()} absolute inset-0 -z-10 rounded-full bg-default transition-transform duration-500 ease-smooth group-hover:translate-x-0`}
       />
       <div className={`${innerElementClass()} relative flex items-center`}>
         {IconComponent && iconSide !== 'none' && (
           <IconComponent
             size={iconSize()}
-            className={`${leftIconClass()} ease-smooth transition-all duration-500`}
+            className={`${leftIconClass()} transition-all duration-500 ease-smooth`}
           />
         )}
         <span
-          className={`${textClass()} ease-smooth transition-all duration-500 group-hover:text-default`}
+          className={`${textClass()} transition-all duration-500 ease-smooth group-hover:text-default`}
         >
           {text}
         </span>
         {IconComponent && iconSide !== 'none' && (
           <IconComponent
             size={iconSize()}
-            className={`${rightIconClass()} ease-smooth transition-all duration-500`}
+            className={`${rightIconClass()} transition-all duration-500 ease-smooth`}
           />
         )}
       </div>
