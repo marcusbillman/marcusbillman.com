@@ -6,7 +6,7 @@ import FeaturedWork from '@/components/sections/FeaturedWork';
 import MoreThings from '@/components/sections/MoreThings';
 import Contact from '@/components/sections/Contact';
 import Footer from '@/components/sections/Footer';
-import WaveLine from '@/components/WaveLine';
+import Separator from '@/components/sections/Separator';
 import Navigation from '@/components/Navigation';
 ---
 
@@ -21,17 +21,11 @@ import Navigation from '@/components/Navigation';
     >
     </div>
     <Bio />
-    <div class="px-4 py-16 lg:px-16 lg:py-32">
-      <WaveLine className="bg-subtle" />
-    </div>
+    <Separator />
     <FeaturedWork />
-    <div class="px-4 py-16 lg:px-16 lg:py-32">
-      <WaveLine className="bg-subtle" />
-    </div>
+    <Separator />
     <MoreThings />
-    <div class="px-4 py-16 lg:px-16 lg:py-32">
-      <WaveLine className="bg-subtle" />
-    </div>
+    <Separator />
     <Contact client:visible />
   </main>
   <Footer client:visible />
