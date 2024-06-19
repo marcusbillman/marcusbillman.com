@@ -11,7 +11,7 @@ export default function Bio() {
         <br className="md:hidden" />
         I'm Marcus.
       </h2>
-      <p className="max-w-[40ch] text-balance text-center text-2xl text-subtle lg:text-6xl">
+      <p className="max-w-[40ch] text-balance text-center text-2xl text-subtle lg:text-4xl 2xl:text-6xl">
         I love designing interfaces, writing code and spreading the joy of
         making cool things. I’m also a tech enthusiast and hobbyist musician 🎹.
       </p>
