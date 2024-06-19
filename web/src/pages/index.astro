@@ -7,32 +7,32 @@ import MoreThings from '@/components/sections/MoreThings';
 import Contact from '@/components/sections/Contact';
 import Footer from '@/components/sections/Footer';
 import WaveLine from '@/components/WaveLine';
+import Navigation from '@/components/Navigation';
 ---
 
 <Layout>
+  <Navigation client:load />
   <Hero />
-  <main>
+  <main
+    class="relative z-20 -mt-8 rounded-4xl bg-default shadow-main-container lg:-mt-16 lg:rounded-t-6xl"
+  >
     <div
-      class="relative -mt-16 rounded-4xl bg-default shadow-main-container lg:rounded-t-6xl"
+      class="absolute left-1/2 top-4 h-1 w-16 -translate-x-1/2 rounded-full bg-subtle lg:hidden"
     >
-      <div
-        class="absolute left-1/2 top-4 h-1 w-16 -translate-x-1/2 rounded-full bg-subtle lg:hidden"
-      >
-      </div>
-      <Bio />
-      <div class="px-4 py-16 lg:px-16 lg:py-32">
-        <WaveLine className="bg-subtle" />
-      </div>
-      <FeaturedWork />
-      <div class="px-4 py-16 lg:px-16 lg:py-32">
-        <WaveLine className="bg-subtle" />
-      </div>
-      <MoreThings />
-      <div class="px-4 py-16 lg:px-16 lg:py-32">
-        <WaveLine className="bg-subtle" />
-      </div>
-      <Contact client:load />
     </div>
+    <Bio />
+    <div class="px-4 py-16 lg:px-16 lg:py-32">
+      <WaveLine className="bg-subtle" />
+    </div>
+    <FeaturedWork />
+    <div class="px-4 py-16 lg:px-16 lg:py-32">
+      <WaveLine className="bg-subtle" />
+    </div>
+    <MoreThings />
+    <div class="px-4 py-16 lg:px-16 lg:py-32">
+      <WaveLine className="bg-subtle" />
+    </div>
+    <Contact client:visible />
   </main>
-  <Footer client:load />
+  <Footer client:visible />
 </Layout>

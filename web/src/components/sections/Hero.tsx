@@ -18,7 +18,7 @@ import DotGrid from '@/components/DotGrid';
 
 export default function Hero() {
   return (
-    <section className="fixed top-0 -z-10 h-[90vh] w-screen overflow-hidden px-4 pt-[15vh] lg:h-screen lg:px-16 lg:pt-32">
+    <section className="fixed top-0 h-[90vh] w-screen overflow-hidden px-4 pt-[15vh] lg:h-screen lg:px-16 lg:pt-32">
       {/* Content */}
       <div className="z-10 max-w-7xl">
         <h1 className="text-balance text-center text-5xl md:text-7xl lg:text-left lg:text-9xl">
