@@ -9,6 +9,8 @@ import {
 } from '@phosphor-icons/react/dist/ssr';
 import { useEffect, useState } from 'react';
 import SocialLinks from './SocialLinks';
+import { BezierCurve, Browser, ButtonClick, Phone } from './illustrations';
+import DotGrid from './DotGrid';
 
 interface MenuProps {
   isMenuOpen: boolean;
@@ -31,10 +33,43 @@ export default function Menu({ isMenuOpen, onClickMenuButton }: MenuProps) {
           />
         </div>
         <ul className="flex flex-col gap-2 lg:flex-[3] lg:flex-row lg:gap-6">
-          <MenuLink text="Home" url="/" icon={House} />
-          <MenuLink text="Portfolio" url="/portfolio" icon={Images} />
-          <MenuLink text="About" url="/about" icon={User} />
-          <MenuLink text="Contact" url="/contact" icon={ChatsCircle} />
+          <MenuLink text="Home" url="/" icon={House}>
+            <div className="absolute inset-0 -z-10 bg-[url('/assets/images/hero-bg-still.jpg')] bg-cover bg-center" />
+            <DotGrid dim="default" />
+            <BezierCurve className="absolute left-[30%] top-[25%]" />
+            <Phone className="absolute left-[80%] top-[-10%]" />
+            <ButtonClick className="absolute left-[-5%] top-[60%]" />
+            <Browser className="absolute left-[60%] top-[70%]" />
+          </MenuLink>
+          <MenuLink text="Portfolio" url="/portfolio" icon={Images}>
+            <div className="absolute inset-0 -z-10 bg-subtle" />
+            <DotGrid dim="default" />
+            <div className='absolute bottom-[60%] right-[30%] -z-10 aspect-square w-[100%] translate-x-1/2 translate-y-1/2 bg-[url("/assets/images/glow-blueberry.png")] bg-cover bg-center' />
+            <img
+              src="/assets/images/phone-iphone-15-plus.png"
+              alt=""
+              className="absolute bottom-[-5%] left-[15%] w-32 rotate-[15deg]"
+            />
+            <img
+              src="/assets/images/phone-pixel-8.png"
+              alt=""
+              className="absolute bottom-[-30%] left-[50%] w-32 rotate-[5deg]"
+            />
+          </MenuLink>
+          <MenuLink text="About" url="/about" icon={User}>
+            <div className="absolute inset-0 -z-10 bg-subtle" />
+            <DotGrid dim="default" />
+            <div className='absolute bottom-[20%] left-[30%] -z-10 aspect-square w-96 bg-[url("/assets/images/glow-orange.png")] bg-cover bg-center' />
+            <img
+              src="/assets/images/portrait-1.png"
+              alt=""
+              className="absolute bottom-[0%] right-0 block w-72"
+            />
+          </MenuLink>
+          <MenuLink text="Contact" url="/contact" icon={ChatsCircle}>
+            <div className="absolute inset-0 -z-10 bg-subtle" />
+            <DotGrid dim="default" />
+          </MenuLink>
         </ul>
         <div className="flex flex-grow flex-col gap-4 lg:flex-[1]">
           <div className="grid flex-grow items-center lg:items-start">
@@ -58,9 +93,10 @@ interface MenuLinkProps {
   text: string;
   url: string;
   icon: Icon;
+  children?: React.ReactNode;
 }
 
-function MenuLink({ text, url, icon }: MenuLinkProps) {
+function MenuLink({ text, url, icon, children }: MenuLinkProps) {
   const IconComponent = icon;
   const [isActive, setIsActive] = useState(false);
 
@@ -69,17 +105,21 @@ function MenuLink({ text, url, icon }: MenuLinkProps) {
   }, [url]);
 
   return (
-    <li className="flex-1">
-      {/* TODO: Show decorative background from children prop */}
+    <li className="group relative isolate flex-1 overflow-clip rounded-2xl">
       <a
         href={url}
-        className={`block rounded-2xl px-5 py-4 lg:h-full ${isActive ? 'h-40 border-2 border-primary' : 'border border-default'}`}
+        className={`block rounded-2xl px-5 py-4 transition-colors group-hover:border-2 group-hover:border-primary lg:h-full ${isActive ? 'h-40 border-2 border-primary' : 'border border-default'}`}
       >
         <div
-          className={`flex items-center gap-2 text-3xl ${isActive ? 'text-default' : 'text-subtle'}`}
+          className={`flex items-center gap-2 text-3xl transition-colors group-hover:text-default ${isActive ? 'text-default' : 'text-subtle'}`}
         >
           <IconComponent size={32} />
           {text}
+        </div>
+        <div
+          className={`${isActive ? '' : 'opacity-0 group-hover:opacity-100'} absolute inset-0 -z-10 transition-opacity`}
+        >
+          {children}
         </div>
       </a>
     </li>
