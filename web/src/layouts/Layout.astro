@@ -1,4 +1,6 @@
 ---
+import { Toaster } from 'react-hot-toast';
+
 interface Props {
   title?: string;
 }
@@ -24,6 +26,11 @@ const { title } = Astro.props;
   </head>
   <body class="min-h-screen text-default">
     <slot />
+    <Toaster
+      client:idle
+      position="bottom-center"
+      toastOptions={{ duration: 3000 }}
+    />
   </body>
 </html>
 <style is:global>

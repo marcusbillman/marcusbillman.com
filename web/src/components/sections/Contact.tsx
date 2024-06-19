@@ -5,35 +5,13 @@ import {
 } from '@phosphor-icons/react/dist/ssr';
 import Button from '@/components/Button';
 import DotGrid from '@/components/DotGrid';
-import { useCopyToClipboard } from 'usehooks-ts';
-import toast, { Toaster } from 'react-hot-toast';
-import confetti from 'canvas-confetti';
+import CopyToClipboard from '@/components/CopyToClipboard';
 
 export default function Contact() {
-  const [copiedText, copy] = useCopyToClipboard();
-  const email = 'hello@marcusbillman.com';
-
-  function handleClickCopy(event: React.MouseEvent, text: string) {
-    copy(text)
-      .then(() => {
-        toast.success('Copied!');
-        confetti({
-          origin: {
-            x: event.clientX / window.innerWidth,
-            y: event.clientY / window.innerHeight,
-          },
-          startVelocity: 20,
-        });
-      })
-      .catch((error) => {
-        toast.error("Couldn't copy! 😢");
-        console.error(error);
-      });
-  }
+  const EMAIL = 'hello@marcusbillman.com';
 
   return (
     <section className="flex flex-col items-center md:px-4 lg:px-16 lg:pb-48">
-      <Toaster position="bottom-center" toastOptions={{ duration: 3000 }} />
       <div className="relative isolate flex w-full flex-col items-center gap-12 overflow-hidden rounded-2xl bg-subtle px-4 py-16 shadow-lg lg:w-fit lg:rotate-3 lg:gap-16 lg:p-16">
         <h2 className="text-balance text-center text-4xl lg:text-6xl">
           Let's get in touch! 💬
@@ -48,33 +26,23 @@ export default function Contact() {
           <div className="flex flex-col gap-4 rounded-2xl border border-default bg-default px-4 py-4 lg:flex-row lg:px-6">
             <div className="flex items-center gap-2">
               <EnvelopeSimple size={24} />
-              <span className="text-xl lg:text-2xl">{email}</span>
+              <span className="text-xl lg:text-2xl">{EMAIL}</span>
             </div>
             <div className="flex gap-2 lg:gap-3">
               <div className="lg:hidden">
-                <Button
-                  text="Copy"
-                  icon={Copy}
-                  size="small"
-                  onClick={(event: React.MouseEvent) =>
-                    handleClickCopy(event, email)
-                  }
-                />
+                <CopyToClipboard text={EMAIL}>
+                  <Button text="Copy" icon={Copy} size="small" />
+                </CopyToClipboard>
               </div>
               <div className="hidden lg:block">
-                <Button
-                  text="Copy"
-                  icon={Copy}
-                  size="medium"
-                  onClick={(event: React.MouseEvent) =>
-                    handleClickCopy(event, email)
-                  }
-                />
+                <CopyToClipboard text={EMAIL}>
+                  <Button text="Copy" icon={Copy} size="medium" />
+                </CopyToClipboard>
               </div>
               <div className="lg:hidden">
                 <Button
                   text="Open"
-                  href={`mailto:${email}`}
+                  href={`mailto:${EMAIL}`}
                   style="subtle"
                   size="small"
                 />
@@ -82,7 +50,7 @@ export default function Contact() {
               <div className="hidden lg:block">
                 <Button
                   text="Open"
-                  href={`mailto:${email}`}
+                  href={`mailto:${EMAIL}`}
                   style="subtle"
                   size="medium"
                 />

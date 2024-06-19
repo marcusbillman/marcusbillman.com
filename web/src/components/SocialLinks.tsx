@@ -1,37 +1,15 @@
 import { ArrowUpRight, Copy } from '@phosphor-icons/react/dist/ssr';
-import { useCopyToClipboard } from 'usehooks-ts';
-import toast, { Toaster } from 'react-hot-toast';
-import confetti from 'canvas-confetti';
+import CopyToClipboard from '@/components/CopyToClipboard';
 
 interface Props {
   forceDark?: boolean;
 }
 
 export default function SocialLinks({ forceDark = false }: Props) {
-  const [copiedText, copy] = useCopyToClipboard();
-  const email = 'hello@marcusbillman.com';
-
-  function handleClickCopy(event: React.MouseEvent, text: string) {
-    copy(text)
-      .then(() => {
-        toast.success('Copied!');
-        confetti({
-          origin: {
-            x: event.clientX / window.innerWidth,
-            y: event.clientY / window.innerHeight,
-          },
-          startVelocity: 20,
-        });
-      })
-      .catch((error) => {
-        toast.error("Couldn't copy! 😢");
-        console.error(error);
-      });
-  }
+  const EMAIL = 'hello@marcusbillman.com';
 
   return (
     <ul className="grid flex-1 grid-cols-2 gap-y-6">
-      <Toaster position="bottom-center" toastOptions={{ duration: 3000 }} />
       <SocialLink
         primaryText="LinkedIn"
         secondaryText="Networking"
@@ -62,16 +40,15 @@ export default function SocialLinks({ forceDark = false }: Props) {
         >
           Email
         </span>
-        <a
-          className="group mt-1 flex cursor-pointer items-center gap-1"
-          onClick={(event: React.MouseEvent) => handleClickCopy(event, email)}
-        >
-          <span className="text-xl">{email}</span>
-          <Copy
-            size={24}
-            className={`${forceDark ? 'text-gray-500 group-hover:text-white' : 'text-subtle group-hover:text-default'} transition-all duration-500 ease-smooth group-hover:rotate-180`}
-          />
-        </a>
+        <CopyToClipboard text={EMAIL}>
+          <a className="group mt-1 flex cursor-pointer items-center gap-1">
+            <span className="text-xl">{EMAIL}</span>
+            <Copy
+              size={24}
+              className={`${forceDark ? 'text-gray-500 group-hover:text-white' : 'text-subtle group-hover:text-default'} transition-all duration-500 ease-smooth group-hover:rotate-180`}
+            />
+          </a>
+        </CopyToClipboard>
       </li>
     </ul>
   );
