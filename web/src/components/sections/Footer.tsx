@@ -4,25 +4,25 @@ import SocialLinks from '@/components/SocialLinks';
 export default function Footer() {
   return (
     <footer className="relative z-10 -mt-8 bg-black px-4 pb-8 pt-16 text-white lg:-mt-16 lg:px-16 lg:pb-16 lg:pt-32">
-      <div className="grid h-96 place-items-center rounded-2xl bg-gray-500 bg-[url('/assets/images/footer-toybox-bg.jpg')] bg-cover bg-center lg:h-[768px]">
-        <div className="text-center text-3xl text-white/60 lg:text-6xl">
+      <div className="grid h-96 place-items-center rounded-2xl bg-gray-500 bg-[url('/assets/images/footer-toybox-bg.jpg')] bg-cover bg-center lg:h-[40vw]">
+        <div className="text-center text-3xl text-white/60 lg:text-4xl 2xl:text-6xl">
           <span className="block translate-x-[-10%]">
             Arranging
             <span className="font-serif italic text-white"> links </span>
-            <Link size={32} className="inline text-white lg:hidden" />
-            <Link size={64} className="hidden text-white lg:inline" />
+            <Link size={32} className="inline text-white 2xl:hidden" />
+            <Link size={64} className="hidden text-white 2xl:inline" />
           </span>
           <span className="block translate-x-[25%]">
             and
             <span className="font-serif italic text-white"> shapes </span>
-            <Shapes size={32} className="inline text-white lg:hidden" />{' '}
-            <Shapes size={64} className="hidden text-white lg:inline" />
+            <Shapes size={32} className="inline text-white 2xl:hidden" />{' '}
+            <Shapes size={64} className="hidden text-white 2xl:inline" />
           </span>
           <span className="block">
             into
             <span className="font-serif italic text-white"> melodies </span>
-            <MusicNotes size={32} className="inline text-white lg:hidden" />
-            <MusicNotes size={64} className="hidden text-white lg:inline" />
+            <MusicNotes size={32} className="inline text-white 2xl:hidden" />
+            <MusicNotes size={64} className="hidden text-white 2xl:inline" />
           </span>
         </div>
       </div>
