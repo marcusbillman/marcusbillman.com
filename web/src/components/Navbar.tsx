@@ -18,11 +18,11 @@ interface NavbarProps {
 export default function Navbar({ isMenuOpen, onClickMenuButton }: NavbarProps) {
   return (
     <div
-      className={`${isMenuOpen ? 'hidden lg:flex' : ''} fixed left-4 right-4 top-4 z-50 flex items-stretch justify-between`}
+      className={`${isMenuOpen ? 'hidden lg:flex' : ''} fixed left-4 right-4 top-4 z-50 flex items-stretch justify-between lg:left-8 lg:right-8`}
     >
       <a
         href="/"
-        className="flex items-center gap-1 rounded-full bg-default px-4 font-medium shadow-lg lg:px-6"
+        className="flex items-center gap-1 rounded-full bg-default px-4 font-medium shadow-lg transition-colors hover:bg-primary hover:text-on-primary lg:px-6"
       >
         <span>Marcus</span>
         <span className="font-serif italic">Billman</span>
@@ -69,7 +69,7 @@ function NavbarLink({ text, url, icon }: NavbarLinkProps) {
     <li>
       <a
         href={url}
-        className={`flex items-center gap-1 ${isActive ? 'font-bold text-default' : 'text-subtle'}`}
+        className={`flex items-center gap-1 transition-colors hover:text-default ${isActive ? 'font-bold text-default' : 'text-subtle'}`}
       >
         <IconComponent weight={isActive ? 'fill' : 'regular'} />
         {text}
