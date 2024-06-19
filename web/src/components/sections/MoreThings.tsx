@@ -18,13 +18,13 @@ export default function MoreThings() {
         More things made by me 🍱
       </h2>
       <ul className="mt-12 grid gap-6 lg:mt-16 lg:gap-8">
-        <div className="flex flex-col gap-6 lg:h-96 lg:flex-row lg:gap-8">
+        <div className="flex min-h-96 flex-col gap-6 lg:h-[20vw] lg:flex-row lg:gap-8">
           <BentoCard
             title="Side projects"
             description="Web apps and experiments"
             icon={Flask}
             href="portfolio"
-            className="h-[50vh] flex-grow bg-gradient-to-b from-[#bfcaf1] to-[#889ef1] lg:h-auto lg:flex-[2]"
+            className="h-[50vh] flex-grow bg-gradient-to-b from-[#bfcaf1] to-[#889ef1] lg:h-auto xl:flex-[2]"
           >
             <img
               src="/assets/images/screenshot-soundboard.jpg"
@@ -46,12 +46,12 @@ export default function MoreThings() {
             description="Design explorations"
             icon={Dribbble}
             href="https://m-b.me/dribbble"
-            className="h-[50vh] flex-grow bg-[url('/assets/images/designer-desk.jpg')] bg-cover bg-center text-black lg:h-auto lg:flex-[1]"
+            className="h-[50vh] flex-grow bg-[url('/assets/images/designer-desk.jpg')] bg-cover bg-center text-black lg:h-auto xl:flex-[1]"
           >
             <DotGrid dim="strong" />
           </BentoCard>
         </div>
-        <div className="flex flex-col gap-6 lg:h-96 lg:flex-row lg:gap-8">
+        <div className="flex min-h-96 flex-col gap-6 lg:h-[20vw] lg:flex-row lg:gap-8">
           <BentoCard
             title="SoundCloud"
             description="Music"
