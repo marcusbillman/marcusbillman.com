@@ -22,13 +22,13 @@ export default function Navbar({ isMenuOpen, onClickMenuButton }: NavbarProps) {
     >
       <a
         href="/"
-        className="flex items-center gap-1 rounded-full bg-default px-4 font-medium shadow-lg transition-colors hover:bg-primary hover:text-on-primary lg:px-6"
+        className={`${isMenuOpen ? '' : 'shadow-lg'} flex items-center gap-1 rounded-full bg-default px-4 font-medium transition-colors hover:bg-primary hover:text-on-primary lg:px-6`}
       >
         <span>Marcus</span>
         <span className="font-serif italic">Billman</span>
       </a>
       <div
-        className={`${isMenuOpen ? '' : 'lg:pl-6'} flex items-center gap-6 rounded-full bg-default shadow-lg lg:p-2`}
+        className={`${isMenuOpen ? '' : 'shadow-lg lg:pl-6'} flex items-center gap-6 rounded-full bg-default lg:p-2`}
       >
         <ul
           className={`${isMenuOpen ? '' : 'lg:flex lg:items-center'} hidden gap-6`}
