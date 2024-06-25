@@ -69,7 +69,7 @@ function NavbarLink({ text, url, icon }: NavbarLinkProps) {
     <li>
       <a
         href={url}
-        className={`flex items-center gap-1 transition-colors hover:text-default ${isActive ? 'font-bold text-default' : 'text-subtle'}`}
+        className={`flex items-center gap-1 transition-all hover:text-default ${isActive ? 'font-bold text-default' : 'text-subtle'}`}
       >
         <IconComponent weight={isActive ? 'fill' : 'regular'} />
         {text}
