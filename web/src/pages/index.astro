@@ -5,26 +5,16 @@ import Bio from '@/components/sections/Bio';
 import FeaturedWork from '@/components/sections/FeaturedWork';
 import MoreThings from '@/components/sections/MoreThings';
 import Contact from '@/components/sections/Contact';
-import Footer from '@/components/sections/Footer';
 import Separator from '@/components/sections/Separator';
 ---
 
 <Layout>
-  <Hero />
-  <main
-    class="relative z-20 -mt-8 rounded-4xl bg-default shadow-main-container lg:-mt-16 lg:rounded-t-6xl"
-  >
-    <div
-      class="absolute left-1/2 top-4 h-1 w-16 -translate-x-1/2 rounded-full bg-subtle lg:hidden"
-    >
-    </div>
-    <Bio />
-    <Separator />
-    <FeaturedWork />
-    <Separator />
-    <MoreThings />
-    <Separator />
-    <Contact client:visible />
-  </main>
-  <Footer client:visible />
+  <Hero slot="header" />
+  <Bio />
+  <Separator />
+  <FeaturedWork />
+  <Separator />
+  <MoreThings />
+  <Separator />
+  <Contact client:visible />
 </Layout>
