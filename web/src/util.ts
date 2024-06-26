@@ -3,7 +3,7 @@ import imageUrlBuilder from '@sanity/image-url';
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
 export function isExternalUrl(url: string) {
-  return url.match(/\w+\:*/) ? true : false;
+  return url.startsWith('http') || url.startsWith('mailto');
 }
 
 export function randomInt(min: number, max: number) {
