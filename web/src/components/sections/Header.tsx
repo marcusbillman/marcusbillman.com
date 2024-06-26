@@ -55,7 +55,7 @@ export default function PageHeader({ title, emoji = [] }: Props) {
   }, []);
 
   return (
-    <header className="fixed top-0 h-[512px] w-screen overflow-hidden px-4 pt-[15vh] lg:h-[75vh] lg:px-16 lg:pt-32">
+    <header className="sticky top-0 h-[512px] overflow-hidden px-4 pt-[15vh] lg:h-[75vh] lg:px-16 lg:pt-32">
       <h1
         className="absolute text-5xl transition-opacity md:text-7xl lg:text-left lg:text-9xl"
         style={{

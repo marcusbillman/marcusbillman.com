@@ -2,7 +2,7 @@ import Button from '@/components/Button';
 
 export default function Bio() {
   return (
-    <section className="mt-[90vh] flex flex-col items-center gap-12 px-4 pb-24 pt-32 lg:mt-[100vh] lg:px-16 lg:pb-32 lg:pt-64">
+    <section className="flex flex-col items-center gap-12 px-4 pb-24 pt-32 lg:px-16 lg:pb-32 lg:pt-64">
       <h2 className="text-balance text-center text-4xl font-medium lg:text-6xl">
         Hej!{' '}
         <span className="inline-block origin-bottom-right animate-wiggle">
