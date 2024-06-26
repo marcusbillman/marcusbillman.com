@@ -1,0 +1,21 @@
+---
+import Header from '@/components/sections/Header';
+import Projects from '@/components/sections/Projects';
+import Layout from '@/layouts/Layout.astro';
+import { sanityClient } from 'sanity:client';
+import type { Project } from '@studio/sanity.types';
+
+const projects = await sanityClient.fetch<Project[]>(
+  `*[_type == "project"] | order(orderRank asc)`,
+);
+---
+
+<Layout title="Portfolio">
+  <Header
+    slot="header"
+    client:load
+    title="Portfolio"
+    emoji={['✨', '🎨', '📄', '🖋️', '🗃️']}
+  />
+  <Projects client:idle projects={projects} />
+</Layout>
