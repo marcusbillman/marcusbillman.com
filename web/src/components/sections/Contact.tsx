@@ -11,7 +11,7 @@ export default function Contact() {
   const EMAIL = 'hello@marcusbillman.com';
 
   return (
-    <section className="flex flex-col items-center md:px-4 lg:px-16 lg:pb-48">
+    <section className="flex flex-col items-center md:px-4 md:pb-4 lg:px-16 lg:pb-40">
       <div className="relative isolate flex w-full flex-col items-center gap-12 overflow-hidden rounded-2xl bg-subtle px-4 py-16 shadow-lg lg:w-fit lg:rotate-3 lg:gap-16 lg:p-16">
         <h2 className="text-balance text-center text-4xl lg:text-6xl">
           Let's get in touch! 💬
