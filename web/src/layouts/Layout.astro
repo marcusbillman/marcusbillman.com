@@ -28,10 +28,10 @@ const { title } = Astro.props;
   </head>
   <body class="min-h-screen bg-default text-default">
     <Navigation client:load />
-    <div class="overflow-clip rounded-b-4xl">
+    <div class="overflow-clip rounded-b-4xl lg:rounded-b-6xl">
       <slot name="header" />
       <main
-        class="relative z-20 -mt-8 min-h-screen bg-default shadow-main-container lg:-mt-16 lg:rounded-t-6xl"
+        class="relative z-20 -mt-8 min-h-screen rounded-t-4xl bg-default shadow-main-container lg:-mt-16 lg:rounded-t-6xl"
       >
         <div
           class="absolute left-1/2 top-4 h-1 w-16 -translate-x-1/2 rounded-full bg-subtle lg:hidden"
