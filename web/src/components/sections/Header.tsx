@@ -56,17 +56,25 @@ export default function PageHeader({ title, emoji = [] }: Props) {
 
   return (
     <header className="sticky top-0 h-[512px] overflow-hidden px-4 pt-[15vh] lg:h-[75vh] lg:px-16 lg:pt-32">
-      <h1
-        className="absolute text-5xl transition-opacity md:text-7xl lg:text-left lg:text-9xl"
-        style={{
-          top: `${headingPosition?.x}%`,
-          left: `${headingPosition?.y}%`,
-          opacity: isVisible ? 1 : 0,
-        }}
+      <div
+        className="absolute bottom-12 left-4 right-4 top-16 lg:bottom-20 lg:left-8 lg:right-8 lg:top-24"
+        ref={constraintsRef}
       >
-        {title}
-      </h1>
-      <div className="absolute inset-8 top-20" ref={constraintsRef}>
+        <motion.h1
+          className="absolute cursor-move text-5xl transition-opacity md:text-7xl lg:text-left lg:text-9xl"
+          drag
+          dragConstraints={constraintsRef}
+          dragElastic={0.05}
+          whileDrag={{ rotate: -5 }}
+          whileHover={{ scale: 1.05 }}
+          style={{
+            top: `${headingPosition?.x}%`,
+            left: `${headingPosition?.y}%`,
+            opacity: isVisible ? 1 : 0,
+          }}
+        >
+          {title}
+        </motion.h1>
         {emoji.map((emoji, index) => (
           <motion.span
             key={index}
