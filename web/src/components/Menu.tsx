@@ -115,7 +115,7 @@ function MenuLink({ text, url, icon, children }: MenuLinkProps) {
         <div
           className={`flex items-center gap-2 text-3xl transition-colors group-hover:text-default ${isActive ? 'text-default' : 'text-subtle'}`}
         >
-          <IconComponent size={32} />
+          <IconComponent size={32} weight={isActive ? 'fill' : 'regular'} />
           {text}
         </div>
         <div
