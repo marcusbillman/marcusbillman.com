@@ -1,6 +1,8 @@
 ---
 import Header from '@/components/sections/Header';
 import Projects from '@/components/sections/Projects';
+import Separator from '@/components/sections/Separator';
+import Contact from '@/components/sections/Contact';
 import Layout from '@/layouts/Layout.astro';
 import { sanityClient } from 'sanity:client';
 import type { Project } from '@studio/sanity.types';
@@ -18,4 +20,6 @@ const projects = await sanityClient.fetch<Project[]>(
     emoji={['✨', '🎨', '📄', '🖋️', '🗃️']}
   />
   <Projects client:idle projects={projects} />
+  <Separator />
+  <Contact client:visible />
 </Layout>
