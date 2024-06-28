@@ -36,9 +36,9 @@ export default function MyWork({ portfolioItems }: MyWorkProps) {
 
   return (
     <section className="px-4 py-16 lg:px-16">
-      <div className="flex flex-col gap-8 xl:flex-row xl:items-center xl:justify-between">
-        <h2 className="text-4xl font-medium xl:text-6xl">My work</h2>
-        <div className="flex flex-col gap-4 overflow-hidden rounded-2xl xl:flex-row xl:gap-0 xl:border xl:border-default">
+      <div className="flex flex-col gap-8 2xl:flex-row 2xl:items-center 2xl:justify-between">
+        <h2 className="text-4xl font-medium lg:text-6xl">My work</h2>
+        <div className="flex flex-col gap-4 overflow-hidden rounded-2xl lg:flex-row lg:gap-0 lg:border lg:border-default">
           <FilterOption
             label="Case studies"
             icon={Images}
@@ -75,7 +75,7 @@ export default function MyWork({ portfolioItems }: MyWorkProps) {
           ))}
         </ul>
       ) : (
-        <p className="mt-16 text-center text-3xl">
+        <p className="mt-16 text-center text-xl">
           Nothing to show! Enable some filters above.
         </p>
       )}
@@ -176,10 +176,12 @@ function PortfolioItemCard({ portfolioItem }: PortfolioItemCardProps) {
       >
         <img
           src={imageUrl()}
-          className="h-96 w-full rounded-2xl object-cover transition-transform duration-500 ease-smooth group-hover:rotate-3 group-hover:scale-105 group-hover:shadow-lg lg:h-[30vw] 2xl:rounded-4xl"
+          className="h-96 w-full rounded-2xl object-cover transition-transform duration-500 ease-smooth group-hover:rotate-3 group-hover:scale-105 group-hover:shadow-lg lg:h-[30vw] 2xl:rounded-4xl 2xl:group-hover:rotate-1"
         />
         <div className="mt-6 flex flex-col gap-3">
-          <div className="flex items-center">
+          <div
+            className={`${!name() ? 'hidden lg:flex' : 'flex'} items-center`}
+          >
             <div className="flex flex-grow items-center gap-4">
               {name() && (
                 <h3 className="font-serif text-xl font-medium text-primary lg:text-2xl 2xl:text-3xl">
@@ -194,7 +196,7 @@ function PortfolioItemCard({ portfolioItem }: PortfolioItemCardProps) {
               {date()}
             </span>
           </div>
-          <p className="text-balance text-3xl lg:text-4xl 2xl:text-6xl">
+          <p className="text-balance text-3xl lg:text-4xl 2xl:text-5xl">
             {headline()}
           </p>
           <div className="flex items-center gap-3 lg:hidden">
@@ -256,11 +258,13 @@ function FilterOption({
 
   return (
     <div
-      className={`${isEnabled ? 'font-bold text-default' : 'text-subtle'} flex cursor-pointer items-center gap-2 transition-all xl:border-l xl:border-l-default xl:p-6`}
+      className={`${isEnabled ? 'font-bold text-default' : 'text-subtle'} flex flex-grow cursor-pointer items-center gap-4 transition-all lg:border-l lg:border-l-default lg:p-6`}
       onClick={handleClick}
     >
-      <IconComponent size={24} weight={isEnabled ? 'fill' : 'regular'} />
-      <span className="flex-grow text-xl xl:text-2xl">{label}</span>
+      <div className="flex flex-grow items-center gap-2">
+        <IconComponent size={24} weight={isEnabled ? 'fill' : 'regular'} />
+        <span className="text-xl 2xl:text-2xl">{label}</span>
+      </div>
       <Switch size="small" checked={isEnabled} />
     </div>
   );
