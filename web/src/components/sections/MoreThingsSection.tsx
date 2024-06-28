@@ -24,7 +24,7 @@ export default function MoreThingsSection() {
             description="Web apps and experiments"
             icon={Flask}
             href="portfolio"
-            className="h-[50vh] flex-grow bg-gradient-to-b from-[#bfcaf1] to-[#889ef1] lg:h-auto xl:flex-[2]"
+            className="h-[50vh] flex-grow bg-gradient-to-b from-[#bfcaf1] to-[#889ef1] text-black lg:h-auto xl:flex-[2]"
           >
             <img
               src="/assets/images/screenshot-soundboard.jpg"
@@ -46,7 +46,7 @@ export default function MoreThingsSection() {
             description="Design explorations"
             icon={Dribbble}
             href="https://m-b.me/dribbble"
-            className="h-[50vh] flex-grow bg-[url('/assets/images/designer-desk.jpg')] bg-cover bg-center text-black lg:h-auto xl:flex-[1]"
+            className="h-[50vh] flex-grow bg-[url('/assets/images/designer-desk.jpg')] bg-cover bg-center lg:h-auto xl:flex-[1]"
           >
             <DotGrid dim="strong" />
           </BentoCard>
