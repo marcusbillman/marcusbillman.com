@@ -41,7 +41,7 @@ function FeaturedProject({ project }: FeaturedProjectProps) {
             {project.headline}
           </p>
         </div>
-        <Button text="View case" href={'/portfolio/' + project.slug} />
+        <Button text="View case" href={'/portfolio/' + project.slug?.current} />
       </div>
       <img
         src={sanityImageUrl(project.coverImage?.asset!).width(1200).url()}
