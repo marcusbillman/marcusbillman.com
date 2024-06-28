@@ -1,8 +1,8 @@
 ---
-import Header from '@/components/sections/Header';
-import MyWork from '@/components/sections/MyWork';
-import Separator from '@/components/sections/Separator';
-import Contact from '@/components/sections/Contact';
+import HeaderSection from '@/components/sections/HeaderSection';
+import PortfolioItemsSection from '@/components/sections/PortfolioItemsSection';
+import SeparatorSection from '@/components/sections/SeparatorSection';
+import ContactSection from '@/components/sections/ContactSection';
 import Layout from '@/layouts/Layout.astro';
 import { fetchDribbbleShots } from '@/util/dribbble';
 import { fetchAllProjects } from '@/util/sanity';
@@ -52,13 +52,13 @@ dribbbleShots.forEach((dribbbleShot) => {
 ---
 
 <Layout title="Portfolio">
-  <Header
+  <HeaderSection
     slot="header"
     client:load
     title="Portfolio"
     emoji={['✨', '🎨', '📄', '🖋️', '🗃️']}
   />
-  <MyWork client:idle portfolioItems={portfolioItems} />
-  <Separator />
-  <Contact client:visible />
+  <PortfolioItemsSection client:idle portfolioItems={portfolioItems} />
+  <SeparatorSection />
+  <ContactSection client:visible />
 </Layout>

@@ -2,11 +2,13 @@ import Button from '@/components/Button';
 import { sanityImageUrl } from '@/util/sanity';
 import type { Project } from '@studio/sanity.types';
 
-interface FeaturedWorkProps {
+interface FeaturedProjectsSectionProps {
   projects: Project[];
 }
 
-export default function FeaturedWork({ projects }: FeaturedWorkProps) {
+export default function FeaturedProjectsSection({
+  projects,
+}: FeaturedProjectsSectionProps) {
   return (
     <section className="px-4 lg:px-16">
       <h2 className="text-4xl font-medium lg:text-6xl">Featured work ✨</h2>

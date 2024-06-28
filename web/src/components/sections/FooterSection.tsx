@@ -1,7 +1,7 @@
 import { Link, MusicNotes, Shapes } from '@phosphor-icons/react/dist/ssr';
 import SocialLinks from '@/components/SocialLinks';
 
-export default function Footer() {
+export default function FooterSection() {
   return (
     <footer className="relative z-10 -mt-8 bg-black px-4 pb-8 pt-16 text-white lg:-mt-16 lg:px-16 lg:pb-16 lg:pt-32">
       <div className="grid h-96 place-items-center rounded-2xl bg-gray-500 bg-[url('/assets/images/footer-toybox-bg.jpg')] bg-cover bg-center lg:h-[40vw]">

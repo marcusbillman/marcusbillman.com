@@ -1,23 +1,23 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import Hero from '@/components/sections/Hero';
-import Bio from '@/components/sections/Bio';
-import FeaturedWork from '@/components/sections/FeaturedWork';
-import MoreThings from '@/components/sections/MoreThings';
-import Contact from '@/components/sections/Contact';
-import Separator from '@/components/sections/Separator';
+import HeroSection from '@/components/sections/HeroSection';
+import BioSection from '@/components/sections/BioSection';
+import FeaturedProjectsSection from '@/components/sections/FeaturedProjectsSection';
+import MoreThingsSection from '@/components/sections/MoreThingsSection';
+import ContactSection from '@/components/sections/ContactSection';
+import SeparatorSection from '@/components/sections/SeparatorSection';
 import { fetchFeaturedProjects } from '@/util/sanity';
 
 const featuredProjects = await fetchFeaturedProjects();
 ---
 
 <Layout>
-  <Hero slot="header" />
-  <Bio />
-  <Separator />
-  <FeaturedWork projects={featuredProjects} />
-  <Separator />
-  <MoreThings />
-  <Separator />
-  <Contact client:visible />
+  <HeroSection slot="header" />
+  <BioSection />
+  <SeparatorSection />
+  <FeaturedProjectsSection projects={featuredProjects} />
+  <SeparatorSection />
+  <MoreThingsSection />
+  <SeparatorSection />
+  <ContactSection client:visible />
 </Layout>

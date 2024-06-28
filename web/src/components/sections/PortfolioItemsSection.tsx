@@ -17,11 +17,13 @@ import type { PortfolioItem } from '@/util/portfolioItem';
 import type { DribbbleShot } from '@/util/dribbble';
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 
-interface MyWorkProps {
+interface PortfolioItemsSectionProps {
   portfolioItems: PortfolioItem[];
 }
 
-export default function MyWork({ portfolioItems }: MyWorkProps) {
+export default function PortfolioItemsSection({
+  portfolioItems,
+}: PortfolioItemsSectionProps) {
   const [filterOptions, setFilterOptions] = useState({
     caseStudies: true,
     sideProjects: true,
@@ -178,15 +180,15 @@ function PortfolioItemCard({ portfolioItem }: PortfolioItemCardProps) {
     }
   }
 
-  function ProjectTagComponent() {
+  function PortfolioItemTagComponent() {
     if (portfolioItem.type === 'CASE_STUDY') {
-      return <ProjectTag label="Case study" icon={Images} />;
+      return <PortfolioItemTag label="Case study" icon={Images} />;
     }
     if (portfolioItem.type === 'SIDE_PROJECT') {
-      return <ProjectTag label="Side project" icon={Flask} />;
+      return <PortfolioItemTag label="Side project" icon={Flask} />;
     }
     if (portfolioItem.type === 'DRIBBBLE_SHOT') {
-      return <ProjectTag label="Dribbble shot" icon={DribbbleLogo} />;
+      return <PortfolioItemTag label="Dribbble shot" icon={DribbbleLogo} />;
     }
   }
 
@@ -228,7 +230,7 @@ function PortfolioItemCard({ portfolioItem }: PortfolioItemCardProps) {
                 </h3>
               )}
               <div className="hidden lg:block">
-                <ProjectTagComponent />
+                <PortfolioItemTagComponent />
               </div>
             </div>
             <span className="hidden text-subtle lg:inline 2xl:text-2xl">
@@ -239,7 +241,7 @@ function PortfolioItemCard({ portfolioItem }: PortfolioItemCardProps) {
             {headline()}
           </p>
           <div className="flex items-center gap-3 lg:hidden">
-            <ProjectTagComponent />
+            <PortfolioItemTagComponent />
             <span className="text-subtle">{date()}</span>
           </div>
         </div>
@@ -248,13 +250,13 @@ function PortfolioItemCard({ portfolioItem }: PortfolioItemCardProps) {
   );
 }
 
-interface ProjectTagProps {
+interface PortfolioItemTagProps {
   label: string;
   icon: Icon;
   className?: string;
 }
 
-function ProjectTag({ label, icon, className }: ProjectTagProps) {
+function PortfolioItemTag({ label, icon, className }: PortfolioItemTagProps) {
   const IconComponent = icon;
 
   return (

@@ -7,7 +7,7 @@ import Button from '@/components/Button';
 import DotGrid from '@/components/DotGrid';
 import CopyToClipboard from '@/components/CopyToClipboard';
 
-export default function Contact() {
+export default function ContactSection() {
   const EMAIL = 'hello@marcusbillman.com';
 
   return (

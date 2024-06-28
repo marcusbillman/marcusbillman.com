@@ -11,7 +11,7 @@ import type { CustomIcon } from '@/components/icons';
 import DotGrid from '@/components/DotGrid';
 import { ButtonClick, CodeBlock, Phone } from '@/components/illustrations';
 
-export default function MoreThings() {
+export default function MoreThingsSection() {
   return (
     <section className="px-4 lg:px-16">
       <h2 className="text-4xl font-medium lg:text-6xl">

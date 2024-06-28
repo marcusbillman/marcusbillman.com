@@ -16,7 +16,7 @@ import {
 import WaveLine from '@/components/WaveLine.tsx';
 import DotGrid from '@/components/DotGrid';
 
-export default function Hero() {
+export default function HeroSection() {
   return (
     <header className="sticky top-0 h-[90vh] overflow-hidden px-4 pt-[15vh] lg:h-screen lg:px-16 lg:pt-32">
       {/* Content */}

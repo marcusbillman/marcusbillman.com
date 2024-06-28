@@ -3,12 +3,15 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { randomInt } from '@/util';
 
-interface Props {
+interface HeaderSectionProps {
   title: string;
   emoji?: string[];
 }
 
-export default function PageHeader({ title, emoji = [] }: Props) {
+export default function HeaderSection({
+  title,
+  emoji = [],
+}: HeaderSectionProps) {
   const constraintsRef = useRef(null);
   const [emojiPositions, setEmojiPositions] = useState<Position[]>([]);
   const [headingPosition, setHeadingPosition] = useState<Position>();
