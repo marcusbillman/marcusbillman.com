@@ -101,6 +101,9 @@ export default {
       boxShadow: {
         'main-container': '0px -4px 32px 0px rgba(0, 0, 0, 0.10)',
       },
+      aspectRatio: {
+        photo: '3/2',
+      },
     },
   },
 };
