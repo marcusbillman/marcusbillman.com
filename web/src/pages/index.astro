@@ -6,13 +6,16 @@ import FeaturedWork from '@/components/sections/FeaturedWork';
 import MoreThings from '@/components/sections/MoreThings';
 import Contact from '@/components/sections/Contact';
 import Separator from '@/components/sections/Separator';
+import { fetchFeaturedProjects } from '@/util/sanity';
+
+const featuredProjects = await fetchFeaturedProjects();
 ---
 
 <Layout>
   <Hero slot="header" />
   <Bio />
   <Separator />
-  <FeaturedWork />
+  <FeaturedWork projects={featuredProjects} />
   <Separator />
   <MoreThings />
   <Separator />
