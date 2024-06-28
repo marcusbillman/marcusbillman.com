@@ -9,6 +9,7 @@ import type {
 import { isExternalUrl, sanityImageUrl } from '@/util';
 import type { PortfolioItem } from '@/util/portfolioItem';
 import type { DribbbleShot } from '@/util/dribbble';
+import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 
 interface MyWorkProps {
   portfolioItems: PortfolioItem[];
@@ -65,20 +66,27 @@ export default function MyWork({ portfolioItems }: MyWorkProps) {
           />
         </div>
       </div>
-      {filteredPortfolioItems.length > 0 ? (
-        <ul className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-y-32">
+      <ul className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-y-32">
+        <AnimatePresence mode="popLayout">
           {filteredPortfolioItems.map((portfolioItem) => (
             <PortfolioItemCard
               key={portfolioItem.id}
               portfolioItem={portfolioItem}
             />
           ))}
-        </ul>
-      ) : (
-        <p className="mt-16 text-center text-xl">
-          Nothing to show! Enable some filters above.
-        </p>
-      )}
+          {filteredPortfolioItems.length === 0 && (
+            <motion.p
+              layout
+              className="mt-16 text-center text-xl lg:col-span-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              Nothing to show! Enable some filters above.
+            </motion.p>
+          )}
+        </AnimatePresence>
+      </ul>
     </section>
   );
 }
@@ -168,7 +176,23 @@ function PortfolioItemCard({ portfolioItem }: PortfolioItemCardProps) {
   }
 
   return (
-    <li className="group">
+    <motion.li
+      key={portfolioItem.id}
+      layout
+      initial={{ opacity: 0, y: 200, rotate: 15 }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        rotate: 0,
+      }}
+      exit={{
+        opacity: 0,
+        y: 200,
+        rotate: 15,
+      }}
+      transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
+      className="group"
+    >
       <a
         href={href()}
         target={isExternalUrl(href() || '') ? '_blank' : '_self'}
@@ -205,7 +229,7 @@ function PortfolioItemCard({ portfolioItem }: PortfolioItemCardProps) {
           </div>
         </div>
       </a>
-    </li>
+    </motion.li>
   );
 }
 
@@ -258,7 +282,7 @@ function FilterOption({
 
   return (
     <div
-      className={`${isEnabled ? 'font-bold text-default' : 'text-subtle'} flex flex-grow cursor-pointer items-center gap-4 transition-all lg:border-l lg:border-l-default lg:p-6`}
+      className={`${isEnabled ? 'font-bold text-default' : 'text-subtle'} flex flex-grow cursor-pointer items-center gap-4 transition-all active:scale-90 lg:border-l lg:border-l-default lg:p-6 lg:first:border-l-0`}
       onClick={handleClick}
     >
       <div className="flex flex-grow items-center gap-2">
