@@ -4,16 +4,13 @@ import MyWork from '@/components/sections/MyWork';
 import Separator from '@/components/sections/Separator';
 import Contact from '@/components/sections/Contact';
 import Layout from '@/layouts/Layout.astro';
-import { sanityClient } from 'sanity:client';
-import type { Project } from '@studio/sanity.types';
 import { fetchDribbbleShots } from '@/util/dribbble';
+import { fetchAllProjects } from '@/util/sanity';
 import type { PortfolioItem } from '@/util/portfolioItem';
 
 // Fetch data and split by type
 
-const sanityProjects = await sanityClient.fetch<Project[]>(
-  `*[_type == "project"] | order(orderRank asc)`,
-);
+const sanityProjects = await fetchAllProjects();
 
 const caseStudies = sanityProjects.filter(
   (project) => project.type === 'CASE_STUDY',

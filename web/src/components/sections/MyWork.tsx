@@ -6,7 +6,8 @@ import type {
   Project as PortfolioItemCard,
   Project,
 } from '@studio/sanity.types';
-import { isExternalUrl, sanityImageUrl } from '@/util';
+import { isExternalUrl } from '@/util';
+import { sanityImageUrl } from '@/util/sanity';
 import type { PortfolioItem } from '@/util/portfolioItem';
 import type { DribbbleShot } from '@/util/dribbble';
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
