@@ -15,12 +15,20 @@ export default function BioSection() {
         I love designing interfaces, writing code and spreading the joy of
         making cool things. I’m also a tech enthusiast and hobbyist musician 🎹.
       </p>
-      <div className="lg:hidden">
-        <Button text="About me" href="about" size="medium" style="primary" />
-      </div>
-      <div className="hidden lg:block">
-        <Button text="About me" href="about" size="large" style="primary" />
-      </div>
+      <Button
+        text="About me"
+        href="about"
+        size="medium"
+        style="primary"
+        className="lg:hidden"
+      />
+      <Button
+        text="About me"
+        href="about"
+        size="large"
+        style="primary"
+        className="hidden lg:flex"
+      />
     </section>
   );
 }

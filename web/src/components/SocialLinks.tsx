@@ -46,7 +46,7 @@ export default function SocialLinks({
       />
       <li className="col-span-2">
         <span
-          className={`${forceDark ? 'text-gray-500' : 'text-subtle'} ${compactOnMobile ? 'hidden lg:block' : ''} font-medium`}
+          className={`${forceDark ? 'text-gray-500' : 'text-subtle'} ${compactOnMobile ? 'hidden lg:inline' : ''} font-medium`}
         >
           Email
         </span>
@@ -84,7 +84,7 @@ function SocialLink({
   return (
     <li>
       <span
-        className={`${forceDark ? 'text-gray-500' : 'text-subtle'} ${compactOnMobile ? 'hidden lg:block' : ''} font-medium`}
+        className={`${forceDark ? 'text-gray-500' : 'text-subtle'} ${compactOnMobile ? 'hidden lg:inline' : ''} font-medium`}
       >
         {secondaryText}
       </span>
@@ -92,18 +92,14 @@ function SocialLink({
         <span className={`${compactOnMobile ? 'lg:text-xl' : 'text-xl'}`}>
           {primaryText}
         </span>
-        <span className={`${compactOnMobile ? 'lg:hidden' : 'hidden'}`}>
-          <ArrowUpRight
-            size={16}
-            className={`${forceDark ? 'text-gray-500 group-hover:text-white' : 'text-subtle group-hover:text-default'} transition-all duration-500 ease-smooth group-hover:-translate-y-[20%] group-hover:translate-x-[20%]`}
-          />
-        </span>
-        <span className={`${compactOnMobile ? 'hidden lg:inline' : ''}`}>
-          <ArrowUpRight
-            size={24}
-            className={`${forceDark ? 'text-gray-500 group-hover:text-white' : 'text-subtle group-hover:text-default'} transition-all duration-500 ease-smooth group-hover:-translate-y-[20%] group-hover:translate-x-[20%]`}
-          />
-        </span>
+        <ArrowUpRight
+          size={16}
+          className={`${compactOnMobile ? 'lg:hidden' : 'hidden'} ${forceDark ? 'text-gray-500 group-hover:text-white' : 'text-subtle group-hover:text-default'} transition-all duration-500 ease-smooth group-hover:-translate-y-[20%] group-hover:translate-x-[20%]`}
+        />
+        <ArrowUpRight
+          size={24}
+          className={`${compactOnMobile ? 'hidden lg:block' : ''} ${forceDark ? 'text-gray-500 group-hover:text-white' : 'text-subtle group-hover:text-default'} transition-all duration-500 ease-smooth group-hover:-translate-y-[20%] group-hover:translate-x-[20%]`}
+        />
       </a>
     </li>
   );

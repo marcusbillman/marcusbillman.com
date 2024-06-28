@@ -29,32 +29,34 @@ export default function ContactSection() {
               <span className="text-xl lg:text-2xl">{EMAIL}</span>
             </div>
             <div className="flex gap-2 lg:gap-3">
-              <div className="lg:hidden">
-                <CopyToClipboard text={EMAIL}>
-                  <Button text="Copy" icon={Copy} size="small" />
-                </CopyToClipboard>
-              </div>
-              <div className="hidden lg:block">
-                <CopyToClipboard text={EMAIL}>
-                  <Button text="Copy" icon={Copy} size="medium" />
-                </CopyToClipboard>
-              </div>
-              <div className="lg:hidden">
+              <CopyToClipboard text={EMAIL}>
                 <Button
-                  text="Open"
-                  href={`mailto:${EMAIL}`}
-                  style="subtle"
+                  text="Copy"
+                  icon={Copy}
                   size="small"
+                  className="lg:hidden"
                 />
-              </div>
-              <div className="hidden lg:block">
                 <Button
-                  text="Open"
-                  href={`mailto:${EMAIL}`}
-                  style="subtle"
+                  text="Copy"
+                  icon={Copy}
                   size="medium"
+                  className="hidden lg:flex"
                 />
-              </div>
+              </CopyToClipboard>
+              <Button
+                text="Open"
+                href={`mailto:${EMAIL}`}
+                style="subtle"
+                size="small"
+                className="lg:hidden"
+              />
+              <Button
+                text="Open"
+                href={`mailto:${EMAIL}`}
+                style="subtle"
+                size="medium"
+                className="hidden lg:flex"
+              />
             </div>
           </div>
         </div>
