@@ -15,28 +15,70 @@ interface MyWorkProps {
 }
 
 export default function MyWork({ portfolioItems }: MyWorkProps) {
+  const [filterOptions, setFilterOptions] = useState({
+    caseStudies: true,
+    sideProjects: true,
+    dribbbleShots: false,
+  });
+
+  const filteredPortfolioItems = portfolioItems.filter((portfolioItem) => {
+    if (portfolioItem.type === 'CASE_STUDY') {
+      return filterOptions.caseStudies;
+    }
+    if (portfolioItem.type === 'SIDE_PROJECT') {
+      return filterOptions.sideProjects;
+    }
+    if (portfolioItem.type === 'DRIBBBLE_SHOT') {
+      return filterOptions.dribbbleShots;
+    }
+    return false;
+  });
+
   return (
     <section className="px-4 py-16 lg:px-16">
       <div className="flex flex-col gap-8 xl:flex-row xl:items-center xl:justify-between">
         <h2 className="text-4xl font-medium xl:text-6xl">My work</h2>
         <div className="flex flex-col gap-4 overflow-hidden rounded-2xl xl:flex-row xl:gap-0 xl:border xl:border-default">
-          <FilterOption label="Case studies" icon={Images} />
-          <FilterOption label="Side projects" icon={Flask} />
+          <FilterOption
+            label="Case studies"
+            icon={Images}
+            defaultEnabled={filterOptions.caseStudies}
+            onChange={(isEnabled) => {
+              setFilterOptions({ ...filterOptions, caseStudies: isEnabled });
+            }}
+          />
+          <FilterOption
+            label="Side projects"
+            icon={Flask}
+            defaultEnabled={filterOptions.sideProjects}
+            onChange={(isEnabled) => {
+              setFilterOptions({ ...filterOptions, sideProjects: isEnabled });
+            }}
+          />
           <FilterOption
             label="Dribbble shots"
             icon={DribbbleLogo}
-            defaultEnabled={false}
+            defaultEnabled={filterOptions.dribbbleShots}
+            onChange={(isEnabled) => {
+              setFilterOptions({ ...filterOptions, dribbbleShots: isEnabled });
+            }}
           />
         </div>
       </div>
-      <ul className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-y-32">
-        {portfolioItems.map((portfolioItem) => (
-          <PortfolioItemCard
-            key={portfolioItem.id}
-            portfolioItem={portfolioItem}
-          />
-        ))}
-      </ul>
+      {filteredPortfolioItems.length > 0 ? (
+        <ul className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-y-32">
+          {filteredPortfolioItems.map((portfolioItem) => (
+            <PortfolioItemCard
+              key={portfolioItem.id}
+              portfolioItem={portfolioItem}
+            />
+          ))}
+        </ul>
+      ) : (
+        <p className="mt-16 text-center text-3xl">
+          Nothing to show! Enable some filters above.
+        </p>
+      )}
     </section>
   );
 }
