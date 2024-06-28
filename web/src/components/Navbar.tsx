@@ -23,18 +23,18 @@ export default function Navbar({ isMenuOpen, onClickMenuButton }: NavbarProps) {
       animate={{ y: 0 }}
       exit={{ y: -100 }}
       transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
-      className={`fixed left-4 right-4 top-4 z-50 flex items-stretch justify-between lg:left-8 lg:right-8`}
+      className={`pointer-events-none fixed left-4 right-4 top-4 z-50 flex items-stretch justify-between lg:left-8 lg:right-8`}
     >
       <a
         href="/"
-        className={`${isMenuOpen ? '' : 'shadow-lg'} flex items-center gap-1 rounded-full bg-default px-4 font-medium transition-colors hover:bg-primary hover:text-on-primary lg:px-6`}
+        className={`${isMenuOpen ? '' : 'shadow-lg'} pointer-events-auto flex items-center gap-1 rounded-full bg-default px-4 font-medium transition-colors hover:bg-primary hover:text-on-primary lg:px-6`}
       >
         <span>Marcus</span>
         <span className="font-serif italic">Billman</span>
       </a>
       <motion.div
         layout="position"
-        className={`${isMenuOpen ? '' : 'shadow-lg lg:pl-6'} flex items-center gap-6 rounded-full bg-default lg:p-2`}
+        className={`${isMenuOpen ? '' : 'shadow-lg lg:pl-6'} pointer-events-auto flex items-center gap-6 rounded-full bg-default lg:p-2`}
       >
         {!isMenuOpen && (
           <motion.ul className={`hidden gap-6 lg:flex lg:items-center`}>
