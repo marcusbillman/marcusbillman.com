@@ -9,6 +9,7 @@ import {
 import { useEffect, useState } from 'react';
 import Button from '@/components/Button';
 import type { Icon } from '@phosphor-icons/react/dist/lib/types';
+import { motion } from 'framer-motion';
 
 interface NavbarProps {
   isMenuOpen: boolean;
@@ -17,8 +18,12 @@ interface NavbarProps {
 
 export default function Navbar({ isMenuOpen, onClickMenuButton }: NavbarProps) {
   return (
-    <div
-      className={`${isMenuOpen ? 'hidden lg:flex' : ''} fixed left-4 right-4 top-4 z-50 flex items-stretch justify-between lg:left-8 lg:right-8`}
+    <motion.div
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      exit={{ y: -100 }}
+      transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
+      className={`fixed left-4 right-4 top-4 z-50 flex items-stretch justify-between lg:left-8 lg:right-8`}
     >
       <a
         href="/"
@@ -27,17 +32,18 @@ export default function Navbar({ isMenuOpen, onClickMenuButton }: NavbarProps) {
         <span>Marcus</span>
         <span className="font-serif italic">Billman</span>
       </a>
-      <div
+      <motion.div
+        layout="position"
         className={`${isMenuOpen ? '' : 'shadow-lg lg:pl-6'} flex items-center gap-6 rounded-full bg-default lg:p-2`}
       >
-        <ul
-          className={`${isMenuOpen ? '' : 'lg:flex lg:items-center'} hidden gap-6`}
-        >
-          <NavbarLink text="Home" url="/" icon={House} />
-          <NavbarLink text="Portfolio" url="/portfolio" icon={Images} />
-          <NavbarLink text="About" url="/about" icon={User} />
-          <NavbarLink text="Contact" url="/contact" icon={ChatsCircle} />
-        </ul>
+        {!isMenuOpen && (
+          <motion.ul className={`hidden gap-6 lg:flex lg:items-center`}>
+            <NavbarLink text="Home" url="/" icon={House} />
+            <NavbarLink text="Portfolio" url="/portfolio" icon={Images} />
+            <NavbarLink text="About" url="/about" icon={User} />
+            <NavbarLink text="Contact" url="/contact" icon={ChatsCircle} />
+          </motion.ul>
+        )}
         <Button
           text={isMenuOpen ? 'Close' : 'Menu'}
           icon={isMenuOpen ? X : List}
@@ -46,8 +52,8 @@ export default function Navbar({ isMenuOpen, onClickMenuButton }: NavbarProps) {
           size="small"
           onClick={onClickMenuButton}
         />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 

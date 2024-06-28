@@ -11,6 +11,9 @@ import { useEffect, useState } from 'react';
 import SocialLinks from './SocialLinks';
 import { BezierCurve, Browser, ButtonClick, Phone } from './illustrations';
 import DotGrid from './DotGrid';
+import { motion } from 'framer-motion';
+import { useMediaQuery } from 'usehooks-ts';
+import { useTailwindConfig } from '@/util/tailwind';
 
 interface MenuProps {
   isMenuOpen: boolean;
@@ -18,9 +21,21 @@ interface MenuProps {
 }
 
 export default function Menu({ isMenuOpen, onClickMenuButton }: MenuProps) {
+  const resolvedTailwindConfig = useTailwindConfig();
+
+  const isDesktop = useMediaQuery(
+    `(min-width: ${resolvedTailwindConfig.theme.screens.lg})`,
+  );
+
   return (
     <>
-      <div className="fixed bottom-0 left-0 right-0 top-[5vh] z-40 flex flex-col gap-4 rounded-t-4xl bg-default p-4 shadow-lg lg:bottom-auto lg:top-0 lg:h-[564px] lg:flex-row lg:gap-8 lg:rounded-b-4xl lg:rounded-t-none lg:p-8 lg:pt-24">
+      <motion.div
+        initial={{ y: isDesktop ? '-100%' : '100%' }}
+        animate={{ y: 0 }}
+        exit={{ y: isDesktop ? '-100%' : '100%' }}
+        transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
+        className="fixed bottom-0 left-0 right-0 top-[5vh] z-40 flex flex-col gap-4 rounded-t-4xl bg-default p-4 shadow-lg lg:bottom-auto lg:top-0 lg:h-[564px] lg:flex-row lg:gap-8 lg:rounded-b-4xl lg:rounded-t-none lg:p-8 lg:pt-24"
+      >
         <div className="flex items-center justify-between lg:hidden">
           <h2 className="font-serif text-xl font-medium italic">Menu</h2>
           <Button
@@ -82,9 +97,13 @@ export default function Menu({ isMenuOpen, onClickMenuButton }: MenuProps) {
             </div>
           </div>
         </div>
-      </div>
-      <div
+      </motion.div>
+      <motion.div
         className={`fixed inset-0 left-0 right-0 top-0 isolate z-30 h-screen bg-black/50`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
         onClick={onClickMenuButton}
       />
     </>
