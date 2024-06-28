@@ -1,5 +1,10 @@
 import Switch from '@/components/Switch';
-import { DribbbleLogo, Flask, Images } from '@phosphor-icons/react/dist/ssr';
+import {
+  DribbbleLogo,
+  EyeClosed,
+  Flask,
+  Images,
+} from '@phosphor-icons/react/dist/ssr';
 import { useState } from 'react';
 import type { Icon } from '@phosphor-icons/react/dist/lib/types';
 import type {
@@ -76,15 +81,24 @@ export default function MyWork({ portfolioItems }: MyWorkProps) {
             />
           ))}
           {filteredPortfolioItems.length === 0 && (
-            <motion.p
+            <motion.div
               layout
-              className="mt-16 text-center text-xl lg:col-span-2"
+              className="flex flex-col items-center gap-4 rounded-2xl border border-default px-4 py-16 lg:col-span-2 lg:gap-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              Nothing to show! Enable some filters above.
-            </motion.p>
+              <EyeClosed size={32} className="text-subtle lg:hidden" />
+              <EyeClosed size={64} className="hidden text-subtle lg:block" />
+              <div className="flex flex-col gap-2 lg:gap-4">
+                <p className="text-center text-xl font-medium lg:text-3xl">
+                  Everyone's hiding!
+                </p>
+                <p className="text-center text-subtle lg:text-xl">
+                  Use the filters above to show my work.
+                </p>
+              </div>
+            </motion.div>
           )}
         </AnimatePresence>
       </ul>
