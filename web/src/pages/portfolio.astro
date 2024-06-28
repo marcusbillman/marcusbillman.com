@@ -1,15 +1,57 @@
 ---
 import Header from '@/components/sections/Header';
-import Projects from '@/components/sections/Projects';
+import MyWork from '@/components/sections/MyWork';
 import Separator from '@/components/sections/Separator';
 import Contact from '@/components/sections/Contact';
 import Layout from '@/layouts/Layout.astro';
 import { sanityClient } from 'sanity:client';
 import type { Project } from '@studio/sanity.types';
+import { fetchDribbbleShots } from '@/util/dribbble';
+import type { PortfolioItem } from '@/util/portfolioItem';
 
-const projects = await sanityClient.fetch<Project[]>(
+// Fetch data and split by type
+
+const sanityProjects = await sanityClient.fetch<Project[]>(
   `*[_type == "project"] | order(orderRank asc)`,
 );
+
+const caseStudies = sanityProjects.filter(
+  (project) => project.type === 'CASE_STUDY',
+);
+
+const sideProjects = sanityProjects.filter(
+  (project) => project.type === 'SIDE_PROJECT',
+);
+
+const dribbbleShots = await fetchDribbbleShots(5);
+
+// Combine data into a single array
+
+const portfolioItems: PortfolioItem[] = [];
+
+caseStudies.forEach((caseStudy) => {
+  portfolioItems.push({
+    type: 'CASE_STUDY',
+    id: caseStudy._id,
+    data: caseStudy,
+  });
+});
+
+sideProjects.forEach((sideProject) => {
+  portfolioItems.push({
+    type: 'SIDE_PROJECT',
+    id: sideProject._id,
+    data: sideProject,
+  });
+});
+
+dribbbleShots.forEach((dribbbleShot) => {
+  portfolioItems.push({
+    type: 'DRIBBBLE_SHOT',
+    id: dribbbleShot.id.toString(),
+    data: dribbbleShot,
+  });
+});
 ---
 
 <Layout title="Portfolio">
@@ -19,7 +61,7 @@ const projects = await sanityClient.fetch<Project[]>(
     title="Portfolio"
     emoji={['✨', '🎨', '📄', '🖋️', '🗃️']}
   />
-  <Projects client:idle projects={projects} />
+  <MyWork client:idle portfolioItems={portfolioItems} />
   <Separator />
   <Contact client:visible />
 </Layout>
