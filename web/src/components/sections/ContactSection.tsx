@@ -23,10 +23,11 @@ export default function ContactSection() {
             style="primary"
           />
           <div className="text-xl text-subtle lg:text-2xl">or</div>
-          <div className="flex flex-col gap-4 rounded-2xl border border-default bg-default px-4 py-4 lg:flex-row lg:px-6">
+          <div className="flex flex-col gap-4 rounded-2xl border border-default bg-default p-4 lg:flex-row lg:pl-6">
             <div className="flex items-center gap-2">
-              <EnvelopeSimple size={24} />
-              <span className="text-xl lg:text-2xl">{EMAIL}</span>
+              <EnvelopeSimple size={24} className="lg:hidden" />
+              <EnvelopeSimple size={32} className="hidden lg:block" />
+              <span className="text-xl font-medium lg:text-2xl">{EMAIL}</span>
             </div>
             <div className="flex gap-2 lg:gap-3">
               <CopyToClipboard text={EMAIL}>
@@ -60,9 +61,11 @@ export default function ContactSection() {
             </div>
           </div>
         </div>
+
+        {/* Backgrounds */}
+        <DotGrid />
         <div className='absolute left-[10%] top-[10%] -z-10 aspect-square w-[100%] -translate-x-1/2 -translate-y-1/2 bg-[url("/assets/images/glow-orange.png")] bg-cover bg-center' />
         <div className='absolute bottom-[10%] right-[10%] -z-10 aspect-square w-[100%] translate-x-1/2 translate-y-1/2 bg-[url("/assets/images/glow-blueberry.png")] bg-cover bg-center' />
-        <DotGrid />
       </div>
     </section>
   );
