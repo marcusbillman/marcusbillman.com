@@ -34,7 +34,7 @@ export default function Menu({ isMenuOpen, onClickMenuButton }: MenuProps) {
         animate={{ y: 0 }}
         exit={{ y: isDesktop ? '-100%' : '100%' }}
         transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
-        className="fixed bottom-0 left-0 right-0 top-[5vh] z-40 flex flex-col gap-4 rounded-t-4xl bg-default p-4 shadow-lg lg:bottom-auto lg:top-0 lg:h-[564px] lg:flex-row lg:gap-8 lg:rounded-b-4xl lg:rounded-t-none lg:p-8 lg:pt-24"
+        className="fixed bottom-0 left-0 right-0 z-40 flex max-h-[95vh] flex-col gap-4 rounded-t-4xl bg-default p-4 shadow-lg lg:bottom-auto lg:top-0 lg:h-[564px] lg:flex-row lg:gap-8 lg:rounded-b-4xl lg:rounded-t-none lg:p-8 lg:pt-24"
       >
         <div className="flex items-center justify-between lg:hidden">
           <h2 className="font-serif text-xl font-medium italic">Menu</h2>
