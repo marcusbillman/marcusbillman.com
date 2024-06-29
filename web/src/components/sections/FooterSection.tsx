@@ -1,10 +1,11 @@
 import { Link, MusicNotes, Shapes } from '@phosphor-icons/react/dist/ssr';
 import SocialLinks from '@/components/SocialLinks';
+import DotGrid from '../DotGrid';
 
 export default function FooterSection() {
   return (
     <footer className="relative z-10 -mt-8 bg-black px-4 pb-8 pt-16 text-white lg:-mt-16 lg:px-16 lg:pb-16 lg:pt-32">
-      <div className="grid h-96 place-items-center rounded-2xl bg-gray-500 bg-[url('/assets/images/footer-toybox-bg.jpg')] bg-cover bg-center lg:h-[40vw]">
+      <div className="relative isolate grid h-96 place-items-center rounded-2xl bg-[url('/assets/images/footer-toybox-bg.jpg')] bg-cover bg-center lg:h-[40vw]">
         <div className="text-center text-3xl text-white/60 lg:text-4xl 2xl:text-6xl">
           <span className="block translate-x-[-10%]">
             Arranging
@@ -25,6 +26,7 @@ export default function FooterSection() {
             <MusicNotes size={64} className="hidden text-white 2xl:inline" />
           </span>
         </div>
+        <DotGrid />
       </div>
       <div className="mt-8 flex flex-col gap-8 lg:mt-16 lg:flex-row">
         <div className="flex-1">
