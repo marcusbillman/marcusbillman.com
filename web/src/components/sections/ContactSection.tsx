@@ -6,8 +6,12 @@ import {
 import Button from '@/components/Button';
 import DotGrid from '@/components/DotGrid';
 import CopyToClipboard from '@/components/CopyToClipboard';
+import { AnimatePresence } from 'framer-motion';
+import ContactFormModal from '@/components/ContactFormModal';
+import { useState } from 'react';
 
 export default function ContactSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const EMAIL = 'hello@marcusbillman.com';
 
   return (
@@ -21,7 +25,13 @@ export default function ContactSection() {
             text="Open contact form"
             icon={PaperPlaneTilt}
             style="primary"
+            onClick={() => setIsModalOpen(true)}
           />
+          <AnimatePresence>
+            {isModalOpen && (
+              <ContactFormModal onClose={() => setIsModalOpen(false)} />
+            )}
+          </AnimatePresence>
           <div className="text-xl text-subtle lg:text-2xl">or</div>
           <div className="flex flex-col gap-4 rounded-2xl border border-default bg-default p-4 lg:flex-row lg:pl-6">
             <div className="flex items-center gap-2">
