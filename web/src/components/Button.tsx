@@ -12,6 +12,7 @@ interface Props {
   style?: 'default' | 'primary' | 'subtle';
   href?: string;
   type?: 'submit' | 'reset';
+  disabled?: boolean;
   className?: string;
   onClick?: React.MouseEventHandler<Element>;
 }
@@ -24,6 +25,7 @@ export default function Button({
   style = 'default',
   href,
   type,
+  disabled = false,
   className,
   onClick,
 }: Props) {
@@ -50,6 +52,8 @@ export default function Button({
     if (style === 'default') className += ' bg-inverted text-on-inverted';
     if (style === 'primary') className += ' bg-primary text-on-primary';
     if (style === 'subtle') className += ' bg-subtle text-default';
+
+    if (disabled) className += ' opacity-25 pointer-events-none';
 
     return className;
   }
@@ -122,16 +126,19 @@ export default function Button({
 
   return (
     <Element
-      className={`${outerElementClass()} ${className} group relative isolate flex w-fit cursor-pointer overflow-hidden rounded-full border border-transparent transition-all duration-500 ease-smooth hover:border-default active:scale-75 active:opacity-50`}
+      className={`${outerElementClass()} ${className} group relative isolate w-fit cursor-pointer overflow-hidden rounded-full border border-transparent transition-all duration-500 ease-smooth hover:border-default active:scale-75 active:opacity-50`}
       href={href}
       target={href && isExternalUrl(href) ? '_blank' : undefined}
       type={type}
+      disabled={disabled}
       onClick={onClick}
     >
       <div
         className={`${hoverOverlayClass()} absolute inset-0 -z-10 rounded-full bg-default transition-transform duration-500 ease-smooth group-hover:translate-x-0`}
       />
-      <div className={`${innerElementClass()} relative flex items-center`}>
+      <div
+        className={`${innerElementClass()} relative flex items-center justify-center`}
+      >
         {IconComponent && iconSide !== 'none' && (
           <IconComponent
             size={iconSize()}
