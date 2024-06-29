@@ -32,12 +32,13 @@ const { title, noHeader = false } = Astro.props;
     <div class="overflow-clip rounded-b-4xl lg:rounded-b-6xl">
       {!noHeader && <slot name="header" />}
       <main
-        class={`${noHeader ? '' : '-mt-8 lg:-mt-16'} relative z-20 rounded-t-4xl bg-default shadow-main-container lg:rounded-t-6xl`}
+        class={`${noHeader ? '' : '-mt-8 rounded-t-4xl lg:-mt-16 lg:rounded-t-6xl'} relative z-20 bg-default shadow-main-container`}
       >
-        <div
-          class="absolute left-1/2 top-4 h-1 w-16 -translate-x-1/2 rounded-full bg-subtle lg:hidden"
-        >
-        </div>
+        {
+          !noHeader && (
+            <div class="absolute left-1/2 top-4 h-1 w-16 -translate-x-1/2 rounded-full bg-subtle lg:hidden" />
+          )
+        }
         <slot />
       </main>
     </div>
