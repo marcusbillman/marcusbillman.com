@@ -15,7 +15,9 @@ export default function ContactFormModal({ onClose }: Props) {
   const [isDirty, setIsDirty] = useState(false);
   const [hasWarned, setHasWarned] = useState(false);
   const [scope, animate] = useAnimate();
-  const [state, handleSubmit] = useForm(import.meta.env.PUBLIC_FORMSPREE_ID);
+  const [state, handleSubmit, reset] = useForm(
+    import.meta.env.PUBLIC_FORMSPREE_ID,
+  );
 
   function handleClose() {
     if (!isDirty) return onClose();
@@ -35,6 +37,11 @@ export default function ContactFormModal({ onClose }: Props) {
     toast.success('Message sent!');
     confetti();
     onClose();
+  }
+
+  if (state.errors) {
+    toast.error("Couldn't send.\nDouble-check and try again.");
+    reset();
   }
 
   function shakeForm() {
@@ -69,12 +76,13 @@ export default function ContactFormModal({ onClose }: Props) {
             id="name"
             name="name"
             placeholder="Super Cool Person"
+            required
             disabled={state.submitting}
-            className="peer rounded-lg border border-default px-4 py-3 text-xl transition-colors placeholder:text-subtle focus:border-primary"
+            className="peer rounded-lg border border-default bg-default px-4 py-3 text-xl transition-colors placeholder:text-subtle focus:border-primary"
           />
           <label
             htmlFor="name"
-            className="block transition-colors peer-focus:font-serif peer-focus:font-medium peer-focus:italic peer-focus:text-primary"
+            className="block text-xl transition-colors peer-focus:font-serif peer-focus:font-medium peer-focus:italic peer-focus:text-primary"
           >
             Your name
           </label>
@@ -85,12 +93,13 @@ export default function ContactFormModal({ onClose }: Props) {
             id="email"
             name="email"
             placeholder="super.cool@email.com"
+            required
             disabled={state.submitting}
-            className="peer rounded-lg border border-default px-4 py-3 text-xl transition-colors placeholder:text-subtle focus:border-primary"
+            className="peer rounded-lg border border-default bg-default px-4 py-3 text-xl transition-colors placeholder:text-subtle focus:border-primary"
           />
           <label
             htmlFor="email"
-            className="block transition-colors peer-focus:font-serif peer-focus:font-medium peer-focus:italic peer-focus:text-primary"
+            className="block text-xl transition-colors peer-focus:font-serif peer-focus:font-medium peer-focus:italic peer-focus:text-primary"
           >
             Your email
           </label>
@@ -101,12 +110,13 @@ export default function ContactFormModal({ onClose }: Props) {
             name="message"
             rows={4}
             placeholder="Hi! I’ve got this cool idea..."
+            required
             disabled={state.submitting}
-            className="peer rounded-lg border border-default px-4 py-3 text-xl transition-colors placeholder:text-subtle focus:border-primary"
+            className="peer rounded-lg border border-default bg-default px-4 py-3 text-xl transition-colors placeholder:text-subtle focus:border-primary"
           />
           <label
             htmlFor="message"
-            className="block transition-colors peer-focus:font-serif peer-focus:font-medium peer-focus:italic peer-focus:text-primary"
+            className="block text-xl transition-colors peer-focus:font-serif peer-focus:font-medium peer-focus:italic peer-focus:text-primary"
           >
             Message
           </label>
@@ -117,7 +127,7 @@ export default function ContactFormModal({ onClose }: Props) {
           style="primary"
           type="submit"
           disabled={state.submitting}
-          className="w-full lg:w-fit"
+          className="mt-4 w-full lg:mt-0 lg:w-fit"
         />
       </form>
     </Modal>
