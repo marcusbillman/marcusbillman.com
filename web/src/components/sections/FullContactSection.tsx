@@ -52,7 +52,7 @@ export default function FullContactSection() {
                 text="Copy"
                 icon={Copy}
                 size="medium"
-                className="hidden lg:flex"
+                className="hidden lg:block"
               />
             </CopyToClipboard>
             <Button
@@ -67,7 +67,7 @@ export default function FullContactSection() {
               href={`mailto:${EMAIL}`}
               style="subtle"
               size="medium"
-              className="hidden lg:flex"
+              className="hidden lg:block"
             />
           </div>
         </div>
@@ -90,7 +90,7 @@ export default function FullContactSection() {
               href={`https://m-b.me/linkedin`}
               style="subtle"
               size="medium"
-              className="hidden lg:flex"
+              className="hidden lg:block"
             />
           </div>
         </div>

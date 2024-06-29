@@ -51,7 +51,7 @@ export default function ContactSection() {
                   text="Copy"
                   icon={Copy}
                   size="medium"
-                  className="hidden lg:flex"
+                  className="hidden lg:block"
                 />
               </CopyToClipboard>
               <Button
@@ -66,7 +66,7 @@ export default function ContactSection() {
                 href={`mailto:${EMAIL}`}
                 style="subtle"
                 size="medium"
-                className="hidden lg:flex"
+                className="hidden lg:block"
               />
             </div>
           </div>

@@ -27,7 +27,7 @@ export default function BioSection() {
         href="about"
         size="large"
         style="primary"
-        className="hidden lg:flex"
+        className="hidden lg:block"
       />
     </section>
   );
