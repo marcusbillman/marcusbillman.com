@@ -14,7 +14,7 @@ export default function Navigation() {
     `(min-width: ${resolvedTailwindConfig.theme.screens.lg})`,
   );
 
-  function onClickMenuButton() {
+  function toggleMenu() {
     setIsMenuOpen(!isMenuOpen);
     isMenuOpen ? enableBodyScroll() : disableBodyScroll();
   }
@@ -23,16 +23,11 @@ export default function Navigation() {
     <nav>
       <AnimatePresence initial={false}>
         {(isDesktop || !isMenuOpen) && (
-          <Navbar
-            isMenuOpen={isMenuOpen}
-            onClickMenuButton={onClickMenuButton}
-          />
+          <Navbar isMenuOpen={isMenuOpen} onClickMenuButton={toggleMenu} />
         )}
       </AnimatePresence>
       <AnimatePresence>
-        {isMenuOpen && (
-          <Menu isMenuOpen={isMenuOpen} onClickMenuButton={onClickMenuButton} />
-        )}
+        {isMenuOpen && <Menu isMenuOpen={isMenuOpen} onClose={toggleMenu} />}
       </AnimatePresence>
     </nav>
   );

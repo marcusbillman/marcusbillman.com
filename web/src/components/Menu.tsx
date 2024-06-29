@@ -17,10 +17,10 @@ import { useTailwindConfig } from '@/util/tailwind';
 
 interface MenuProps {
   isMenuOpen: boolean;
-  onClickMenuButton?: () => void;
+  onClose?: () => void;
 }
 
-export default function Menu({ isMenuOpen, onClickMenuButton }: MenuProps) {
+export default function Menu({ isMenuOpen, onClose }: MenuProps) {
   const resolvedTailwindConfig = useTailwindConfig();
 
   const isDesktop = useMediaQuery(
@@ -44,7 +44,7 @@ export default function Menu({ isMenuOpen, onClickMenuButton }: MenuProps) {
             style="subtle"
             iconSide="right"
             size="small"
-            onClick={onClickMenuButton}
+            onClick={onClose}
           />
         </div>
         <div className="flex flex-grow flex-col gap-4 overflow-y-auto lg:flex-row lg:gap-8">
@@ -104,7 +104,7 @@ export default function Menu({ isMenuOpen, onClickMenuButton }: MenuProps) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
-        onClick={onClickMenuButton}
+        onClick={onClose}
       />
     </>
   );
