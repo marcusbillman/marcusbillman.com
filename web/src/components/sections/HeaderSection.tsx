@@ -97,6 +97,8 @@ export default function HeaderSection({
           </motion.span>
         ))}
       </div>
+
+      {/* Backgrounds */}
       <DotGrid dim="default" />
       <div className='absolute left-[10%] top-[10%] -z-10 aspect-square w-[100%] -translate-x-1/2 -translate-y-1/2 bg-[url("/assets/images/glow-orange.png")] bg-cover bg-center' />
       <div className='absolute bottom-[10%] right-[10%] -z-10 aspect-square w-[100%] translate-x-1/2 translate-y-1/2 bg-[url("/assets/images/glow-blueberry.png")] bg-cover bg-center' />
