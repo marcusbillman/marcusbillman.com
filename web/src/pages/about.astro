@@ -1,0 +1,23 @@
+---
+import HeaderSection from '@/components/sections/HeaderSection';
+import Layout from '@/layouts/Layout.astro';
+import FullBioSection from '@/components/sections/FullBioSection';
+import DesignerDeveloperSection from '@/components/sections/DesignerDeveloperSection';
+import SkillsSection from '@/components/sections/SkillsSection';
+import ContactSection from '@/components/sections/ContactSection';
+import SeparatorSection from '@/components/sections/SeparatorSection';
+---
+
+<Layout title="About me">
+  <HeaderSection
+    slot="header"
+    client:load
+    title="About me"
+    emoji={['🤔', '🧑‍🎨', '💎', '🧠', '🔎']}
+  />
+  <FullBioSection />
+  <DesignerDeveloperSection client:visible />
+  <SkillsSection />
+  <SeparatorSection />
+  <ContactSection client:visible />
+</Layout>
