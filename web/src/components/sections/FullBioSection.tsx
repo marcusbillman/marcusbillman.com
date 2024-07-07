@@ -37,12 +37,12 @@ function Portrait() {
     <div className="group relative isolate my-6 aspect-[3/4] overflow-hidden rounded-2xl bg-subtle md:-col-start-2 md:row-span-full md:my-0 lg:rounded-4xl 2xl:row-span-full 2xl:self-center">
       <img
         src="/assets/images/portrait-1.png"
-        alt="Portrait of Marcus Billman"
+        alt="Marcus looking at the camera"
         className="absolute bottom-0 left-0 right-0 block transition-opacity duration-300 group-hover:opacity-0"
       />
       <img
         src="/assets/images/portrait-2.png"
-        alt="Portrait of Marcus Billman"
+        alt="Marcus looking up and to the side"
         className="absolute bottom-0 left-0 right-0 block opacity-0 transition-opacity duration-300 group-hover:opacity-100"
       />
       <DotGrid />

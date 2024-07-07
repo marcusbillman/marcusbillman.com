@@ -139,6 +139,21 @@ function PortfolioItemCard({ portfolioItem }: PortfolioItemCardProps) {
     }
   }
 
+  function imageAlt() {
+    if (
+      portfolioItem.type === 'CASE_STUDY' ||
+      portfolioItem.type === 'SIDE_PROJECT'
+    ) {
+      return (
+        (portfolioItem.data as Project).coverImage?.alt ||
+        (portfolioItem.data as Project).name
+      );
+    }
+    if (portfolioItem.type === 'DRIBBBLE_SHOT') {
+      return (portfolioItem.data as DribbbleShot).title;
+    }
+  }
+
   function name() {
     if (
       portfolioItem.type === 'CASE_STUDY' ||
@@ -217,6 +232,7 @@ function PortfolioItemCard({ portfolioItem }: PortfolioItemCardProps) {
       >
         <img
           src={imageUrl()}
+          alt={imageAlt()}
           className="aspect-photo w-full rounded-2xl object-cover transition-transform duration-500 ease-smooth group-hover:rotate-3 group-hover:scale-105 group-hover:shadow-lg 2xl:rounded-4xl 2xl:group-hover:rotate-1"
         />
         <div className="mt-6 flex flex-col gap-3">

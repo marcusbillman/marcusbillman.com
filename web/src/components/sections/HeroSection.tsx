@@ -29,6 +29,7 @@ export default function HeroSection() {
           </span>
           <img
             src="/assets/images/profile-picture.jpg"
+            alt="Profile picture"
             className="inline size-12 rounded-full shadow-lg md:size-20 lg:size-32"
           />
         </h1>

@@ -67,12 +67,12 @@ export default function Menu({ isMenuOpen, onClose }: MenuProps) {
               />
               <img
                 src="/assets/images/phone-iphone-15-plus.png"
-                alt=""
+                alt="iPhone 15 Plus smartphone"
                 className="absolute bottom-[-5%] left-[15%] w-32 rotate-[15deg]"
               />
               <img
                 src="/assets/images/phone-pixel-8.png"
-                alt=""
+                alt="Google Pixel 8 smartphone"
                 className="absolute bottom-[-30%] left-[50%] w-32 rotate-[5deg]"
               />
             </MenuLink>
@@ -82,7 +82,7 @@ export default function Menu({ isMenuOpen, onClose }: MenuProps) {
               <Glow color="orange" className="bottom-[20%] left-[30%] w-full" />
               <img
                 src="/assets/images/portrait-1.png"
-                alt=""
+                alt="Marcus looking at the camera"
                 className="absolute bottom-[0%] right-0 block w-72"
               />
             </MenuLink>
