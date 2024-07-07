@@ -14,6 +14,7 @@ import DotGrid from './DotGrid';
 import { motion } from 'framer-motion';
 import { useMediaQuery } from 'usehooks-ts';
 import { useTailwindConfig } from '@/util/tailwind';
+import Glow from './Glow';
 
 interface MenuProps {
   isMenuOpen: boolean;
@@ -60,7 +61,10 @@ export default function Menu({ isMenuOpen, onClose }: MenuProps) {
             <MenuLink text="Portfolio" url="/portfolio" icon={Images}>
               <div className="absolute inset-0 -z-10 bg-subtle" />
               <DotGrid dim="default" />
-              <div className='absolute bottom-[60%] right-[30%] -z-10 aspect-square w-[100%] translate-x-1/2 translate-y-1/2 bg-[url("/assets/images/glow-blueberry.png")] bg-cover bg-center' />
+              <Glow
+                color="blueberry"
+                className="bottom-[60%] right-[30%] w-full translate-x-1/2 translate-y-1/2"
+              />
               <img
                 src="/assets/images/phone-iphone-15-plus.png"
                 alt=""
@@ -75,7 +79,7 @@ export default function Menu({ isMenuOpen, onClose }: MenuProps) {
             <MenuLink text="About" url="/about" icon={User}>
               <div className="absolute inset-0 -z-10 bg-subtle" />
               <DotGrid dim="default" />
-              <div className='absolute bottom-[20%] left-[30%] -z-10 aspect-square w-96 bg-[url("/assets/images/glow-orange.png")] bg-cover bg-center' />
+              <Glow color="orange" className="bottom-[20%] left-[30%] w-full" />
               <img
                 src="/assets/images/portrait-1.png"
                 alt=""

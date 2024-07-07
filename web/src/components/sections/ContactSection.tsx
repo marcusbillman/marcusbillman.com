@@ -9,6 +9,7 @@ import CopyToClipboard from '@/components/CopyToClipboard';
 import { AnimatePresence } from 'framer-motion';
 import ContactFormModal from '@/components/ContactFormModal';
 import { useState } from 'react';
+import Glow from '@/components/Glow';
 
 export default function ContactSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -74,8 +75,14 @@ export default function ContactSection() {
 
         {/* Backgrounds */}
         <DotGrid />
-        <div className='absolute left-[10%] top-[10%] -z-10 aspect-square w-[100%] -translate-x-1/2 -translate-y-1/2 bg-[url("/assets/images/glow-orange.png")] bg-cover bg-center' />
-        <div className='absolute bottom-[10%] right-[10%] -z-10 aspect-square w-[100%] translate-x-1/2 translate-y-1/2 bg-[url("/assets/images/glow-blueberry.png")] bg-cover bg-center' />
+        <Glow
+          color="orange"
+          className="left-[10%] top-[10%] w-full -translate-x-1/2 -translate-y-1/2"
+        />
+        <Glow
+          color="blueberry"
+          className="bottom-[10%] right-[10%] w-full translate-x-1/2 translate-y-1/2"
+        />
       </div>
     </section>
   );

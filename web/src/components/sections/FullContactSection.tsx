@@ -10,6 +10,7 @@ import ContactFormModal from '@/components/ContactFormModal';
 import { LinkedIn } from '@/components/icons';
 import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import Glow from '@/components/Glow';
 
 export default function FullContactSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -98,8 +99,14 @@ export default function FullContactSection() {
 
       {/* Backgrounds */}
       <DotGrid dim="default" />
-      <div className='absolute bottom-[10%] left-[10%] -z-10 aspect-square w-full translate-x-1/3 bg-[url("/assets/images/glow-orange.png")] bg-cover bg-center'></div>
-      <div className='absolute right-[10%] top-[10%] -z-10 aspect-square w-full -translate-x-1/3 bg-[url("/assets/images/glow-blueberry.png")] bg-cover bg-center'></div>
+      <Glow
+        color="blueberry"
+        className="right-[10%] top-1/3 w-full -translate-y-1/2 translate-x-1/2"
+      />
+      <Glow
+        color="orange"
+        className="bottom-[10%] left-1/3 h-full -translate-x-1/2 translate-y-1/2"
+      />
     </section>
   );
 }

@@ -2,6 +2,7 @@ import DotGrid from '@/components/DotGrid';
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { randomInt } from '@/util';
+import Glow from '@/components/Glow';
 
 interface HeaderSectionProps {
   title: string;
@@ -100,8 +101,14 @@ export default function HeaderSection({
 
       {/* Backgrounds */}
       <DotGrid dim="default" />
-      <div className='absolute left-[10%] top-[10%] -z-10 aspect-square w-[100%] -translate-x-1/2 -translate-y-1/2 bg-[url("/assets/images/glow-orange.png")] bg-cover bg-center' />
-      <div className='absolute bottom-[10%] right-[10%] -z-10 aspect-square w-[100%] translate-x-1/2 translate-y-1/2 bg-[url("/assets/images/glow-blueberry.png")] bg-cover bg-center' />
+      <Glow
+        color="orange"
+        className="left-[10%] top-[10%] w-full -translate-x-1/2 -translate-y-1/2"
+      />
+      <Glow
+        color="blueberry"
+        className="bottom-[10%] right-[10%] w-full translate-x-1/2 translate-y-1/2"
+      />
     </header>
   );
 }

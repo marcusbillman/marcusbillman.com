@@ -5,6 +5,7 @@ import {
   Lightning,
 } from '@phosphor-icons/react/dist/ssr';
 import DotGrid from '@/components/DotGrid';
+import Glow from '@/components/Glow';
 
 export default function SkillsSection() {
   return (
@@ -30,7 +31,10 @@ export default function SkillsSection() {
             </span>
           </p>
           <DotGrid />
-          <div className='absolute left-[-10%] top-[-100%] -z-10 aspect-square h-[250%] bg-[url("/assets/images/glow-blueberry.png")] bg-cover bg-center' />
+          <Glow
+            color="blueberry"
+            className="left-0 top-0 h-[250%] -translate-x-1/2 -translate-y-1/2"
+          />
         </li>
         <li className="relative isolate flex h-96 flex-col justify-between gap-4 overflow-hidden rounded-2xl border border-default bg-subtle p-4 lg:p-6">
           <div className="w-fit rounded-full border border-default bg-default p-3">
@@ -42,7 +46,10 @@ export default function SkillsSection() {
             of new tools and domains.
           </p>
           <DotGrid />
-          <div className='absolute left-[-10%] top-[-100%] -z-10 aspect-square h-[250%] bg-[url("/assets/images/glow-blueberry.png")] bg-cover bg-center' />
+          <Glow
+            color="blueberry"
+            className="bottom-0 right-0 h-[250%] translate-x-1/2 translate-y-1/2"
+          />
         </li>
         <li className="relative isolate flex h-96 flex-col justify-between gap-4 overflow-hidden rounded-2xl border border-default bg-subtle p-4 lg:p-6">
           <div className="w-fit rounded-full border border-default bg-default p-3">
@@ -56,7 +63,10 @@ export default function SkillsSection() {
             </span>
           </p>
           <DotGrid />
-          <div className='absolute left-[-10%] top-[-100%] -z-10 aspect-square h-[250%] bg-[url("/assets/images/glow-orange.png")] bg-cover bg-center' />
+          <Glow
+            color="orange"
+            className="bottom-0 left-0 h-[250%] -translate-x-1/2 translate-y-1/2"
+          />
         </li>
         <li className="relative isolate flex h-96 flex-col justify-between gap-4 overflow-hidden rounded-2xl border border-default bg-subtle p-4 lg:p-6">
           <div className="w-fit rounded-full border border-default bg-default p-3">
@@ -71,7 +81,10 @@ export default function SkillsSection() {
             knowledge.
           </p>
           <DotGrid />
-          <div className='absolute left-[-10%] top-[-100%] -z-10 aspect-square h-[250%] bg-[url("/assets/images/glow-orange.png")] bg-cover bg-center' />
+          <Glow
+            color="orange"
+            className="right-0 top-0 h-[250%] -translate-y-1/2 translate-x-1/2"
+          />
         </li>
         <li className="relative isolate h-96 overflow-hidden rounded-2xl border border-default bg-subtle lg:col-span-2">
           <div className="absolute bottom-0 left-0 right-0 flex h-1/2 flex-col justify-end bg-gradient-to-b from-white/0 to-white p-4 lg:p-6 dark:from-black/0 dark:to-black">

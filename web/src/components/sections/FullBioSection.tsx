@@ -1,4 +1,5 @@
 import DotGrid from '@/components/DotGrid';
+import Glow from '@/components/Glow';
 
 export default function FullBioSection() {
   return (
@@ -45,8 +46,14 @@ function Portrait() {
         className="absolute bottom-0 left-0 right-0 block opacity-0 transition-opacity duration-300 group-hover:opacity-100"
       />
       <DotGrid />
-      <div className='absolute right-[-40%] top-[-40%] -z-10 aspect-square w-[150%] bg-[url("/assets/images/glow-orange.png")] bg-cover bg-center transition-opacity duration-300 group-hover:opacity-0' />
-      <div className='absolute right-[-40%] top-[-40%] -z-10 aspect-square w-[150%] bg-[url("/assets/images/glow-blueberry.png")] bg-cover bg-center opacity-0 transition-opacity duration-300 group-hover:opacity-100' />
+      <Glow
+        color="orange"
+        className="right-[-40%] top-[-40%] w-[150%] transition-opacity duration-300 group-hover:opacity-0"
+      />
+      <Glow
+        color="blueberry"
+        className="right-[-40%] top-[-40%] w-[150%] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+      />
     </div>
   );
 }
