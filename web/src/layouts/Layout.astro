@@ -152,5 +152,9 @@ const { title, noHeader = false } = Astro.props;
     textarea {
       @apply cursor-text;
     }
+
+    ::selection {
+      @apply bg-primary text-on-primary;
+    }
   }
 </style>
