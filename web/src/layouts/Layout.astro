@@ -2,6 +2,7 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/sections/FooterSection';
 import { Toaster } from 'react-hot-toast';
+import { useTailwindConfig } from '@/util/tailwind';
 
 interface Props {
   title?: string;
@@ -9,6 +10,7 @@ interface Props {
 }
 
 const { title, noHeader = false } = Astro.props;
+const tailwindConfig = useTailwindConfig();
 ---
 
 <!doctype html>
@@ -46,7 +48,31 @@ const { title, noHeader = false } = Astro.props;
     <Toaster
       client:idle
       position="bottom-center"
-      toastOptions={{ duration: 3000 }}
+      toastOptions={{
+        duration: 3000,
+        style: {
+          background: tailwindConfig.theme.backgroundColor.default.toString(),
+          color: tailwindConfig.theme.textColor.default.toString(),
+          border: `1px solid ${tailwindConfig.theme.borderColor.default.toString()}`,
+          borderRadius: tailwindConfig.theme.borderRadius.full,
+          fontSize: 20,
+        },
+        success: {
+          iconTheme: {
+            primary: tailwindConfig.theme.backgroundColor.primary.toString(),
+            secondary: tailwindConfig.theme.textColor['on-primary'].toString(),
+          },
+        },
+        error: {
+          iconTheme: {
+            primary: tailwindConfig.theme.colors.orange[500].toString(),
+            secondary: tailwindConfig.theme.textColor['on-primary'].toString(),
+          },
+        },
+      }}
+      containerStyle={{
+        bottom: 32,
+      }}
     />
   </body>
 </html>
