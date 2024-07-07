@@ -104,6 +104,20 @@ export default {
       aspectRatio: {
         photo: '3/2',
       },
+      cursor: {
+        'default-light':
+          'url("/assets/cursor/cursor-normal-light.svg") 32 32, auto',
+        'default-dark':
+          'url("/assets/cursor/cursor-normal-dark.svg") 32 32, auto',
+        'pointer-light':
+          'url("/assets/cursor/cursor-pointer-light.svg") 32 32, pointer',
+        'pointer-dark':
+          'url("/assets/cursor/cursor-pointer-dark.svg") 32 32, pointer',
+        'text-light': 'url("/assets/cursor/cursor-text-light.svg") 32 32, text',
+        'text-dark': 'url("/assets/cursor/cursor-text-dark.svg") 32 32, text',
+        'move-light': 'url("/assets/cursor/cursor-move-light.svg") 32 32, move',
+        'move-dark': 'url("/assets/cursor/cursor-move-dark.svg") 32 32, move',
+      },
     },
   },
 };
