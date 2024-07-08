@@ -133,7 +133,7 @@ function MenuLink({ text, url, icon, children }: MenuLinkProps) {
     <li className="group relative isolate min-w-64 flex-1 overflow-clip rounded-2xl">
       <a
         href={url}
-        className={`block rounded-2xl px-5 py-4 transition-colors group-hover:border-2 group-hover:border-primary lg:h-full ${isActive ? 'border-2 border-primary' : 'border'}`}
+        className={`block rounded-2xl border px-5 py-4 transition-colors group-hover:border-primary lg:h-full ${isActive ? 'border-primary' : ''}`}
       >
         <div
           className={`flex items-center gap-2 text-3xl transition-colors group-hover:text-default ${isActive ? 'text-default' : 'text-subtle'}`}
