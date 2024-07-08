@@ -78,7 +78,7 @@ export default function ContactFormModal({ onClose }: Props) {
             placeholder="Super Cool Person"
             required
             disabled={state.submitting}
-            className="peer rounded-lg border border-default bg-default px-4 py-3 text-xl transition-colors placeholder:text-subtle focus:border-primary"
+            className="peer rounded-lg border bg-default px-4 py-3 text-xl transition-colors placeholder:text-subtle focus:border-primary"
           />
           <label
             htmlFor="name"
@@ -95,7 +95,7 @@ export default function ContactFormModal({ onClose }: Props) {
             placeholder="super.cool@email.com"
             required
             disabled={state.submitting}
-            className="peer rounded-lg border border-default bg-default px-4 py-3 text-xl transition-colors placeholder:text-subtle focus:border-primary"
+            className="peer rounded-lg border bg-default px-4 py-3 text-xl transition-colors placeholder:text-subtle focus:border-primary"
           />
           <label
             htmlFor="email"
@@ -112,7 +112,7 @@ export default function ContactFormModal({ onClose }: Props) {
             placeholder="Hi! I’ve got this cool idea..."
             required
             disabled={state.submitting}
-            className="peer rounded-lg border border-default bg-default px-4 py-3 text-xl transition-colors placeholder:text-subtle focus:border-primary"
+            className="peer rounded-lg border bg-default px-4 py-3 text-xl transition-colors placeholder:text-subtle focus:border-primary"
           />
           <label
             htmlFor="message"

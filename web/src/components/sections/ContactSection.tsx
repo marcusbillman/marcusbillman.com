@@ -34,7 +34,7 @@ export default function ContactSection() {
             )}
           </AnimatePresence>
           <div className="text-xl text-subtle lg:text-2xl">or</div>
-          <div className="flex flex-col gap-4 rounded-2xl border border-default bg-default p-4 lg:flex-row lg:pl-6">
+          <div className="flex flex-col gap-4 rounded-2xl border bg-default p-4 lg:flex-row lg:pl-6">
             <div className="flex items-center gap-2">
               <EnvelopeSimple size={24} className="lg:hidden" />
               <EnvelopeSimple size={32} className="hidden lg:block" />

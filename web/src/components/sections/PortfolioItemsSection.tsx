@@ -47,7 +47,7 @@ export default function PortfolioItemsSection({
     <section className="px-4 py-16 lg:px-16">
       <div className="flex flex-col gap-8 2xl:flex-row 2xl:items-center 2xl:justify-between">
         <h2 className="text-4xl font-medium lg:text-6xl">My work</h2>
-        <div className="flex flex-col gap-4 overflow-hidden rounded-2xl lg:flex-row lg:gap-0 lg:divide-x lg:border lg:border-default">
+        <div className="flex flex-col gap-4 overflow-hidden rounded-2xl lg:flex-row lg:gap-0 lg:divide-x lg:border">
           <FilterOption
             label="Case studies"
             icon={Images}
@@ -85,7 +85,7 @@ export default function PortfolioItemsSection({
           {filteredPortfolioItems.length === 0 && (
             <motion.div
               layout
-              className="flex flex-col items-center gap-4 rounded-2xl border border-default px-4 py-16 lg:col-span-2 lg:gap-8"
+              className="flex flex-col items-center gap-4 rounded-2xl border px-4 py-16 lg:col-span-2 lg:gap-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -277,7 +277,7 @@ function PortfolioItemTag({ label, icon, className }: PortfolioItemTagProps) {
 
   return (
     <div
-      className={`flex items-center gap-1 rounded-lg border border-default px-2 py-1 text-subtle 2xl:px-3 2xl:py-2 ${className}`}
+      className={`flex items-center gap-1 rounded-lg border px-2 py-1 text-subtle 2xl:px-3 2xl:py-2 ${className}`}
     >
       <span className="2xl:hidden">
         <IconComponent size={16} />

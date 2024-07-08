@@ -126,7 +126,7 @@ export default function Button({
 
   return (
     <Element
-      className={`${outerElementClass()} ${className} group relative isolate block w-fit cursor-pointer overflow-hidden rounded-full border border-transparent transition-all duration-500 ease-smooth hover:border-default active:scale-75 active:opacity-50`}
+      className={`${outerElementClass()} ${className} group relative isolate block w-fit cursor-pointer overflow-hidden rounded-full border border-transparent transition-all duration-500 ease-smooth active:scale-75 active:opacity-50`}
       href={href}
       target={href && isExternalUrl(href) ? '_blank' : undefined}
       type={type}

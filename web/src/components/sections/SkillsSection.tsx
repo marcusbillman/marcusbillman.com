@@ -19,8 +19,8 @@ export default function SkillsSection() {
         one where everyone learns from each other.
       </p>
       <ul className="grid gap-6 lg:grid-cols-2 lg:gap-8 2xl:grid-cols-4">
-        <li className="relative isolate flex h-96 flex-col justify-between gap-4 overflow-hidden rounded-2xl border border-default bg-subtle p-4 lg:p-6">
-          <div className="w-fit rounded-full border border-default bg-default p-3">
+        <li className="relative isolate flex h-96 flex-col justify-between gap-4 overflow-hidden rounded-2xl border bg-subtle p-4 lg:p-6">
+          <div className="w-fit rounded-full border bg-default p-3">
             <CubeFocus size={24} className="lg:hidden" />
             <CubeFocus size={32} className="hidden lg:inline" />
           </div>
@@ -36,8 +36,8 @@ export default function SkillsSection() {
             className="left-0 top-0 h-[250%] -translate-x-1/2 -translate-y-1/2"
           />
         </li>
-        <li className="relative isolate flex h-96 flex-col justify-between gap-4 overflow-hidden rounded-2xl border border-default bg-subtle p-4 lg:p-6">
-          <div className="w-fit rounded-full border border-default bg-default p-3">
+        <li className="relative isolate flex h-96 flex-col justify-between gap-4 overflow-hidden rounded-2xl border bg-subtle p-4 lg:p-6">
+          <div className="w-fit rounded-full border bg-default p-3">
             <Lightning size={24} className="lg:hidden" />
             <Lightning size={32} className="hidden lg:inline" />
           </div>
@@ -51,8 +51,8 @@ export default function SkillsSection() {
             className="bottom-0 right-0 h-[250%] translate-x-1/2 translate-y-1/2"
           />
         </li>
-        <li className="relative isolate flex h-96 flex-col justify-between gap-4 overflow-hidden rounded-2xl border border-default bg-subtle p-4 lg:p-6">
-          <div className="w-fit rounded-full border border-default bg-default p-3">
+        <li className="relative isolate flex h-96 flex-col justify-between gap-4 overflow-hidden rounded-2xl border bg-subtle p-4 lg:p-6">
+          <div className="w-fit rounded-full border bg-default p-3">
             <ChatsCircle size={24} className="lg:hidden" />
             <ChatsCircle size={32} className="hidden lg:inline" />
           </div>
@@ -68,8 +68,8 @@ export default function SkillsSection() {
             className="bottom-0 left-0 h-[250%] -translate-x-1/2 translate-y-1/2"
           />
         </li>
-        <li className="relative isolate flex h-96 flex-col justify-between gap-4 overflow-hidden rounded-2xl border border-default bg-subtle p-4 lg:p-6">
-          <div className="w-fit rounded-full border border-default bg-default p-3">
+        <li className="relative isolate flex h-96 flex-col justify-between gap-4 overflow-hidden rounded-2xl border bg-subtle p-4 lg:p-6">
+          <div className="w-fit rounded-full border bg-default p-3">
             <Heart size={24} className="lg:hidden" />
             <Heart size={32} className="hidden lg:inline" />
           </div>
@@ -86,7 +86,7 @@ export default function SkillsSection() {
             className="right-0 top-0 h-[250%] -translate-y-1/2 translate-x-1/2"
           />
         </li>
-        <li className="relative isolate h-96 overflow-hidden rounded-2xl border border-default bg-subtle lg:col-span-2">
+        <li className="relative isolate h-96 overflow-hidden rounded-2xl border bg-subtle lg:col-span-2">
           <div className="absolute bottom-0 left-0 right-0 flex h-1/2 flex-col justify-end bg-gradient-to-b from-white/0 to-white p-4 lg:p-6 dark:from-black/0 dark:to-black">
             <p className="text-xl font-medium lg:text-2xl">
               <span className="font-serif italic text-primary">
@@ -103,7 +103,7 @@ export default function SkillsSection() {
           />
         </li>
         {/* TODO: Background image of me giving a presentation */}
-        <li className="relative isolate h-96 overflow-hidden rounded-2xl border border-default bg-black lg:col-span-2">
+        <li className="relative isolate h-96 overflow-hidden rounded-2xl border bg-black lg:col-span-2">
           <div className="absolute bottom-0 left-0 right-0 flex h-1/2 flex-col justify-end bg-gradient-to-b from-black/0 to-black p-4 lg:p-6">
             <p className="text-xl font-medium text-white lg:text-2xl">
               <span className="font-serif italic text-blueberry-300">
