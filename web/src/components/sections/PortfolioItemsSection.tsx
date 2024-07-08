@@ -47,7 +47,7 @@ export default function PortfolioItemsSection({
     <section className="px-4 py-16 lg:px-16">
       <div className="flex flex-col gap-8 2xl:flex-row 2xl:items-center 2xl:justify-between">
         <h2 className="text-4xl font-medium lg:text-6xl">My work</h2>
-        <div className="flex flex-col gap-4 overflow-hidden rounded-2xl lg:flex-row lg:gap-0 lg:border lg:border-default">
+        <div className="flex flex-col gap-4 overflow-hidden rounded-2xl lg:flex-row lg:gap-0 lg:divide-x lg:border lg:border-default">
           <FilterOption
             label="Case studies"
             icon={Images}
@@ -315,7 +315,7 @@ function FilterOption({
 
   return (
     <div
-      className={`${isEnabled ? 'font-bold text-default' : 'text-subtle'} flex flex-grow cursor-pointer items-center gap-4 transition-all active:scale-90 lg:border-l lg:border-l-default lg:p-6 lg:first:border-l-0`}
+      className={`${isEnabled ? 'font-bold text-default' : 'text-subtle'} flex flex-grow cursor-pointer items-center gap-4 transition-all active:scale-90 lg:p-6`}
       onClick={handleClick}
     >
       <div className="flex flex-grow items-center gap-2">
