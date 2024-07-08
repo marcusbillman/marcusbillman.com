@@ -130,11 +130,10 @@ function MenuLink({ text, url, icon, children }: MenuLinkProps) {
   }, [url]);
 
   return (
-    <li className="group relative isolate min-w-64 flex-1 overflow-clip rounded-2xl">
-      <a
-        href={url}
-        className={`block rounded-2xl border px-5 py-4 transition-colors group-hover:border-primary lg:h-full ${isActive ? 'border-primary' : ''}`}
-      >
+    <li
+      className={`group relative isolate block min-w-64 flex-1 overflow-clip rounded-2xl border px-5 py-4 transition-all active:scale-90 active:opacity-50 group-hover:border-primary lg:h-full ${isActive ? 'border-primary' : ''}`}
+    >
+      <a href={url}>
         <div
           className={`flex items-center gap-2 text-3xl transition-colors group-hover:text-default ${isActive ? 'text-default' : 'text-subtle'}`}
         >
