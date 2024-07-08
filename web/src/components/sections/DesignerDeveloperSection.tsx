@@ -32,9 +32,7 @@ export default function DesignerDeveloperSection() {
             <PenNib size={64} className="hidden lg:inline 2xl:hidden" />
             <PenNib size={128} className="hidden 2xl:inline" />
           </span>
-          <span className="lg:absolute lg:left-0 lg:top-1/2">
-            &nbsp;with&nbsp;
-          </span>
+          <span className="lg:absolute lg:left-0 lg:top-1/3">with&nbsp;</span>
           <span className="inline-flex font-serif italic lg:absolute lg:bottom-0 lg:right-0 lg:flex-col lg:items-end lg:font-sans lg:not-italic">
             developer's&nbsp;
             <span className="inline-flex items-center">
@@ -80,9 +78,7 @@ export default function DesignerDeveloperSection() {
             <CodeBlock size={64} className="hidden lg:inline 2xl:hidden" />
             <CodeBlock size={128} className="hidden 2xl:inline" />
           </span>
-          <span className="lg:absolute lg:right-0 lg:top-1/2">
-            &nbsp;with&nbsp;
-          </span>
+          <span className="lg:absolute lg:right-0 lg:top-1/3">with&nbsp;</span>
           <span className="inline-flex font-serif italic lg:absolute lg:bottom-0 lg:left-0 lg:flex-col lg:font-sans lg:not-italic">
             designer's&nbsp;
             <span className="inline-flex items-center">
