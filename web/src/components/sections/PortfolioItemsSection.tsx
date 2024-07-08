@@ -315,7 +315,7 @@ function FilterOption({
 
   return (
     <div
-      className={`${isEnabled ? 'font-bold text-default' : 'text-subtle'} flex flex-grow cursor-pointer items-center gap-4 transition-all active:scale-90 lg:p-6`}
+      className={`${isEnabled ? 'font-bold text-default' : 'text-subtle'} flex flex-grow cursor-pointer items-center gap-4 transition-all active:scale-90 active:opacity-50 lg:p-6`}
       onClick={handleClick}
     >
       <div className="flex flex-grow items-center gap-2">
