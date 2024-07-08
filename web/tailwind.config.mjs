@@ -106,17 +106,17 @@ export default {
       },
       cursor: {
         'default-light':
-          'url("/assets/cursor/cursor-normal-light.svg") 32 32, auto',
+          'url("/assets/cursor/cursor-normal-light.svg") 5 4, auto',
         'default-dark':
-          'url("/assets/cursor/cursor-normal-dark.svg") 32 32, auto',
+          'url("/assets/cursor/cursor-normal-dark.svg") 5 4, auto',
         'pointer-light':
-          'url("/assets/cursor/cursor-pointer-light.svg") 32 32, pointer',
+          'url("/assets/cursor/cursor-pointer-light.svg") 15 4, pointer',
         'pointer-dark':
-          'url("/assets/cursor/cursor-pointer-dark.svg") 32 32, pointer',
-        'text-light': 'url("/assets/cursor/cursor-text-light.svg") 32 32, text',
-        'text-dark': 'url("/assets/cursor/cursor-text-dark.svg") 32 32, text',
-        'move-light': 'url("/assets/cursor/cursor-move-light.svg") 32 32, move',
-        'move-dark': 'url("/assets/cursor/cursor-move-dark.svg") 32 32, move',
+          'url("/assets/cursor/cursor-pointer-dark.svg") 15 4, pointer',
+        'text-light': 'url("/assets/cursor/cursor-text-light.svg") 9 17, text',
+        'text-dark': 'url("/assets/cursor/cursor-text-dark.svg") 9 17, text',
+        'move-light': 'url("/assets/cursor/cursor-move-light.svg") 37 37, move',
+        'move-dark': 'url("/assets/cursor/cursor-move-dark.svg") 37 37, move',
       },
     },
   },
