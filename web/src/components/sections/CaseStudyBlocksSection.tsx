@@ -66,7 +66,7 @@ function GalleryBlockComponent({
   return (
     <div className="flex flex-wrap justify-stretch gap-4 px-4 lg:gap-8 lg:px-16">
       {value.images!.map((image) => (
-        <ImageWithAltComponent imageWithAlt={image} />
+        <ImageWithAltComponent key={image._key} imageWithAlt={image} />
       ))}
     </div>
   );
