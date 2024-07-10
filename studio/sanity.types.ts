@@ -133,7 +133,7 @@ export type RichText = Array<
         _type: 'span'
         _key: string
       }>
-      style?: 'normal' | 'h2' | 'h3'
+      style?: 'normal' | 'h1' | 'h2'
       listItem?: 'bullet' | 'number'
       markDefs?: Array<{
         href?: string
@@ -159,6 +159,17 @@ export type RichText = Array<
       _key: string
     }
 >
+
+export type MetadataBlock = {
+  _type: 'metadataBlock'
+  title?: string
+  metadataItems?: Array<{
+    key?: string
+    value?: Array<string>
+    _type: 'metadataItem'
+    _key: string
+  }>
+}
 
 export type GalleryBlock = {
   _type: 'galleryBlock'
@@ -196,7 +207,6 @@ export type Project = {
   headline?: string
   preamble?: string
   featured?: boolean
-  tags?: Array<string>
   date?: string
   coverImage?: {
     asset?: {
@@ -219,6 +229,9 @@ export type Project = {
     | ({
         _key: string
       } & GalleryBlock)
+    | ({
+        _key: string
+      } & MetadataBlock)
   >
   linkUrl?: string
   orderRank?: string
@@ -243,4 +256,23 @@ export type Slug = {
   current?: string
   source?: string
 }
+
+export type AllSanitySchemaTypes =
+  | SanityImagePaletteSwatch
+  | SanityImagePalette
+  | SanityImageDimensions
+  | SanityFileAsset
+  | Geopoint
+  | SanityImageCrop
+  | SanityImageHotspot
+  | SanityImageAsset
+  | SanityAssetSourceData
+  | SanityImageMetadata
+  | RichText
+  | MetadataBlock
+  | GalleryBlock
+  | TextBlock
+  | Project
+  | ImageWithAlt
+  | Slug
 export declare const internalGroqTypeReferenceTo: unique symbol

@@ -61,13 +61,6 @@ export default {
       validation: (Rule: Rule) => Rule.required(),
     },
     {
-      name: 'tags',
-      title: 'Tags',
-      type: 'array',
-      of: [{type: 'string'}],
-      group: 'meta',
-    },
-    {
       name: 'date',
       title: 'Date',
       type: 'string',
@@ -101,7 +94,7 @@ export default {
       name: 'caseStudyBlocks',
       title: 'Case study blocks',
       type: 'array',
-      of: [{type: 'textBlock'}, {type: 'galleryBlock'}],
+      of: [{type: 'textBlock'}, {type: 'galleryBlock'}, {type: 'metadataBlock'}],
       group: 'main',
       hidden: ({document}: {document: any}) => document?.type !== 'CASE_STUDY',
     },
