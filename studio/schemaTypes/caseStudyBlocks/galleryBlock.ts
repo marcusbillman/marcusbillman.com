@@ -1,7 +1,10 @@
+import {ImageIcon} from '@sanity/icons'
+
 export default {
   title: 'Gallery block',
   name: 'galleryBlock',
   type: 'object',
+  icon: ImageIcon,
   fields: [
     {
       name: 'title',
@@ -17,9 +20,20 @@ export default {
           type: 'imageWithAlt',
         },
       ],
+      options: {
+        layout: 'grid',
+      },
     },
   ],
-  initialValue: () => ({
-    title: 'Gallery block',
-  }),
+  preview: {
+    select: {
+      title: 'title',
+    },
+    prepare({title}: {title: string}) {
+      return {
+        title: title,
+        subtitle: 'Gallery block',
+      }
+    },
+  },
 }

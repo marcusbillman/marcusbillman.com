@@ -1,7 +1,10 @@
+import {BlockContentIcon} from '@sanity/icons'
+
 export default {
   title: 'Text block',
   name: 'textBlock',
   type: 'object',
+  icon: BlockContentIcon,
   fields: [
     {
       name: 'title',
@@ -14,7 +17,15 @@ export default {
       type: 'richText',
     },
   ],
-  initialValue: () => ({
-    title: 'Text block',
-  }),
+  preview: {
+    select: {
+      title: 'title',
+    },
+    prepare({title}: {title: string}) {
+      return {
+        title: title,
+        subtitle: 'Text block',
+      }
+    },
+  },
 }
