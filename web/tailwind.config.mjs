@@ -48,6 +48,7 @@ export default {
     },
     extend: {
       textColor: {
+        DEFAULT: 'var(--text-default)',
         default: 'var(--text-default)',
         subtle: 'var(--text-subtle)',
         primary: 'var(--text-primary)',
@@ -57,6 +58,7 @@ export default {
         'illustration-secondary': 'var(--illustration-secondary)',
       },
       backgroundColor: {
+        DEFAULT: 'var(--bg-default)',
         default: 'var(--bg-default)',
         subtle: 'var(--bg-subtle)',
         primary: 'var(--bg-primary)',
@@ -65,6 +67,7 @@ export default {
         'overlay-dim-strong': 'var(--overlay-dim-strong)',
       },
       borderColor: {
+        DEFAULT: 'var(--border-default)',
         default: 'var(--border-default)',
         strong: 'var(--border-strong)',
         primary: 'var(--border-primary)',
