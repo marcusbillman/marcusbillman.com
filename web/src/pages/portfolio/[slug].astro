@@ -1,16 +1,10 @@
 ---
-import Button from '@/components/Button';
-import {
-  GalleryBlockComponent,
-  TextBlockComponent,
-} from '@/components/sections/CaseStudyBlocks';
+import CaseStudyBlocksSection from '@/components/sections/CaseStudyBlocksSection';
 import CaseStudyHeaderSection from '@/components/sections/CaseStudyHeaderSection';
 import ContactSection from '@/components/sections/ContactSection';
 import SeparatorSection from '@/components/sections/SeparatorSection';
 import Layout from '@/layouts/Layout.astro';
-import { fetchAllProjects, sanityImageUrl } from '@/util/sanity';
-import { ArrowLeft } from '@phosphor-icons/react/dist/ssr';
-import { PortableText } from '@portabletext/react';
+import { fetchAllProjects } from '@/util/sanity';
 
 export async function getStaticPaths() {
   const projects = await fetchAllProjects();
@@ -33,30 +27,7 @@ const { project } = Astro.props;
 
 <Layout title={project.name}>
   <CaseStudyHeaderSection client:load project={project} slot="header" />
-  <article class="space-y-16 lg:space-y-24">
-    <img
-      src={sanityImageUrl(project.coverImage?.asset!).url()}
-      alt={project.coverImage?.alt}
-      class="block w-full rounded-4xl lg:rounded-6xl"
-    />
-    <PortableText
-      value={project.caseStudyBlocks!}
-      components={{
-        types: {
-          textBlock: TextBlockComponent,
-          galleryBlock: GalleryBlockComponent,
-        },
-      }}
-    />
-    <div class="flex flex-col items-center px-4 lg:px-16">
-      <Button
-        text="All projects"
-        icon={ArrowLeft}
-        iconSide="left"
-        href="/portfolio"
-      />
-    </div>
-  </article>
+  <CaseStudyBlocksSection project={project} />
   <SeparatorSection />
   <ContactSection client:visible />
 </Layout>

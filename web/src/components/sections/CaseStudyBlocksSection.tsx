@@ -1,4 +1,5 @@
 import { sanityImageUrl } from '@/util/sanity';
+import { ArrowLeft } from '@phosphor-icons/react/dist/ssr';
 import {
   PortableText,
   type PortableTextComponentProps,
@@ -6,13 +7,52 @@ import {
 import type {
   TextBlock,
   GalleryBlock,
+  MetadataBlock,
   RichText,
   ImageWithAlt,
+  Project,
 } from '@studio/sanity.types';
+import Button from '@/components/Button';
 
-export function TextBlockComponent({
-  value,
-}: PortableTextComponentProps<TextBlock>) {
+interface CaseStudyBlocksSectionProps {
+  project: Project;
+}
+
+export default function CaseStudyBlocksSection({
+  project,
+}: CaseStudyBlocksSectionProps) {
+  return (
+    <article className="space-y-16 lg:space-y-24">
+      <img
+        src={sanityImageUrl(project.coverImage?.asset!).url()}
+        alt={project.coverImage?.alt}
+        className="block w-full rounded-4xl lg:rounded-6xl"
+      />
+      <PortableText
+        value={project.caseStudyBlocks!}
+        components={{
+          types: {
+            textBlock: TextBlockComponent,
+            galleryBlock: GalleryBlockComponent,
+            metadataBlock: (props) => (
+              <MetadataBlockComponent {...props} projectDate={project.date} />
+            ),
+          },
+        }}
+      />
+      <div className="flex flex-col items-center px-4 lg:px-16">
+        <Button
+          text="All projects"
+          icon={ArrowLeft}
+          iconSide="left"
+          href="/portfolio"
+        />
+      </div>
+    </article>
+  );
+}
+
+function TextBlockComponent({ value }: PortableTextComponentProps<TextBlock>) {
   return (
     <div className="px-4 lg:px-16">
       <RichTextComponent richText={value.text!} />
@@ -20,7 +60,7 @@ export function TextBlockComponent({
   );
 }
 
-export function GalleryBlockComponent({
+function GalleryBlockComponent({
   value,
 }: PortableTextComponentProps<GalleryBlock>) {
   return (
@@ -32,11 +72,53 @@ export function GalleryBlockComponent({
   );
 }
 
+interface MetadataBlockComponentProps
+  extends PortableTextComponentProps<MetadataBlock> {
+  projectDate?: string;
+}
+
+function MetadataBlockComponent({
+  value,
+  projectDate,
+}: MetadataBlockComponentProps) {
+  return (
+    <div className="px-4 lg:px-16">
+      <dl className="mx-auto max-w-4xl divide-y rounded-2xl border">
+        {projectDate && (
+          <div className="flex gap-4 p-4">
+            <dt className="block w-32 max-w-[25vw] flex-shrink-0 font-serif font-medium italic text-subtle">
+              Date
+            </dt>
+            <dd className="flex-grow">{projectDate}</dd>
+          </div>
+        )}
+        {value.metadataItems!.map((item) => (
+          <div key={item.key} className="flex gap-4 p-4">
+            <dt className="block w-32 max-w-[25vw] flex-shrink-0 font-serif font-medium italic text-subtle">
+              {item.key}
+            </dt>
+            <dd className="flex-grow">
+              <ul className="">
+                {item.value?.map((value, index) => (
+                  <li key={value} className="inline">
+                    {value}
+                    {index < item.value?.length! - 1 && ' • '}
+                  </li>
+                ))}
+              </ul>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  );
+}
+
 interface RichTextComponentProps {
   richText: RichText;
 }
 
-export function RichTextComponent({ richText }: RichTextComponentProps) {
+function RichTextComponent({ richText }: RichTextComponentProps) {
   return (
     <PortableText
       value={richText}
@@ -85,7 +167,7 @@ interface ImageWithAltComponentProps {
   className?: string;
 }
 
-export function ImageWithAltComponent({
+function ImageWithAltComponent({
   imageWithAlt,
   className,
 }: ImageWithAltComponentProps) {
