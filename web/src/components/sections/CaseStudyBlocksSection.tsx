@@ -13,6 +13,7 @@ import type {
   Project,
 } from '@studio/sanity.types';
 import Button from '@/components/Button';
+import DotGrid from '@/components/DotGrid';
 
 interface CaseStudyBlocksSectionProps {
   project: Project;
@@ -82,7 +83,7 @@ function MetadataBlockComponent({
   projectDate,
 }: MetadataBlockComponentProps) {
   return (
-    <div className="px-4 lg:px-16">
+    <div className="space-y-6 px-4 lg:space-y-8 lg:px-16">
       <dl className="mx-auto max-w-4xl divide-y rounded-2xl border">
         {projectDate && (
           <div className="flex gap-4 p-4">
@@ -92,17 +93,17 @@ function MetadataBlockComponent({
             <dd className="flex-grow">{projectDate}</dd>
           </div>
         )}
-        {value.metadataItems!.map((item) => (
-          <div key={item.key} className="flex gap-4 p-4">
+        {value.metadataFields?.map((field) => (
+          <div key={field.key} className="flex gap-4 p-4">
             <dt className="block w-32 max-w-[25vw] flex-shrink-0 font-serif font-medium italic text-subtle">
-              {item.key}
+              {field.key}
             </dt>
             <dd className="flex-grow">
               <ul className="">
-                {item.value?.map((value, index) => (
+                {field.values?.map((value, index) => (
                   <li key={value} className="inline">
                     {value}
-                    {index < item.value?.length! - 1 && ' • '}
+                    {index < field.values?.length! - 1 && ' • '}
                   </li>
                 ))}
               </ul>
@@ -110,6 +111,19 @@ function MetadataBlockComponent({
           </div>
         ))}
       </dl>
+      {value.metadataLinks && (
+        <div className="relative isolate mx-auto flex max-w-4xl flex-wrap justify-center gap-4 rounded-2xl border p-8 lg:p-16">
+          {value.metadataLinks.map((link, index) => (
+            <Button
+              key={link.url}
+              text={link.text!}
+              href={link.url}
+              style={index === 0 ? 'default' : 'subtle'}
+            />
+          ))}
+          <DotGrid />
+        </div>
+      )}
     </div>
   );
 }
