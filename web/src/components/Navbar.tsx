@@ -76,6 +76,7 @@ function NavbarLink({ text, url, icon }: NavbarLinkProps) {
       <a
         href={url}
         className={`flex items-center gap-1 transition-all hover:text-default active:scale-75 active:opacity-50 ${isActive ? 'font-bold text-default' : 'text-subtle'}`}
+        aria-current={isActive ? 'page' : undefined}
       >
         <IconComponent weight={isActive ? 'fill' : 'regular'} />
         {text}
