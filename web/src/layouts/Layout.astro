@@ -71,10 +71,17 @@ const tailwindConfig = useTailwindConfig();
     />
   </head>
   <body class="min-h-screen cursor-default bg-default text-default">
+    <a
+      href="#main"
+      class="absolute left-8 top-4 z-[60] w-44 origin-center scale-0 rounded-full bg-primary p-4 text-center font-medium text-on-primary transition-transform focus:scale-100"
+    >
+      Skip to content
+    </a>
     <Navigation client:load />
     <div class="overflow-clip rounded-b-4xl lg:rounded-b-6xl">
       {!noHeader && <slot name="header" />}
       <main
+        id="main"
         class={`${noHeader ? '' : '-mt-8 rounded-t-4xl lg:-mt-16 lg:rounded-t-6xl'} relative z-20 bg-default shadow-main-container`}
       >
         {
