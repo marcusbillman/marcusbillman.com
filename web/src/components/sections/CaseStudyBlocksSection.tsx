@@ -186,7 +186,7 @@ function ImageWithAltComponent({
   className,
 }: ImageWithAltComponentProps) {
   return (
-    <div
+    <figure
       className={`${className} relative max-h-screen flex-grow basis-96 flex-col overflow-hidden rounded-2xl lg:rounded-4xl`}
     >
       <img
@@ -196,10 +196,10 @@ function ImageWithAltComponent({
         className="h-full w-full object-cover"
       />
       {imageWithAlt.caption && (
-        <div className="absolute inset-0 top-auto bg-gradient-to-b from-black/0 to-black/50 p-4 lg:p-6">
-          <p className="font-serif italic text-white">{imageWithAlt.caption}</p>
-        </div>
+        <figcaption className="absolute inset-0 top-auto bg-gradient-to-b from-black/0 to-black/50 p-4 font-serif italic text-white lg:p-6">
+          {imageWithAlt.caption}
+        </figcaption>
       )}
-    </div>
+    </figure>
   );
 }
