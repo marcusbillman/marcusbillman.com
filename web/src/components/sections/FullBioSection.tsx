@@ -44,6 +44,7 @@ function Portrait() {
         src="/assets/images/portrait-2.png"
         alt="Marcus looking up and to the side"
         className="absolute bottom-0 left-0 right-0 block opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        aria-hidden
       />
       <DotGrid />
       <Glow

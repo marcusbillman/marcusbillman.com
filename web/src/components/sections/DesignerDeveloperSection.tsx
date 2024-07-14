@@ -50,17 +50,20 @@ export default function DesignerDeveloperSection() {
             src="/assets/images/colour-card-blueberry.png"
             alt="Blueberry colour card"
             className="absolute right-[15%] top-[-10%] block origin-bottom rotate-[5deg] transition-transform duration-500 ease-smooth group-hover:rotate-[-5deg]"
+            aria-hidden
           />
           <img
             src="/assets/images/colour-card-salmon.png"
             alt="Salmon colour card"
             className="absolute right-[-5%] top-[10%] block origin-bottom rotate-[15deg] transition-transform duration-500 ease-smooth group-hover:rotate-[20deg]"
+            aria-hidden
           />
         </div>
         <img
           src="/assets/images/figma-tools.png"
           alt="Figma tool icons arranged in a circle"
           className="absolute -bottom-64 -left-32 opacity-50"
+          aria-hidden
         />
         <DotGrid dim="strong" />
       </div>
@@ -95,11 +98,13 @@ export default function DesignerDeveloperSection() {
           src="/assets/images/tech-logos.png"
           alt="Grid of web technology logos"
           className="absolute left-[-25%] top-[-15%] rotate-[-30deg] opacity-50"
+          aria-hidden
         />
         <img
           src="/assets/images/code-easter-egg.png"
           alt="Code block with easter egg"
           className="absolute -bottom-32 -right-32 w-[800px] rotate-[-15deg] opacity-50 transition-opacity hover:opacity-100"
+          aria-hidden
         />
         <DotGrid />
       </motion.div>

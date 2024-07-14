@@ -93,6 +93,7 @@ export default function HeaderSection({
               left: `${emojiPositions[index]?.y}%`,
               opacity: isVisible ? 1 : 0,
             }}
+            aria-hidden
           >
             {emoji}
           </motion.span>

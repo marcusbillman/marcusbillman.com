@@ -30,11 +30,13 @@ export default function MoreThingsSection() {
               src="/assets/images/screenshot-soundboard.jpg"
               alt="App screenshot"
               className="absolute left-[20%] top-[0%] h-48 rotate-[30deg] rounded-2xl shadow-xl"
+              aria-hidden
             />
             <img
               src="/assets/images/screenshot-cooldownload.jpg"
               alt="App screenshot"
               className="absolute bottom-[0%] left-[35%] h-48 rotate-[30deg] rounded-2xl shadow-xl"
+              aria-hidden
             />
             <ButtonClick className="absolute left-[90%] top-[0%] rotate-[30deg] drop-shadow-xl" />
             <Phone className="absolute left-[80%] top-[15%] rotate-[30deg] drop-shadow-xl" />
