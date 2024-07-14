@@ -4,7 +4,7 @@ import Menu from '@/components/Menu';
 import { AnimatePresence } from 'framer-motion';
 import { useTailwindConfig } from '@/util/tailwind';
 import { useMediaQuery } from 'usehooks-ts';
-import { disableBodyScroll, enableBodyScroll } from '@/util/document';
+import { FocusOn } from 'react-focus-on';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,21 +14,30 @@ export default function Navigation() {
     `(min-width: ${resolvedTailwindConfig.theme.screens.lg})`,
   );
 
-  function toggleMenu() {
-    setIsMenuOpen(!isMenuOpen);
-    isMenuOpen ? enableBodyScroll() : disableBodyScroll();
-  }
-
   return (
-    <nav>
-      <AnimatePresence initial={false}>
-        {(isDesktop || !isMenuOpen) && (
-          <Navbar isMenuOpen={isMenuOpen} onClickMenuButton={toggleMenu} />
-        )}
-      </AnimatePresence>
-      <AnimatePresence>
-        {isMenuOpen && <Menu isMenuOpen={isMenuOpen} onClose={toggleMenu} />}
-      </AnimatePresence>
-    </nav>
+    <FocusOn enabled={isMenuOpen}>
+      <nav
+        onKeyDown={(e) => {
+          if (e.key === 'Escape') setIsMenuOpen(false);
+        }}
+      >
+        <AnimatePresence initial={false}>
+          {(isDesktop || !isMenuOpen) && (
+            <Navbar
+              isMenuOpen={isMenuOpen}
+              onClickMenuButton={() => setIsMenuOpen(!isMenuOpen)}
+            />
+          )}
+        </AnimatePresence>
+        <AnimatePresence>
+          {isMenuOpen && (
+            <Menu
+              isMenuOpen={isMenuOpen}
+              onClose={() => setIsMenuOpen(!isMenuOpen)}
+            />
+          )}
+        </AnimatePresence>
+      </nav>
+    </FocusOn>
   );
 }
