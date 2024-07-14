@@ -9,12 +9,19 @@ import {
 } from '@phosphor-icons/react/dist/ssr';
 import { useEffect, useState } from 'react';
 import SocialLinks from './SocialLinks';
-import { BezierCurve, Browser, ButtonClick, Phone } from './illustrations';
+import {
+  BezierCurve,
+  Browser,
+  ButtonClick,
+  Dropdown,
+  Phone,
+} from './illustrations';
 import DotGrid from './DotGrid';
 import { motion } from 'framer-motion';
 import { useMediaQuery } from 'usehooks-ts';
 import { useTailwindConfig } from '@/util/tailwind';
 import Glow from './Glow';
+import Chat from './illustrations/Chat';
 
 interface MenuProps {
   isMenuOpen: boolean;
@@ -55,7 +62,7 @@ export default function Menu({ isMenuOpen, onClose }: MenuProps) {
               <DotGrid dim="default" />
               <BezierCurve className="absolute left-[30%] top-[25%]" />
               <Phone className="absolute left-[80%] top-[-10%]" />
-              <ButtonClick className="absolute left-[-5%] top-[60%]" />
+              <ButtonClick className="absolute left-[-5%] top-[60%] hidden 2xl:block" />
               <Browser className="absolute left-[60%] top-[70%]" />
             </MenuLink>
             <MenuLink text="Portfolio" url="/portfolio" icon={Images}>
@@ -68,12 +75,12 @@ export default function Menu({ isMenuOpen, onClose }: MenuProps) {
               <img
                 src="/assets/images/phone-iphone-15-plus.png"
                 alt="iPhone 15 Plus smartphone"
-                className="absolute bottom-[-5%] left-[15%] w-32 rotate-[15deg]"
+                className="absolute right-[30%] top-[30%] h-[80%] min-h-64 rotate-[15deg]"
               />
               <img
                 src="/assets/images/phone-pixel-8.png"
                 alt="Google Pixel 8 smartphone"
-                className="absolute bottom-[-30%] left-[50%] w-32 rotate-[5deg]"
+                className="absolute right-[30%] top-[30%] h-[80%] min-h-64 translate-x-[50%] translate-y-[20%] rotate-[5deg]"
               />
             </MenuLink>
             <MenuLink text="About" url="/about" icon={User}>
@@ -83,12 +90,17 @@ export default function Menu({ isMenuOpen, onClose }: MenuProps) {
               <img
                 src="/assets/images/portrait-1.png"
                 alt="Marcus looking at the camera"
-                className="absolute bottom-[0%] right-0 block w-72"
+                className="absolute bottom-[-30%] right-0 h-[80%] min-h-24 max-w-fit lg:bottom-0"
               />
             </MenuLink>
             <MenuLink text="Contact" url="/contact" icon={ChatsCircle}>
               <div className="absolute inset-0 -z-10 bg-subtle" />
               <DotGrid dim="default" />
+              <Glow
+                color="orange"
+                className="bottom-[-30%] left-[-30%] w-full"
+              />
+              <Chat className="absolute right-0 top-[35%] lg:right-[10%]" />
             </MenuLink>
           </ul>
           <div className="flex flex-1 flex-col gap-4 xl:flex-[1]">
