@@ -27,7 +27,7 @@ export default function CaseStudyBlocksSection({
       <img
         src={sanityImageUrl(project.coverImage?.asset!).url()}
         alt={project.coverImage?.alt}
-        className="block w-full rounded-4xl lg:rounded-6xl"
+        className="block min-h-[50vh] w-full rounded-4xl object-cover object-center lg:rounded-6xl"
       />
       <PortableText
         value={project.caseStudyBlocks!}
