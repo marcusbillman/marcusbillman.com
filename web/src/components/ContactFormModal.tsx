@@ -6,6 +6,7 @@ import { motion, useAnimate } from 'framer-motion';
 import toast from 'react-hot-toast';
 import { useForm } from '@formspree/react';
 import confetti from 'canvas-confetti';
+import { AutoFocusInside } from 'react-focus-on';
 
 interface Props {
   onClose: () => void;
@@ -70,23 +71,25 @@ export default function ContactFormModal({ onClose }: Props) {
             <p>Sending...</p>
           </motion.div>
         )}
-        <div className="flex flex-col-reverse gap-2">
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Super Cool Person"
-            required
-            disabled={state.submitting}
-            className="peer rounded-lg border bg-default px-4 py-3 text-xl transition-colors placeholder:text-subtle focus:border-primary"
-          />
-          <label
-            htmlFor="name"
-            className="block text-xl transition-colors peer-focus:font-serif peer-focus:font-medium peer-focus:italic peer-focus:text-primary"
-          >
-            Your name
-          </label>
-        </div>
+        <AutoFocusInside>
+          <div className="flex flex-col-reverse gap-2">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Super Cool Person"
+              required
+              disabled={state.submitting}
+              className="peer rounded-lg border bg-default px-4 py-3 text-xl transition-colors placeholder:text-subtle focus:border-primary"
+            />
+            <label
+              htmlFor="name"
+              className="block text-xl transition-colors peer-focus:font-serif peer-focus:font-medium peer-focus:italic peer-focus:text-primary"
+            >
+              Your name
+            </label>
+          </div>
+        </AutoFocusInside>
         <div className="flex flex-col-reverse gap-2">
           <input
             type="email"
