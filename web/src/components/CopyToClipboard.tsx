@@ -16,8 +16,8 @@ export default function CopyToClipboard({ text, children }: Props) {
         toast.success('Copied!');
         confetti({
           origin: {
-            x: event.clientX / window.innerWidth,
-            y: event.clientY / window.innerHeight,
+            x: event.clientX / window.innerWidth || undefined,
+            y: event.clientY / window.innerHeight || undefined,
           },
           startVelocity: 20,
         });
