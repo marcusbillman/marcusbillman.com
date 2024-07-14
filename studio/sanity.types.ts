@@ -163,10 +163,16 @@ export type RichText = Array<
 export type MetadataBlock = {
   _type: 'metadataBlock'
   title?: string
-  metadataItems?: Array<{
+  metadataFields?: Array<{
     key?: string
-    value?: Array<string>
-    _type: 'metadataItem'
+    values?: Array<string>
+    _type: 'metadataField'
+    _key: string
+  }>
+  metadataLinks?: Array<{
+    text?: string
+    url?: string
+    _type: 'metadataLink'
     _key: string
   }>
 }
