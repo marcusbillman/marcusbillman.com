@@ -51,7 +51,7 @@ export default function SocialLinks({
           Email
         </span>
         <CopyToClipboard text={EMAIL}>
-          <span className="group mt-1 flex cursor-pointer items-center gap-1">
+          <button className="group mt-1 flex cursor-pointer items-center gap-1">
             <span className={`${compactOnMobile ? 'lg:text-xl' : 'text-xl'}`}>
               {EMAIL}
             </span>
@@ -59,7 +59,7 @@ export default function SocialLinks({
               size={24}
               className={`${forceDark ? 'text-gray-500 group-hover:text-white' : 'text-subtle group-hover:text-default'} transition-all duration-500 ease-smooth group-hover:rotate-180`}
             />
-          </span>
+          </button>
         </CopyToClipboard>
       </li>
     </ul>
