@@ -109,7 +109,7 @@ function BentoCard({
 
   return (
     <li
-      className={`${className} group relative isolate overflow-hidden rounded-2xl bg-subtle transition-transform duration-500 ease-smooth hover:z-10 hover:scale-105`}
+      className={`${className} group relative isolate overflow-hidden rounded-2xl bg-subtle transition-transform duration-500 ease-smooth focus-within:z-10 focus-within:scale-105 focus-within:ring hover:z-10 hover:scale-105`}
     >
       <a href={href} className="flex h-full flex-col justify-between gap-3 p-4">
         <div className="flex w-fit origin-top-left items-center gap-2 rounded-2xl bg-default p-4 transition-all duration-500 ease-smooth group-hover:scale-95">

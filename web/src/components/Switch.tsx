@@ -36,7 +36,7 @@ export default function Switch({
 
   return (
     <div
-      className={`relative inline-block rounded-full transition-colors duration-300 ease-smooth ${size === 'small' ? 'h-8 w-14' : 'h-10 w-[72px]'} ${isChecked ? 'bg-primary' : 'border border-strong bg-default'}`}
+      className={`relative inline-block rounded-full transition-colors duration-300 ease-smooth focus-within:ring focus-within:ring-offset-4 ${size === 'small' ? 'h-8 w-14' : 'h-10 w-[72px]'} ${isChecked ? 'bg-primary' : 'border border-strong bg-default'}`}
     >
       <input
         type="checkbox"
