@@ -5,7 +5,7 @@ export default function BioSection() {
     <section className="flex flex-col items-center gap-12 px-4 pb-24 pt-32 lg:px-16 lg:pb-32 lg:pt-64">
       <h2 className="text-balance text-center text-4xl font-medium lg:text-6xl">
         Hej!{' '}
-        <span className="inline-block origin-bottom-right animate-wiggle">
+        <span className="inline-block origin-bottom-right motion-safe:animate-wiggle">
           👋
         </span>{' '}
         <br className="md:hidden" />

@@ -17,7 +17,7 @@ import {
   Phone,
 } from './illustrations';
 import DotGrid from './DotGrid';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useMediaQuery } from 'usehooks-ts';
 import { useTailwindConfig } from '@/util/tailwind';
 import Glow from './Glow';
@@ -30,17 +30,23 @@ interface MenuProps {
 
 export default function Menu({ isMenuOpen, onClose }: MenuProps) {
   const resolvedTailwindConfig = useTailwindConfig();
+  const shouldReduceMotion = useReducedMotion();
 
   const isDesktop = useMediaQuery(
     `(min-width: ${resolvedTailwindConfig.theme.screens.lg})`,
   );
 
+  const outProperties = {
+    y: shouldReduceMotion ? 0 : isDesktop ? '-100%' : '100%',
+    opacity: shouldReduceMotion ? 0 : 1,
+  };
+
   return (
     <>
       <motion.div
-        initial={{ y: isDesktop ? '-100%' : '100%' }}
-        animate={{ y: 0 }}
-        exit={{ y: isDesktop ? '-100%' : '100%' }}
+        initial={outProperties}
+        animate={{ y: 0, opacity: 1 }}
+        exit={outProperties}
         transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
         className="fixed bottom-0 left-0 right-0 z-40 flex max-h-[95vh] flex-col gap-4 rounded-t-4xl bg-default p-4 shadow-lg lg:bottom-auto lg:top-0 lg:h-[564px] lg:flex-row lg:gap-8 lg:rounded-b-4xl lg:rounded-t-none lg:p-8 lg:pt-24"
       >

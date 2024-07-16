@@ -9,7 +9,7 @@ import {
 import { useEffect, useState } from 'react';
 import Button from '@/components/Button';
 import type { Icon } from '@phosphor-icons/react/dist/lib/types';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 interface NavbarProps {
   isMenuOpen: boolean;
@@ -17,11 +17,18 @@ interface NavbarProps {
 }
 
 export default function Navbar({ isMenuOpen, onClickMenuButton }: NavbarProps) {
+  const shouldReduceMotion = useReducedMotion();
+
+  const outProperties = {
+    y: shouldReduceMotion ? 0 : '-100',
+    opacity: shouldReduceMotion ? 0 : 1,
+  };
+
   return (
     <motion.div
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      exit={{ y: -100 }}
+      initial={outProperties}
+      animate={{ y: 0, opacity: 1 }}
+      exit={outProperties}
       transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
       className={`pointer-events-none fixed left-4 right-4 top-4 z-50 flex items-stretch justify-between lg:left-8 lg:right-8`}
     >
@@ -33,7 +40,7 @@ export default function Navbar({ isMenuOpen, onClickMenuButton }: NavbarProps) {
         <span className="font-serif italic">Billman</span>
       </a>
       <motion.div
-        layout="position"
+        layout={shouldReduceMotion ? false : 'position'}
         className={`${isMenuOpen ? '' : 'shadow-lg lg:pl-6 dark:border'} pointer-events-auto flex items-center gap-6 rounded-full bg-default lg:p-2`}
       >
         {!isMenuOpen && (

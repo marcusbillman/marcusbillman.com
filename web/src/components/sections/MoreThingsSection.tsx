@@ -71,14 +71,14 @@ export default function MoreThingsSection() {
               description="Code"
               icon={GitHub}
               href="https://m-b.me/github"
-              className="flex-grow lg:h-auto"
+              className="flex-grow border border-transparent hover:border-default hover:bg-default lg:h-auto"
             />
             <BentoCard
               title="LinkedIn"
               description="Networking"
               icon={LinkedIn}
               href="https://m-b.me/linkedin"
-              className="flex-grow lg:h-auto"
+              className="flex-grow border border-transparent hover:border hover:bg-default lg:h-auto"
             />
           </div>
         </div>
@@ -109,16 +109,16 @@ function BentoCard({
 
   return (
     <li
-      className={`${className} group relative isolate overflow-hidden rounded-2xl bg-subtle transition-transform duration-500 ease-smooth focus-within:z-10 focus-within:scale-105 focus-within:ring hover:z-10 hover:scale-105`}
+      className={`${className} group relative isolate overflow-hidden rounded-2xl bg-subtle transition-all focus-within:z-10 focus-within:scale-105 focus-within:ring hover:z-10 hover:shadow-lg motion-safe:duration-500 motion-safe:ease-smooth motion-safe:hover:scale-105`}
     >
       <a href={href} className="flex h-full flex-col justify-between gap-3 p-4">
-        <div className="flex w-fit origin-top-left items-center gap-2 rounded-2xl bg-default p-4 transition-all duration-500 ease-smooth group-hover:scale-95">
+        <div className="flex w-fit origin-top-left items-center gap-2 rounded-2xl bg-default p-4 transition-all duration-500 ease-smooth motion-safe:group-hover:scale-95">
           {LeftIconComponent && <LeftIconComponent className="text-primary" />}
           <h3 className="text-default">{title}</h3>
           <RightIconComponent className="text-subtle" />
         </div>
         <div className="-z-10">{children}</div>
-        <p className="max-w-[15ch] origin-bottom-left text-3xl transition-transform duration-500 ease-smooth group-hover:scale-95 lg:mb-3 lg:ml-3 lg:text-5xl">
+        <p className="max-w-[15ch] origin-bottom-left text-3xl transition-transform duration-500 ease-smooth motion-safe:group-hover:scale-95 lg:mb-3 lg:ml-3 lg:text-5xl">
           {description}
         </p>
       </a>

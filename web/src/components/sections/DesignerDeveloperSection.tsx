@@ -1,20 +1,35 @@
 import { CodeBlock, Eye, Graph, PenNib } from '@phosphor-icons/react/dist/ssr';
 import DotGrid from '@/components/DotGrid';
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from 'framer-motion';
 
 export default function DesignerDeveloperSection() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
   });
+  const shouldReduceMotion = useReducedMotion();
+
   const clipPathOutput = useTransform(
     scrollYProgress,
     [0, 1],
-    [
-      'polygon(0 0, 100% 0%, 100% -20%, 0 0%)',
-      'polygon(0 0, 100% 0%, 100% 100%, 0 120%)',
-    ],
+    shouldReduceMotion
+      ? ['none', 'none']
+      : [
+          'polygon(0 0, 100% 0%, 100% -20%, 0 0%)',
+          'polygon(0 0, 100% 0%, 100% 100%, 0 120%)',
+        ],
+  );
+
+  const opacityOutput = useTransform(
+    scrollYProgress,
+    [0, 1],
+    shouldReduceMotion ? [0, 1] : [1, 1],
   );
 
   return (
@@ -71,7 +86,7 @@ export default function DesignerDeveloperSection() {
       {/* Developer */}
       <motion.div
         className="sticky top-0 isolate mt-[-100vh] flex h-screen flex-col items-center justify-center overflow-hidden rounded-4xl bg-black bg-[url('/assets/images/code-dim.jpg')] bg-cover bg-center p-16 text-white lg:rounded-6xl"
-        style={{ clipPath: clipPathOutput }}
+        style={{ clipPath: clipPathOutput, opacity: opacityOutput }}
       >
         {/* Text */}
         <div className="flex flex-wrap justify-center lg:absolute lg:inset-16 lg:top-32 lg:w-auto">

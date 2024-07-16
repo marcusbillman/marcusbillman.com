@@ -65,8 +65,8 @@ export default function Button({
   }
 
   function hoverOverlayClass() {
-    if (iconSide === 'left') return 'translate-x-full';
-    return '-translate-x-full';
+    if (iconSide === 'left') return 'motion-safe:translate-x-full';
+    return 'motion-safe:-translate-x-full';
   }
 
   function iconSize() {
@@ -79,11 +79,12 @@ export default function Button({
     let className = '';
 
     if (iconSide === 'left') {
-      className += 'group-hover:translate-x-[-200%] group-hover:opacity-0';
+      className +=
+        'motion-safe:group-hover:translate-x-[-200%] motion-safe:group-hover:opacity-0';
     }
     if (iconSide === 'right') {
       className +=
-        'absolute left-0 translate-x-[-200%] text-default opacity-0 group-hover:translate-x-0 group-hover:opacity-100';
+        'absolute left-0 translate-x-[-200%] text-default opacity-0 motion-safe:group-hover:translate-x-0 motion-safe:group-hover:opacity-100';
     }
 
     return className;
@@ -94,10 +95,11 @@ export default function Button({
 
     if (iconSide === 'left') {
       className +=
-        'absolute right-0 translate-x-[200%] text-default opacity-0 group-hover:translate-x-0 group-hover:opacity-100';
+        'absolute right-0 translate-x-[200%] text-default opacity-0 motion-safe:group-hover:translate-x-0 motion-safe:group-hover:opacity-100';
     }
     if (iconSide === 'right') {
-      className += 'group-hover:translate-x-[200%] group-hover:opacity-0';
+      className +=
+        'motion-safe:group-hover:translate-x-[200%] motion-safe:group-hover:opacity-0';
     }
 
     return className;
@@ -107,14 +109,20 @@ export default function Button({
     let className = '';
 
     if (iconSide === 'left') {
-      if (size === 'small') className += 'group-hover:-translate-x-5';
-      if (size === 'medium') className += 'group-hover:-translate-x-8';
-      if (size === 'large') className += 'group-hover:-translate-x-11';
+      if (size === 'small')
+        className += 'motion-safe:group-hover:-translate-x-5';
+      if (size === 'medium')
+        className += 'motion-safe:group-hover:-translate-x-8';
+      if (size === 'large')
+        className += 'motion-safe:group-hover:-translate-x-11';
     }
     if (iconSide === 'right') {
-      if (size === 'small') className += 'group-hover:translate-x-5';
-      if (size === 'medium') className += 'group-hover:translate-x-8';
-      if (size === 'large') className += 'group-hover:translate-x-11';
+      if (size === 'small')
+        className += 'motion-safe:group-hover:translate-x-5';
+      if (size === 'medium')
+        className += 'motion-safe:group-hover:translate-x-8';
+      if (size === 'large')
+        className += 'motion-safe:group-hover:translate-x-11';
     }
 
     if (size === 'small') className += ' text-base';
@@ -126,7 +134,7 @@ export default function Button({
 
   return (
     <Element
-      className={`${outerElementClass()} ${className} group relative isolate block w-fit cursor-pointer overflow-hidden rounded-full border border-transparent transition-all duration-500 ease-smooth focus:outline-none focus:ring focus:ring-blueberry-500 focus:ring-offset-4 active:scale-75 active:opacity-50`}
+      className={`${outerElementClass()} ${className} group relative isolate block w-fit cursor-pointer overflow-hidden rounded-full border border-transparent transition-all focus:outline-none focus:ring focus:ring-blueberry-500 focus:ring-offset-4 active:scale-75 active:opacity-50 motion-safe:duration-500 motion-safe:ease-smooth motion-reduce:hover:text-default`}
       href={href}
       target={href && isExternalUrl(href) ? '_blank' : undefined}
       type={type}
@@ -134,7 +142,7 @@ export default function Button({
       onClick={onClick}
     >
       <div
-        className={`${hoverOverlayClass()} absolute inset-0 -z-10 rounded-full bg-default transition-transform duration-500 ease-smooth group-hover:translate-x-0`}
+        className={`${hoverOverlayClass()} absolute inset-0 -z-10 rounded-full bg-default transition-all motion-safe:duration-500 motion-safe:ease-smooth motion-safe:group-hover:translate-x-0 motion-reduce:opacity-0 motion-reduce:group-hover:opacity-100`}
       />
       <div
         className={`${innerElementClass()} relative flex items-center justify-center`}
@@ -142,18 +150,18 @@ export default function Button({
         {IconComponent && iconSide !== 'none' && (
           <IconComponent
             size={iconSize()}
-            className={`${leftIconClass()} transition-all duration-500 ease-smooth`}
+            className={`${leftIconClass()} motion-safe:transition-all motion-safe:duration-500 motion-safe:ease-smooth`}
           />
         )}
         <span
-          className={`${textClass()} transition-all duration-500 ease-smooth group-hover:text-default`}
+          className={`${textClass()} motion-safe:transition-all motion-safe:duration-500 motion-safe:ease-smooth motion-safe:group-hover:text-default`}
         >
           {text}
         </span>
         {IconComponent && iconSide !== 'none' && (
           <IconComponent
             size={iconSize()}
-            className={`${rightIconClass()} transition-all duration-500 ease-smooth`}
+            className={`${rightIconClass()} motion-safe:transition-all motion-safe:duration-500 motion-safe:ease-smooth`}
           />
         )}
       </div>

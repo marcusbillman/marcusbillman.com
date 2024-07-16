@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom';
 import Button from '@/components/Button';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useTailwindConfig } from '@/util/tailwind';
 import { useMediaQuery } from 'usehooks-ts';
 import { createRef } from 'react';
@@ -16,19 +16,33 @@ interface Props {
 export default function Modal({ title, onClose, children }: Props) {
   const childrenRef = createRef<HTMLDivElement>();
   const resolvedTailwindConfig = useTailwindConfig();
+  const shouldReduceMotion = useReducedMotion();
 
   const isDesktop = useMediaQuery(
     `(min-width: ${resolvedTailwindConfig.theme.screens.lg})`,
   );
+
+  function outProperties() {
+    if (isDesktop)
+      return {
+        opacity: 0,
+        scale: shouldReduceMotion ? 1 : 0.8,
+      };
+    else
+      return {
+        opacity: shouldReduceMotion ? 0 : 1,
+        y: shouldReduceMotion ? 0 : '100%',
+      };
+  }
 
   return createPortal(
     <FocusOn>
       <div>
         <motion.div
           className="pointer-events-none fixed inset-0 z-[60] flex items-center justify-center"
-          initial={isDesktop ? { opacity: 0, scale: 0.8 } : { y: '100%' }}
-          animate={isDesktop ? { opacity: 1, scale: 1 } : { y: 0 }}
-          exit={isDesktop ? { opacity: 0, scale: 0.8 } : { y: '100%' }}
+          initial={outProperties()}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={outProperties()}
           transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
           onKeyDown={(e) => {
             if (e.key === 'Escape') onClose();

@@ -15,7 +15,7 @@ import { isExternalUrl } from '@/util';
 import { sanityImageUrl } from '@/util/sanity';
 import type { PortfolioItem } from '@/util/portfolioItem';
 import type { DribbbleShot } from '@/util/dribbble';
-import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 
 interface PortfolioItemsSectionProps {
   portfolioItems: PortfolioItem[];
@@ -29,6 +29,8 @@ export default function PortfolioItemsSection({
     sideProjects: true,
     dribbbleShots: false,
   });
+
+  const shouldReduceMotion = useReducedMotion();
 
   const filteredPortfolioItems = portfolioItems.filter((portfolioItem) => {
     if (portfolioItem.type === 'CASE_STUDY') {
@@ -84,7 +86,7 @@ export default function PortfolioItemsSection({
           ))}
           {filteredPortfolioItems.length === 0 && (
             <motion.div
-              layout
+              layout={!shouldReduceMotion}
               className="flex flex-col items-center gap-4 rounded-2xl border px-4 py-16 lg:col-span-2 lg:gap-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -207,21 +209,25 @@ function PortfolioItemCard({ portfolioItem }: PortfolioItemCardProps) {
     }
   }
 
+  const shouldReduceMotion = useReducedMotion();
+
+  const outProperties = {
+    opacity: 0,
+    y: shouldReduceMotion ? 0 : 200,
+    rotate: shouldReduceMotion ? 0 : 15,
+  };
+
   return (
     <motion.li
       key={portfolioItem.id}
-      layout
-      initial={{ opacity: 0, y: 200, rotate: 15 }}
+      layout={!shouldReduceMotion}
+      initial={outProperties}
       animate={{
         opacity: 1,
         y: 0,
         rotate: 0,
       }}
-      exit={{
-        opacity: 0,
-        y: 200,
-        rotate: 15,
-      }}
+      exit={outProperties}
       transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
       className="group"
     >
@@ -233,7 +239,7 @@ function PortfolioItemCard({ portfolioItem }: PortfolioItemCardProps) {
         <img
           src={imageUrl()}
           alt={imageAlt()}
-          className="aspect-photo w-full rounded-2xl object-cover transition-transform duration-500 ease-smooth group-focus-within:scale-105 group-focus-within:shadow-lg group-hover:rotate-3 group-hover:scale-105 group-hover:shadow-lg 2xl:rounded-4xl 2xl:group-hover:rotate-1"
+          className="aspect-photo w-full rounded-2xl object-cover transition-all group-focus-within:shadow-lg group-hover:shadow-lg motion-safe:duration-500 motion-safe:ease-smooth motion-safe:group-focus-within:scale-105 motion-safe:group-hover:rotate-3 motion-safe:group-hover:scale-105 2xl:rounded-4xl motion-safe:2xl:group-hover:rotate-1"
         />
         <div className="mt-6 flex flex-col gap-3">
           <div
