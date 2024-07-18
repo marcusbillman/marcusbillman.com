@@ -77,7 +77,7 @@ export default function PortfolioItemsSection({
         </div>
       </div>
       <ul className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-y-32">
-        <AnimatePresence mode="popLayout">
+        <AnimatePresence>
           {filteredPortfolioItems.map((portfolioItem) => (
             <PortfolioItemCard
               key={portfolioItem.id}
