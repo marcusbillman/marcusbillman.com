@@ -1,6 +1,6 @@
 import type { IllustrationProps } from './index';
 
-export default function Chat({
+export default function ChatIllustration({
   transparent = false,
   className,
 }: IllustrationProps) {

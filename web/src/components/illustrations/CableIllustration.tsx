@@ -1,6 +1,6 @@
 import type { IllustrationProps } from './index';
 
-export default function Cable({
+export default function CableIllustration({
   transparent = false,
   className,
 }: IllustrationProps) {

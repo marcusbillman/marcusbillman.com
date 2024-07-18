@@ -1,6 +1,6 @@
 import type { IllustrationProps } from './index';
 
-export default function ButtonClick({
+export default function ButtonClickIllustration({
   transparent = false,
   className,
 }: IllustrationProps) {

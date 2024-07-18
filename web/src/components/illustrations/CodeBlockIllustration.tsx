@@ -1,6 +1,6 @@
 import type { IllustrationProps } from './index';
 
-export default function CodeBlock({
+export default function CodeBlockIllustration({
   transparent = false,
   className,
 }: IllustrationProps) {

@@ -1,6 +1,6 @@
 import type { IllustrationProps } from './index';
 
-export default function Switch({
+export default function SwitchIllustration({
   transparent = false,
   className,
 }: IllustrationProps) {

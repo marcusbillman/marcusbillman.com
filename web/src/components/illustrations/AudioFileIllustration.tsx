@@ -1,6 +1,6 @@
 import type { IllustrationProps } from './index';
 
-export default function AudioFile({
+export default function AudioFileIllustration({
   transparent = false,
   className,
 }: IllustrationProps) {

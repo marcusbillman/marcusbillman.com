@@ -1,6 +1,6 @@
 import type { IllustrationProps } from './index';
 
-export default function Metronome({
+export default function MetronomeIllustration({
   transparent = false,
   className,
 }: IllustrationProps) {

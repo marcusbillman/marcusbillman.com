@@ -1,6 +1,6 @@
 import type { IllustrationProps } from './index';
 
-export default function Daw({
+export default function DawIllustration({
   transparent = false,
   className,
 }: IllustrationProps) {

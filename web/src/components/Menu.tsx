@@ -10,18 +10,18 @@ import {
 import { useEffect, useState } from 'react';
 import SocialLinks from './SocialLinks';
 import {
-  BezierCurve,
-  Browser,
-  ButtonClick,
-  Dropdown,
-  Phone,
+  BezierCurveIllustration,
+  BrowserIllustration,
+  ButtonClickIllustration,
+  DropdownIllustration,
+  PhoneIllustration,
+  ChatIllustration,
 } from './illustrations';
 import DotGrid from './DotGrid';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useMediaQuery } from 'usehooks-ts';
 import { useTailwindConfig } from '@/util/tailwind';
 import Glow from './Glow';
-import Chat from './illustrations/Chat';
 
 interface MenuProps {
   isMenuOpen: boolean;
@@ -66,10 +66,10 @@ export default function Menu({ isMenuOpen, onClose }: MenuProps) {
             <MenuLink text="Home" url="/" icon={House}>
               <div className="absolute inset-0 -z-10 bg-[url('/assets/images/hero-bg-still.jpg')] bg-cover bg-center" />
               <DotGrid dim="default" />
-              <BezierCurve className="absolute left-[30%] top-[25%]" />
-              <Phone className="absolute left-[80%] top-[-10%]" />
-              <ButtonClick className="absolute left-[-5%] top-[60%] hidden 2xl:block" />
-              <Browser className="absolute left-[60%] top-[70%]" />
+              <BezierCurveIllustration className="absolute left-[30%] top-[25%]" />
+              <PhoneIllustration className="absolute left-[80%] top-[-10%]" />
+              <ButtonClickIllustration className="absolute left-[-5%] top-[60%] hidden 2xl:block" />
+              <BrowserIllustration className="absolute left-[60%] top-[70%]" />
             </MenuLink>
             <MenuLink text="Portfolio" url="/portfolio" icon={Images}>
               <div className="absolute inset-0 -z-10 bg-subtle" />
@@ -106,7 +106,7 @@ export default function Menu({ isMenuOpen, onClose }: MenuProps) {
                 color="orange"
                 className="bottom-[-30%] left-[-30%] w-full"
               />
-              <Chat className="absolute right-0 top-[35%] lg:right-[10%]" />
+              <ChatIllustration className="absolute right-0 top-[35%] lg:right-[10%]" />
             </MenuLink>
           </ul>
           <div className="flex flex-1 flex-col gap-4 xl:flex-[1]">

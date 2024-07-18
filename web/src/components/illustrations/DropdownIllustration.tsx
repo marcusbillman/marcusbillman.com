@@ -1,6 +1,6 @@
 import type { IllustrationProps } from './index';
 
-export default function Dropdown({
+export default function DropdownIllustration({
   transparent = false,
   className,
 }: IllustrationProps) {

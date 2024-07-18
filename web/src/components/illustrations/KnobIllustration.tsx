@@ -1,6 +1,6 @@
 import type { IllustrationProps } from './index';
 
-export default function Knob({
+export default function KnobIllustration({
   transparent = false,
   className,
 }: IllustrationProps) {

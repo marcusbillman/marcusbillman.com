@@ -1,6 +1,6 @@
 import type { IllustrationProps } from './index';
 
-export default function Phone({
+export default function PianoIllustration({
   transparent = false,
   className,
 }: IllustrationProps) {

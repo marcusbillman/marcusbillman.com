@@ -9,7 +9,11 @@ import type React from 'react';
 import type { Icon as PhosphorIcon } from '@phosphor-icons/react/dist/lib/types';
 import type { CustomIcon } from '@/components/icons';
 import DotGrid from '@/components/DotGrid';
-import { ButtonClick, CodeBlock, Phone } from '@/components/illustrations';
+import {
+  ButtonClickIllustration,
+  CodeBlockIllustration,
+  PhoneIllustration,
+} from '@/components/illustrations';
 
 export default function MoreThingsSection() {
   return (
@@ -37,9 +41,9 @@ export default function MoreThingsSection() {
             className="absolute bottom-[0%] left-[35%] h-48 rotate-[30deg] rounded-2xl shadow-xl"
             aria-hidden
           />
-          <ButtonClick className="absolute left-[90%] top-[0%] rotate-[30deg] drop-shadow-xl" />
-          <Phone className="absolute left-[80%] top-[15%] rotate-[30deg] drop-shadow-xl" />
-          <CodeBlock className="absolute left-[90%] top-[60%] rotate-[30deg] drop-shadow-xl" />
+          <ButtonClickIllustration className="absolute left-[90%] top-[0%] rotate-[30deg] drop-shadow-xl" />
+          <PhoneIllustration className="absolute left-[80%] top-[15%] rotate-[30deg] drop-shadow-xl" />
+          <CodeBlockIllustration className="absolute left-[90%] top-[60%] rotate-[30deg] drop-shadow-xl" />
           <DotGrid />
         </BentoCard>
         <BentoCard

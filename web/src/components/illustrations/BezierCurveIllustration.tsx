@@ -1,6 +1,6 @@
 import type { IllustrationProps } from './index';
 
-export default function BezierCurve({
+export default function BezierCurveIllustration({
   transparent = false,
   className,
 }: IllustrationProps) {

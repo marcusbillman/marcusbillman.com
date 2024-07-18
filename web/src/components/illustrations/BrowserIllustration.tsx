@@ -1,6 +1,6 @@
 import type { IllustrationProps } from './index';
 
-export default function Browser({
+export default function BrowserIllustration({
   transparent = false,
   className,
 }: IllustrationProps) {

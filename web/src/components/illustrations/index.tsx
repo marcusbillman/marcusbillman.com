@@ -1,16 +1,17 @@
-import AudioFile from './AudioFile';
-import BezierCurve from './BezierCurve';
-import Browser from './Browser';
-import ButtonClick from './ButtonClick';
-import Cable from './Cable';
-import CodeBlock from './CodeBlock';
-import Daw from './Daw';
-import Dropdown from './Dropdown';
-import Knob from './Knob';
-import Metronome from './Metronome';
-import Phone from './Phone';
-import Piano from './Piano';
-import Switch from './Switch';
+import AudioFileIllustration from './AudioFileIllustration';
+import BezierCurveIllustration from './BezierCurveIllustration';
+import BrowserIllustration from './BrowserIllustration';
+import ButtonClickIllustration from './ButtonClickIllustration';
+import CableIllustration from './CableIllustration';
+import ChatIllustration from './ChatIllustration';
+import CodeBlockIllustration from './CodeBlockIllustration';
+import DawIllustration from './DawIllustration';
+import DropdownIllustration from './DropdownIllustration';
+import KnobIllustration from './KnobIllustration';
+import MetronomeIllustration from './MetronomeIllustration';
+import PhoneIllustration from './PhoneIllustration';
+import PianoIllustration from './PianoIllustration';
+import SwitchIllustration from './SwitchIllustration';
 
 interface IllustrationProps {
   transparent?: boolean;
@@ -20,18 +21,19 @@ interface IllustrationProps {
 type Illustration = React.FC<IllustrationProps>;
 
 export {
-  AudioFile,
-  BezierCurve,
-  Browser,
-  ButtonClick,
-  Cable,
-  CodeBlock,
-  Daw,
-  Dropdown,
-  Knob,
-  Metronome,
-  Phone,
-  Piano,
-  Switch,
+  AudioFileIllustration,
+  BezierCurveIllustration,
+  BrowserIllustration,
+  ButtonClickIllustration,
+  CableIllustration,
+  ChatIllustration,
+  CodeBlockIllustration,
+  DawIllustration,
+  DropdownIllustration,
+  KnobIllustration,
+  MetronomeIllustration,
+  PhoneIllustration,
+  PianoIllustration,
+  SwitchIllustration,
 };
 export type { Illustration, IllustrationProps };
