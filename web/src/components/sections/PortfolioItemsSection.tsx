@@ -328,7 +328,10 @@ function FilterOption({
     >
       <div className="flex flex-grow items-center gap-2">
         <IconComponent size={24} weight={isEnabled ? 'fill' : 'regular'} />
-        <label htmlFor={id} className="text-xl 2xl:text-2xl">
+        <label
+          htmlFor={id}
+          className="pointer-events-none text-xl 2xl:text-2xl"
+        >
           {label}
         </label>
       </div>
