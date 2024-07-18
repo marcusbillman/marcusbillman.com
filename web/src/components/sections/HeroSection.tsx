@@ -147,6 +147,7 @@ export default function HeroSection() {
           muted
           loop
           className="h-full w-full object-cover motion-reduce:hidden"
+          aria-hidden
         ></video>
       </div>
     </header>
