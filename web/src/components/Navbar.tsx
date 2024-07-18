@@ -20,7 +20,7 @@ export default function Navbar({ isMenuOpen, onClickMenuButton }: NavbarProps) {
   const shouldReduceMotion = useReducedMotion();
 
   const outProperties = {
-    y: shouldReduceMotion ? 0 : '-100',
+    y: shouldReduceMotion ? 0 : -100,
     opacity: shouldReduceMotion ? 0 : 1,
   };
 
