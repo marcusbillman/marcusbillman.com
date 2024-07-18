@@ -319,6 +319,8 @@ function FilterOption({
 
   const IconComponent = icon;
 
+  const id = `filter-${label.toLowerCase().replace(' ', '-')}`;
+
   return (
     <div
       className={`${isEnabled ? 'font-bold text-default' : 'text-subtle'} flex flex-grow cursor-pointer items-center gap-4 transition-all active:scale-90 active:opacity-50 lg:p-6`}
@@ -326,9 +328,11 @@ function FilterOption({
     >
       <div className="flex flex-grow items-center gap-2">
         <IconComponent size={24} weight={isEnabled ? 'fill' : 'regular'} />
-        <span className="text-xl 2xl:text-2xl">{label}</span>
+        <label htmlFor={id} className="text-xl 2xl:text-2xl">
+          {label}
+        </label>
       </div>
-      <Switch size="small" checked={isEnabled} />
+      <Switch id={id} size="small" checked={isEnabled} />
     </div>
   );
 }

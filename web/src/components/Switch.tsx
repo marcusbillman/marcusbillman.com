@@ -6,6 +6,7 @@ interface Props {
   /** The controlled state of the switch. */
   checked?: boolean;
   size?: 'small' | 'medium';
+  id?: string;
   onChange?: (isChecked?: boolean) => void;
 }
 
@@ -13,6 +14,7 @@ export default function Switch({
   defaultChecked = false,
   checked,
   size = 'medium',
+  id,
   onChange,
 }: Props) {
   const [isChecked, setIsChecked] = useState(defaultChecked);
@@ -41,6 +43,7 @@ export default function Switch({
       <input
         type="checkbox"
         checked={isChecked}
+        id={id}
         onChange={handleToggle}
         className="absolute inset-0 z-10 cursor-pointer opacity-0"
       />
