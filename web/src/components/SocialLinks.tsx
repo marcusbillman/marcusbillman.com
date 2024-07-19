@@ -3,7 +3,9 @@ import { ArrowUpRight, Copy } from '@phosphor-icons/react/dist/ssr';
 import CopyToClipboard from '@/components/CopyToClipboard';
 
 interface Props {
+  /** Make the component always look like dark theme instead of using dynamic colour tokens */
   forceDark?: boolean;
+  /** Hide link labels on mobile to make the component more compact */
   compactOnMobile?: boolean;
 }
 
@@ -68,7 +70,9 @@ export default function SocialLinks({
 }
 
 interface SocialLinkProps {
+  /** Main link text, e.g. 'SoundCloud' */
   primaryText: string;
+  /** Descriptive label text, e.g. 'Music' */
   secondaryText: string;
   url: string;
   forceDark: boolean;

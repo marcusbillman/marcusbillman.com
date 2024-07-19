@@ -2,6 +2,9 @@ interface Props {
   className?: string;
 }
 
+/**
+ * Animated, horizontal, sine-like wave.
+ */
 export default function WaveLine({ className }: Props) {
   return (
     <div

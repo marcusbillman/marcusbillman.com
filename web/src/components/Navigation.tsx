@@ -7,6 +7,9 @@ import Menu from '@/components/Menu';
 import Navbar from '@/components/Navbar';
 import { useTailwindConfig } from '@/util/tailwind';
 
+/**
+ * Contains and controls the navbar and menu components.
+ */
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const resolvedTailwindConfig = useTailwindConfig();

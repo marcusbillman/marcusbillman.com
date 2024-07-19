@@ -42,6 +42,7 @@ export default function Navbar({ isMenuOpen, onClickMenuButton }: NavbarProps) {
         <span className="font-serif italic">Billman</span>
       </a>
       <motion.div
+        // Animation for hiding or showing navbar links as the menu is opened or closed
         layout={shouldReduceMotion ? false : 'position'}
         className={`${isMenuOpen ? '' : 'shadow-lg lg:pl-6 dark:border'} pointer-events-auto flex items-center gap-6 rounded-full bg-default lg:p-2`}
       >

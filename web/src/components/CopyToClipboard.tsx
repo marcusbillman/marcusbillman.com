@@ -3,10 +3,14 @@ import toast from 'react-hot-toast';
 import { useCopyToClipboard } from 'usehooks-ts';
 
 interface Props {
+  /** The text to copy to the clipboard. */
   text: string;
   children: React.ReactNode;
 }
 
+/**
+ * Wrapper component that copies the `text` prop to the clipboard when clicked.
+ */
 export default function CopyToClipboard({ text, children }: Props) {
   const [_copiedText, copy] = useCopyToClipboard();
 
