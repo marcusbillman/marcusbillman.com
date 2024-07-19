@@ -19,20 +19,86 @@ export default function CodeBlockIllustration({
         width="197"
         height="92"
         rx="6.5"
-        stroke="#4265E3"
+        stroke="var(--illustration-primary)"
         strokeWidth="3"
       />
-      <rect x="16" y="16" width="40" height="3" fill="#4265E3" />
-      <rect x="16" y="76" width="20" height="3" fill="#4265E3" />
-      <rect x="32" y="31" width="60" height="3" fill="#3551B6" />
-      <rect x="32" y="46" width="30" height="3" fill="#3551B6" />
-      <rect x="32" y="61" width="40" height="3" fill="#3551B6" />
-      <rect x="76" y="61" width="50" height="3" fill="#3551B6" />
-      <rect x="66" y="46" width="30" height="3" fill="#4265E3" />
-      <rect x="130" y="61" width="50" height="3" fill="#4265E3" />
-      <rect x="100" y="46" width="50" height="3" fill="#4265E3" />
-      <rect x="96" y="31" width="46" height="3" fill="#4265E3" />
-      <rect x="146" y="31" width="30" height="3" fill="#4265E3" />
+      <rect
+        x="16"
+        y="16"
+        width="40"
+        height="3"
+        fill="var(--illustration-primary)"
+      />
+      <rect
+        x="16"
+        y="76"
+        width="20"
+        height="3"
+        fill="var(--illustration-primary)"
+      />
+      <rect
+        x="32"
+        y="31"
+        width="60"
+        height="3"
+        fill="var(--illustration-secondary)"
+      />
+      <rect
+        x="32"
+        y="46"
+        width="30"
+        height="3"
+        fill="var(--illustration-secondary)"
+      />
+      <rect
+        x="32"
+        y="61"
+        width="40"
+        height="3"
+        fill="var(--illustration-secondary)"
+      />
+      <rect
+        x="76"
+        y="61"
+        width="50"
+        height="3"
+        fill="var(--illustration-secondary)"
+      />
+      <rect
+        x="66"
+        y="46"
+        width="30"
+        height="3"
+        fill="var(--illustration-primary)"
+      />
+      <rect
+        x="130"
+        y="61"
+        width="50"
+        height="3"
+        fill="var(--illustration-primary)"
+      />
+      <rect
+        x="100"
+        y="46"
+        width="50"
+        height="3"
+        fill="var(--illustration-primary)"
+      />
+      <rect
+        x="96"
+        y="31"
+        width="46"
+        height="3"
+        fill="var(--illustration-primary)"
+      />
+      <rect
+        x="146"
+        y="31"
+        width="30"
+        height="3"
+        fill="var(--illustration-primary)"
+      />
     </svg>
   ) : (
     <svg
@@ -49,21 +115,87 @@ export default function CodeBlockIllustration({
         width="197"
         height="92"
         rx="6.5"
-        fill="white"
-        stroke="#4265E3"
+        fill="var(--bg-default)"
+        stroke="var(--illustration-primary)"
         strokeWidth="3"
       />
-      <rect x="16" y="16" width="40" height="3" fill="#4265E3" />
-      <rect x="16" y="76" width="20" height="3" fill="#4265E3" />
-      <rect x="32" y="31" width="60" height="3" fill="#3551B6" />
-      <rect x="32" y="46" width="30" height="3" fill="#3551B6" />
-      <rect x="32" y="61" width="40" height="3" fill="#3551B6" />
-      <rect x="76" y="61" width="50" height="3" fill="#3551B6" />
-      <rect x="66" y="46" width="30" height="3" fill="#4265E3" />
-      <rect x="130" y="61" width="50" height="3" fill="#4265E3" />
-      <rect x="100" y="46" width="50" height="3" fill="#4265E3" />
-      <rect x="96" y="31" width="46" height="3" fill="#4265E3" />
-      <rect x="146" y="31" width="30" height="3" fill="#4265E3" />
+      <rect
+        x="16"
+        y="16"
+        width="40"
+        height="3"
+        fill="var(--illustration-primary)"
+      />
+      <rect
+        x="16"
+        y="76"
+        width="20"
+        height="3"
+        fill="var(--illustration-primary)"
+      />
+      <rect
+        x="32"
+        y="31"
+        width="60"
+        height="3"
+        fill="var(--illustration-secondary)"
+      />
+      <rect
+        x="32"
+        y="46"
+        width="30"
+        height="3"
+        fill="var(--illustration-secondary)"
+      />
+      <rect
+        x="32"
+        y="61"
+        width="40"
+        height="3"
+        fill="var(--illustration-secondary)"
+      />
+      <rect
+        x="76"
+        y="61"
+        width="50"
+        height="3"
+        fill="var(--illustration-secondary)"
+      />
+      <rect
+        x="66"
+        y="46"
+        width="30"
+        height="3"
+        fill="var(--illustration-primary)"
+      />
+      <rect
+        x="130"
+        y="61"
+        width="50"
+        height="3"
+        fill="var(--illustration-primary)"
+      />
+      <rect
+        x="100"
+        y="46"
+        width="50"
+        height="3"
+        fill="var(--illustration-primary)"
+      />
+      <rect
+        x="96"
+        y="31"
+        width="46"
+        height="3"
+        fill="var(--illustration-primary)"
+      />
+      <rect
+        x="146"
+        y="31"
+        width="30"
+        height="3"
+        fill="var(--illustration-primary)"
+      />
     </svg>
   );
 }

@@ -17,14 +17,14 @@ export default function BezierCurveIllustration({
         fillRule="evenodd"
         clipRule="evenodd"
         d="M45.3114 32.0837L69.0566 9.95189L67.0112 7.75732L43.044 30.096C43.9201 30.6103 44.6896 31.2866 45.3114 32.0837ZM33.6525 42.9504C32.9027 42.2761 32.281 41.4621 31.8285 40.5495L7.89801 62.8539L9.94346 65.0485L33.6525 42.9504Z"
-        fill="#3551B6"
+        fill="var(--illustration-secondary)"
       />
       <rect
         x="68.5"
         y="1.5"
         width="7"
         height="7"
-        stroke="#3551B6"
+        stroke="var(--illustration-secondary)"
         strokeWidth="3"
       />
       <rect
@@ -32,12 +32,12 @@ export default function BezierCurveIllustration({
         y="64.5"
         width="7"
         height="7"
-        stroke="#3551B6"
+        stroke="var(--illustration-secondary)"
         strokeWidth="3"
       />
       <path
         d="M52.8388 48.8389L59.5564 73.2341C59.5564 73.2341 64.5061 73.2341 68.2184 75.1786C71.9307 77.1232 74.052 78.5374 74.052 78.5374L70.8701 81.7194V81.7194C73.6037 84.453 78.0359 84.453 80.7696 81.7194L83.2444 79.2445L85.7193 76.7696C88.453 74.036 88.453 69.6038 85.7193 66.8701V66.8701L82.5373 70.0521C82.5373 70.0521 81.1231 67.9308 79.3553 64.0417C77.5876 60.1526 77.234 55.5564 77.234 55.5564L52.8388 48.8389ZM52.8388 48.8389L64.5061 60.5062"
-        stroke="#3551B6"
+        stroke="var(--illustration-secondary)"
         strokeWidth="3"
       />
       <circle
@@ -45,16 +45,22 @@ export default function BezierCurveIllustration({
         cy="63.3345"
         r="3"
         transform="rotate(-45 67.3345 63.3345)"
-        stroke="#3551B6"
+        stroke="var(--illustration-secondary)"
         strokeWidth="3"
       />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M46.013 33.1474C55.7951 25.9576 67.4566 21.201 78.45 18.2615C91.804 14.6907 103.992 13.8484 110.349 14.4922L110.651 11.5074C103.842 10.8179 91.2793 11.7256 77.675 15.3633C66.4101 18.3754 54.3073 23.2916 44.0965 30.8331C44.8719 31.4746 45.5243 32.2596 46.013 33.1474ZM34.5706 43.6628C33.7304 43.1031 33.0021 42.3888 32.4263 41.5604C24.1332 50.7893 18.0464 61.2985 13.8661 71.2963C8.81043 83.3877 6.5 94.8365 6.5 102.5H9.5C9.5 95.3298 11.6896 84.2787 16.6339 72.4536C20.696 62.7385 26.5881 52.5722 34.5706 43.6628Z"
-        fill="#4265E3"
+        fill="var(--illustration-primary)"
       />
-      <circle cx="39" cy="37" r="6.5" stroke="#3551B6" strokeWidth="3" />
+      <circle
+        cx="39"
+        cy="37"
+        r="6.5"
+        stroke="var(--illustration-secondary)"
+        strokeWidth="3"
+      />
     </svg>
   ) : (
     <svg
@@ -69,15 +75,15 @@ export default function BezierCurveIllustration({
         fillRule="evenodd"
         clipRule="evenodd"
         d="M45.8114 32.0837L69.5566 9.95189L67.5112 7.75732L43.544 30.096C44.4201 30.6103 45.1896 31.2866 45.8114 32.0837ZM34.1525 42.9504C33.4027 42.2761 32.781 41.4621 32.3285 40.5495L8.39801 62.8539L10.4435 65.0485L34.1525 42.9504Z"
-        fill="#3551B6"
+        fill="var(--illustration-secondary)"
       />
       <rect
         x="69"
         y="1.5"
         width="7"
         height="7"
-        fill="white"
-        stroke="#3551B6"
+        fill="var(--bg-default)"
+        stroke="var(--illustration-secondary)"
         strokeWidth="3"
       />
       <rect
@@ -85,17 +91,17 @@ export default function BezierCurveIllustration({
         y="64.5"
         width="7"
         height="7"
-        fill="white"
-        stroke="#3551B6"
+        fill="var(--bg-default)"
+        stroke="var(--illustration-secondary)"
         strokeWidth="3"
       />
       <path
         d="M53.3388 48.8389L60.0564 73.2341C60.0564 73.2341 65.0061 73.2341 68.7184 75.1786C72.4307 77.1232 74.552 78.5374 74.552 78.5374L71.3701 81.7194C74.1037 84.453 78.5359 84.453 81.2696 81.7194L83.7444 79.2445L86.2193 76.7696C88.953 74.036 88.953 69.6038 86.2193 66.8701L83.0373 70.0521C83.0373 70.0521 81.6231 67.9308 79.8553 64.0417C78.0876 60.1526 77.734 55.5564 77.734 55.5564L53.3388 48.8389Z"
-        fill="white"
+        fill="var(--bg-default)"
       />
       <path
         d="M53.3388 48.8389L60.0564 73.2341C60.0564 73.2341 65.0061 73.2341 68.7184 75.1786C72.4307 77.1232 74.552 78.5374 74.552 78.5374L71.3701 81.7194V81.7194C74.1037 84.453 78.5359 84.453 81.2696 81.7194L83.7444 79.2445L86.2193 76.7696C88.953 74.036 88.953 69.6038 86.2193 66.8701V66.8701L83.0373 70.0521C83.0373 70.0521 81.6231 67.9308 79.8553 64.0417C78.0876 60.1526 77.734 55.5564 77.734 55.5564L53.3388 48.8389ZM53.3388 48.8389L65.0061 60.5062"
-        stroke="#3551B6"
+        stroke="var(--illustration-secondary)"
         strokeWidth="3"
       />
       <circle
@@ -103,21 +109,21 @@ export default function BezierCurveIllustration({
         cy="63.3345"
         r="3"
         transform="rotate(-45 67.8345 63.3345)"
-        stroke="#3551B6"
+        stroke="var(--illustration-secondary)"
         strokeWidth="3"
       />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M46.513 33.1474C56.2951 25.9576 67.9566 21.201 78.95 18.2615C92.304 14.6907 104.492 13.8484 110.849 14.4922L111.151 11.5074C104.342 10.8179 91.7793 11.7256 78.175 15.3633C66.9101 18.3754 54.8073 23.2916 44.5965 30.8331C45.3719 31.4746 46.0243 32.2596 46.513 33.1474ZM35.0706 43.6628C34.2304 43.1031 33.5021 42.3888 32.9263 41.5604C24.6332 50.7893 18.5464 61.2985 14.3661 71.2963C9.31043 83.3877 7 94.8365 7 102.5H10C10 95.3298 12.1896 84.2787 17.1339 72.4536C21.196 62.7385 27.0881 52.5722 35.0706 43.6628Z"
-        fill="#4265E3"
+        fill="var(--illustration-primary)"
       />
       <circle
         cx="39.5"
         cy="37"
         r="6.5"
-        fill="white"
-        stroke="#3551B6"
+        fill="var(--bg-default)"
+        stroke="var(--illustration-secondary)"
         strokeWidth="3"
       />
     </svg>
