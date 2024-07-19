@@ -1,6 +1,7 @@
 import { Link, MusicNotes, Shapes } from '@phosphor-icons/react/dist/ssr';
+
+import DotGrid from '@/components/DotGrid';
 import SocialLinks from '@/components/SocialLinks';
-import DotGrid from '../DotGrid';
 
 export default function FooterSection() {
   return (

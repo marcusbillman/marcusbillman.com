@@ -1,14 +1,15 @@
+import { useState } from 'react';
 import {
   Copy,
   EnvelopeSimple,
   PaperPlaneTilt,
 } from '@phosphor-icons/react/dist/ssr';
-import Button from '@/components/Button';
-import DotGrid from '@/components/DotGrid';
-import CopyToClipboard from '@/components/CopyToClipboard';
 import { AnimatePresence } from 'framer-motion';
+
+import Button from '@/components/Button';
 import ContactFormModal from '@/components/ContactFormModal';
-import { useState } from 'react';
+import CopyToClipboard from '@/components/CopyToClipboard';
+import DotGrid from '@/components/DotGrid';
 import Glow from '@/components/Glow';
 
 export default function ContactSection() {

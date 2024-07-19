@@ -1,8 +1,8 @@
-import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
-import sanity from '@sanity/astro';
 import vercel from '@astrojs/vercel/static';
+import sanity from '@sanity/astro';
+import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   integrations: [

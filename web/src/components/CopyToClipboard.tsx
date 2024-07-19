@@ -1,6 +1,6 @@
-import { useCopyToClipboard } from 'usehooks-ts';
-import toast from 'react-hot-toast';
 import confetti from 'canvas-confetti';
+import toast from 'react-hot-toast';
+import { useCopyToClipboard } from 'usehooks-ts';
 
 interface Props {
   text: string;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default function CopyToClipboard({ text, children }: Props) {
-  const [copiedText, copy] = useCopyToClipboard();
+  const [_copiedText, copy] = useCopyToClipboard();
 
   function handleClick(event: React.MouseEvent, text: string) {
     copy(text)

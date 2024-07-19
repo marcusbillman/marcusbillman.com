@@ -36,4 +36,5 @@ export {
   PianoIllustration,
   SwitchIllustration,
 };
+
 export type { Illustration, IllustrationProps };

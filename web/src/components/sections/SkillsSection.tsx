@@ -4,6 +4,7 @@ import {
   Heart,
   Lightning,
 } from '@phosphor-icons/react/dist/ssr';
+
 import DotGrid from '@/components/DotGrid';
 import Glow from '@/components/Glow';
 

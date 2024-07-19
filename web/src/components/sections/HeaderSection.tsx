@@ -1,8 +1,9 @@
-import DotGrid from '@/components/DotGrid';
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { randomInt } from '@/util';
+
+import DotGrid from '@/components/DotGrid';
 import Glow from '@/components/Glow';
+import { randomInt } from '@/util';
 
 interface HeaderSectionProps {
   title: string;

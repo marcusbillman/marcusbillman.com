@@ -1,4 +1,5 @@
 import { ArrowUpRight, Copy } from '@phosphor-icons/react/dist/ssr';
+
 import CopyToClipboard from '@/components/CopyToClipboard';
 
 interface Props {

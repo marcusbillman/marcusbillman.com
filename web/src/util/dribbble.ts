@@ -41,9 +41,9 @@ type DribbbleShotRaw = {
   width: number;
   published_at: string;
   updated_at: string;
-  attachments: any[];
-  projects: any[];
-  video: any;
+  attachments: unknown[];
+  projects: unknown[];
+  video: unknown;
 };
 
 export type DribbbleShot = {

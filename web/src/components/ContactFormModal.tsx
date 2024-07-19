@@ -1,12 +1,13 @@
+import { useState } from 'react';
+import { useForm } from '@formspree/react';
 import { CircleNotch, PaperPlaneTilt } from '@phosphor-icons/react/dist/ssr';
+import confetti from 'canvas-confetti';
+import { motion, useAnimate } from 'framer-motion';
+import { AutoFocusInside } from 'react-focus-on';
+import toast from 'react-hot-toast';
+
 import Button from '@/components/Button';
 import Modal from '@/components/Modal';
-import { useState } from 'react';
-import { motion, useAnimate } from 'framer-motion';
-import toast from 'react-hot-toast';
-import { useForm } from '@formspree/react';
-import confetti from 'canvas-confetti';
-import { AutoFocusInside } from 'react-focus-on';
 
 interface Props {
   onClose: () => void;

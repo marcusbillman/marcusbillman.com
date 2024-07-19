@@ -1,4 +1,4 @@
-import {BlockContentIcon} from '@sanity/icons'
+import { BlockContentIcon } from '@sanity/icons';
 
 export default {
   title: 'Text block',
@@ -21,11 +21,11 @@ export default {
     select: {
       title: 'title',
     },
-    prepare({title}: {title: string}) {
+    prepare({ title }: { title: string }) {
       return {
         title: title,
         subtitle: 'Text block',
-      }
+      };
     },
   },
-}
+};

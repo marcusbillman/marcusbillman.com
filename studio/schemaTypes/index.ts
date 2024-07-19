@@ -1,8 +1,15 @@
-import project from './project'
-import textBlock from './caseStudyBlocks/textBlock'
-import galleryBlock from './caseStudyBlocks/galleryBlock'
-import metadataBlock from './caseStudyBlocks/metadataBlock'
-import richText from './richText'
-import imageWithAlt from './imageWithAlt'
+import galleryBlock from './caseStudyBlocks/galleryBlock';
+import metadataBlock from './caseStudyBlocks/metadataBlock';
+import textBlock from './caseStudyBlocks/textBlock';
+import imageWithAlt from './imageWithAlt';
+import project from './project';
+import richText from './richText';
 
-export const schemaTypes = [project, textBlock, galleryBlock, metadataBlock, richText, imageWithAlt]
+export const schemaTypes = [
+  galleryBlock,
+  imageWithAlt,
+  metadataBlock,
+  project,
+  richText,
+  textBlock,
+];

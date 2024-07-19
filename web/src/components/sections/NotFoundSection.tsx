@@ -1,6 +1,7 @@
+import { House } from '@phosphor-icons/react/dist/ssr';
+
 import Button from '@/components/Button';
 import DotGrid from '@/components/DotGrid';
-import { House } from '@phosphor-icons/react/dist/ssr';
 
 export default function FullContactSection() {
   return (

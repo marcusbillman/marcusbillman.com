@@ -1,4 +1,4 @@
-import {ImageIcon} from '@sanity/icons'
+import { ImageIcon } from '@sanity/icons';
 
 export default {
   title: 'Gallery block',
@@ -29,11 +29,11 @@ export default {
     select: {
       title: 'title',
     },
-    prepare({title}: {title: string}) {
+    prepare({ title }: { title: string }) {
       return {
         title: title,
         subtitle: 'Gallery block',
-      }
+      };
     },
   },
-}
+};

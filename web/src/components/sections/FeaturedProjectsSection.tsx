@@ -1,6 +1,7 @@
+import type { Project } from '@studio/sanity.types';
+
 import Button from '@/components/Button';
 import { sanityImageUrl } from '@/util/sanity';
-import type { Project } from '@studio/sanity.types';
 
 interface FeaturedProjectsSectionProps {
   projects: Project[];
@@ -46,11 +47,13 @@ function FeaturedProject({ project }: FeaturedProjectProps) {
         </div>
         <Button text="View case" href={'/portfolio/' + project.slug?.current} />
       </div>
-      <img
-        src={sanityImageUrl(project.coverImage?.asset!).width(1200).url()}
-        alt={project.coverImage?.alt || project.name}
-        className="aspect-photo rounded-2xl object-cover lg:w-1/2"
-      ></img>
+      {project.coverImage?.asset && (
+        <img
+          src={sanityImageUrl(project.coverImage?.asset).width(1200).url()}
+          alt={project.coverImage?.alt || project.name}
+          className="aspect-photo rounded-2xl object-cover lg:w-1/2"
+        ></img>
+      )}
     </li>
   );
 }

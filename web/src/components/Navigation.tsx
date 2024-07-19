@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import Navbar from '@/components/Navbar';
-import Menu from '@/components/Menu';
 import { AnimatePresence } from 'framer-motion';
-import { useTailwindConfig } from '@/util/tailwind';
-import { useMediaQuery } from 'usehooks-ts';
 import { FocusOn } from 'react-focus-on';
+import { useMediaQuery } from 'usehooks-ts';
+
+import Menu from '@/components/Menu';
+import Navbar from '@/components/Navbar';
+import { useTailwindConfig } from '@/util/tailwind';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,12 +31,7 @@ export default function Navigation() {
           )}
         </AnimatePresence>
         <AnimatePresence>
-          {isMenuOpen && (
-            <Menu
-              isMenuOpen={isMenuOpen}
-              onClose={() => setIsMenuOpen(!isMenuOpen)}
-            />
-          )}
+          {isMenuOpen && <Menu onClose={() => setIsMenuOpen(!isMenuOpen)} />}
         </AnimatePresence>
       </nav>
     </FocusOn>

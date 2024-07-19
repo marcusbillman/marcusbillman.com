@@ -1,16 +1,17 @@
-import {
-  PaperPlaneTilt,
-  EnvelopeSimple,
-  Copy,
-} from '@phosphor-icons/react/dist/ssr';
-import CopyToClipboard from '@/components/CopyToClipboard';
-import Button from '@/components/Button';
-import DotGrid from '@/components/DotGrid';
-import ContactFormModal from '@/components/ContactFormModal';
-import { LinkedIn } from '@/components/icons';
 import { useState } from 'react';
+import {
+  Copy,
+  EnvelopeSimple,
+  PaperPlaneTilt,
+} from '@phosphor-icons/react/dist/ssr';
 import { AnimatePresence } from 'framer-motion';
+
+import Button from '@/components/Button';
+import ContactFormModal from '@/components/ContactFormModal';
+import CopyToClipboard from '@/components/CopyToClipboard';
+import DotGrid from '@/components/DotGrid';
 import Glow from '@/components/Glow';
+import { LinkedIn } from '@/components/icons';
 
 export default function FullContactSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);

@@ -1,11 +1,12 @@
-import { createPortal } from 'react-dom';
-import Button from '@/components/Button';
-import { motion, useReducedMotion } from 'framer-motion';
-import { useTailwindConfig } from '@/util/tailwind';
-import { useMediaQuery } from 'usehooks-ts';
 import { createRef } from 'react';
 import { X } from '@phosphor-icons/react/dist/ssr';
+import { motion, useReducedMotion } from 'framer-motion';
+import { createPortal } from 'react-dom';
 import { FocusOn } from 'react-focus-on';
+import { useMediaQuery } from 'usehooks-ts';
+
+import Button from '@/components/Button';
+import { useTailwindConfig } from '@/util/tailwind';
 
 interface Props {
   title: string;

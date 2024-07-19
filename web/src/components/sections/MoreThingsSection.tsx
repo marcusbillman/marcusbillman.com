@@ -1,19 +1,21 @@
+import type { Icon as PhosphorIcon } from '@phosphor-icons/react/dist/lib/types';
+import type React from 'react';
+import type { CustomIcon } from '@/components/icons';
+
 import {
   ArrowRight,
   ArrowUpRight,
   Flask,
 } from '@phosphor-icons/react/dist/ssr';
-import { Dribbble, GitHub, LinkedIn, SoundCloud } from '@/components/icons';
-import { isExternalUrl } from '@/util';
-import type React from 'react';
-import type { Icon as PhosphorIcon } from '@phosphor-icons/react/dist/lib/types';
-import type { CustomIcon } from '@/components/icons';
+
 import DotGrid from '@/components/DotGrid';
+import { Dribbble, GitHub, LinkedIn, SoundCloud } from '@/components/icons';
 import {
   ButtonClickIllustration,
   CodeBlockIllustration,
   PhoneIllustration,
 } from '@/components/illustrations';
+import { isExternalUrl } from '@/util';
 
 export default function MoreThingsSection() {
   return (

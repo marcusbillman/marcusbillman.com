@@ -1,11 +1,11 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import HeroSection from '@/components/sections/HeroSection';
 import BioSection from '@/components/sections/BioSection';
-import FeaturedProjectsSection from '@/components/sections/FeaturedProjectsSection';
-import MoreThingsSection from '@/components/sections/MoreThingsSection';
 import ContactSection from '@/components/sections/ContactSection';
+import FeaturedProjectsSection from '@/components/sections/FeaturedProjectsSection';
+import HeroSection from '@/components/sections/HeroSection';
+import MoreThingsSection from '@/components/sections/MoreThingsSection';
 import SeparatorSection from '@/components/sections/SeparatorSection';
+import Layout from '@/layouts/Layout.astro';
 import { fetchFeaturedProjects } from '@/util/sanity';
 
 const featuredProjects = await fetchFeaturedProjects();

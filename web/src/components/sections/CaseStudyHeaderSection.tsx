@@ -1,8 +1,10 @@
 import type { Project } from '@studio/sanity.types';
+
+import { ArrowLeft } from '@phosphor-icons/react/dist/ssr';
+
+import Button from '@/components/Button';
 import DotGrid from '@/components/DotGrid';
 import Glow from '@/components/Glow';
-import Button from '@/components/Button';
-import { ArrowLeft } from '@phosphor-icons/react/dist/ssr';
 
 interface Props {
   project: Project;

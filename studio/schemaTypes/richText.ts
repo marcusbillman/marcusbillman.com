@@ -8,18 +8,18 @@ export default {
       title: 'Block',
       type: 'block',
       styles: [
-        {title: 'Normal', value: 'normal'},
-        {title: 'Heading 1', value: 'h1'},
-        {title: 'Heading 2', value: 'h2'},
+        { title: 'Normal', value: 'normal' },
+        { title: 'Heading 1', value: 'h1' },
+        { title: 'Heading 2', value: 'h2' },
       ],
       lists: [
-        {title: 'Bullet', value: 'bullet'},
-        {title: 'Number', value: 'number'},
+        { title: 'Bullet', value: 'bullet' },
+        { title: 'Number', value: 'number' },
       ],
       marks: {
         decorators: [
-          {title: 'Bold', value: 'strong'},
-          {title: 'Italic', value: 'em'},
+          { title: 'Bold', value: 'strong' },
+          { title: 'Italic', value: 'em' },
         ],
         annotations: [
           {
@@ -41,4 +41,4 @@ export default {
       type: 'imageWithAlt',
     },
   ],
-}
+};

@@ -1,3 +1,4 @@
+import DotGrid from '@/components/DotGrid';
 import {
   AudioFileIllustration,
   BezierCurveIllustration,
@@ -14,7 +15,6 @@ import {
   SwitchIllustration,
 } from '@/components/illustrations';
 import WaveLine from '@/components/WaveLine.tsx';
-import DotGrid from '@/components/DotGrid';
 
 export default function HeroSection() {
   return (

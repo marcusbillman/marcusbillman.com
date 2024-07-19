@@ -1,19 +1,19 @@
-import { sanityImageUrl } from '@/util/sanity';
-import { ArrowLeft } from '@phosphor-icons/react/dist/ssr';
-import {
-  PortableText,
-  type PortableTextComponentProps,
-} from '@portabletext/react';
+import type { PortableTextComponentProps } from '@portabletext/react';
 import type {
-  TextBlock,
   GalleryBlock,
-  MetadataBlock,
-  RichText,
   ImageWithAlt,
+  MetadataBlock,
   Project,
+  RichText,
+  TextBlock,
 } from '@studio/sanity.types';
+
+import { ArrowLeft } from '@phosphor-icons/react/dist/ssr';
+import { PortableText } from '@portabletext/react';
+
 import Button from '@/components/Button';
 import DotGrid from '@/components/DotGrid';
+import { sanityImageUrl } from '@/util/sanity';
 
 interface CaseStudyBlocksSectionProps {
   project: Project;
@@ -24,11 +24,13 @@ export default function CaseStudyBlocksSection({
 }: CaseStudyBlocksSectionProps) {
   return (
     <article className="space-y-16 lg:space-y-24">
-      <img
-        src={sanityImageUrl(project.coverImage?.asset!).url()}
-        alt={project.coverImage?.alt}
-        className="block min-h-[50vh] w-full rounded-4xl object-cover object-center lg:rounded-6xl"
-      />
+      {project.coverImage?.asset && (
+        <img
+          src={sanityImageUrl(project.coverImage?.asset).url()}
+          alt={project.coverImage?.alt}
+          className="block min-h-[50vh] w-full rounded-4xl object-cover object-center lg:rounded-6xl"
+        />
+      )}
       <PortableText
         value={project.caseStudyBlocks!}
         components={{
@@ -103,7 +105,9 @@ function MetadataBlockComponent({
                 {field.values?.map((value, index) => (
                   <li key={value} className="inline">
                     {value}
-                    {index < field.values?.length! - 1 && ' • '}
+                    {field.values?.length &&
+                      index < field.values.length - 1 &&
+                      ' • '}
                   </li>
                 ))}
               </ul>

@@ -1,8 +1,10 @@
-import { ArrowRight, ArrowUpRight } from '@phosphor-icons/react/dist/ssr';
-import { isExternalUrl } from '@/util';
 import type { Icon as PhosphorIcon } from '@phosphor-icons/react/dist/lib/types';
-import type { CustomIcon } from '@/components/icons';
 import type React from 'react';
+import type { CustomIcon } from '@/components/icons';
+
+import { ArrowRight, ArrowUpRight } from '@phosphor-icons/react/dist/ssr';
+
+import { isExternalUrl } from '@/util';
 
 interface Props {
   text: string;
@@ -40,7 +42,7 @@ export default function Button({
 
   if (!iconSide) iconSide = href ? 'right' : 'left';
 
-  let Element: React.ElementType = href ? 'a' : 'button';
+  const Element: React.ElementType = href ? 'a' : 'button';
 
   function outerElementClass() {
     let className = '';

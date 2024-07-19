@@ -1,5 +1,5 @@
-import {Rule} from 'sanity'
-import {LinkIcon, TagIcon, UlistIcon} from '@sanity/icons'
+import { LinkIcon, TagIcon, UlistIcon } from '@sanity/icons';
+import { Rule } from 'sanity';
 
 export default {
   title: 'Metadata block',
@@ -35,7 +35,7 @@ export default {
               name: 'values',
               title: 'Value(s)',
               type: 'array',
-              of: [{type: 'string'}],
+              of: [{ type: 'string' }],
               options: {
                 layout: 'tags',
               },
@@ -47,11 +47,11 @@ export default {
               key: 'key',
               values: 'values',
             },
-            prepare({key, values}: {key: string; values: string[]}) {
+            prepare({ key, values }: { key: string; values: string[] }) {
               return {
                 title: key,
                 subtitle: values.join(' • '),
-              }
+              };
             },
           },
         },
@@ -91,11 +91,11 @@ export default {
               text: 'text',
               url: 'url',
             },
-            prepare({text, url}: {text: string; url: string}) {
+            prepare({ text, url }: { text: string; url: string }) {
               return {
                 title: text,
                 subtitle: url,
-              }
+              };
             },
           },
         },
@@ -109,11 +109,11 @@ export default {
     select: {
       title: 'title',
     },
-    prepare({title}: {title: string}) {
+    prepare({ title }: { title: string }) {
       return {
         title: title,
         subtitle: 'Metadata block',
-      }
+      };
     },
   },
-}
+};

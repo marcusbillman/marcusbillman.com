@@ -1,3 +1,6 @@
+import type { Icon } from '@phosphor-icons/react/dist/lib/types';
+
+import { useEffect, useState } from 'react';
 import {
   ChatsCircle,
   House,
@@ -6,10 +9,9 @@ import {
   User,
   X,
 } from '@phosphor-icons/react/dist/ssr';
-import { useEffect, useState } from 'react';
-import Button from '@/components/Button';
-import type { Icon } from '@phosphor-icons/react/dist/lib/types';
 import { motion, useReducedMotion } from 'framer-motion';
+
+import Button from '@/components/Button';
 
 interface NavbarProps {
   isMenuOpen: boolean;

@@ -1,5 +1,8 @@
-import {Rule} from 'sanity'
-import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list'
+import {
+  orderRankField,
+  orderRankOrdering,
+} from '@sanity/orderable-document-list';
+import { Rule, SanityDocument } from 'sanity';
 
 export default {
   name: 'project',
@@ -48,7 +51,8 @@ export default {
       name: 'preamble',
       title: 'Preamble',
       type: 'text',
-      description: 'Introductory paragraph summarizing the project — a few sentences',
+      description:
+        'Introductory paragraph summarizing the project — a few sentences',
       rows: 4,
       group: 'main',
     },
@@ -81,8 +85,8 @@ export default {
       type: 'string',
       options: {
         list: [
-          {title: 'Case study', value: 'CASE_STUDY'},
-          {title: 'Side project', value: 'SIDE_PROJECT'},
+          { title: 'Case study', value: 'CASE_STUDY' },
+          { title: 'Side project', value: 'SIDE_PROJECT' },
         ],
         layout: 'radio',
         direction: 'horizontal',
@@ -94,9 +98,14 @@ export default {
       name: 'caseStudyBlocks',
       title: 'Case study blocks',
       type: 'array',
-      of: [{type: 'textBlock'}, {type: 'galleryBlock'}, {type: 'metadataBlock'}],
+      of: [
+        { type: 'textBlock' },
+        { type: 'galleryBlock' },
+        { type: 'metadataBlock' },
+      ],
       group: 'main',
-      hidden: ({document}: {document: any}) => document?.type !== 'CASE_STUDY',
+      hidden: ({ document }: { document: SanityDocument }) =>
+        document?.type !== 'CASE_STUDY',
     },
     {
       name: 'linkUrl',
@@ -104,9 +113,10 @@ export default {
       type: 'url',
       description: 'URL to the live app, project repository, etc.',
       group: 'main',
-      hidden: ({document}: {document: any}) => document?.type !== 'SIDE_PROJECT',
+      hidden: ({ document }: { document: SanityDocument }) =>
+        document?.type !== 'SIDE_PROJECT',
     },
-    orderRankField({type: 'category'}),
+    orderRankField({ type: 'category' }),
   ],
   initialValue: () => ({
     featured: true,
@@ -120,4 +130,4 @@ export default {
       media: 'coverImage',
     },
   },
-}
+};

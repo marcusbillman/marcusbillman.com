@@ -1,5 +1,6 @@
-import Button from '@/components/Button';
 import type { Icon } from '@phosphor-icons/react/dist/lib/types';
+
+import { useEffect, useState } from 'react';
 import {
   ChatsCircle,
   House,
@@ -7,28 +8,27 @@ import {
   User,
   X,
 } from '@phosphor-icons/react/dist/ssr';
-import { useEffect, useState } from 'react';
-import SocialLinks from './SocialLinks';
+import { motion, useReducedMotion } from 'framer-motion';
+import { useMediaQuery } from 'usehooks-ts';
+
+import Button from '@/components/Button';
+import DotGrid from '@/components/DotGrid';
+import Glow from '@/components/Glow';
 import {
   BezierCurveIllustration,
   BrowserIllustration,
   ButtonClickIllustration,
-  DropdownIllustration,
-  PhoneIllustration,
   ChatIllustration,
-} from './illustrations';
-import DotGrid from './DotGrid';
-import { motion, useReducedMotion } from 'framer-motion';
-import { useMediaQuery } from 'usehooks-ts';
+  PhoneIllustration,
+} from '@/components/illustrations';
+import SocialLinks from '@/components/SocialLinks';
 import { useTailwindConfig } from '@/util/tailwind';
-import Glow from './Glow';
 
 interface MenuProps {
-  isMenuOpen: boolean;
   onClose?: () => void;
 }
 
-export default function Menu({ isMenuOpen, onClose }: MenuProps) {
+export default function Menu({ onClose }: MenuProps) {
   const resolvedTailwindConfig = useTailwindConfig();
   const shouldReduceMotion = useReducedMotion();
 

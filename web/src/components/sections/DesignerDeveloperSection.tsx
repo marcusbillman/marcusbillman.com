@@ -1,12 +1,13 @@
-import { CodeBlock, Eye, Graph, PenNib } from '@phosphor-icons/react/dist/ssr';
-import DotGrid from '@/components/DotGrid';
 import { useRef } from 'react';
+import { CodeBlock, Eye, Graph, PenNib } from '@phosphor-icons/react/dist/ssr';
 import {
   motion,
   useReducedMotion,
   useScroll,
   useTransform,
 } from 'framer-motion';
+
+import DotGrid from '@/components/DotGrid';
 
 export default function DesignerDeveloperSection() {
   const ref = useRef(null);

@@ -1,21 +1,23 @@
-import Switch from '@/components/Switch';
+import type { Icon } from '@phosphor-icons/react/dist/lib/types';
+import type {
+  Project as PortfolioItemCard,
+  Project,
+} from '@studio/sanity.types';
+import type { DribbbleShot } from '@/util/dribbble';
+import type { PortfolioItem } from '@/util/portfolioItem';
+
+import { useState } from 'react';
 import {
   DribbbleLogo,
   EyeClosed,
   Flask,
   Images,
 } from '@phosphor-icons/react/dist/ssr';
-import { useState } from 'react';
-import type { Icon } from '@phosphor-icons/react/dist/lib/types';
-import type {
-  Project as PortfolioItemCard,
-  Project,
-} from '@studio/sanity.types';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+
+import Switch from '@/components/Switch';
 import { isExternalUrl } from '@/util';
 import { sanityImageUrl } from '@/util/sanity';
-import type { PortfolioItem } from '@/util/portfolioItem';
-import type { DribbbleShot } from '@/util/dribbble';
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 
 interface PortfolioItemsSectionProps {
   portfolioItems: PortfolioItem[];
@@ -132,9 +134,9 @@ function PortfolioItemCard({ portfolioItem }: PortfolioItemCardProps) {
       portfolioItem.type === 'CASE_STUDY' ||
       portfolioItem.type === 'SIDE_PROJECT'
     ) {
-      return sanityImageUrl((portfolioItem.data as Project).coverImage?.asset!)
-        .width(1200)
-        .url();
+      const project = portfolioItem.data as Project;
+      if (!project.coverImage?.asset) return '';
+      return sanityImageUrl(project.coverImage?.asset).width(1200).url();
     }
     if (portfolioItem.type === 'DRIBBBLE_SHOT') {
       return (portfolioItem.data as DribbbleShot).images.hidpi;
@@ -146,10 +148,8 @@ function PortfolioItemCard({ portfolioItem }: PortfolioItemCardProps) {
       portfolioItem.type === 'CASE_STUDY' ||
       portfolioItem.type === 'SIDE_PROJECT'
     ) {
-      return (
-        (portfolioItem.data as Project).coverImage?.alt ||
-        (portfolioItem.data as Project).name
-      );
+      const project = portfolioItem.data as Project;
+      return project.coverImage?.alt || project.name;
     }
     if (portfolioItem.type === 'DRIBBBLE_SHOT') {
       return (portfolioItem.data as DribbbleShot).title;
