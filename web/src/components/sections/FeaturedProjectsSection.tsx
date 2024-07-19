@@ -51,6 +51,7 @@ function FeaturedProject({ project }: FeaturedProjectProps) {
         <img
           src={sanityImageUrl(project.coverImage?.asset).width(1200).url()}
           alt={project.coverImage?.alt || project.name}
+          loading="lazy"
           className="aspect-photo rounded-2xl object-cover lg:w-1/2"
         ></img>
       )}

@@ -48,12 +48,14 @@ export default function MoreThingsSection() {
           <img
             src={optimizedSideProjectsScreen1.src}
             alt="App screenshot"
+            loading="lazy"
             className="absolute left-[20%] top-[0%] h-48 rotate-[30deg] rounded-2xl shadow-xl"
             aria-hidden
           />
           <img
             src={optimizedSideProjectsScreen2.src}
             alt="App screenshot"
+            loading="lazy"
             className="absolute bottom-[0%] left-[35%] h-48 rotate-[30deg] rounded-2xl shadow-xl"
             aria-hidden
           />

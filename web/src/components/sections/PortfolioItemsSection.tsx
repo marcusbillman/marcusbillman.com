@@ -239,6 +239,7 @@ function PortfolioItemCard({ portfolioItem }: PortfolioItemCardProps) {
         <img
           src={imageUrl()}
           alt={imageAlt()}
+          loading="lazy"
           className="aspect-photo w-full rounded-2xl object-cover transition-all group-focus-within:shadow-lg group-hover:shadow-lg motion-safe:duration-500 motion-safe:ease-smooth motion-safe:group-focus-within:scale-105 motion-safe:group-hover:rotate-3 motion-safe:group-hover:scale-105 2xl:rounded-4xl motion-safe:2xl:group-hover:rotate-1"
         />
         <div className="mt-6 flex flex-col gap-3">

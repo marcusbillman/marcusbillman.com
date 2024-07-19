@@ -86,12 +86,14 @@ export default function DesignerDeveloperSection() {
           <img
             src={optimizedColourCardBlueberry.src}
             alt="Blueberry colour card"
+            loading="lazy"
             className="absolute right-[15%] top-[-10%] block origin-bottom rotate-[5deg] transition-transform duration-500 ease-smooth group-hover:rotate-[-5deg]"
             aria-hidden
           />
           <img
             src={optimizedColourCardSalmon.src}
             alt="Salmon colour card"
+            loading="lazy"
             className="absolute right-[-5%] top-[10%] block origin-bottom rotate-[15deg] transition-transform duration-500 ease-smooth group-hover:rotate-[20deg]"
             aria-hidden
           />
@@ -99,6 +101,7 @@ export default function DesignerDeveloperSection() {
         <img
           src={optimizedFigmaTools.src}
           alt="Figma tool icons arranged in a circle"
+          loading="lazy"
           className="absolute -bottom-64 -left-32 opacity-50"
           aria-hidden
         />
@@ -138,12 +141,14 @@ export default function DesignerDeveloperSection() {
         <img
           src={optimizedTechLogos.src}
           alt="Grid of web technology logos"
+          loading="lazy"
           className="absolute left-[-25%] top-[-15%] rotate-[-30deg] opacity-50"
           aria-hidden
         />
         <img
           src={optimizedCodeEasterEgg.src}
           alt="Code block with easter egg"
+          loading="lazy"
           className="absolute -bottom-32 -right-32 w-[800px] rotate-[-15deg] opacity-50 transition-opacity hover:opacity-100"
           aria-hidden
         />

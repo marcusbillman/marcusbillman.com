@@ -201,6 +201,7 @@ function ImageWithAltComponent({
         key={imageWithAlt.asset?._ref}
         src={sanityImageUrl(imageWithAlt.asset!).url()}
         alt={imageWithAlt.alt}
+        loading="lazy"
         className="h-full w-full object-cover"
       />
       {imageWithAlt.caption && (
