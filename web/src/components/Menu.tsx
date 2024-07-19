@@ -159,7 +159,7 @@ function MenuLink({ text, url, icon, children }: MenuLinkProps) {
           {text}
         </div>
         <div
-          className={`${isActive ? '' : 'opacity-0 group-focus-within:opacity-100 group-hover:opacity-100'} absolute inset-0 -z-10 transition-opacity`}
+          className={`absolute inset-0 -z-10 transition-opacity ${isActive ? '' : 'opacity-0 group-focus-within:opacity-100 group-hover:opacity-100'}`}
         >
           {children}
         </div>

@@ -283,7 +283,7 @@ function PortfolioItemTag({ label, icon, className }: PortfolioItemTagProps) {
 
   return (
     <div
-      className={`flex items-center gap-1 rounded-lg border px-2 py-1 text-subtle 2xl:px-3 2xl:py-2 ${className}`}
+      className={`${className} flex items-center gap-1 rounded-lg border px-2 py-1 text-subtle 2xl:px-3 2xl:py-2`}
     >
       <span className="2xl:hidden">
         <IconComponent size={16} />
