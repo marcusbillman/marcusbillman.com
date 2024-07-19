@@ -8,9 +8,14 @@ import {
   User,
   X,
 } from '@phosphor-icons/react/dist/ssr';
+import { getImage } from 'astro:assets';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useMediaQuery } from 'usehooks-ts';
 
+import homeBg from '@/assets/images/hero-bg-still.jpg';
+import portfolioPhone1 from '@/assets/images/phone-iphone-15-plus.png';
+import portfolioPhone2 from '@/assets/images/phone-pixel-8.png';
+import aboutPortrait from '@/assets/images/portrait-1.png';
 import Button from '@/components/Button';
 import DotGrid from '@/components/DotGrid';
 import Glow from '@/components/Glow';
@@ -23,6 +28,11 @@ import {
 } from '@/components/illustrations';
 import SocialLinks from '@/components/SocialLinks';
 import { useTailwindConfig } from '@/util/tailwind';
+
+const optimizedHomeBg = await getImage({ src: homeBg });
+const optimizedPortfolioPhone1 = await getImage({ src: portfolioPhone1 });
+const optimizedPortfolioPhone2 = await getImage({ src: portfolioPhone2 });
+const optimizedAboutPortrait = await getImage({ src: aboutPortrait });
 
 interface MenuProps {
   onClose?: () => void;
@@ -64,7 +74,10 @@ export default function Menu({ onClose }: MenuProps) {
         <div className="flex flex-grow flex-col gap-4 overflow-y-auto lg:flex-row lg:gap-8">
           <ul className="flex flex-col flex-wrap gap-2 lg:flex-[1] lg:flex-row lg:gap-4 2xl:flex-[3]">
             <MenuLink text="Home" url="/" icon={House}>
-              <div className="absolute inset-0 -z-10 bg-[url('/assets/images/hero-bg-still.jpg')] bg-cover bg-center" />
+              <div
+                className="absolute inset-0 -z-10 bg-cover bg-center"
+                style={{ backgroundImage: `url(${optimizedHomeBg.src})` }}
+              />
               <DotGrid dim="default" />
               <BezierCurveIllustration className="absolute left-[30%] top-[25%]" />
               <PhoneIllustration className="absolute left-[80%] top-[-10%]" />
@@ -79,12 +92,12 @@ export default function Menu({ onClose }: MenuProps) {
                 className="bottom-[60%] right-[30%] w-full translate-x-1/2 translate-y-1/2"
               />
               <img
-                src="/assets/images/phone-iphone-15-plus.png"
+                src={optimizedPortfolioPhone1.src}
                 alt="iPhone 15 Plus smartphone"
                 className="absolute right-[30%] top-[30%] h-[80%] min-h-64 rotate-[15deg]"
               />
               <img
-                src="/assets/images/phone-pixel-8.png"
+                src={optimizedPortfolioPhone2.src}
                 alt="Google Pixel 8 smartphone"
                 className="absolute right-[30%] top-[30%] h-[80%] min-h-64 translate-x-[50%] translate-y-[20%] rotate-[5deg]"
               />
@@ -94,7 +107,7 @@ export default function Menu({ onClose }: MenuProps) {
               <DotGrid dim="default" />
               <Glow color="orange" className="bottom-[20%] left-[30%] w-full" />
               <img
-                src="/assets/images/portrait-1.png"
+                src={optimizedAboutPortrait.src}
                 alt="Marcus looking at the camera"
                 className="absolute bottom-[-30%] right-0 h-[80%] min-h-24 max-w-fit lg:bottom-0"
               />

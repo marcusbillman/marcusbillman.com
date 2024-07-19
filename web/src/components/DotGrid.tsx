@@ -15,7 +15,7 @@ export default function DotGrid({ dim = 'none' }: Props) {
 
   return (
     <div
-      className={`${dimClass()} absolute inset-0 -z-10 bg-[url('/assets/images/tiled/dot-light.svg')] bg-center dark:bg-[url('/assets/images/tiled/dot-dark.svg')]`}
+      className={`${dimClass()} absolute inset-0 -z-10 bg-[url('/assets/images/dot-tile-light.svg')] bg-center dark:bg-[url('/assets/images/dot-tile-dark.svg')]`}
     ></div>
   );
 }

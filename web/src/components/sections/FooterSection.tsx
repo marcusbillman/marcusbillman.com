@@ -1,12 +1,19 @@
 import { Link, MusicNotes, Shapes } from '@phosphor-icons/react/dist/ssr';
+import { getImage } from 'astro:assets';
 
+import toyboxBg from '@/assets/images/footer-toybox-bg.jpg';
 import DotGrid from '@/components/DotGrid';
 import SocialLinks from '@/components/SocialLinks';
+
+const optimizedToyboxBg = await getImage({ src: toyboxBg });
 
 export default function FooterSection() {
   return (
     <footer className="relative z-10 -mt-8 bg-black px-4 pb-8 pt-16 text-white lg:-mt-16 lg:px-16 lg:pb-16 lg:pt-32">
-      <div className="relative isolate grid h-96 place-items-center rounded-2xl bg-[url('/assets/images/footer-toybox-bg.jpg')] bg-cover bg-center lg:h-[40vw]">
+      <div
+        className="relative isolate grid h-96 place-items-center rounded-2xl bg-cover bg-center lg:h-[40vw]"
+        style={{ backgroundImage: `url(${optimizedToyboxBg.src})` }}
+      >
         <div className="text-center text-3xl text-white/60 lg:text-4xl 2xl:text-6xl">
           <span className="block translate-x-[-10%]">
             Arranging

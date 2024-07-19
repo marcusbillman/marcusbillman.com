@@ -4,9 +4,13 @@ import {
   Heart,
   Lightning,
 } from '@phosphor-icons/react/dist/ssr';
+import { getImage } from 'astro:assets';
 
+import techLogos from '@/assets/images/tech-logos.png';
 import DotGrid from '@/components/DotGrid';
 import Glow from '@/components/Glow';
+
+const optimizedTechLogos = await getImage({ src: techLogos });
 
 export default function SkillsSection() {
   return (
@@ -98,7 +102,7 @@ export default function SkillsSection() {
           </div>
           <DotGrid />
           <img
-            src="/assets/images/tech-logos.png"
+            src={optimizedTechLogos.src}
             alt="Grid of web technology logos"
             className="absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 rotate-[30deg]"
           />

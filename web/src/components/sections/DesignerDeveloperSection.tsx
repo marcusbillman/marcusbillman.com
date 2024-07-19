@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { CodeBlock, Eye, Graph, PenNib } from '@phosphor-icons/react/dist/ssr';
+import { getImage } from 'astro:assets';
 import {
   motion,
   useReducedMotion,
@@ -7,7 +8,24 @@ import {
   useTransform,
 } from 'framer-motion';
 
+import developerBg from '@/assets/images/code-dim.jpg';
+import codeEasterEgg from '@/assets/images/code-easter-egg.png';
+import colourCardBlueberry from '@/assets/images/colour-card-blueberry.png';
+import colourCardSalmon from '@/assets/images/colour-card-salmon.png';
+import figmaTools from '@/assets/images/figma-tools.png';
+import techLogos from '@/assets/images/tech-logos.png';
+import designerBg from '@/assets/images/wireframe-sketch.jpg';
 import DotGrid from '@/components/DotGrid';
+
+const optimizedDesignerBg = await getImage({ src: designerBg });
+const optimizedDeveloperBg = await getImage({ src: developerBg });
+const optimizedColourCardBlueberry = await getImage({
+  src: colourCardBlueberry,
+});
+const optimizedColourCardSalmon = await getImage({ src: colourCardSalmon });
+const optimizedFigmaTools = await getImage({ src: figmaTools });
+const optimizedTechLogos = await getImage({ src: techLogos });
+const optimizedCodeEasterEgg = await getImage({ src: codeEasterEgg });
 
 export default function DesignerDeveloperSection() {
   const ref = useRef(null);
@@ -39,7 +57,10 @@ export default function DesignerDeveloperSection() {
       className="relative h-[200vh] text-4xl lg:text-6xl lg:uppercase 2xl:text-9xl"
     >
       {/* Designer */}
-      <div className="sticky top-0 isolate flex h-screen flex-col items-center justify-center overflow-hidden rounded-4xl bg-subtle bg-[url('/assets/images/wireframe-sketch.jpg')] bg-cover bg-center p-16 lg:rounded-6xl">
+      <div
+        className="sticky top-0 isolate flex h-screen flex-col items-center justify-center overflow-hidden rounded-4xl bg-subtle bg-cover bg-center p-16 lg:rounded-6xl"
+        style={{ backgroundImage: `url(${optimizedDesignerBg.src})` }}
+      >
         {/* Text */}
         <div className="flex flex-wrap justify-center lg:absolute lg:inset-16 lg:top-32 lg:w-auto">
           <span className="inline-flex items-center text-primary lg:absolute lg:left-0 lg:top-0">
@@ -63,20 +84,20 @@ export default function DesignerDeveloperSection() {
         {/* Illustrations */}
         <div className="group absolute right-0 top-0 size-[25vw] min-w-64 opacity-50 transition-opacity duration-500 hover:opacity-100">
           <img
-            src="/assets/images/colour-card-blueberry.png"
+            src={optimizedColourCardBlueberry.src}
             alt="Blueberry colour card"
             className="absolute right-[15%] top-[-10%] block origin-bottom rotate-[5deg] transition-transform duration-500 ease-smooth group-hover:rotate-[-5deg]"
             aria-hidden
           />
           <img
-            src="/assets/images/colour-card-salmon.png"
+            src={optimizedColourCardSalmon.src}
             alt="Salmon colour card"
             className="absolute right-[-5%] top-[10%] block origin-bottom rotate-[15deg] transition-transform duration-500 ease-smooth group-hover:rotate-[20deg]"
             aria-hidden
           />
         </div>
         <img
-          src="/assets/images/figma-tools.png"
+          src={optimizedFigmaTools.src}
           alt="Figma tool icons arranged in a circle"
           className="absolute -bottom-64 -left-32 opacity-50"
           aria-hidden
@@ -86,8 +107,12 @@ export default function DesignerDeveloperSection() {
 
       {/* Developer */}
       <motion.div
-        className="sticky top-0 isolate mt-[-100vh] flex h-screen flex-col items-center justify-center overflow-hidden rounded-4xl bg-black bg-[url('/assets/images/code-dim.jpg')] bg-cover bg-center p-16 text-white lg:rounded-6xl"
-        style={{ clipPath: clipPathOutput, opacity: opacityOutput }}
+        className="sticky top-0 isolate mt-[-100vh] flex h-screen flex-col items-center justify-center overflow-hidden rounded-4xl bg-black bg-cover bg-center p-16 text-white lg:rounded-6xl"
+        style={{
+          backgroundImage: `url(${optimizedDeveloperBg.src})`,
+          clipPath: clipPathOutput,
+          opacity: opacityOutput,
+        }}
       >
         {/* Text */}
         <div className="flex flex-wrap justify-center lg:absolute lg:inset-16 lg:top-32 lg:w-auto">
@@ -111,13 +136,13 @@ export default function DesignerDeveloperSection() {
 
         {/* Illustrations */}
         <img
-          src="/assets/images/tech-logos.png"
+          src={optimizedTechLogos.src}
           alt="Grid of web technology logos"
           className="absolute left-[-25%] top-[-15%] rotate-[-30deg] opacity-50"
           aria-hidden
         />
         <img
-          src="/assets/images/code-easter-egg.png"
+          src={optimizedCodeEasterEgg.src}
           alt="Code block with easter egg"
           className="absolute -bottom-32 -right-32 w-[800px] rotate-[-15deg] opacity-50 transition-opacity hover:opacity-100"
           aria-hidden

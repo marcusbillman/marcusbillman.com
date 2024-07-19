@@ -1,3 +1,7 @@
+import { getImage } from 'astro:assets';
+
+import bg from '@/assets/images/hero-bg-still.jpg';
+import profilePicture from '@/assets/images/profile-picture.jpg';
 import DotGrid from '@/components/DotGrid';
 import {
   AudioFileIllustration,
@@ -16,6 +20,9 @@ import {
 } from '@/components/illustrations';
 import WaveLine from '@/components/WaveLine.tsx';
 
+const optimizedBg = await getImage({ src: bg });
+const optimizedProfilePicture = await getImage({ src: profilePicture });
+
 export default function HeroSection() {
   return (
     <header className="sticky top-0 h-[90vh] overflow-hidden px-4 pt-[15vh] lg:h-screen lg:px-16 lg:pt-32">
@@ -28,7 +35,7 @@ export default function HeroSection() {
             <WaveLine className="text-primary" />
           </span>
           <img
-            src="/assets/images/profile-picture.jpg"
+            src={optimizedProfilePicture.src}
             alt="Profile picture"
             className="inline size-12 rounded-full shadow-lg md:size-20 lg:size-32"
           />
@@ -140,7 +147,10 @@ export default function HeroSection() {
 
       {/* Backgrounds */}
       <DotGrid dim="default" />
-      <div className="absolute left-0 top-0 -z-20 h-full w-full bg-[url('/assets/images/hero-bg-still.jpg')] bg-cover bg-center">
+      <div
+        className="absolute left-0 top-0 -z-20 h-full w-full bg-cover bg-center"
+        style={{ backgroundImage: `url(${optimizedBg.src})` }}
+      >
         <video
           src="/assets/videos/hero-bg.mp4"
           autoPlay

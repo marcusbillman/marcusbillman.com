@@ -1,5 +1,12 @@
+import { getImage } from 'astro:assets';
+
+import portrait1 from '@/assets/images/portrait-1.png';
+import portrait2 from '@/assets/images/portrait-2.png';
 import DotGrid from '@/components/DotGrid';
 import Glow from '@/components/Glow';
+
+const optimizedPortrait1 = await getImage({ src: portrait1 });
+const optimizedPortrait2 = await getImage({ src: portrait2 });
 
 export default function FullBioSection() {
   return (
@@ -36,12 +43,12 @@ function Portrait() {
   return (
     <div className="group relative isolate my-6 aspect-[3/4] overflow-hidden rounded-2xl bg-subtle md:col-start-[-2] md:row-span-full md:my-0 lg:rounded-4xl 2xl:row-span-full 2xl:self-center">
       <img
-        src="/assets/images/portrait-1.png"
+        src={optimizedPortrait1.src}
         alt="Marcus looking at the camera"
         className="absolute bottom-0 left-0 right-0 block transition-opacity duration-300 group-hover:opacity-0"
       />
       <img
-        src="/assets/images/portrait-2.png"
+        src={optimizedPortrait2.src}
         alt="Marcus looking up and to the side"
         className="absolute bottom-0 left-0 right-0 block opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         aria-hidden

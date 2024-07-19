@@ -1,14 +1,21 @@
 import { House } from '@phosphor-icons/react/dist/ssr';
+import { getImage } from 'astro:assets';
 
+import bg from '@/assets/images/hero-bg-still.jpg';
 import Button from '@/components/Button';
 import DotGrid from '@/components/DotGrid';
+
+const optimizedBg = await getImage({ src: bg });
 
 export default function FullContactSection() {
   return (
     <section className="isolate flex min-h-screen flex-col items-center justify-center bg-primary lg:p-16 2xl:p-32">
       {/* Decoration */}
       <div className="relative w-full flex-grow">
-        <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-[url('/assets/images/hero-bg-still.jpg')] bg-cover bg-clip-text bg-center text-[40vh] font-bold tracking-tighter text-transparent">
+        <span
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-cover bg-clip-text bg-center text-[40vh] font-bold tracking-tighter text-transparent"
+          style={{ backgroundImage: `url(${optimizedBg.src})` }}
+        >
           <span>4</span>
           <span>0</span>
           <span>4</span>
