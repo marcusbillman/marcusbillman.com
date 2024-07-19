@@ -98,7 +98,7 @@ export default function MoreThingsSection() {
           description="Networking"
           icon={LinkedIn}
           href="https://m-b.me/linkedin"
-          className="border border-transparent hover:border hover:bg-default md:col-span-3 md:h-auto"
+          className="border border-transparent hover:border-default hover:bg-default md:col-span-3 md:h-auto"
         />
       </ul>
     </section>
