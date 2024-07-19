@@ -72,6 +72,24 @@ export default {
         strong: 'var(--border-strong)',
         primary: 'var(--border-primary)',
       },
+      spacing: {
+        128: '32rem',
+        192: '48rem',
+        256: '64rem',
+      },
+      aspectRatio: {
+        photo: '3/2',
+      },
+      borderRadius: {
+        '4xl': '2rem', // 32px
+        '5xl': '3rem', // 48px
+        '6xl': '4rem', // 64px
+        '7xl': '6rem', // 96px
+        '8xl': '8rem', // 128px
+      },
+      boxShadow: {
+        'main-container': '0px -4px 32px 0px rgba(0, 0, 0, 0.10)',
+      },
       animation: {
         float: 'float 2s ease-in-out infinite',
         wiggle: 'wiggle 1s ease-in-out infinite',
@@ -93,19 +111,6 @@ export default {
       },
       transitionTimingFunction: {
         smooth: 'cubic-bezier(0.2, 0, 0, 1)',
-      },
-      borderRadius: {
-        '4xl': '2rem', // 32px
-        '5xl': '3rem', // 48px
-        '6xl': '4rem', // 64px
-        '7xl': '6rem', // 96px
-        '8xl': '8rem', // 128px
-      },
-      boxShadow: {
-        'main-container': '0px -4px 32px 0px rgba(0, 0, 0, 0.10)',
-      },
-      aspectRatio: {
-        photo: '3/2',
       },
       cursor: {
         'default-light':
