@@ -69,7 +69,11 @@ function GalleryBlockComponent({
   return (
     <div className="flex flex-wrap justify-stretch gap-4 px-4 lg:gap-8 lg:px-16">
       {value.images!.map((image) => (
-        <ImageWithAltComponent key={image._key} imageWithAlt={image} />
+        <ImageWithAltComponent
+          key={image._key}
+          imageWithAlt={image}
+          className="basis-256 flex-grow"
+        />
       ))}
     </div>
   );
@@ -158,7 +162,7 @@ function RichTextComponent({ richText }: RichTextComponentProps) {
         },
         list: {
           bullet: ({ children }) => (
-            <ul className="mx-auto max-w-4xl list-disc space-y-2 pl-12 text-xl marker:text-primary">
+            <ul className="mx-auto mb-6 max-w-4xl list-disc space-y-2 pl-12 text-xl marker:text-primary lg:mb-8">
               {children}
             </ul>
           ),
@@ -171,7 +175,7 @@ function RichTextComponent({ richText }: RichTextComponentProps) {
           imageWithAlt: ({ value }) => (
             <ImageWithAltComponent
               imageWithAlt={value}
-              className="mx-auto my-6 max-w-7xl lg:my-8"
+              className="mx-auto my-6 max-w-7xl lg:my-16"
             />
           ),
         },
@@ -191,7 +195,7 @@ function ImageWithAltComponent({
 }: ImageWithAltComponentProps) {
   return (
     <figure
-      className={`${className} relative max-h-screen flex-grow basis-96 flex-col overflow-hidden rounded-2xl lg:rounded-4xl`}
+      className={`${className} relative max-h-screen flex-col overflow-hidden rounded-2xl lg:rounded-4xl`}
     >
       <img
         key={imageWithAlt.asset?._ref}
