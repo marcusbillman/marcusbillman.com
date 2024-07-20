@@ -110,7 +110,7 @@ export default function DesignerDeveloperSection() {
 
       {/* Developer */}
       <motion.div
-        className="sticky top-0 isolate mt-[-100vh] flex h-screen flex-col items-center justify-center overflow-hidden rounded-4xl bg-black bg-cover bg-center p-16 text-white lg:rounded-6xl"
+        className="sticky top-0 isolate mt-[-100vh] flex h-screen flex-col items-center justify-center overflow-hidden rounded-4xl bg-black bg-cover bg-center p-16 text-gray-100 lg:rounded-6xl"
         style={{
           backgroundImage: `url(${optimizedDeveloperBg.src})`,
           clipPath: clipPathOutput,

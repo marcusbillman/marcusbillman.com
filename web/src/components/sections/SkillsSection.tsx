@@ -111,7 +111,7 @@ export default function SkillsSection() {
         {/* TODO: Background image of me giving a presentation */}
         <li className="relative isolate h-96 overflow-hidden rounded-2xl border bg-black lg:col-span-2">
           <div className="absolute bottom-0 left-0 right-0 flex h-1/2 flex-col justify-end bg-gradient-to-b from-black/0 to-black p-4 lg:p-6">
-            <p className="text-xl font-medium text-white lg:text-2xl">
+            <p className="text-xl font-medium text-gray-100 lg:text-2xl">
               <span className="font-serif italic text-blueberry-300">
                 Public speaker
               </span>{' '}

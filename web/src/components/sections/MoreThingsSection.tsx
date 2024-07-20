@@ -1,6 +1,6 @@
+import type { CustomIcon } from '@/components/icons';
 import type { Icon as PhosphorIcon } from '@phosphor-icons/react/dist/lib/types';
 import type React from 'react';
-import type { CustomIcon } from '@/components/icons';
 
 import {
   ArrowRight,
@@ -79,7 +79,7 @@ export default function MoreThingsSection() {
           description="Music"
           icon={SoundCloud}
           href="https://m-b.me/soundcloud"
-          className="h-[50vh] bg-cover bg-center text-white md:col-span-3 md:row-span-2 md:h-auto"
+          className="h-[50vh] bg-cover bg-center text-gray-100 md:col-span-3 md:row-span-2 md:h-auto"
           style={{ backgroundImage: `url(${optimizedMusicBg.src})` }}
         >
           <div className="absolute inset-0 isolate bg-gradient-to-b from-[#FF5722CC] to-[#FF5722]">

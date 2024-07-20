@@ -60,7 +60,7 @@ export default function SocialLinks({
             </span>
             <Copy
               size={24}
-              className={`${forceDark ? 'text-gray-400 group-hover:text-white' : 'text-subtle group-hover:text-default'} transition-all duration-500 ease-smooth group-hover:rotate-180`}
+              className={`${forceDark ? 'text-gray-400 group-hover:text-gray-100' : 'text-subtle group-hover:text-default'} transition-all duration-500 ease-smooth group-hover:rotate-180`}
             />
           </button>
         </CopyToClipboard>
@@ -99,11 +99,11 @@ function SocialLink({
         </span>
         <ArrowUpRight
           size={16}
-          className={`${compactOnMobile ? 'lg:hidden' : 'hidden'} ${forceDark ? 'text-gray-400 group-hover:text-white' : 'text-subtle group-hover:text-default'} transition-all duration-500 ease-smooth group-hover:-translate-y-[20%] group-hover:translate-x-[20%]`}
+          className={`${compactOnMobile ? 'lg:hidden' : 'hidden'} ${forceDark ? 'text-gray-400 group-hover:text-gray-100' : 'text-subtle group-hover:text-default'} transition-all duration-500 ease-smooth group-hover:-translate-y-[20%] group-hover:translate-x-[20%]`}
         />
         <ArrowUpRight
           size={24}
-          className={`${compactOnMobile ? 'hidden lg:block' : ''} ${forceDark ? 'text-gray-400 group-hover:text-white' : 'text-subtle group-hover:text-default'} transition-all duration-500 ease-smooth group-hover:-translate-y-[20%] group-hover:translate-x-[20%]`}
+          className={`${compactOnMobile ? 'hidden lg:block' : ''} ${forceDark ? 'text-gray-400 group-hover:text-gray-100' : 'text-subtle group-hover:text-default'} transition-all duration-500 ease-smooth group-hover:-translate-y-[20%] group-hover:translate-x-[20%]`}
         />
       </a>
     </li>

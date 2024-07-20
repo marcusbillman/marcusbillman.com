@@ -72,7 +72,7 @@ function GalleryBlockComponent({
         <ImageWithAltComponent
           key={image._key}
           imageWithAlt={image}
-          className="basis-256 flex-grow"
+          className="flex-grow basis-256"
         />
       ))}
     </div>
@@ -205,7 +205,7 @@ function ImageWithAltComponent({
         className="h-full w-full object-cover"
       />
       {imageWithAlt.caption && (
-        <figcaption className="absolute inset-0 top-auto bg-gradient-to-b from-black/0 to-black/50 p-4 font-serif italic text-white lg:p-6">
+        <figcaption className="absolute inset-0 top-auto bg-gradient-to-b from-black/0 to-black/50 p-4 font-serif italic text-gray-100 lg:p-6">
           {imageWithAlt.caption}
         </figcaption>
       )}
