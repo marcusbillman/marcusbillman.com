@@ -2,7 +2,7 @@ import type { IllustrationProps } from './index';
 
 export default function CodeBlockIllustration({
   transparent = false,
-  className,
+  ...props
 }: IllustrationProps) {
   return transparent ? (
     <svg
@@ -11,7 +11,7 @@ export default function CodeBlockIllustration({
       viewBox="0 0 200 95"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <rect
         x="1.5"
@@ -107,7 +107,7 @@ export default function CodeBlockIllustration({
       viewBox="0 0 200 95"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <rect
         x="1.5"

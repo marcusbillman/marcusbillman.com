@@ -2,7 +2,7 @@ import type { IllustrationProps } from './index';
 
 export default function DropdownIllustration({
   transparent = false,
-  className,
+  ...props
 }: IllustrationProps) {
   return transparent ? (
     <svg
@@ -11,7 +11,7 @@ export default function DropdownIllustration({
       viewBox="0 0 141 66"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <rect
         x="1.73761"
@@ -55,7 +55,7 @@ export default function DropdownIllustration({
       viewBox="0 0 141 66"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <rect
         x="1.73761"

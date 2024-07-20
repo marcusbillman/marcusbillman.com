@@ -2,7 +2,7 @@ import type { IllustrationProps } from './index';
 
 export default function SwitchIllustration({
   transparent = false,
-  className,
+  ...props
 }: IllustrationProps) {
   return transparent ? (
     <svg
@@ -11,7 +11,7 @@ export default function SwitchIllustration({
       viewBox="0 0 47 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <path
         fillRule="evenodd"
@@ -36,7 +36,7 @@ export default function SwitchIllustration({
       viewBox="0 0 47 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <rect y="3" width="36" height="18" rx="9" fill="var(--bg-default)" />
       <path

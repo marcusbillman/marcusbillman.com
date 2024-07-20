@@ -1,6 +1,6 @@
 import type { CustomIconProps } from './index';
 
-export default function Dribbble({ size = 16, className }: CustomIconProps) {
+export default function Dribbble({ size = 16, ...props }: CustomIconProps) {
   return (
     <svg
       width={size}
@@ -8,7 +8,7 @@ export default function Dribbble({ size = 16, className }: CustomIconProps) {
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <g clipPath="url(#clip0_66_2389)">
         <path

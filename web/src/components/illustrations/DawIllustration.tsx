@@ -2,7 +2,7 @@ import type { IllustrationProps } from './index';
 
 export default function DawIllustration({
   transparent = false,
-  className,
+  ...props
 }: IllustrationProps) {
   return transparent ? (
     <svg
@@ -11,7 +11,7 @@ export default function DawIllustration({
       viewBox="0 0 219 115"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <path
         fillRule="evenodd"
@@ -144,7 +144,7 @@ export default function DawIllustration({
       viewBox="0 0 219 115"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <rect
         x="15"

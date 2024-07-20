@@ -2,7 +2,7 @@ import type { IllustrationProps } from './index';
 
 export default function PianoIllustration({
   transparent = false,
-  className,
+  ...props
 }: IllustrationProps) {
   return transparent ? (
     <svg
@@ -11,7 +11,7 @@ export default function PianoIllustration({
       viewBox="0 0 163 92"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <path
         d="M23 52.5H26V91.5H23V52.5Z"
@@ -76,7 +76,7 @@ export default function PianoIllustration({
       viewBox="0 0 164 92"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <rect
         width="162.663"

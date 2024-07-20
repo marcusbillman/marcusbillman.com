@@ -13,9 +13,8 @@ import PhoneIllustration from './PhoneIllustration';
 import PianoIllustration from './PianoIllustration';
 import SwitchIllustration from './SwitchIllustration';
 
-interface IllustrationProps {
+interface IllustrationProps extends React.HTMLAttributes<SVGElement> {
   transparent?: boolean;
-  className?: string;
 }
 
 type Illustration = React.FC<IllustrationProps>;

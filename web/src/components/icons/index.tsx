@@ -3,9 +3,8 @@ import GitHub from './GitHub';
 import LinkedIn from './LinkedIn';
 import SoundCloud from './SoundCloud';
 
-interface CustomIconProps {
+interface CustomIconProps extends React.HTMLAttributes<SVGElement> {
   size?: number;
-  className?: string;
 }
 
 type CustomIcon = React.FC<CustomIconProps>;

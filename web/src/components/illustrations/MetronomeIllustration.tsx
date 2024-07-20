@@ -2,7 +2,7 @@ import type { IllustrationProps } from './index';
 
 export default function MetronomeIllustration({
   transparent = false,
-  className,
+  ...props
 }: IllustrationProps) {
   return transparent ? (
     <svg
@@ -11,7 +11,7 @@ export default function MetronomeIllustration({
       viewBox="0 0 63 72"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <path
         d="M26.6426 18.75V63.1071"
@@ -68,7 +68,7 @@ export default function MetronomeIllustration({
       viewBox="0 0 63 72"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <path
         d="M20.4821 1.5L2 70.5C2 70.5 13 63 26.5 63C40 63 51.2857 70.5 51.2857 70.5L32.8036 1.5H20.4821Z"

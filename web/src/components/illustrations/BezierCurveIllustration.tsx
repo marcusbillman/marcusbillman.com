@@ -2,7 +2,7 @@ import type { IllustrationProps } from './index';
 
 export default function BezierCurveIllustration({
   transparent = false,
-  className,
+  ...props
 }: IllustrationProps) {
   return transparent ? (
     <svg
@@ -11,7 +11,7 @@ export default function BezierCurveIllustration({
       viewBox="0 0 111 103"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <path
         fillRule="evenodd"
@@ -69,7 +69,7 @@ export default function BezierCurveIllustration({
       viewBox="0 0 112 103"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <path
         fillRule="evenodd"

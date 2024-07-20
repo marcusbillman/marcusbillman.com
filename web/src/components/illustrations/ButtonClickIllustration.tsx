@@ -2,7 +2,7 @@ import type { IllustrationProps } from './index';
 
 export default function ButtonClickIllustration({
   transparent = false,
-  className,
+  ...props
 }: IllustrationProps) {
   return transparent ? (
     <svg
@@ -11,7 +11,7 @@ export default function ButtonClickIllustration({
       viewBox="0 0 133 62"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <rect
         x="72"
@@ -61,7 +61,7 @@ export default function ButtonClickIllustration({
       viewBox="0 0 133 62"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <rect
         x="2"

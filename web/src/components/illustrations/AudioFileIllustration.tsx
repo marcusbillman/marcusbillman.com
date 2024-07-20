@@ -2,7 +2,7 @@ import type { IllustrationProps } from './index';
 
 export default function AudioFileIllustration({
   transparent = false,
-  className,
+  ...props
 }: IllustrationProps) {
   return transparent ? (
     <svg
@@ -11,7 +11,7 @@ export default function AudioFileIllustration({
       viewBox="0 0 50 70"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <path
         d="M48.5 12.6569V66C48.5 67.3807 47.3807 68.5 46 68.5H4C2.61929 68.5 1.5 67.3807 1.5 66V4C1.5 2.61929 2.61929 1.5 4 1.5H37.3431C38.0062 1.5 38.6421 1.76339 39.1109 2.23223L47.7678 10.8891C48.2366 11.3579 48.5 11.9938 48.5 12.6569Z"
@@ -51,7 +51,7 @@ export default function AudioFileIllustration({
       viewBox="0 0 50 70"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <path
         d="M48.5 12.6569V66C48.5 67.3807 47.3807 68.5 46 68.5H4C2.61929 68.5 1.5 67.3807 1.5 66V4C1.5 2.61929 2.61929 1.5 4 1.5H37.3431C38.0062 1.5 38.6421 1.76339 39.1109 2.23223L47.7678 10.8891C48.2366 11.3579 48.5 11.9938 48.5 12.6569Z"

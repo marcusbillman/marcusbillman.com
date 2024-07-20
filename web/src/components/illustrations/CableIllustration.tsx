@@ -2,7 +2,7 @@ import type { IllustrationProps } from './index';
 
 export default function CableIllustration({
   transparent = false,
-  className,
+  ...props
 }: IllustrationProps) {
   return transparent ? (
     <svg
@@ -11,7 +11,7 @@ export default function CableIllustration({
       viewBox="0 0 125 108"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <path
         d="M11.5463 106.986C16.4491 91.4564 21.3462 74.1919 34.2003 70.7477C47.0544 67.3034 50.8191 84.0597 62.8817 79.0148C74.9443 73.9699 68.3343 54.713 82.2811 43.1505"
@@ -36,7 +36,7 @@ export default function CableIllustration({
       viewBox="0 0 125 108"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <path
         d="M11.4014 106.986C16.3041 91.4564 21.2013 74.1919 34.0553 70.7477C46.9094 67.3034 50.6741 84.0597 62.7368 79.0148C74.7994 73.9699 68.1893 54.713 82.1361 43.1505"

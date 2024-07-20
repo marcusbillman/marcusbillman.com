@@ -2,7 +2,7 @@ import type { IllustrationProps } from './index';
 
 export default function ChatIllustration({
   transparent = false,
-  className,
+  ...props
 }: IllustrationProps) {
   return transparent ? (
     <svg
@@ -11,7 +11,7 @@ export default function ChatIllustration({
       viewBox="0 0 223 173"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <path
         d="M178.5 12V49.5H94.5H91C85.201 49.5 80.5 54.201 80.5 60V74H40C37.079 74 34.2368 74.9474 31.9 76.7L19.5 86V75.5V74H18H12C6.20101 74 1.5 69.299 1.5 63.5V12C1.5 6.20101 6.20101 1.5 12 1.5H168C173.799 1.5 178.5 6.20101 178.5 12Z"
@@ -181,7 +181,7 @@ export default function ChatIllustration({
       viewBox="0 0 223 173"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <path
         d="M178.5 12V49.5H94.5H91C85.201 49.5 80.5 54.201 80.5 60V74H40C37.079 74 34.2368 74.9474 31.9 76.7L19.5 86V75.5V74H18H12C6.20101 74 1.5 69.299 1.5 63.5V12C1.5 6.20101 6.20101 1.5 12 1.5H168C173.799 1.5 178.5 6.20101 178.5 12Z"

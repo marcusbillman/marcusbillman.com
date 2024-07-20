@@ -105,13 +105,11 @@ export default function MoreThingsSection() {
   );
 }
 
-interface BentoCardProps {
+interface BentoCardProps extends React.HTMLAttributes<HTMLLIElement> {
   title: string;
   description: string;
   icon?: PhosphorIcon | CustomIcon;
   href: string;
-  className?: string;
-  style?: React.CSSProperties;
   children?: React.ReactNode;
 }
 
@@ -121,8 +119,8 @@ function BentoCard({
   icon,
   href,
   className,
-  style,
   children,
+  ...props
 }: BentoCardProps) {
   const LeftIconComponent = icon;
   const RightIconComponent = isExternalUrl(href) ? ArrowUpRight : ArrowRight;
@@ -130,7 +128,7 @@ function BentoCard({
   return (
     <li
       className={`${className} group relative isolate overflow-hidden rounded-2xl bg-subtle transition-all focus-within:z-10 focus-within:scale-105 focus-within:ring hover:z-10 hover:shadow-lg motion-safe:duration-500 motion-safe:ease-smooth motion-safe:hover:scale-105`}
-      style={style}
+      {...props}
     >
       <a href={href} className="flex h-full flex-col justify-between gap-3 p-4">
         <div className="flex w-fit origin-top-left items-center gap-2 rounded-2xl bg-default p-4 transition-all duration-500 ease-smooth motion-safe:group-hover:scale-95">
