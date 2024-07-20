@@ -12,7 +12,7 @@ const featuredProjects = await fetchFeaturedProjects();
 ---
 
 <Layout>
-  <HeroSection slot="header" />
+  <HeroSection slot="header" client:idle />
   <BioSection />
   <SeparatorSection />
   <FeaturedProjectsSection projects={featuredProjects} />
