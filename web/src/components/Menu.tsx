@@ -27,7 +27,7 @@ import {
   PhoneIllustration,
 } from '@/components/illustrations';
 import SocialLinks from '@/components/SocialLinks';
-import { useTailwindConfig } from '@/util/tailwind';
+import { useTailwindConfig } from '@/utils/tailwind';
 
 const optimizedHomeBg = await getImage({ src: homeBg });
 const optimizedPortfolioPhone1 = await getImage({ src: portfolioPhone1 });

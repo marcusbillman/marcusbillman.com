@@ -1,10 +1,10 @@
+import type { DribbbleShot } from '@/utils/dribbble';
+import type { PortfolioItem } from '@/utils/portfolioItem';
 import type { Icon } from '@phosphor-icons/react/dist/lib/types';
 import type {
   Project as PortfolioItemCard,
   Project,
 } from '@studio/sanity.types';
-import type { DribbbleShot } from '@/util/dribbble';
-import type { PortfolioItem } from '@/util/portfolioItem';
 
 import { useState } from 'react';
 import {
@@ -16,8 +16,8 @@ import {
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 
 import Switch from '@/components/Switch';
-import { isExternalUrl } from '@/util';
-import { sanityImageUrl } from '@/util/sanity';
+import { isExternalUrl } from '@/utils';
+import { sanityImageUrl } from '@/utils/sanity';
 
 interface PortfolioItemsSectionProps {
   portfolioItems: PortfolioItem[];

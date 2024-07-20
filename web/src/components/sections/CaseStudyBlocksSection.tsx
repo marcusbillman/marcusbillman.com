@@ -13,7 +13,7 @@ import { PortableText } from '@portabletext/react';
 
 import Button from '@/components/Button';
 import DotGrid from '@/components/DotGrid';
-import { sanityImageUrl } from '@/util/sanity';
+import { sanityImageUrl } from '@/utils/sanity';
 
 interface CaseStudyBlocksSectionProps {
   project: Project;

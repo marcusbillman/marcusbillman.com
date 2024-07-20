@@ -6,7 +6,7 @@ import { FocusOn } from 'react-focus-on';
 import { useMediaQuery } from 'usehooks-ts';
 
 import Button from '@/components/Button';
-import { useTailwindConfig } from '@/util/tailwind';
+import { useTailwindConfig } from '@/utils/tailwind';
 
 interface Props {
   title: string;

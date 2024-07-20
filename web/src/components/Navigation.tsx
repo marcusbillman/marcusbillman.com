@@ -5,7 +5,7 @@ import { useMediaQuery } from 'usehooks-ts';
 
 import Menu from '@/components/Menu';
 import Navbar from '@/components/Navbar';
-import { useTailwindConfig } from '@/util/tailwind';
+import { useTailwindConfig } from '@/utils/tailwind';
 
 /**
  * Contains and controls the navbar and menu components.

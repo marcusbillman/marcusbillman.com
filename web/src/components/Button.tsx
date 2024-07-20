@@ -1,10 +1,10 @@
+import type { CustomIcon } from '@/components/icons';
 import type { Icon as PhosphorIcon } from '@phosphor-icons/react/dist/lib/types';
 import type React from 'react';
-import type { CustomIcon } from '@/components/icons';
 
 import { ArrowRight, ArrowUpRight } from '@phosphor-icons/react/dist/ssr';
 
-import { isExternalUrl } from '@/util';
+import { isExternalUrl } from '@/utils';
 
 interface Props {
   text: string;

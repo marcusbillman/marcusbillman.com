@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 import DotGrid from '@/components/DotGrid';
 import Glow from '@/components/Glow';
-import { randomInt } from '@/util';
+import { randomInt } from '@/utils';
 
 interface HeaderSectionProps {
   title: string;

@@ -4,7 +4,7 @@ import CaseStudyHeaderSection from '@/components/sections/CaseStudyHeaderSection
 import ContactSection from '@/components/sections/ContactSection';
 import SeparatorSection from '@/components/sections/SeparatorSection';
 import Layout from '@/layouts/Layout.astro';
-import { fetchAllProjects } from '@/util/sanity';
+import { fetchAllProjects } from '@/utils/sanity';
 
 export async function getStaticPaths() {
   const projects = await fetchAllProjects();

@@ -1,12 +1,13 @@
 ---
+import type { PortfolioItem } from '@/utils/portfolioItem';
+
+import ContactSection from '@/components/sections/ContactSection';
 import HeaderSection from '@/components/sections/HeaderSection';
 import PortfolioItemsSection from '@/components/sections/PortfolioItemsSection';
 import SeparatorSection from '@/components/sections/SeparatorSection';
-import ContactSection from '@/components/sections/ContactSection';
 import Layout from '@/layouts/Layout.astro';
-import { fetchDribbbleShots } from '@/util/dribbble';
-import { fetchAllProjects } from '@/util/sanity';
-import type { PortfolioItem } from '@/util/portfolioItem';
+import { fetchDribbbleShots } from '@/utils/dribbble';
+import { fetchAllProjects } from '@/utils/sanity';
 
 // Fetch data and split by type
 

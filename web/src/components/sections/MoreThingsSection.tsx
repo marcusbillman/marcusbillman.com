@@ -20,7 +20,7 @@ import {
   CodeBlockIllustration,
   PhoneIllustration,
 } from '@/components/illustrations';
-import { isExternalUrl } from '@/util';
+import { isExternalUrl } from '@/utils';
 
 const optimizedDesignBg = await getImage({ src: designBg });
 const optimizedMusicBg = await getImage({ src: musicBg });

@@ -1,7 +1,7 @@
 import type { Project } from '@studio/sanity.types';
 
 import Button from '@/components/Button';
-import { sanityImageUrl } from '@/util/sanity';
+import { sanityImageUrl } from '@/utils/sanity';
 
 interface FeaturedProjectsSectionProps {
   projects: Project[];

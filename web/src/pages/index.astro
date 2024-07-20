@@ -6,7 +6,7 @@ import HeroSection from '@/components/sections/HeroSection';
 import MoreThingsSection from '@/components/sections/MoreThingsSection';
 import SeparatorSection from '@/components/sections/SeparatorSection';
 import Layout from '@/layouts/Layout.astro';
-import { fetchFeaturedProjects } from '@/util/sanity';
+import { fetchFeaturedProjects } from '@/utils/sanity';
 
 const featuredProjects = await fetchFeaturedProjects();
 ---
