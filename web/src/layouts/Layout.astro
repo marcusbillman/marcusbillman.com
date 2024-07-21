@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import { Toaster } from 'react-hot-toast';
 
 import Navigation from '@/components/Navigation';
@@ -70,6 +71,9 @@ const tailwindConfig = useTailwindConfig();
       name="twitter:image"
       content="https://marcusbillman.com/assets/images/social-embed.jpg"
     />
+
+    <!-- Astro View Transitions -->
+    <ViewTransitions />
   </head>
   <body class="min-h-screen cursor-default bg-default text-default">
     <a
