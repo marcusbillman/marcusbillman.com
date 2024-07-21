@@ -68,6 +68,7 @@ export default function DesignerDeveloperSection() {
             <PenNib size={32} className="lg:hidden" />
             <PenNib size={64} className="hidden lg:inline 2xl:hidden" />
             <PenNib size={128} className="hidden 2xl:inline" />
+            &nbsp;
           </span>
           <span className="lg:absolute lg:left-0 lg:top-1/3">with&nbsp;</span>
           <span className="inline-flex font-serif italic lg:absolute lg:bottom-0 lg:right-0 lg:flex-col lg:items-end lg:font-sans lg:not-italic">
@@ -93,7 +94,6 @@ export default function DesignerDeveloperSection() {
           <img
             src={optimizedColourCardSalmon.src}
             alt="Salmon colour card"
-            loading="lazy"
             className="absolute right-[-5%] top-[10%] block origin-bottom rotate-[15deg] transition-transform duration-500 ease-smooth group-hover:rotate-[20deg]"
             aria-hidden
           />
@@ -101,7 +101,6 @@ export default function DesignerDeveloperSection() {
         <img
           src={optimizedFigmaTools.src}
           alt="Figma tool icons arranged in a circle"
-          loading="lazy"
           className="absolute -bottom-64 -left-32 opacity-50"
           aria-hidden
         />
@@ -124,6 +123,7 @@ export default function DesignerDeveloperSection() {
             <CodeBlock size={32} className="lg:hidden" />
             <CodeBlock size={64} className="hidden lg:inline 2xl:hidden" />
             <CodeBlock size={128} className="hidden 2xl:inline" />
+            &nbsp;
           </span>
           <span className="lg:absolute lg:right-0 lg:top-1/3">with&nbsp;</span>
           <span className="inline-flex font-serif italic lg:absolute lg:bottom-0 lg:left-0 lg:flex-col lg:font-sans lg:not-italic">
@@ -141,14 +141,12 @@ export default function DesignerDeveloperSection() {
         <img
           src={optimizedTechLogos.src}
           alt="Grid of web technology logos"
-          loading="lazy"
           className="absolute left-[-25%] top-[-15%] rotate-[-30deg] opacity-50"
           aria-hidden
         />
         <img
           src={optimizedCodeEasterEgg.src}
           alt="Code block with easter egg"
-          loading="lazy"
           className="absolute -bottom-32 -right-32 w-[800px] rotate-[-15deg] opacity-50 transition-opacity hover:opacity-100"
           aria-hidden
         />
