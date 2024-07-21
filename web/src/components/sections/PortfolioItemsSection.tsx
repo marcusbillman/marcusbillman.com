@@ -18,6 +18,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import Switch from '@/components/Switch';
 import { isExternalUrl } from '@/utils';
 import { sanityImageUrl } from '@/utils/sanity';
+import { TIMING_FUNCTIONS } from '@/utils/tailwind';
 
 interface PortfolioItemsSectionProps {
   portfolioItems: PortfolioItem[];
@@ -228,7 +229,7 @@ function PortfolioItemCard({ portfolioItem }: PortfolioItemCardProps) {
         rotate: 0,
       }}
       exit={outProperties}
-      transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
+      transition={{ duration: 0.5, ease: TIMING_FUNCTIONS.SMOOTH }}
       className="group"
     >
       <a

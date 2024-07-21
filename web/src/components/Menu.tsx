@@ -27,7 +27,7 @@ import {
   PhoneIllustration,
 } from '@/components/illustrations';
 import SocialLinks from '@/components/SocialLinks';
-import { useTailwindConfig } from '@/utils/tailwind';
+import { TIMING_FUNCTIONS, useTailwindConfig } from '@/utils/tailwind';
 
 const optimizedHomeBg = await getImage({ src: homeBg });
 const optimizedPortfolioPhone1 = await getImage({ src: portfolioPhone1 });
@@ -57,7 +57,7 @@ export default function Menu({ onClose }: MenuProps) {
         initial={outProperties}
         animate={{ y: 0, opacity: 1 }}
         exit={outProperties}
-        transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
+        transition={{ duration: 0.5, ease: TIMING_FUNCTIONS.SMOOTH }}
         className="fixed bottom-0 left-0 right-0 z-40 flex max-h-[95vh] flex-col gap-4 rounded-t-4xl bg-default p-4 shadow-lg lg:bottom-auto lg:top-0 lg:h-[564px] lg:flex-row lg:gap-8 lg:rounded-b-4xl lg:rounded-t-none lg:p-8 lg:pt-24"
       >
         <div className="flex items-center justify-between lg:hidden">
@@ -138,7 +138,7 @@ export default function Menu({ onClose }: MenuProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
+        transition={{ duration: 0.5, ease: TIMING_FUNCTIONS.SMOOTH }}
         onClick={onClose}
       />
     </>

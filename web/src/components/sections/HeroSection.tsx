@@ -24,6 +24,7 @@ import {
 } from '@/components/illustrations';
 import WaveLine from '@/components/WaveLine.tsx';
 import { useIntersectionObserverSelector } from '@/hooks';
+import { TIMING_FUNCTIONS } from '@/utils/tailwind';
 
 const optimizedBg = await getImage({ src: bg });
 const optimizedProfilePicture = await getImage({ src: profilePicture });
@@ -52,7 +53,7 @@ export default function HeroSection() {
       transition: {
         delay: delay,
         duration: 0.5,
-        ease: [0.2, 0, 0, 1],
+        ease: TIMING_FUNCTIONS.SMOOTH,
       },
     };
   }
@@ -71,7 +72,11 @@ export default function HeroSection() {
               className="w-full overflow-hidden"
               initial={{ width: 0 }}
               animate={{ width: '100%' }}
-              transition={{ delay: 1.4, duration: 1, ease: [0.2, 0, 0, 1] }}
+              transition={{
+                delay: 1.4,
+                duration: 1,
+                ease: TIMING_FUNCTIONS.SMOOTH,
+              }}
             >
               <WaveLine
                 className="text-primary"
@@ -97,7 +102,11 @@ export default function HeroSection() {
           className="size-[1400px]"
           initial={{ y: '50%', opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1.6, duration: 2, ease: [0.2, 0, 0, 1] }}
+          transition={{
+            delay: 1.6,
+            duration: 2,
+            ease: TIMING_FUNCTIONS.SMOOTH,
+          }}
         >
           {/* Outer circle */}
           <div

@@ -6,7 +6,7 @@ import { FocusOn } from 'react-focus-on';
 import { useMediaQuery } from 'usehooks-ts';
 
 import Button from '@/components/Button';
-import { useTailwindConfig } from '@/utils/tailwind';
+import { TIMING_FUNCTIONS, useTailwindConfig } from '@/utils/tailwind';
 
 interface Props {
   title: string;
@@ -44,7 +44,7 @@ export default function Modal({ title, onClose, children }: Props) {
           initial={outProperties()}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={outProperties()}
-          transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
+          transition={{ duration: 0.5, ease: TIMING_FUNCTIONS.SMOOTH }}
           onKeyDown={(e) => {
             if (e.key === 'Escape') onClose();
           }}
@@ -71,7 +71,7 @@ export default function Modal({ title, onClose, children }: Props) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
+          transition={{ duration: 0.5, ease: TIMING_FUNCTIONS.SMOOTH }}
           onClick={onClose}
         />
       </div>

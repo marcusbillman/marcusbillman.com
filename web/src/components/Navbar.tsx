@@ -12,6 +12,7 @@ import {
 import { motion, useReducedMotion } from 'framer-motion';
 
 import Button from '@/components/Button';
+import { TIMING_FUNCTIONS } from '@/utils/tailwind';
 
 interface NavbarProps {
   isMenuOpen: boolean;
@@ -31,7 +32,7 @@ export default function Navbar({ isMenuOpen, onClickMenuButton }: NavbarProps) {
       initial={outProperties}
       animate={{ y: 0, opacity: 1 }}
       exit={outProperties}
-      transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
+      transition={{ duration: 0.5, ease: TIMING_FUNCTIONS.SMOOTH }}
       className={`pointer-events-none fixed left-4 right-4 top-4 z-50 flex items-stretch justify-between lg:left-8 lg:right-8`}
     >
       <a
