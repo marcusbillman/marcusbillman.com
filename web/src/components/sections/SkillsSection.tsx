@@ -91,7 +91,7 @@ export default function SkillsSection() {
             className="right-0 top-0 h-[250%] -translate-y-1/2 translate-x-1/2"
           />
         </li>
-        <li className="relative isolate h-96 overflow-hidden rounded-2xl border bg-subtle lg:col-span-2">
+        <li className="relative isolate h-96 overflow-hidden rounded-2xl border bg-subtle lg:col-span-full">
           <div className="absolute bottom-0 left-0 right-0 flex h-1/2 flex-col justify-end bg-gradient-to-b from-white/0 to-white p-4 lg:p-6 dark:from-black/0 dark:to-black">
             <p className="text-xl font-medium lg:text-2xl">
               <span className="font-serif italic text-primary">
@@ -108,8 +108,8 @@ export default function SkillsSection() {
             className="absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 rotate-[30deg]"
           />
         </li>
-        {/* TODO: Background image of me giving a presentation */}
-        <li className="relative isolate h-96 overflow-hidden rounded-2xl border bg-black lg:col-span-2">
+        {/* TODO: This item is hidden until I've got a photo of me giving a presentation */}
+        {/* <li className="relative isolate h-96 overflow-hidden rounded-2xl border bg-black lg:col-span-2">
           <div className="absolute bottom-0 left-0 right-0 flex h-1/2 flex-col justify-end bg-gradient-to-b from-black/0 to-black p-4 lg:p-6">
             <p className="text-xl font-medium text-gray-100 lg:text-2xl">
               <span className="font-serif italic text-blueberry-300">
@@ -118,7 +118,7 @@ export default function SkillsSection() {
               with engaging visual storytelling.
             </p>
           </div>
-        </li>
+        </li> */}
       </ul>
     </section>
   );
