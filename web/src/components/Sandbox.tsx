@@ -76,15 +76,18 @@ export default function Sandbox({
     setIsVisible(true);
   }, []);
 
-  const motionProps: MotionProps = {
-    drag: true,
-    dragConstraints: constraintsRef,
-    dragElastic: 0.05,
-    whileDrag: { rotate: 15 },
-    whileHover: { scale: 1.1 },
-    initial: { opacity: 0, scale: 0.8 },
-    animate: { opacity: isVisible ? 1 : 0, scale: 1 },
-  };
+  function motionProps(index: number): MotionProps {
+    return {
+      drag: true,
+      dragConstraints: constraintsRef,
+      dragElastic: 0.05,
+      whileDrag: { rotate: 15 },
+      whileHover: { scale: 1.1 },
+      initial: { opacity: 0, scale: 0.8 },
+      animate: { opacity: isVisible ? 1 : 0, scale: 1 },
+      transition: { delay: index * 0.1 },
+    };
+  }
 
   return (
     <div
@@ -95,7 +98,7 @@ export default function Sandbox({
       {React.Children.map(children, (child, index) => {
         if (React.isValidElement(child)) {
           return React.cloneElement(child, {
-            ...motionProps,
+            ...motionProps(index),
             ...child.props,
             key: index,
             className: `${child.props.className} absolute cursor-move pointer-events-auto`,
