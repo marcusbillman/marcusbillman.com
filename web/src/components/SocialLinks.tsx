@@ -59,8 +59,12 @@ export default function SocialLinks({
               {EMAIL}
             </span>
             <Copy
+              size={16}
+              className={`${compactOnMobile ? 'lg:hidden' : 'hidden'} ${forceDark ? 'text-gray-400 group-hover:text-gray-100' : 'text-subtle group-hover:text-default'} transition-all duration-500 ease-smooth group-hover:rotate-180`}
+            />
+            <Copy
               size={24}
-              className={`${forceDark ? 'text-gray-400 group-hover:text-gray-100' : 'text-subtle group-hover:text-default'} transition-all duration-500 ease-smooth group-hover:rotate-180`}
+              className={`${compactOnMobile ? 'hidden lg:block' : ''} ${forceDark ? 'text-gray-400 group-hover:text-gray-100' : 'text-subtle group-hover:text-default'} transition-all duration-500 ease-smooth group-hover:rotate-180`}
             />
           </button>
         </CopyToClipboard>
