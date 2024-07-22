@@ -46,7 +46,7 @@ export default function FooterSection() {
             &copy; 2024 Marcus Billman. Website designed and built with ❤️✨ by
             me. Check out the{' '}
             <a
-              href="https://www.figma.com/design/eu6rt3MLe69pZndtZzS6Vg/Main"
+              href="https://m-b.me/website-figma"
               target="_blank"
               className="text-blueberry-300 underline underline-offset-1 transition-all hover:text-gray-100 hover:underline-offset-4"
             >
@@ -54,7 +54,7 @@ export default function FooterSection() {
             </a>{' '}
             and{' '}
             <a
-              href="https://github.com/marcusbillman/marcusbillman.com-2024"
+              href="https://m-b.me/website-repo"
               target="_blank"
               className="text-blueberry-300 underline underline-offset-1 transition-all hover:text-gray-100 hover:underline-offset-4"
             >
