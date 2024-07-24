@@ -2,7 +2,7 @@ import type { AnimationProps } from 'framer-motion';
 
 import { useEffect, useRef } from 'react';
 import { getImage } from 'astro:assets';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 import bg from '@/assets/images/hero-bg-still.jpg';
 import profilePicture from '@/assets/images/profile-picture.jpg';
@@ -46,10 +46,22 @@ export default function HeroSection() {
     else videoRef.current?.play();
   }, [isCovered]);
 
+  const shouldReduceMotion = useReducedMotion();
+
   function slideAnimationWithDelay(delay: number): AnimationProps {
     return {
-      initial: { y: '120%', clipPath: 'inset(0% 0% 100% 0%)' },
-      animate: { y: 0, clipPath: 'inset(0% 0% -20% 0%)' },
+      initial: {
+        opacity: shouldReduceMotion ? 0 : 1,
+        y: shouldReduceMotion ? 0 : '120%',
+        clipPath: shouldReduceMotion
+          ? 'inset(0% 0% -20% 0%)'
+          : 'inset(0% 0% 100% 0%)',
+      },
+      animate: {
+        opacity: 1,
+        y: 0,
+        clipPath: 'inset(0% 0% -20% 0%)',
+      },
       transition: {
         delay: delay,
         duration: 0.5,
@@ -70,8 +82,14 @@ export default function HeroSection() {
             <motion.span {...slideAnimationWithDelay(1.2)}>human</motion.span>
             <motion.span
               className="w-full overflow-hidden"
-              initial={{ width: 0 }}
-              animate={{ width: '100%' }}
+              initial={{
+                opacity: shouldReduceMotion ? 0 : 1,
+                width: shouldReduceMotion ? '100%' : 0,
+              }}
+              animate={{
+                opacity: 1,
+                width: '100%',
+              }}
               transition={{
                 delay: 1.4,
                 duration: 1,
@@ -100,8 +118,8 @@ export default function HeroSection() {
       <div className="absolute left-1/2 top-2/3 z-50 origin-top -translate-x-1/2 scale-75 lg:scale-100">
         <motion.div
           className="size-[1400px]"
-          initial={{ y: '50%', opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : '50%' }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{
             delay: 1.6,
             duration: 2,
