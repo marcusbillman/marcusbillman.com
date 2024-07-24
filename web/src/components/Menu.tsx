@@ -157,7 +157,7 @@ function MenuLink({ text, url, icon, children }: MenuLinkProps) {
 
   return (
     <li
-      className={`group relative isolate block min-w-64 flex-1 overflow-clip rounded-2xl border px-5 py-4 transition-all active:scale-90 active:opacity-50 group-hover:border-primary ${isActive ? 'border-primary' : ''}`}
+      className={`group relative isolate block min-w-64 flex-1 overflow-clip rounded-2xl border px-5 py-4 transition-all active:opacity-50 group-hover:border-primary motion-safe:active:scale-90 ${isActive ? 'border-primary' : ''}`}
     >
       <a href={url}>
         <div

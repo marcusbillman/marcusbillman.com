@@ -321,19 +321,13 @@ interface FilterOptionProps {
 }
 
 function FilterOption({ label, icon, isEnabled, onChange }: FilterOptionProps) {
-  // const handleClick = () => {
-  //   const newValue = !isEnabled;
-  //   setIsEnabled(newValue);
-  //   if (onChange) onChange(newValue);
-  // };
-
   const IconComponent = icon;
 
   const id = `filter-${label.toLowerCase().replace(' ', '-')}`;
 
   return (
     <div
-      className={`${isEnabled ? 'font-bold text-default' : 'text-subtle'} flex flex-grow cursor-pointer items-center gap-4 transition-all active:scale-90 active:opacity-50 lg:p-6`}
+      className={`${isEnabled ? 'font-bold text-default' : 'text-subtle'} flex flex-grow cursor-pointer items-center gap-4 transition-all active:opacity-50 motion-safe:active:scale-90 lg:p-6`}
       onClick={onChange}
     >
       <div className="flex flex-grow items-center gap-2">

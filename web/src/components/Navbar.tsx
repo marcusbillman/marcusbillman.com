@@ -37,7 +37,7 @@ export default function Navbar({ isMenuOpen, onClickMenuButton }: NavbarProps) {
     >
       <a
         href="/"
-        className={`pointer-events-auto flex items-center gap-1 rounded-full bg-default px-4 font-medium transition-all hover:bg-primary hover:text-on-primary active:scale-75 active:opacity-50 lg:px-6 dark:border ${isMenuOpen ? '' : 'shadow-lg'}`}
+        className={`pointer-events-auto flex items-center gap-1 rounded-full bg-default px-4 font-medium transition-all hover:bg-primary hover:text-on-primary active:opacity-50 motion-safe:active:scale-75 lg:px-6 dark:border ${isMenuOpen ? '' : 'shadow-lg'}`}
       >
         <span>Marcus</span>
         <span className="font-serif italic">Billman</span>
@@ -86,7 +86,7 @@ function NavbarLink({ text, url, icon }: NavbarLinkProps) {
     <li>
       <a
         href={url}
-        className={`flex items-center gap-1 transition-all hover:text-default active:scale-75 active:opacity-50 ${isActive ? 'font-bold text-default' : 'text-subtle'}`}
+        className={`flex items-center gap-1 transition-all hover:text-default active:opacity-50 motion-safe:active:scale-75 ${isActive ? 'font-bold text-default' : 'text-subtle'}`}
         aria-current={isActive ? 'page' : undefined}
       >
         <IconComponent weight={isActive ? 'fill' : 'regular'} />

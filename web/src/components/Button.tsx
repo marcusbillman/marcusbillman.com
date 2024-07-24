@@ -136,7 +136,7 @@ export default function Button({
 
   return (
     <Element
-      className={`${outerElementClass()} ${className} group relative isolate block w-fit cursor-pointer overflow-hidden rounded-full border border-transparent transition-all focus:outline-none focus:ring focus:ring-blueberry-500 focus:ring-offset-4 active:scale-75 active:opacity-50 motion-safe:duration-500 motion-safe:ease-smooth motion-reduce:hover:text-default`}
+      className={`${outerElementClass()} ${className} group relative isolate block w-fit cursor-pointer overflow-hidden rounded-full border border-transparent transition-all focus:outline-none focus:ring focus:ring-blueberry-500 focus:ring-offset-4 active:opacity-50 motion-safe:duration-500 motion-safe:ease-smooth motion-safe:active:scale-75 motion-reduce:hover:text-default`}
       href={href}
       target={href && isExternalUrl(href) ? '_blank' : undefined}
       type={type}
