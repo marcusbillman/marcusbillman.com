@@ -1,10 +1,9 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from 'sonner';
 
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/sections/FooterSection';
-import { useTailwindConfig } from '@/utils/tailwind';
 
 interface Props {
   title?: string;
@@ -12,11 +11,10 @@ interface Props {
 }
 
 const { title, noHeader = false } = Astro.props;
-const tailwindConfig = useTailwindConfig();
 ---
 
 <!doctype html>
-<html lang="en" class="motion-safe:scroll-smooth">
+<html lang="en" class="motion-safe:scroll-smooth" transition:animate="none">
   <head>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -82,7 +80,7 @@ const tailwindConfig = useTailwindConfig();
     >
       Skip to content
     </a>
-    <Navigation client:load />
+    <Navigation client:idle />
     <div class="overflow-clip rounded-b-4xl lg:rounded-b-6xl">
       {!noHeader && <slot name="header" />}
       <main
@@ -101,30 +99,20 @@ const tailwindConfig = useTailwindConfig();
     <Toaster
       client:idle
       position="bottom-center"
+      gap={8}
       toastOptions={{
         duration: 3000,
-        style: {
-          background: tailwindConfig.theme.backgroundColor.default.toString(),
-          color: tailwindConfig.theme.textColor.default.toString(),
-          border: `1px solid ${tailwindConfig.theme.borderColor.default.toString()}`,
-          borderRadius: tailwindConfig.theme.borderRadius.full,
-          fontSize: 20,
+        unstyled: true,
+        classNames: {
+          toast:
+            'flex w-full gap-1 rounded-4xl border bg-default px-6 py-4 font-sans text-lg shadow-xl',
+          success: 'text-primary',
+          warning: 'text-orange-500',
+          error: 'text-orange-500',
+          title: 'font-bold',
+          description: 'text-subtle',
+          icon: 'mt-[0.5ch]',
         },
-        success: {
-          iconTheme: {
-            primary: tailwindConfig.theme.backgroundColor.primary.toString(),
-            secondary: tailwindConfig.theme.textColor['on-primary'].toString(),
-          },
-        },
-        error: {
-          iconTheme: {
-            primary: tailwindConfig.theme.colors.orange[500].toString(),
-            secondary: tailwindConfig.theme.textColor['on-primary'].toString(),
-          },
-        },
-      }}
-      containerStyle={{
-        bottom: 32,
       }}
     />
   </body>

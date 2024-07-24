@@ -1,5 +1,5 @@
 import confetti from 'canvas-confetti';
-import toast from 'react-hot-toast';
+import { toast } from 'sonner';
 import { useCopyToClipboard } from 'usehooks-ts';
 
 interface Props {

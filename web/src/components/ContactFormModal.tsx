@@ -4,7 +4,7 @@ import { CircleNotch, PaperPlaneTilt } from '@phosphor-icons/react/dist/ssr';
 import confetti from 'canvas-confetti';
 import { motion, useAnimate } from 'framer-motion';
 import { AutoFocusInside } from 'react-focus-on';
-import toast from 'react-hot-toast';
+import { toast } from 'sonner';
 
 import Button from '@/components/Button';
 import Modal from '@/components/Modal';
@@ -42,7 +42,9 @@ export default function ContactFormModal({ onClose }: Props) {
   }
 
   if (state.errors) {
-    toast.error("Couldn't send.\nDouble-check and try again.");
+    toast.error('Failed to send', {
+      description: 'Double-check the form and try again.',
+    });
     reset();
   }
 
