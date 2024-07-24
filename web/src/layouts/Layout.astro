@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
 import { Toaster } from 'sonner';
 
 import Navigation from '@/components/Navigation';
@@ -69,9 +68,6 @@ const { title, noHeader = false } = Astro.props;
       name="twitter:image"
       content="https://marcusbillman.com/assets/images/social-embed.jpg"
     />
-
-    <!-- Astro View Transitions -->
-    <ViewTransitions />
   </head>
   <body class="min-h-screen cursor-default bg-default text-default">
     <a
