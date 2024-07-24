@@ -6,7 +6,7 @@ import type {
   Project,
 } from '@studio/sanity.types';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   DribbbleLogo,
   EyeClosed,
@@ -46,6 +46,21 @@ export default function PortfolioItemsSection({
     return false;
   });
 
+  // Set filter options based on 'type' URL parameter
+  // Example URL: '/portfolio?type=CASE_STUDY&type=SIDE_PROJECT'
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const types = urlParams.getAll('type');
+    if (types.length === 0) return;
+
+    setFilterOptions((prevOptions) => ({
+      ...prevOptions,
+      caseStudies: types.includes('CASE_STUDY'),
+      sideProjects: types.includes('SIDE_PROJECT'),
+      dribbbleShots: types.includes('DRIBBBLE_SHOT'),
+    }));
+  }, []);
+
   return (
     <section className="px-4 py-16 lg:px-16">
       <div className="flex flex-col gap-8 2xl:flex-row 2xl:items-center 2xl:justify-between">
@@ -54,25 +69,34 @@ export default function PortfolioItemsSection({
           <FilterOption
             label="Case studies"
             icon={Images}
-            defaultEnabled={filterOptions.caseStudies}
-            onChange={(isEnabled) => {
-              setFilterOptions({ ...filterOptions, caseStudies: isEnabled });
+            isEnabled={filterOptions.caseStudies}
+            onChange={() => {
+              setFilterOptions((prevOptions) => ({
+                ...prevOptions,
+                caseStudies: !prevOptions.caseStudies,
+              }));
             }}
           />
           <FilterOption
             label="Side projects"
             icon={Flask}
-            defaultEnabled={filterOptions.sideProjects}
-            onChange={(isEnabled) => {
-              setFilterOptions({ ...filterOptions, sideProjects: isEnabled });
+            isEnabled={filterOptions.sideProjects}
+            onChange={() => {
+              setFilterOptions((prevOptions) => ({
+                ...prevOptions,
+                sideProjects: !prevOptions.sideProjects,
+              }));
             }}
           />
           <FilterOption
             label="Dribbble shots"
             icon={DribbbleLogo}
-            defaultEnabled={filterOptions.dribbbleShots}
-            onChange={(isEnabled) => {
-              setFilterOptions({ ...filterOptions, dribbbleShots: isEnabled });
+            isEnabled={filterOptions.dribbbleShots}
+            onChange={() => {
+              setFilterOptions((prevOptions) => ({
+                ...prevOptions,
+                dribbbleShots: !prevOptions.dribbbleShots,
+              }));
             }}
           />
         </div>
@@ -292,23 +316,16 @@ function PortfolioItemTag({ label, icon, className }: PortfolioItemTagProps) {
 interface FilterOptionProps {
   label: string;
   icon: Icon;
-  defaultEnabled?: boolean;
-  onChange?: (isEnabled: boolean) => void;
+  isEnabled: boolean;
+  onChange: () => void;
 }
 
-function FilterOption({
-  label,
-  icon,
-  defaultEnabled = true,
-  onChange,
-}: FilterOptionProps) {
-  const [isEnabled, setIsEnabled] = useState(defaultEnabled);
-
-  const handleClick = () => {
-    const newValue = !isEnabled;
-    setIsEnabled(newValue);
-    if (onChange) onChange(newValue);
-  };
+function FilterOption({ label, icon, isEnabled, onChange }: FilterOptionProps) {
+  // const handleClick = () => {
+  //   const newValue = !isEnabled;
+  //   setIsEnabled(newValue);
+  //   if (onChange) onChange(newValue);
+  // };
 
   const IconComponent = icon;
 
@@ -317,7 +334,7 @@ function FilterOption({
   return (
     <div
       className={`${isEnabled ? 'font-bold text-default' : 'text-subtle'} flex flex-grow cursor-pointer items-center gap-4 transition-all active:scale-90 active:opacity-50 lg:p-6`}
-      onClick={handleClick}
+      onClick={onChange}
     >
       <div className="flex flex-grow items-center gap-2">
         <IconComponent size={24} weight={isEnabled ? 'fill' : 'regular'} />
