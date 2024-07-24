@@ -42,7 +42,7 @@ export default function MoreThingsSection() {
           title="Side projects"
           description="Web apps and experiments"
           icon={Flask}
-          href="portfolio"
+          href="portfolio?type=SIDE_PROJECT"
           className="h-[50vh] bg-gradient-to-b from-[#bfcaf1] to-[#889ef1] text-black md:col-span-3 md:row-span-2 md:h-auto xl:col-span-4"
         >
           <img
