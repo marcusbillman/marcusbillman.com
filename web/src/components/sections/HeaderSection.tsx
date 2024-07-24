@@ -16,7 +16,7 @@ export default function HeaderSection({
   return (
     <header className="sticky top-0 h-[512px] overflow-hidden px-4 pt-[15vh] lg:h-[75vh] lg:px-16 lg:pt-32">
       <Sandbox className="absolute bottom-12 left-4 right-4 top-16 lg:bottom-20 lg:left-8 lg:right-8 lg:top-24">
-        <motion.h1 className="absolute cursor-move text-5xl transition-opacity md:text-7xl lg:text-left lg:text-9xl">
+        <motion.h1 className="text-5xl transition-opacity md:text-7xl lg:text-left lg:text-9xl">
           {title}
         </motion.h1>
         {emoji.map((emoji, index) => (

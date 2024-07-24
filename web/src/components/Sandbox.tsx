@@ -2,7 +2,7 @@ import type { MotionProps } from 'framer-motion';
 import type { ReactElement } from 'react';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { useSpring, useTransform } from 'framer-motion';
+import { useReducedMotion, useSpring, useTransform } from 'framer-motion';
 
 import { randomInt } from '@/utils';
 import { TIMING_FUNCTIONS } from '@/utils/tailwind';
@@ -76,6 +76,7 @@ export default function Sandbox({
   const dragVelocityX = useSpring(0, { stiffness: 200, damping: 20 });
   const tiltAngle = useTransform(dragVelocityX, [-1000, 1000], [-30, 30]);
   const [lastDraggedIndex, setLastDraggedIndex] = useState<number>();
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     if (randomize) {
@@ -107,8 +108,11 @@ export default function Sandbox({
             {
               ...child.props,
               key: index,
-              className: `${child.props.className} absolute cursor-move pointer-events-auto`,
-              initial: { opacity: 0, scale: 0.8 },
+              className: `${child.props.className} absolute pointer-events-auto motion-safe:cursor-move`,
+              initial: {
+                opacity: 0,
+                scale: shouldReduceMotion ? 1 : 0.8,
+              },
               animate: {
                 opacity: 1,
                 scale: 1,
@@ -118,7 +122,7 @@ export default function Sandbox({
                 duration: 0.5,
                 ease: TIMING_FUNCTIONS.SMOOTH,
               },
-              drag: true,
+              drag: !shouldReduceMotion,
               dragConstraints: constraintsRef,
               dragElastic: 0.05,
               onDrag: (_event, info) => {
