@@ -13,7 +13,7 @@ import {
   Flask,
   Images,
 } from '@phosphor-icons/react/dist/ssr';
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 import Switch from '@/components/Switch';
 import { isExternalUrl } from '@/utils';
@@ -32,8 +32,6 @@ export default function PortfolioItemsSection({
     sideProjects: true,
     dribbbleShots: false,
   });
-
-  const shouldReduceMotion = useReducedMotion();
 
   const filteredPortfolioItems = portfolioItems.filter((portfolioItem) => {
     if (portfolioItem.type === 'CASE_STUDY') {
@@ -80,34 +78,30 @@ export default function PortfolioItemsSection({
         </div>
       </div>
       <ul className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-y-32">
-        <AnimatePresence>
-          {filteredPortfolioItems.map((portfolioItem) => (
-            <PortfolioItemCard
-              key={portfolioItem.id}
-              portfolioItem={portfolioItem}
-            />
-          ))}
-          {filteredPortfolioItems.length === 0 && (
-            <motion.div
-              layout={!shouldReduceMotion}
-              className="flex flex-col items-center gap-4 rounded-2xl border px-4 py-16 lg:col-span-2 lg:gap-8"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <EyeClosed size={32} className="text-subtle lg:hidden" />
-              <EyeClosed size={64} className="hidden text-subtle lg:block" />
-              <div className="flex flex-col gap-2 lg:gap-4">
-                <p className="text-center text-xl font-medium lg:text-3xl">
-                  Everyone's hiding!
-                </p>
-                <p className="text-center text-subtle lg:text-xl">
-                  Use the filters above to show my work.
-                </p>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {filteredPortfolioItems.map((portfolioItem) => (
+          <PortfolioItemCard
+            key={portfolioItem.id}
+            portfolioItem={portfolioItem}
+          />
+        ))}
+        {filteredPortfolioItems.length === 0 && (
+          <motion.div
+            className="flex flex-col items-center gap-4 rounded-2xl border px-4 py-16 lg:col-span-2 lg:gap-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            <EyeClosed size={32} className="text-subtle lg:hidden" />
+            <EyeClosed size={64} className="hidden text-subtle lg:block" />
+            <div className="flex flex-col gap-2 lg:gap-4">
+              <p className="text-center text-xl font-medium lg:text-3xl">
+                Everyone's hiding!
+              </p>
+              <p className="text-center text-subtle lg:text-xl">
+                Use the filters above to show my work.
+              </p>
+            </div>
+          </motion.div>
+        )}
       </ul>
     </section>
   );
@@ -212,23 +206,20 @@ function PortfolioItemCard({ portfolioItem }: PortfolioItemCardProps) {
 
   const shouldReduceMotion = useReducedMotion();
 
-  const outProperties = {
-    opacity: 0,
-    y: shouldReduceMotion ? 0 : 200,
-    rotate: shouldReduceMotion ? 0 : 15,
-  };
-
   return (
     <motion.li
       key={portfolioItem.id}
       layout={!shouldReduceMotion}
-      initial={outProperties}
+      initial={{
+        opacity: 0,
+        y: shouldReduceMotion ? 0 : 200,
+        rotate: shouldReduceMotion ? 0 : 15,
+      }}
       animate={{
         opacity: 1,
         y: 0,
         rotate: 0,
       }}
-      exit={outProperties}
       transition={{ duration: 0.5, ease: TIMING_FUNCTIONS.SMOOTH }}
       className="group"
     >
