@@ -13,7 +13,7 @@ const { title, noHeader = false } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="motion-safe:scroll-smooth" transition:animate="none">
+<html lang="en" class="motion-safe:scroll-smooth">
   <head>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -68,6 +68,21 @@ const { title, noHeader = false } = Astro.props;
       name="twitter:image"
       content="https://marcusbillman.com/assets/images/social-embed.jpg"
     />
+
+    <!-- Theme script -->
+    <script is:inline>
+      const theme = JSON.parse(localStorage.getItem('theme'));
+
+      if (theme === 'light') {
+        document.documentElement.classList.add('light');
+        document.documentElement.classList.remove('dark');
+      } else if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+      } else {
+        document.documentElement.classList.remove('light', 'dark');
+      }
+    </script>
   </head>
   <body class="min-h-screen cursor-default bg-default text-default">
     <a
@@ -141,7 +156,7 @@ const { title, noHeader = false } = Astro.props;
 
     /* Dark theme (system) */
     @media (prefers-color-scheme: dark) {
-      :root {
+      :root:not(.light) {
         --text-default: theme('colors.gray.100');
         --text-subtle: theme('colors.gray.400');
         --text-primary: theme('colors.blueberry.300');

@@ -28,6 +28,7 @@ import {
 } from '@/components/illustrations';
 import SocialLinks from '@/components/SocialLinks';
 import { TIMING_FUNCTIONS, useTailwindConfig } from '@/utils/tailwind';
+import ThemeSwitch from './ThemeSwitch';
 
 interface MenuProps {
   onClose?: () => void;
@@ -122,7 +123,7 @@ export default function Menu({ onClose }: MenuProps) {
               <SocialLinks compactOnMobile />
             </div>
             <div className="flex items-center justify-between">
-              {/* TODO: Add theme switch */}
+              <ThemeSwitch />
               {/* TODO: Add language switch */}
             </div>
           </div>
