@@ -96,7 +96,11 @@ function SocialLink({
       >
         {secondaryText}
       </span>
-      <a href={url} className="group mt-1 flex items-center gap-1">
+      <a
+        href={url}
+        target="_blank"
+        className="group mt-1 flex items-center gap-1"
+      >
         <span className={`${compactOnMobile ? 'lg:text-xl' : 'text-xl'}`}>
           {primaryText}
         </span>

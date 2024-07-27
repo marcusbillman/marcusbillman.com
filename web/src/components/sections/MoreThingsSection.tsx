@@ -131,7 +131,11 @@ function BentoCard({
       className={`${className} group relative isolate overflow-hidden rounded-2xl bg-subtle transition-all focus-within:z-10 focus-within:ring hover:z-10 hover:shadow-lg motion-safe:duration-500 motion-safe:ease-smooth motion-safe:focus-within:scale-105 motion-safe:hover:scale-105`}
       {...props}
     >
-      <a href={href} className="flex h-full flex-col justify-between gap-3 p-4">
+      <a
+        href={href}
+        target={isExternalUrl(href) ? '_blank' : '_self'}
+        className="flex h-full flex-col justify-between gap-3 p-4"
+      >
         <div className="flex w-fit origin-top-left items-center gap-2 rounded-2xl bg-default p-4 transition-all duration-500 ease-smooth motion-safe:group-hover:scale-95">
           {LeftIconComponent && <LeftIconComponent className="text-primary" />}
           <h3 className="text-default">{title}</h3>
