@@ -1,4 +1,5 @@
 import { dashboardTool, projectInfoWidget } from '@sanity/dashboard';
+import { documentInternationalization } from '@sanity/document-internationalization';
 import { visionTool } from '@sanity/vision';
 import { defineConfig, SchemaTypeDefinition } from 'sanity';
 import { structureTool } from 'sanity/structure';
@@ -17,6 +18,13 @@ export default defineConfig({
       widgets: [projectInfoWidget()],
     }),
     visionTool(),
+    documentInternationalization({
+      supportedLanguages: [
+        { id: 'en', title: 'English' },
+        { id: 'sv', title: 'Swedish' },
+      ],
+      schemaTypes: ['project'],
+    }),
   ],
   schema: {
     types: schemaTypes as SchemaTypeDefinition[],

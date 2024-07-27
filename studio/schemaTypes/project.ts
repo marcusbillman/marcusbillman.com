@@ -2,7 +2,7 @@ import {
   orderRankField,
   orderRankOrdering,
 } from '@sanity/orderable-document-list';
-import { Rule, SanityDocument } from 'sanity';
+import { Rule, SanityDocument, SlugValidationContext } from 'sanity';
 
 export default {
   name: 'project',
@@ -35,6 +35,7 @@ export default {
       options: {
         source: 'name',
         maxLength: 64,
+        isUnique: isUniqueForLanguage,
       },
       group: 'meta',
       validation: (Rule: Rule) => Rule.required(),
@@ -116,6 +117,12 @@ export default {
       hidden: ({ document }: { document: SanityDocument }) =>
         document?.type !== 'SIDE_PROJECT',
     },
+    {
+      name: 'language',
+      type: 'string',
+      readOnly: true,
+      hidden: true,
+    },
     orderRankField({ type: 'category' }),
   ],
   initialValue: () => ({
@@ -125,9 +132,58 @@ export default {
   orderings: [orderRankOrdering],
   preview: {
     select: {
-      title: 'name',
-      subtitle: 'headline',
-      media: 'coverImage',
+      name: 'name',
+      headline: 'headline',
+      coverImage: 'coverImage',
+      language: 'language',
+    },
+    prepare({
+      name,
+      headline,
+      coverImage,
+      language,
+    }: {
+      name: string;
+      headline: string;
+      coverImage: unknown;
+      language: string;
+    }) {
+      return {
+        title: name + (language ? ` (${language.toUpperCase()})` : ''),
+        subtitle: headline,
+        media: coverImage,
+      };
     },
   },
 };
+
+/**
+ * Checks that the slug is unique among documents of the same type and the same language.
+ * In other words, the same slug can be used for documents in different languages.
+ * @see https://github.com/justacodename/sanity-document-internationalization/blob/main/docs/05-allowing-the-same-slug-for-translations.md
+ */
+export async function isUniqueForLanguage(
+  slug: string,
+  context: SlugValidationContext,
+) {
+  const { document, getClient } = context;
+  if (!document?.language) return true;
+
+  const client = getClient({ apiVersion: '2024-07-27' });
+  const id = document._id.replace(/^drafts\./, '');
+  const params = {
+    draft: `drafts.${id}`,
+    published: id,
+    language: document.language,
+    slug,
+  };
+  const query = `!defined(*[
+    !(_id in [$draft, $published]) &&
+    slug.current == $slug &&
+    language == $language
+  ][0]._id)`;
+
+  const result = await client.fetch(query, params);
+
+  return result;
+}
