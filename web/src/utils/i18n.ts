@@ -15,7 +15,7 @@ const strings = { en, sv };
  * @returns The translated string, or the key if no translation was found
  */
 export default function t(key: string): string {
-  const locale = import.meta.env.PUBLIC_LOCALE as Locale;
+  const locale = (import.meta.env.PUBLIC_LOCALE as Locale) || 'en';
   const keypath = key.split('.');
   let result: TranslationObject | string = strings[locale];
 
