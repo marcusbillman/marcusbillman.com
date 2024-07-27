@@ -1,5 +1,6 @@
 {
   "404": {
+    "title": "Sidan hittades inte",
     "heading": "Nämen, du hittade 404-sidan!",
     "text": "Fast du letade förmodligen efter något annat. Dubbelkolla webbadressen eller börja från startsidan.",
     "cta": "Kom, vi går hem"
@@ -108,6 +109,7 @@
     }
   },
   "portfolio": {
+    "title": "Portfolio",
     "heading": "Portfolio",
     "myWork": "Mitt arbete",
     "caseStudy": "Case",
@@ -122,6 +124,7 @@
     }
   },
   "about": {
+    "title": "Om mig",
     "heading": "Om mig",
     "bio": {
       "heading": {
@@ -188,6 +191,7 @@
     }
   },
   "contact": {
+    "title": "Kontakt",
     "heading": "Hör gärna av dig! 💬",
     "openForm": "Öppna kontaktformulär",
     "or": "eller",

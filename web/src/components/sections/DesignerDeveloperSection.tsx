@@ -16,6 +16,7 @@ import figmaTools from '@/assets/images/figma-tools.png';
 import techLogos from '@/assets/images/tech-logos.png';
 import designerBg from '@/assets/images/wireframe-sketch.jpg';
 import DotGrid from '@/components/DotGrid';
+import t from '@/utils/i18n';
 
 const optimizedDesignerBg = await getImage({ src: designerBg });
 const optimizedDeveloperBg = await getImage({ src: developerBg });
@@ -64,17 +65,19 @@ export default function DesignerDeveloperSection() {
         {/* Text */}
         <div className="flex flex-wrap justify-center lg:absolute lg:inset-16 lg:top-32 lg:w-auto">
           <span className="inline-flex items-center text-primary lg:absolute lg:left-0 lg:top-0">
-            Designer&nbsp;
+            {t('about.designerDeveloper.designer.word1')}&nbsp;
             <PenNib size={32} className="lg:hidden" />
             <PenNib size={64} className="hidden lg:inline 2xl:hidden" />
             <PenNib size={128} className="hidden 2xl:inline" />
             &nbsp;
           </span>
-          <span className="lg:absolute lg:left-0 lg:top-1/3">with&nbsp;</span>
+          <span className="lg:absolute lg:left-0 lg:top-1/3">
+            {t('about.designerDeveloper.designer.word2')}&nbsp;
+          </span>
           <span className="inline-flex font-serif italic lg:absolute lg:bottom-0 lg:right-0 lg:flex-col lg:items-end lg:font-sans lg:not-italic">
-            developer's&nbsp;
+            {t('about.designerDeveloper.designer.word3')}&nbsp;
             <span className="inline-flex items-center">
-              mind&nbsp;
+              {t('about.designerDeveloper.designer.word4')}&nbsp;
               <Graph size={32} className="lg:hidden" />
               <Graph size={64} className="hidden lg:inline 2xl:hidden" />
               <Graph size={128} className="hidden 2xl:inline" />
@@ -86,21 +89,21 @@ export default function DesignerDeveloperSection() {
         <div className="group absolute right-0 top-0 size-[25vw] min-w-64 opacity-50 transition-opacity duration-500 hover:opacity-100">
           <img
             src={optimizedColourCardBlueberry.src}
-            alt="Blueberry colour card"
+            alt={t('about.alt.colourCardBlueberry')}
             loading="lazy"
             className="absolute right-[15%] top-[-10%] block origin-bottom rotate-[5deg] transition-transform duration-500 ease-smooth group-hover:rotate-[-5deg]"
             aria-hidden
           />
           <img
             src={optimizedColourCardSalmon.src}
-            alt="Salmon colour card"
+            alt={t('about.alt.colourCardSalmon')}
             className="absolute right-[-5%] top-[10%] block origin-bottom rotate-[15deg] transition-transform duration-500 ease-smooth group-hover:rotate-[20deg]"
             aria-hidden
           />
         </div>
         <img
           src={optimizedFigmaTools.src}
-          alt="Figma tool icons arranged in a circle"
+          alt={t('about.alt.figmaTools')}
           className="absolute -bottom-64 -left-32 opacity-50"
           aria-hidden
         />
@@ -119,17 +122,19 @@ export default function DesignerDeveloperSection() {
         {/* Text */}
         <div className="flex flex-wrap justify-center lg:absolute lg:inset-16 lg:top-32 lg:w-auto">
           <span className="inline-flex items-center text-blueberry-300 lg:absolute lg:right-0 lg:top-0">
-            Developer&nbsp;
+            {t('about.designerDeveloper.developer.word1')}&nbsp;
             <CodeBlock size={32} className="lg:hidden" />
             <CodeBlock size={64} className="hidden lg:inline 2xl:hidden" />
             <CodeBlock size={128} className="hidden 2xl:inline" />
             &nbsp;
           </span>
-          <span className="lg:absolute lg:right-0 lg:top-1/3">with&nbsp;</span>
+          <span className="lg:absolute lg:right-0 lg:top-1/3">
+            {t('about.designerDeveloper.developer.word2')}&nbsp;
+          </span>
           <span className="inline-flex font-serif italic lg:absolute lg:bottom-0 lg:left-0 lg:flex-col lg:font-sans lg:not-italic">
-            designer's&nbsp;
+            {t('about.designerDeveloper.developer.word3')}&nbsp;
             <span className="inline-flex items-center">
-              eye&nbsp;
+              {t('about.designerDeveloper.developer.word4')}&nbsp;
               <Eye size={32} className="lg:hidden" />
               <Eye size={64} className="hidden lg:inline 2xl:hidden" />
               <Eye size={128} className="hidden 2xl:inline" />
@@ -140,13 +145,13 @@ export default function DesignerDeveloperSection() {
         {/* Illustrations */}
         <img
           src={optimizedTechLogos.src}
-          alt="Grid of web technology logos"
+          alt={t('about.alt.techLogos')}
           className="absolute left-[-25%] top-[-15%] rotate-[-30deg] opacity-50"
           aria-hidden
         />
         <img
           src={optimizedCodeEasterEgg.src}
-          alt="Code block with easter egg"
+          alt={t('about.alt.codeEasterEgg')}
           className="absolute -bottom-32 -right-32 w-[800px] rotate-[-15deg] opacity-50 transition-opacity hover:opacity-100"
           aria-hidden
         />

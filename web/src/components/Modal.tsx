@@ -6,6 +6,7 @@ import { FocusOn } from 'react-focus-on';
 import { useMediaQuery } from 'usehooks-ts';
 
 import Button from '@/components/Button';
+import t from '@/utils/i18n';
 import { TIMING_FUNCTIONS, useTailwindConfig } from '@/utils/tailwind';
 
 interface Props {
@@ -53,7 +54,7 @@ export default function Modal({ title, onClose, children }: Props) {
             <div className="flex items-center justify-between p-4 lg:border-b lg:border-b-default lg:p-6">
               <h2 className="font-serif text-xl font-medium italic">{title}</h2>
               <Button
-                text="Close"
+                text={t('common.close')}
                 icon={X}
                 iconSide="right"
                 size="small"

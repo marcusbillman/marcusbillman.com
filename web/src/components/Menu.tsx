@@ -27,8 +27,9 @@ import {
   PhoneIllustration,
 } from '@/components/illustrations';
 import SocialLinks from '@/components/SocialLinks';
+import ThemeSwitch from '@/components/ThemeSwitch';
+import t from '@/utils/i18n';
 import { TIMING_FUNCTIONS, useTailwindConfig } from '@/utils/tailwind';
-import ThemeSwitch from './ThemeSwitch';
 
 interface MenuProps {
   onClose?: () => void;
@@ -59,7 +60,7 @@ export default function Menu({ onClose }: MenuProps) {
         <div className="flex items-center justify-between lg:hidden">
           <h2 className="font-serif text-xl font-medium italic">Menu</h2>
           <Button
-            text="Close"
+            text={t('common.close')}
             icon={X}
             style="subtle"
             iconSide="right"
@@ -69,7 +70,7 @@ export default function Menu({ onClose }: MenuProps) {
         </div>
         <div className="flex flex-grow flex-col gap-4 overflow-y-auto lg:flex-row lg:gap-8">
           <ul className="flex flex-col flex-wrap gap-2 lg:flex-[1] lg:flex-row lg:gap-4 2xl:flex-[3]">
-            <MenuLink text="Home" url="/" icon={House}>
+            <MenuLink text={t('navigation.home')} url="/" icon={House}>
               <div
                 className="absolute inset-0 -z-10 bg-cover bg-center"
                 style={{ backgroundImage: `url(${homeBg.src})` }}
@@ -80,7 +81,11 @@ export default function Menu({ onClose }: MenuProps) {
               <ButtonClickIllustration className="absolute left-[-5%] top-[60%] hidden 2xl:block" />
               <BrowserIllustration className="absolute left-[60%] top-[70%]" />
             </MenuLink>
-            <MenuLink text="Portfolio" url="/portfolio" icon={Images}>
+            <MenuLink
+              text={t('navigation.portfolio')}
+              url="/portfolio"
+              icon={Images}
+            >
               <div className="absolute inset-0 -z-10 bg-subtle" />
               <DotGrid dim="default" />
               <Glow
@@ -89,26 +94,30 @@ export default function Menu({ onClose }: MenuProps) {
               />
               <img
                 src={portfolioPhone1.src}
-                alt="iPhone 15 Plus smartphone"
+                alt={t('navigation.alt.portfolioPhone1')}
                 className="absolute right-[30%] top-[30%] h-[80%] min-h-64 rotate-[15deg]"
               />
               <img
                 src={portfolioPhone2.src}
-                alt="Google Pixel 8 smartphone"
+                alt={t('navigation.alt.portfolioPhone2')}
                 className="absolute right-[30%] top-[30%] h-[80%] min-h-64 translate-x-[50%] translate-y-[20%] rotate-[5deg]"
               />
             </MenuLink>
-            <MenuLink text="About" url="/about" icon={User}>
+            <MenuLink text={t('navigation.about')} url="/about" icon={User}>
               <div className="absolute inset-0 -z-10 bg-subtle" />
               <DotGrid dim="default" />
               <Glow color="orange" className="bottom-[20%] left-[30%] w-full" />
               <img
                 src={aboutPortrait.src}
-                alt="Marcus looking at the camera"
+                alt={t('navigation.alt.aboutPortrait')}
                 className="absolute bottom-[-30%] right-0 h-[80%] min-h-24 max-w-fit lg:bottom-0"
               />
             </MenuLink>
-            <MenuLink text="Contact" url="/contact" icon={ChatsCircle}>
+            <MenuLink
+              text={t('navigation.contact')}
+              url="/contact"
+              icon={ChatsCircle}
+            >
               <div className="absolute inset-0 -z-10 bg-subtle" />
               <DotGrid dim="default" />
               <Glow

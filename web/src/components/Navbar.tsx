@@ -12,6 +12,7 @@ import {
 import { motion, useReducedMotion } from 'framer-motion';
 
 import Button from '@/components/Button';
+import t from '@/utils/i18n';
 import { TIMING_FUNCTIONS } from '@/utils/tailwind';
 
 interface NavbarProps {
@@ -39,8 +40,8 @@ export default function Navbar({ isMenuOpen, onClickMenuButton }: NavbarProps) {
         href="/"
         className={`pointer-events-auto flex items-center gap-1 rounded-full bg-default px-4 font-medium transition-all hover:bg-primary hover:text-on-primary active:opacity-50 motion-safe:active:scale-75 lg:px-6 dark:border ${isMenuOpen ? '' : 'shadow-lg'}`}
       >
-        <span>Marcus</span>
-        <span className="font-serif italic">Billman</span>
+        <span>{t('common.firstName')}</span>
+        <span className="font-serif italic">{t('common.lastName')}</span>
       </a>
       <motion.div
         // Animation for hiding or showing navbar links as the menu is opened or closed
@@ -49,14 +50,22 @@ export default function Navbar({ isMenuOpen, onClickMenuButton }: NavbarProps) {
       >
         {!isMenuOpen && (
           <motion.ul className={`hidden gap-6 lg:flex lg:items-center`}>
-            <NavbarLink text="Home" url="/" icon={House} />
-            <NavbarLink text="Portfolio" url="/portfolio" icon={Images} />
-            <NavbarLink text="About" url="/about" icon={User} />
-            <NavbarLink text="Contact" url="/contact" icon={ChatsCircle} />
+            <NavbarLink text={t('navigation.home')} url="/" icon={House} />
+            <NavbarLink
+              text={t('navigation.portfolio')}
+              url="/portfolio"
+              icon={Images}
+            />
+            <NavbarLink text={t('navigation.about')} url="/about" icon={User} />
+            <NavbarLink
+              text={t('navigation.contact')}
+              url="/contact"
+              icon={ChatsCircle}
+            />
           </motion.ul>
         )}
         <Button
-          text={isMenuOpen ? 'Close' : 'Menu'}
+          text={isMenuOpen ? t('common.close') : t('navigation.menu')}
           icon={isMenuOpen ? X : List}
           style={isMenuOpen ? 'subtle' : 'default'}
           iconSide="right"

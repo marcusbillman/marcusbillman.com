@@ -1,6 +1,7 @@
 import { ArrowUpRight, Copy } from '@phosphor-icons/react/dist/ssr';
 
 import CopyToClipboard from '@/components/CopyToClipboard';
+import t from '@/utils/i18n';
 
 interface Props {
   /** Make the component always look like dark theme instead of using dynamic colour tokens */
@@ -13,36 +14,34 @@ export default function SocialLinks({
   forceDark = false,
   compactOnMobile = false,
 }: Props) {
-  const EMAIL = 'hello@marcusbillman.com';
-
   return (
     <ul
       className={`${compactOnMobile ? 'gap-y-3 lg:gap-y-6' : 'gap-y-6'} grid flex-1 grid-cols-2`}
     >
       <SocialLink
-        primaryText="LinkedIn"
-        secondaryText="Networking"
+        primaryText={t('common.socials.linkedin')}
+        secondaryText={t('common.socials.linkedinDescription')}
         url="https://m-b.me/linkedin"
         forceDark={forceDark}
         compactOnMobile={compactOnMobile}
       />
       <SocialLink
-        primaryText="GitHub"
-        secondaryText="Code"
+        primaryText={t('common.socials.github')}
+        secondaryText={t('common.socials.githubDescription')}
         url="https://m-b.me/github"
         forceDark={forceDark}
         compactOnMobile={compactOnMobile}
       />
       <SocialLink
-        primaryText="Dribbble"
-        secondaryText="Design"
+        primaryText={t('common.socials.dribbble')}
+        secondaryText={t('common.socials.dribbbleDescription')}
         url="https://m-b.me/dribbble"
         forceDark={forceDark}
         compactOnMobile={compactOnMobile}
       />
       <SocialLink
-        primaryText="SoundCloud"
-        secondaryText="Music"
+        primaryText={t('common.socials.soundcloud')}
+        secondaryText={t('common.socials.soundcloudDescription')}
         url="https://m-b.me/soundcloud"
         forceDark={forceDark}
         compactOnMobile={compactOnMobile}
@@ -51,12 +50,12 @@ export default function SocialLinks({
         <span
           className={`${forceDark ? 'text-gray-400' : 'text-subtle'} ${compactOnMobile ? 'hidden lg:inline' : ''} font-medium`}
         >
-          Email
+          {t('common.socials.emailDescription')}
         </span>
-        <CopyToClipboard text={EMAIL}>
+        <CopyToClipboard text={t('common.socials.emailAddress')}>
           <button className="group mt-1 flex cursor-pointer items-center gap-1">
             <span className={`${compactOnMobile ? 'lg:text-xl' : 'text-xl'}`}>
-              {EMAIL}
+              {t('common.socials.emailAddress')}
             </span>
             <Copy
               size={16}

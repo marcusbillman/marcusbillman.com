@@ -7,6 +7,7 @@ import PortfolioItemsSection from '@/components/sections/PortfolioItemsSection';
 import SeparatorSection from '@/components/sections/SeparatorSection';
 import Layout from '@/layouts/Layout.astro';
 import { fetchDribbbleShots } from '@/utils/dribbble';
+import t from '@/utils/i18n';
 import { fetchAllProjects } from '@/utils/sanity';
 
 // Fetch data and split by type
@@ -52,11 +53,11 @@ dribbbleShots.forEach((dribbbleShot) => {
 });
 ---
 
-<Layout title="Portfolio">
+<Layout title={t('portfolio.title')}>
   <HeaderSection
     slot="header"
     client:load
-    title="Portfolio"
+    title={t('portfolio.heading')}
     emoji={['✨', '🎨', '📄', '🖋️', '🗃️']}
   />
   <PortfolioItemsSection client:idle portfolioItems={portfolioItems} />

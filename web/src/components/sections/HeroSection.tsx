@@ -24,6 +24,7 @@ import {
 } from '@/components/illustrations';
 import WaveLine from '@/components/WaveLine.tsx';
 import { useIntersectionObserverSelector } from '@/hooks';
+import t from '@/utils/i18n';
 import { TIMING_FUNCTIONS } from '@/utils/tailwind';
 
 const optimizedBg = await getImage({ src: bg });
@@ -75,11 +76,19 @@ export default function HeroSection() {
       {/* Content */}
       <div className="z-10 max-w-7xl">
         <h1 className="flex flex-wrap justify-center gap-x-[0.33ch] text-5xl md:text-7xl lg:justify-start lg:text-left lg:text-9xl">
-          <motion.span {...slideAnimationWithDelay(0)}>Designer,</motion.span>
-          <motion.span {...slideAnimationWithDelay(0.5)}>developer</motion.span>
-          <motion.span {...slideAnimationWithDelay(1)}>and</motion.span>
+          <motion.span {...slideAnimationWithDelay(0)}>
+            {t('home.hero.word1')}
+          </motion.span>
+          <motion.span {...slideAnimationWithDelay(0.5)}>
+            {t('home.hero.word2')}
+          </motion.span>
+          <motion.span {...slideAnimationWithDelay(1)}>
+            {t('home.hero.word3')}
+          </motion.span>
           <span className="relative flex flex-col gap-1 lg:gap-2">
-            <motion.span {...slideAnimationWithDelay(1.2)}>human</motion.span>
+            <motion.span {...slideAnimationWithDelay(1.2)}>
+              {t('home.hero.word4')}
+            </motion.span>
             <motion.span
               className="w-full overflow-hidden"
               initial={{
@@ -105,7 +114,7 @@ export default function HeroSection() {
           <span className="drop-shadow-md">
             <motion.img
               src={optimizedProfilePicture.src}
-              alt="Profile picture"
+              alt={t('home.alt.profilePicture')}
               className="size-12 rounded-full md:size-20 lg:size-32"
               aria-hidden
               {...slideAnimationWithDelay(1.6)}

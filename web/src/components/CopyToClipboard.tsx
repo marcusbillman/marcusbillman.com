@@ -2,6 +2,8 @@ import confetti from 'canvas-confetti';
 import { toast } from 'sonner';
 import { useCopyToClipboard } from 'usehooks-ts';
 
+import t from '@/utils/i18n';
+
 interface Props {
   /** The text to copy to the clipboard. */
   text: string;
@@ -17,7 +19,7 @@ export default function CopyToClipboard({ text, children }: Props) {
   function handleClick(event: React.MouseEvent, text: string) {
     copy(text)
       .then(() => {
-        toast.success('Copied!');
+        toast.success(t('common.toastCopySuccess'));
         confetti({
           origin: {
             x: event.clientX / window.innerWidth || undefined,
@@ -27,7 +29,7 @@ export default function CopyToClipboard({ text, children }: Props) {
         });
       })
       .catch((error) => {
-        toast.error("Couldn't copy! 😢");
+        toast.error(t('common.toastCopyError'));
         console.error(error);
       });
   }

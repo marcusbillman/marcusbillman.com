@@ -12,18 +12,18 @@ import CopyToClipboard from '@/components/CopyToClipboard';
 import DotGrid from '@/components/DotGrid';
 import Glow from '@/components/Glow';
 import { LinkedIn } from '@/components/icons';
+import t from '@/utils/i18n';
 
 export default function FullContactSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const EMAIL = 'hello@marcusbillman.com';
 
   return (
     <section className="flex min-h-[75vh] flex-col items-center justify-center px-4 py-32 lg:p-32">
       <h1 className="text-balance text-center text-5xl lg:text-8xl">
-        Let’s get in touch! 💬
+        {t('contact.heading')}
       </h1>
       <Button
-        text="Open contact form"
+        text={t('contact.openForm')}
         icon={PaperPlaneTilt}
         style="primary"
         className="mt-16"
@@ -34,39 +34,41 @@ export default function FullContactSection() {
           <ContactFormModal onClose={() => setIsModalOpen(false)} />
         )}
       </AnimatePresence>
-      <span className="mt-6 text-xl text-subtle">or</span>
+      <span className="mt-6 text-xl text-subtle">{t('contact.or')}</span>
       <div className="mt-6 flex w-full max-w-5xl flex-col gap-4 md:flex-row lg:gap-8">
         <div className="flex flex-col gap-4 rounded-2xl border bg-default p-4 md:flex-1 lg:p-6">
           <div className="flex items-center gap-2">
             <EnvelopeSimple size={24} className="lg:hidden" />
             <EnvelopeSimple size={32} className="hidden lg:block" />
-            <span className="text-xl font-medium lg:text-2xl">{EMAIL}</span>
+            <span className="text-xl font-medium lg:text-2xl">
+              {t('common.socials.emailAddress')}
+            </span>
           </div>
           <div className="flex gap-2 lg:gap-3">
-            <CopyToClipboard text={EMAIL}>
+            <CopyToClipboard text={t('common.socials.emailAddress')}>
               <Button
-                text="Copy"
+                text={t('contact.emailCopy')}
                 icon={Copy}
                 size="small"
                 className="lg:hidden"
               />
               <Button
-                text="Copy"
+                text={t('contact.emailCopy')}
                 icon={Copy}
                 size="medium"
                 className="hidden lg:block"
               />
             </CopyToClipboard>
             <Button
-              text="Open"
-              href={`mailto:${EMAIL}`}
+              text={t('contact.emailOpen')}
+              href={`mailto:${t('common.socials.emailAddress')}`}
               style="subtle"
               size="small"
               className="lg:hidden"
             />
             <Button
-              text="Open"
-              href={`mailto:${EMAIL}`}
+              text={t('contact.emailOpen')}
+              href={`mailto:${t('common.socials.emailAddress')}`}
               style="subtle"
               size="medium"
               className="hidden lg:block"
@@ -77,18 +79,20 @@ export default function FullContactSection() {
           <div className="flex items-center gap-2">
             <LinkedIn size={24} className="lg:hidden" />
             <LinkedIn size={32} className="hidden lg:block" />
-            <span className="text-xl font-medium lg:text-2xl">LinkedIn</span>
+            <span className="text-xl font-medium lg:text-2xl">
+              {t('common.socials.linkedin')}
+            </span>
           </div>
           <div className="flex gap-2 lg:gap-3">
             <Button
-              text="Visit profile"
+              text={t('contact.linkedinVisit')}
               href={`https://m-b.me/linkedin`}
               style="subtle"
               size="small"
               className="lg:hidden"
             />
             <Button
-              text="Visit profile"
+              text={t('contact.linkedinVisit')}
               href={`https://m-b.me/linkedin`}
               style="subtle"
               size="medium"

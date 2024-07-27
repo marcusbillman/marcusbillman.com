@@ -6,13 +6,14 @@ import HeaderSection from '@/components/sections/HeaderSection';
 import SeparatorSection from '@/components/sections/SeparatorSection';
 import SkillsSection from '@/components/sections/SkillsSection';
 import Layout from '@/layouts/Layout.astro';
+import t from '@/utils/i18n';
 ---
 
-<Layout title="About me">
+<Layout title={t('about.title')}>
   <HeaderSection
     slot="header"
     client:load
-    title="About me"
+    title={t('about.heading')}
     emoji={['🤔', '🧑‍🎨', '💎', '🧠', '🔎']}
   />
   <FullBioSection />

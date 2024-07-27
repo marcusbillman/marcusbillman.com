@@ -6,6 +6,7 @@ import bg from '@/assets/images/hero-bg-still.jpg';
 import Button from '@/components/Button';
 import DotGrid from '@/components/DotGrid';
 import Sandbox from '@/components/Sandbox';
+import t from '@/utils/i18n';
 
 const optimizedBg = await getImage({ src: bg });
 
@@ -71,15 +72,12 @@ export default function NotFoundSection() {
       <div className="h-fit lg:absolute lg:bottom-16 lg:left-16 lg:right-16 2xl:bottom-32 2xl:left-32 2xl:right-32">
         <div className="mx-auto flex flex-col gap-6 rounded-2xl p-6 text-on-primary lg:container lg:bg-default lg:text-default xl:flex-row xl:items-end xl:gap-16">
           <h1 className="text-balance text-4xl lg:text-6xl">
-            Woah, you found the 404 page!
+            {t('404.heading')}
           </h1>
           <div className="flex flex-col gap-6 md:flex-row md:items-center xl:gap-16">
-            <p className="text-xl md:text-balance">
-              Though, you were probably looking for something else. Check the
-              URL or start from the home page.
-            </p>
+            <p className="text-xl md:text-balance">{t('404.text')}</p>
             <Button
-              text="Let's go home"
+              text={t('404.cta')}
               icon={House}
               iconSide="left"
               href="/"

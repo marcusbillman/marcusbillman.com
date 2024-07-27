@@ -1,6 +1,7 @@
 import type { Project } from '@studio/sanity.types';
 
 import Button from '@/components/Button';
+import t from '@/utils/i18n';
 import { sanityImageUrl } from '@/utils/sanity';
 
 interface FeaturedProjectsSectionProps {
@@ -12,7 +13,9 @@ export default function FeaturedProjectsSection({
 }: FeaturedProjectsSectionProps) {
   return (
     <section className="px-4 lg:px-16">
-      <h2 className="text-4xl font-medium lg:text-6xl">Featured work ✨</h2>
+      <h2 className="text-4xl font-medium lg:text-6xl">
+        {t('home.featuredProjects.heading')}
+      </h2>
       <ul className="relative isolate mt-12 flex flex-col gap-32 pb-12 lg:mt-16 lg:pb-16">
         <div
           className="absolute left-12 -z-10 h-full w-px border-l-4 border-dotted border-l-default"
@@ -23,7 +26,11 @@ export default function FeaturedProjectsSection({
         ))}
       </ul>
       <div className="mt-6 lg:mt-16">
-        <Button text="All projects" href="portfolio" style="subtle" />
+        <Button
+          text={t('home.featuredProjects.all')}
+          href="portfolio"
+          style="subtle"
+        />
       </div>
     </section>
   );
@@ -45,7 +52,10 @@ function FeaturedProject({ project }: FeaturedProjectProps) {
             {project.headline}
           </p>
         </div>
-        <Button text="View case" href={'/portfolio/' + project.slug?.current} />
+        <Button
+          text={t('home.featuredProjects.viewCase')}
+          href={'/portfolio/' + project.slug?.current}
+        />
       </div>
       {project.coverImage?.asset && (
         <img

@@ -21,6 +21,7 @@ import {
   PhoneIllustration,
 } from '@/components/illustrations';
 import { isExternalUrl } from '@/utils';
+import t from '@/utils/i18n';
 
 const optimizedDesignBg = await getImage({ src: designBg });
 const optimizedMusicBg = await getImage({ src: musicBg });
@@ -35,26 +36,26 @@ export default function MoreThingsSection() {
   return (
     <section className="px-4 lg:px-16">
       <h2 className="text-4xl font-medium lg:text-6xl">
-        More things made by me 🍱
+        {t('home.moreThings.heading')}
       </h2>
       <ul className="mt-12 grid gap-6 md:grid-cols-6 md:grid-rows-[repeat(4,max(10vw,12rem))] lg:mt-16 lg:gap-8">
         <BentoCard
-          title="Side projects"
-          description="Web apps and experiments"
+          title={t('home.moreThings.sideProjects')}
+          description={t('home.moreThings.sideProjectsDescription')}
           icon={Flask}
           href="portfolio?type=SIDE_PROJECT"
           className="h-[50vh] bg-gradient-to-b from-[#bfcaf1] to-[#889ef1] text-black md:col-span-3 md:row-span-2 md:h-auto xl:col-span-4"
         >
           <img
             src={optimizedSideProjectsScreen1.src}
-            alt="App screenshot"
+            alt={t('home.alt.sideProjectsScreen1')}
             loading="lazy"
             className="absolute left-[20%] top-[0%] h-48 rotate-[30deg] rounded-2xl shadow-xl"
             aria-hidden
           />
           <img
             src={optimizedSideProjectsScreen2.src}
-            alt="App screenshot"
+            alt={t('home.alt.sideProjectsScreen2')}
             loading="lazy"
             className="absolute bottom-[0%] left-[35%] h-48 rotate-[30deg] rounded-2xl shadow-xl"
             aria-hidden
@@ -65,8 +66,8 @@ export default function MoreThingsSection() {
           <DotGrid />
         </BentoCard>
         <BentoCard
-          title="Dribbble"
-          description="Design explorations"
+          title={t('home.moreThings.dribbble')}
+          description={t('home.moreThings.dribbbleDescription')}
           icon={Dribbble}
           href="https://m-b.me/dribbble"
           className="h-[50vh] bg-cover bg-center md:col-span-3 md:row-span-2 md:h-auto xl:col-span-2"
@@ -75,8 +76,8 @@ export default function MoreThingsSection() {
           <DotGrid dim="strong" />
         </BentoCard>
         <BentoCard
-          title="SoundCloud"
-          description="Music"
+          title={t('home.moreThings.soundcloud')}
+          description={t('home.moreThings.soundcloudDescription')}
           icon={SoundCloud}
           href="https://m-b.me/soundcloud"
           className="h-[50vh] bg-cover bg-center text-gray-100 md:col-span-3 md:row-span-2 md:h-auto"
@@ -87,15 +88,15 @@ export default function MoreThingsSection() {
           </div>
         </BentoCard>
         <BentoCard
-          title="GitHub"
-          description="Code"
+          title={t('home.moreThings.github')}
+          description={t('home.moreThings.githubDescription')}
           icon={GitHub}
           href="https://m-b.me/github"
           className="border border-transparent hover:border-default hover:bg-default md:col-span-3 md:h-auto"
         />
         <BentoCard
-          title="LinkedIn"
-          description="Networking"
+          title={t('home.moreThings.linkedin')}
+          description={t('home.moreThings.linkedinDescription')}
           icon={LinkedIn}
           href="https://m-b.me/linkedin"
           className="border border-transparent hover:border-default hover:bg-default md:col-span-3 md:h-auto"

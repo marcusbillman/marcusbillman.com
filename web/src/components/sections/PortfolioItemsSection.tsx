@@ -17,6 +17,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 
 import Switch from '@/components/Switch';
 import { isExternalUrl } from '@/utils';
+import t from '@/utils/i18n';
 import { sanityImageUrl } from '@/utils/sanity';
 import { TIMING_FUNCTIONS } from '@/utils/tailwind';
 
@@ -64,10 +65,12 @@ export default function PortfolioItemsSection({
   return (
     <section className="px-4 py-16 lg:px-16">
       <div className="flex flex-col gap-8 2xl:flex-row 2xl:items-center 2xl:justify-between">
-        <h2 className="text-4xl font-medium lg:text-6xl">My work</h2>
+        <h2 className="text-4xl font-medium lg:text-6xl">
+          {t('portfolio.myWork')}
+        </h2>
         <div className="flex flex-col gap-4 overflow-hidden rounded-2xl lg:flex-row lg:gap-0 lg:divide-x lg:border">
           <FilterOption
-            label="Case studies"
+            label={t('portfolio.caseStudies')}
             icon={Images}
             isEnabled={filterOptions.caseStudies}
             onChange={() => {
@@ -78,7 +81,7 @@ export default function PortfolioItemsSection({
             }}
           />
           <FilterOption
-            label="Side projects"
+            label={t('portfolio.sideProjects')}
             icon={Flask}
             isEnabled={filterOptions.sideProjects}
             onChange={() => {
@@ -89,7 +92,7 @@ export default function PortfolioItemsSection({
             }}
           />
           <FilterOption
-            label="Dribbble shots"
+            label={t('portfolio.dribbbleShots')}
             icon={DribbbleLogo}
             isEnabled={filterOptions.dribbbleShots}
             onChange={() => {
@@ -118,10 +121,10 @@ export default function PortfolioItemsSection({
             <EyeClosed size={64} className="hidden text-subtle lg:block" />
             <div className="flex flex-col gap-2 lg:gap-4">
               <p className="text-center text-xl font-medium lg:text-3xl">
-                Everyone's hiding!
+                {t('portfolio.emptyState.heading')}
               </p>
               <p className="text-center text-subtle lg:text-xl">
-                Use the filters above to show my work.
+                {t('portfolio.emptyState.text')}
               </p>
             </div>
           </motion.div>
@@ -218,13 +221,22 @@ function PortfolioItemCard({ portfolioItem }: PortfolioItemCardProps) {
 
   function PortfolioItemTagComponent() {
     if (portfolioItem.type === 'CASE_STUDY') {
-      return <PortfolioItemTag label="Case study" icon={Images} />;
+      return (
+        <PortfolioItemTag label={t('portfolio.caseStudy')} icon={Images} />
+      );
     }
     if (portfolioItem.type === 'SIDE_PROJECT') {
-      return <PortfolioItemTag label="Side project" icon={Flask} />;
+      return (
+        <PortfolioItemTag label={t('portfolio.sideProject')} icon={Flask} />
+      );
     }
     if (portfolioItem.type === 'DRIBBBLE_SHOT') {
-      return <PortfolioItemTag label="Dribbble shot" icon={DribbbleLogo} />;
+      return (
+        <PortfolioItemTag
+          label={t('portfolio.dribbbleShot')}
+          icon={DribbbleLogo}
+        />
+      );
     }
   }
 

@@ -4,6 +4,7 @@ import { getImage } from 'astro:assets';
 import toyboxBg from '@/assets/images/footer-toybox-bg.jpg';
 import DotGrid from '@/components/DotGrid';
 import SocialLinks from '@/components/SocialLinks';
+import t from '@/utils/i18n';
 
 const optimizedToyboxBg = await getImage({ src: toyboxBg });
 
@@ -16,23 +17,29 @@ export default function FooterSection() {
       >
         <div className="text-center text-3xl text-gray-100/60 lg:text-4xl 2xl:text-6xl">
           <span className="block translate-x-[-10%]">
-            Arranging
-            <span className="font-serif italic text-gray-100"> links </span>
+            {t('footer.slogan.word1') + ' '}
+            <span className="font-serif italic text-gray-100">
+              {t('footer.slogan.word2') + ' '}
+            </span>
             <Link size={32} className="inline text-gray-100 2xl:hidden" />
-            <Link size={64} className="hidden text-gray-100 2xl:inline" />
+            <Link size={64} className="hidden text-gray-100 2xl:inline" />{' '}
           </span>
           <span className="block translate-x-[25%]">
-            and
-            <span className="font-serif italic text-gray-100"> shapes </span>
+            {t('footer.slogan.word3') + ' '}
+            <span className="font-serif italic text-gray-100">
+              {t('footer.slogan.word4') + ' '}
+            </span>
+            <Shapes size={32} className="inline text-gray-100 2xl:hidden" />
             <Shapes
-              size={32}
-              className="inline text-gray-100 2xl:hidden"
+              size={64}
+              className="hidden text-gray-100 2xl:inline"
             />{' '}
-            <Shapes size={64} className="hidden text-gray-100 2xl:inline" />
           </span>
           <span className="block">
-            into
-            <span className="font-serif italic text-gray-100"> melodies </span>
+            {t('footer.slogan.word5') + ' '}
+            <span className="font-serif italic text-gray-100">
+              {t('footer.slogan.word6') + ' '}
+            </span>
             <MusicNotes size={32} className="inline text-gray-100 2xl:hidden" />
             <MusicNotes size={64} className="hidden text-gray-100 2xl:inline" />
           </span>
@@ -41,24 +48,23 @@ export default function FooterSection() {
       </div>
       <div className="mt-8 flex flex-col gap-8 lg:mt-16 lg:flex-row">
         <div className="flex-1">
-          <p className="text-2xl lg:text-4xl">Marcus Billman</p>
+          <p className="text-2xl lg:text-4xl">{t('common.fullName')}</p>
           <p className="mt-6 max-w-prose text-balance">
-            &copy; 2024 Marcus Billman. Website designed and built with ❤️✨ by
-            me. Check out the{' '}
+            {t('footer.fineprint.part1') + ' '}
             <a
               href="https://m-b.me/website-figma"
               target="_blank"
               className="text-blueberry-300 underline underline-offset-1 transition-all hover:text-gray-100 hover:underline-offset-4"
             >
-              Figma design file
-            </a>{' '}
-            and{' '}
+              {t('footer.fineprint.part2')}
+            </a>
+            {t('footer.fineprint.part3')}
             <a
               href="https://m-b.me/website-repo"
               target="_blank"
               className="text-blueberry-300 underline underline-offset-1 transition-all hover:text-gray-100 hover:underline-offset-4"
             >
-              GitHub repository
+              {t('footer.fineprint.part4')}
             </a>
             .
           </p>

@@ -8,6 +8,7 @@ import { toast } from 'sonner';
 
 import Button from '@/components/Button';
 import Modal from '@/components/Modal';
+import t from '@/utils/i18n';
 
 interface Props {
   onClose: () => void;
@@ -26,7 +27,7 @@ export default function ContactFormModal({ onClose }: Props) {
     if (hasWarned) return onClose();
 
     shakeForm();
-    toast.error('Click again to discard message');
+    toast.error(t('contact.form.toastWarning'));
     setHasWarned(true);
   }
 
@@ -36,14 +37,14 @@ export default function ContactFormModal({ onClose }: Props) {
   }
 
   if (state.succeeded) {
-    toast.success('Message sent!');
+    toast.success(t('contact.form.toastSuccess'));
     confetti();
     onClose();
   }
 
   if (state.errors) {
-    toast.error('Failed to send', {
-      description: 'Double-check the form and try again.',
+    toast.error(t('contact.form.toastErrorTitle'), {
+      description: t('contact.form.toastErrorDescription'),
     });
     reset();
   }
@@ -57,7 +58,7 @@ export default function ContactFormModal({ onClose }: Props) {
   }
 
   return (
-    <Modal title="Contact form" onClose={handleClose}>
+    <Modal title={t('contact.form.heading')} onClose={handleClose}>
       <form
         className={`relative flex flex-col gap-6 transition-opacity`}
         ref={scope}
@@ -71,7 +72,7 @@ export default function ContactFormModal({ onClose }: Props) {
             className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 bg-default text-subtle"
           >
             <CircleNotch size={32} className="animate-spin" />
-            <p>Sending...</p>
+            <p>{t('contact.form.sending')}</p>
           </motion.div>
         )}
         <AutoFocusInside>
@@ -80,7 +81,7 @@ export default function ContactFormModal({ onClose }: Props) {
               type="text"
               id="name"
               name="name"
-              placeholder="Super Cool Person"
+              placeholder={t('contact.form.namePlaceholder')}
               required
               disabled={state.submitting}
               className="peer rounded-lg border bg-default px-4 py-3 text-xl transition-colors placeholder:text-subtle focus:border-primary"
@@ -89,7 +90,7 @@ export default function ContactFormModal({ onClose }: Props) {
               htmlFor="name"
               className="block text-xl transition-colors peer-focus:font-serif peer-focus:font-medium peer-focus:italic peer-focus:text-primary"
             >
-              Your name
+              {t('contact.form.name')}
             </label>
           </div>
         </AutoFocusInside>
@@ -98,7 +99,7 @@ export default function ContactFormModal({ onClose }: Props) {
             type="email"
             id="email"
             name="email"
-            placeholder="super.cool@email.com"
+            placeholder={t('contact.form.emailPlaceholder')}
             required
             disabled={state.submitting}
             className="peer rounded-lg border bg-default px-4 py-3 text-xl transition-colors placeholder:text-subtle focus:border-primary"
@@ -107,7 +108,7 @@ export default function ContactFormModal({ onClose }: Props) {
             htmlFor="email"
             className="block text-xl transition-colors peer-focus:font-serif peer-focus:font-medium peer-focus:italic peer-focus:text-primary"
           >
-            Your email
+            {t('contact.form.email')}
           </label>
         </div>
         <div className="flex flex-col-reverse gap-2">
@@ -115,7 +116,7 @@ export default function ContactFormModal({ onClose }: Props) {
             id="message"
             name="message"
             rows={4}
-            placeholder="Hi! I’ve got this cool idea..."
+            placeholder={t('contact.form.messagePlaceholder')}
             required
             disabled={state.submitting}
             className="peer rounded-lg border bg-default px-4 py-3 text-xl transition-colors placeholder:text-subtle focus:border-primary"
@@ -124,11 +125,11 @@ export default function ContactFormModal({ onClose }: Props) {
             htmlFor="message"
             className="block text-xl transition-colors peer-focus:font-serif peer-focus:font-medium peer-focus:italic peer-focus:text-primary"
           >
-            Message
+            {t('contact.form.message')}
           </label>
         </div>
         <Button
-          text="Send message"
+          text={t('contact.form.send')}
           icon={PaperPlaneTilt}
           style="primary"
           type="submit"

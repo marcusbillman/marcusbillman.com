@@ -1,8 +1,9 @@
 ---
 import FullContactSection from '@/components/sections/FullContactSection';
 import Layout from '@/layouts/Layout.astro';
+import t from '@/utils/i18n';
 ---
 
-<Layout title="Contact" noHeader>
+<Layout title={t('contact.title')} noHeader>
   <FullContactSection client:idle />
 </Layout>
