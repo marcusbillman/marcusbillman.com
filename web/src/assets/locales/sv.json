@@ -1,0 +1,224 @@
+{
+  "404": {
+    "heading": "Nämen, du hittade 404-sidan!",
+    "text": "Fast du letade förmodligen efter något annat. Dubbelkolla webbadressen eller börja från startsidan.",
+    "cta": "Kom, vi går hem"
+  },
+  "common": {
+    "firstName": "Marcus",
+    "lastName": "Billman",
+    "fullName": "Marcus Billman",
+    "baseUrl": "marcusbillman.se",
+    "close": "Stäng",
+    "toastCopySuccess": "Kopierat! 📋",
+    "toastCopyError": "Kunde inte kopiera 😢",
+    "socials": {
+      "linkedin": "LinkedIn",
+      "linkedinDescription": "Nätverkande",
+      "github": "GitHub",
+      "githubDescription": "Kod",
+      "dribbble": "Dribbble",
+      "dribbbleDescription": "Design",
+      "soundcloud": "SoundCloud",
+      "soundcloudDescription": "Musik",
+      "emailAddress": "hej@marcusbillman.se",
+      "emailDescription": "E-post"
+    }
+  },
+  "seo": {
+    "title": "Marcus Billman — Designer, utvecklare och människa",
+    "description": "Jag älskar att designa gränssnitt, skriva kod och sprida glädjen att skapa coola saker. Jag är också teknikentusiast och hobbymusiker."
+  },
+  "navigation": {
+    "home": "Start",
+    "portfolio": "Portfolio",
+    "about": "Om",
+    "contact": "Kontakt",
+    "menu": "Meny",
+    "themeSwitch": {
+      "label": "Färgtema",
+      "light": "Ljust tema",
+      "dark": "Mörkt tema",
+      "system": "Synka med enhet",
+      "toastLight": "Bytte till ljust tema",
+      "toastDark": "Bytte till mörkt tema",
+      "toastSystem": "Synkar med enhetens tema"
+    },
+    "skipToContent": "Hoppa till innehåll",
+    "alt": {
+      "aboutPortrait": "Marcus tittar in i kameran",
+      "portfolioPhone1": "iPhone 15 Plus smartphone",
+      "portfolioPhone2": "Google Pixel 8 smartphone"
+    }
+  },
+  "footer": {
+    "slogan": {
+      "word1": "Gör",
+      "word2": "länkar",
+      "word3": "och",
+      "word4": "former",
+      "word5": "till",
+      "word6": "melodier"
+    },
+    "fineprint": {
+      "part1": "© 2024 Marcus Billman. Hemsidan är designad och byggd med ❤️✨ av mig. Kolla in ",
+      "part2": "Figma-designfilen",
+      "part3": " och ",
+      "part4": "GitHub-repot",
+      "part5": "."
+    }
+  },
+  "home": {
+    "hero": {
+      "word1": "Designer,",
+      "word2": "utvecklare",
+      "word3": "och",
+      "word4": "människa"
+    },
+    "bio": {
+      "heading": {
+        "beforeEmoji": "Hej!",
+        "afterEmoji": "Jag heter Marcus."
+      },
+      "text": "Jag älskar att designa gränssnitt, skriva kod och sprida glädjen att skapa coola saker. Jag är också teknikentusiast och hobbymusiker 🎹.",
+      "cta": "Om mig"
+    },
+    "featuredProjects": {
+      "heading": "Utvalda projekt ✨",
+      "viewCase": "Läs case",
+      "all": "Alla projekt"
+    },
+    "moreThings": {
+      "heading": "Fler saker gjorda av mig 🍱",
+      "sideProjects": "Sidoprojekt",
+      "sideProjectsDescription": "Webbappar och laborationer",
+      "dribbble": "Dribbble",
+      "dribbbleDescription": "Designexperiment",
+      "soundcloud": "SoundCloud",
+      "soundcloudDescription": "Musik",
+      "github": "GitHub",
+      "githubDescription": "Kod",
+      "linkedin": "LinkedIn",
+      "linkedinDescription": "Nätverkande"
+    },
+    "alt": {
+      "profilePicture": "Marcus tittar in i kameran",
+      "sideProjectsScreen1": "Skärmdump av app",
+      "sideProjectsScreen2": "Skärmdump av app"
+    }
+  },
+  "portfolio": {
+    "heading": "Portfolio",
+    "myWork": "Mitt arbete",
+    "caseStudy": "Case",
+    "caseStudies": "Case",
+    "sideProject": "Sidoprojekt",
+    "sideProjects": "Sidoprojekt",
+    "dribbbleShot": "Dribbble-inlägg",
+    "dribbbleShots": "Dribbble-inlägg",
+    "emptyState": {
+      "heading": "Alla har gömt sig!",
+      "text": "Använd filtren ovan för att se mitt arbete."
+    }
+  },
+  "about": {
+    "heading": "Om mig",
+    "bio": {
+      "heading": {
+        "paragraph1": "Hej! 👋",
+        "paragraph2": "Jag är en flersidig UX/UI-designer och webbutvecklare från Norrland. Just nu pluggar jag för en civilingenjörsexamen i interaktion och design."
+      },
+      "text": {
+        "paragraph1": "Jag har designat gränssnitt för webben, mobilappar och specialutrustning. Jag har lett UX-undersökningar, utvecklat designsystem och diskuterat mjukvaruarkitekturer.",
+        "paragraph2": "Som liten var jag fascinerad av automatiska gliddörrar. Futuristiska, eleganta och öppnade sig likt magi av att gå nära! Vissa saker känns helt enkelt bra att använda. Idag hoppas jag få andra att känna som 6-åriga jag i mataffären.",
+        "paragraph3": "På fritiden följer jag tekniknyheter, ägnar mig åt datorspel och producerar dansmusik. Jag lär mig också ständigt om nya tekniker, designknep och intressanta produkter."
+      }
+    },
+    "designerDeveloper": {
+      "designer": {
+        "word1": "Designer",
+        "word2": "med",
+        "word3": "en utvecklares",
+        "word4": "hjärna"
+      },
+      "developer": {
+        "word1": "Utvecklare",
+        "word2": "med",
+        "word3": "en designers",
+        "word4": "öga"
+      }
+    },
+    "skills": {
+      "heading": "En nöjd del av ett bra team 👏",
+      "text": "Jag jobbar som bäst i tajta team av skickliga människor som också älskar det de gör. Den bästa miljön är öppen, ärlig och låter alla lära av varandra.",
+      "systemicThinker": {
+        "part1": "Systemtänkare med stor ",
+        "part2": "känsla för detaljer."
+      },
+      "fastLearner": {
+        "part1": "Lär mig snabbt",
+        "part2": " nya verktyg och domäner."
+      },
+      "openMinded": {
+        "part1": "Öppen och redo att ",
+        "part2": "diskutera och tänka om."
+      },
+      "eagerToShare": {
+        "part1": "Entusiastisk och ",
+        "part2": "ivrig att dela",
+        "part3": " kunskap."
+      },
+      "technologies": {
+        "part1": "Erfaren med tekniker",
+        "part2": " som React, TypeScript, Git och Bash."
+      },
+      "publicSpeaker": {
+        "part1": "Talare och presentatör",
+        "part2": " som berättar med engagerande grafik."
+      }
+    },
+    "alt": {
+      "portrait1": "Marcus tittar in i kameran",
+      "portrait2": "Marcus tittar upp och åt sidan",
+      "colourCardBlueberry": "Färgkort i blåbär",
+      "colourCardSalmon": "Färgkort i laxrosa",
+      "figmaTools": "Figma-verktygsikoner ordnade i en cirkel",
+      "techLogos": "Rutnät av webbteknikers logotyper",
+      "codeEasterEgg": "Kodblock med easter egg"
+    }
+  },
+  "contact": {
+    "heading": "Hör gärna av dig! 💬",
+    "openForm": "Öppna kontaktformulär",
+    "or": "eller",
+    "emailCopy": "Kopiera",
+    "emailOpen": "Öppna",
+    "linkedinVisit": "Besök profil",
+    "form": {
+      "heading": "Kontaktformulär",
+      "name": "Ditt namn",
+      "namePlaceholder": "Supercool Persson",
+      "email": "Din e-post",
+      "emailPlaceholder": "supercool@epost.se",
+      "message": "Meddelande",
+      "messagePlaceholder": "Hej! Jag har en cool idé...",
+      "send": "Skicka meddelande",
+      "sending": "Skickar...",
+      "toastSuccess": "Meddelande skickat! 🚀",
+      "toastErrorTitle": "Kunde inte skicka 😢",
+      "toastErrorDescription": "Dubbelkolla formuläret och försök igen",
+      "toastWarning": "Klicka igen för att radera meddelandet"
+    }
+  },
+  "caseStudy": {
+    "back": "Alla projekt",
+    "missingTranslation": "Detta case är tyvärr inte tillgängligt på svenska. Det kommer att visas på engelska istället."
+  },
+  "misc": {
+    "consoleGreeting": {
+      "heading": "Hej! 👋",
+      "paragraph1": "Trevligt att råkas, Inspektör Element! 🕵️",
+      "paragraph2": "Om du är nyfiken på hur den här sidan är byggd så finns koden på GitHub: https://m-b.me/website-repo"
+    }
+  }
+}

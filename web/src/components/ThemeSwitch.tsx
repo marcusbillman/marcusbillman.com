@@ -5,6 +5,8 @@ import { ArrowsClockwise, Moon, Sun } from '@phosphor-icons/react/dist/ssr';
 import { toast } from 'sonner';
 import { useLocalStorage } from 'usehooks-ts';
 
+import t from '@/utils/i18n';
+
 export type Theme = 'light' | 'dark' | 'system';
 
 export default function ThemeSwitch() {
@@ -25,34 +27,34 @@ export default function ThemeSwitch() {
   return (
     <div
       role="radiogroup"
-      aria-label="Colour theme"
+      aria-label={t('navigation.themeSwitch.label')}
       className="flex items-center rounded-full bg-subtle p-2"
     >
       <SwitchSegment
         icon={Sun}
-        label="Light theme"
+        label={t('navigation.themeSwitch.light')}
         isSelected={value === 'light'}
         onChange={() => {
           setValue('light');
-          toast.success('Switched to light theme');
+          toast.success(t('navigation.themeSwitch.toastLight'));
         }}
       />
       <SwitchSegment
         icon={Moon}
-        label="Dark theme"
+        label={t('navigation.themeSwitch.dark')}
         isSelected={value === 'dark'}
         onChange={() => {
           setValue('dark');
-          toast.success('Switched to dark theme');
+          toast.success(t('navigation.themeSwitch.toastDark'));
         }}
       />
       <SwitchSegment
         icon={ArrowsClockwise}
-        label="Sync with device"
+        label={t('navigation.themeSwitch.system')}
         isSelected={value === 'system'}
         onChange={() => {
           setValue('system');
-          toast.success('Syncing with your device theme');
+          toast.success(t('navigation.themeSwitch.toastSystem'));
         }}
       />
     </div>

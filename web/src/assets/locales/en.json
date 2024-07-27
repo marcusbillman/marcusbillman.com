@@ -1,0 +1,224 @@
+{
+  "404": {
+    "heading": "Woah, you found the 404 page!",
+    "text": "Though, you were probably looking for something else. Check the URL or start from the home page.",
+    "cta": "Let's go home"
+  },
+  "common": {
+    "firstName": "Marcus",
+    "lastName": "Billman",
+    "fullName": "Marcus Billman",
+    "baseUrl": "marcusbillman.com",
+    "close": "Close",
+    "toastCopySuccess": "Copied! 📋",
+    "toastCopyError": "Failed to copy 😢",
+    "socials": {
+      "linkedin": "LinkedIn",
+      "linkedinDescription": "Networking",
+      "github": "GitHub",
+      "githubDescription": "Code",
+      "dribbble": "Dribbble",
+      "dribbbleDescription": "Design",
+      "soundcloud": "SoundCloud",
+      "soundcloudDescription": "Music",
+      "emailAddress": "hello@marcusbillman.com",
+      "emailDescription": "Email"
+    }
+  },
+  "seo": {
+    "title": "Marcus Billman — Designer, developer and human",
+    "description": "I love designing interfaces, writing code and spreading the joy of creating cool things. I'm also a tech enthusiast and hobbyist musician."
+  },
+  "navigation": {
+    "home": "Home",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact",
+    "menu": "Menu",
+    "themeSwitch": {
+      "label": "Colour theme",
+      "light": "Light theme",
+      "dark": "Dark theme",
+      "system": "Sync with device",
+      "toastLight": "Switched to light theme",
+      "toastDark": "Switched to dark theme",
+      "toastSystem": "Syncing with device theme"
+    },
+    "skipToContent": "Skip to content",
+    "alt": {
+      "portfolioPhone1": "iPhone 15 Plus smartphone",
+      "portfolioPhone2": "Google Pixel 8 smartphone",
+      "aboutPortrait": "Marcus looking at the camera"
+    }
+  },
+  "footer": {
+    "slogan": {
+      "word1": "Turning",
+      "word2": "links",
+      "word3": "and",
+      "word4": "shapes",
+      "word5": "into",
+      "word6": "melodies"
+    },
+    "fineprint": {
+      "part1": "© 2024 Marcus Billman. Website designed and built with ❤️✨ by me. Check out the ",
+      "part2": "Figma design file",
+      "part3": " and ",
+      "part4": "GitHub repository",
+      "part5": "."
+    }
+  },
+  "home": {
+    "hero": {
+      "word1": "Designer,",
+      "word2": "developer",
+      "word3": "and",
+      "word4": "human"
+    },
+    "bio": {
+      "heading": {
+        "beforeEmoji": "Hej!",
+        "afterEmoji": "I'm Marcus."
+      },
+      "text": "I love designing interfaces, writing code and spreading the joy of making cool things. I'm also a tech enthusiast and hobbyist musician 🎹.",
+      "cta": "About me"
+    },
+    "featuredProjects": {
+      "heading": "Featured work ✨",
+      "viewCase": "View case",
+      "all": "All projects"
+    },
+    "moreThings": {
+      "heading": "More things made by me 🍱",
+      "sideProjects": "Side projects",
+      "sideProjectsDescription": "Web apps and experiments",
+      "dribbble": "Dribbble",
+      "dribbbleDescription": "Design explorations",
+      "soundcloud": "SoundCloud",
+      "soundcloudDescription": "Music",
+      "github": "GitHub",
+      "githubDescription": "Code",
+      "linkedin": "LinkedIn",
+      "linkedinDescription": "Networking"
+    },
+    "alt": {
+      "profilePicture": "Marcus looking at the camera",
+      "sideProjectsScreen1": "App screenshot",
+      "sideProjectsScreen2": "App screenshot"
+    }
+  },
+  "portfolio": {
+    "heading": "Portfolio",
+    "myWork": "My work",
+    "caseStudy": "Case study",
+    "caseStudies": "Case studies",
+    "sideProject": "Side project",
+    "sideProjects": "Side projects",
+    "dribbbleShot": "Dribbble shot",
+    "dribbbleShots": "Dribbble shots",
+    "emptyState": {
+      "heading": "Everyone's hiding!",
+      "text": "Use the filters above to show my work."
+    }
+  },
+  "about": {
+    "heading": "About me",
+    "bio": {
+      "heading": {
+        "paragraph1": "Hej! 👋",
+        "paragraph2": "I’m a multi-faceted UX/UI designer and web developer based in northern Sweden. Currently pursuing a master’s degree in interaction design."
+      },
+      "text": {
+        "paragraph1": "I’ve designed interfaces for the web, mobile apps and specialised equipment. I’ve led user research, developed design systems and discussed software architectures.",
+        "paragraph2": "As a kid, I was blown away by automatic sliding doors. Futuristic, elegant and opened like magic just by walking near! Some things just feel great to use. Today, I dream of making others feel like 6-year-old me in the store.",
+        "paragraph3": "In my free time, I follow tech news, enjoy video games and produce dance music. I’m also constantly learning about new technologies, design tricks and fascinating products."
+      }
+    },
+    "designerDeveloper": {
+      "designer": {
+        "word1": "Designer",
+        "word2": "with",
+        "word3": "developer's",
+        "word4": "mind"
+      },
+      "developer": {
+        "word1": "Developer",
+        "word2": "with",
+        "word3": "designer's",
+        "word4": "eye"
+      }
+    },
+    "skills": {
+      "heading": "A happy part of a great team 👏",
+      "text": "My best work is done in tight-knit teams of skilled people that also love what they do. The most inspiring environment is open, honest and one where everyone learns from each other.",
+      "systemicThinker": {
+        "part1": "Systemic thinker with high ",
+        "part2": "attention to detail."
+      },
+      "fastLearner": {
+        "part1": "Fast learner",
+        "part2": " of new tools and domains."
+      },
+      "openMinded": {
+        "part1": "Approachable and open to ",
+        "part2": "discuss and rethink."
+      },
+      "eagerToShare": {
+        "part1": "Enthusiastic and ",
+        "part2": "eager to share",
+        "part3": " knowledge."
+      },
+      "technologies": {
+        "part1": "Experienced with technologies",
+        "part2": " such as React, TypeScript, Git and Bash."
+      },
+      "publicSpeaker": {
+        "part1": "Public speaker",
+        "part2": " with engaging visual storytelling."
+      }
+    },
+    "alt": {
+      "portrait1": "Marcus looking at the camera",
+      "portrait2": "Marcus looking up and to the side",
+      "colourCardBlueberry": "Blueberry colour card",
+      "colourCardSalmon": "Salmon colour card",
+      "figmaTools": "Figma tool icons arranged in a circle",
+      "techLogos": "Grid of web technology logos",
+      "codeEasterEgg": "Code block with easter egg"
+    }
+  },
+  "contact": {
+    "heading": "Let's get in touch! 💬",
+    "openForm": "Open contact form",
+    "or": "or",
+    "emailCopy": "Copy",
+    "emailOpen": "Open",
+    "linkedinVisit": "Visit profile",
+    "form": {
+      "heading": "Contact form",
+      "name": "Your name",
+      "namePlaceholder": "Super Cool Person",
+      "email": "Your email",
+      "emailPlaceholder": "super.cool@email.com",
+      "message": "Message",
+      "messagePlaceholder": "Hi! I've got this cool idea...",
+      "send": "Send message",
+      "sending": "Sending...",
+      "toastSuccess": "Message sent! 🚀",
+      "toastErrorTitle": "Failed to send 😢",
+      "toastErrorDescription": "Double-check the form and try again",
+      "toastWarning": "Click again to discard message"
+    }
+  },
+  "caseStudy": {
+    "back": "All projects",
+    "missingTranslation": "This case study is unfortunately not available in English. It will be displayed in Swedish instead."
+  },
+  "misc": {
+    "consoleGreeting": {
+      "paragraph1": "Fancy seeing you here, Inspector Element! 🕵️",
+      "paragraph2": "If you're curious about how this site is built, the code is on GitHub: https://m-b.me/website-repo",
+      "heading": "Hej! 👋"
+    }
+  }
+}
