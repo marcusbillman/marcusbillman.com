@@ -1,0 +1,17 @@
+# Configuration to use i18n-ally with my custom i18n implementation
+# https://github.com/lokalise/i18n-ally/wiki/Custom-Framework
+
+# Keys will be detected inside files written in these languages:
+languageIds:
+  - javascript
+  - typescript
+  - javascriptreact
+  - typescriptreact
+  - astro
+
+# Regex to find key usage. The following matches `t('key')` and `t("key")`:
+usageMatchRegex:
+  - "[^\\w\\d]t\\(['\"`]({key})['\"`]"
+
+# Disables all built-in frameworks of i18n-ally
+monopoly: true
