@@ -1,5 +1,5 @@
 import type { DribbbleShot } from '@/utils/dribbble';
-import type { PortfolioItem } from '@/utils/portfolioItem';
+import type { PortfolioItem } from '@/utils/portfolio-item';
 import type { Icon } from '@phosphor-icons/react/dist/lib/types';
 import type {
   Project as PortfolioItemCard,
