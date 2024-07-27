@@ -9,7 +9,7 @@
     "firstName": "Marcus",
     "lastName": "Billman",
     "fullName": "Marcus Billman",
-    "baseUrl": "marcusbillman.com",
+    "baseUrl": "https://marcusbillman.com",
     "close": "Close",
     "toastCopySuccess": "Copied! 📋",
     "toastCopyError": "Failed to copy 😢",
@@ -44,6 +44,11 @@
       "toastLight": "Switched to light theme",
       "toastDark": "Switched to dark theme",
       "toastSystem": "Syncing with device theme"
+    },
+    "languageSwitch": {
+      "label": "Language",
+      "english": "Go to English site",
+      "swedish": "Go to Swedish site"
     },
     "skipToContent": "Skip to content",
     "alt": {

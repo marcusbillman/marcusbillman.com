@@ -26,6 +26,7 @@ import {
   ChatIllustration,
   PhoneIllustration,
 } from '@/components/illustrations';
+import LanguageSwitch from '@/components/LanguageSwitch';
 import SocialLinks from '@/components/SocialLinks';
 import ThemeSwitch from '@/components/ThemeSwitch';
 import t from '@/utils/i18n';
@@ -133,7 +134,7 @@ export default function Menu({ onClose }: MenuProps) {
             </div>
             <div className="flex items-center justify-between">
               <ThemeSwitch />
-              {/* TODO: Add language switch */}
+              <LanguageSwitch />
             </div>
           </div>
         </div>

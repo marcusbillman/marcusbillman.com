@@ -9,7 +9,7 @@
     "firstName": "Marcus",
     "lastName": "Billman",
     "fullName": "Marcus Billman",
-    "baseUrl": "marcusbillman.se",
+    "baseUrl": "https://marcusbillman.se",
     "close": "Stäng",
     "toastCopySuccess": "Kopierat! 📋",
     "toastCopyError": "Kunde inte kopiera 😢",
@@ -44,6 +44,11 @@
       "toastLight": "Bytte till ljust tema",
       "toastDark": "Bytte till mörkt tema",
       "toastSystem": "Synkar med enhetens tema"
+    },
+    "languageSwitch": {
+      "label": "Språk",
+      "english": "Gå till engelsk webbplats",
+      "swedish": "Gå till svensk webbplats"
     },
     "skipToContent": "Hoppa till innehåll",
     "alt": {

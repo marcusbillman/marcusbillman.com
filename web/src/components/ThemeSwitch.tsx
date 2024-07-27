@@ -83,8 +83,9 @@ function SwitchSegment({
         role="radio"
         name="theme"
         checked={isSelected}
+        title={label}
         aria-label={label}
-        className={`${isSelected ? 'cursor-default' : 'cursor-pointer'} absolute inset-0 opacity-0`}
+        className={`${isSelected ? 'pointer-events-none' : ''} absolute inset-0 cursor-pointer opacity-0`}
         onChange={onChange}
       />
       <IconComponent size={24} />
