@@ -10,6 +10,7 @@
     "lastName": "Billman",
     "fullName": "Marcus Billman",
     "baseUrl": "https://marcusbillman.se",
+    "domain": "marcusbillman.se",
     "close": "Stäng",
     "toastCopySuccess": "Kopierat! 📋",
     "toastCopyError": "Kunde inte kopiera 😢",

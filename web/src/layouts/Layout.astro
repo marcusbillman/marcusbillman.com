@@ -11,10 +11,11 @@ interface Props {
 }
 
 const { title, noHeader = false } = Astro.props;
+const language = import.meta.env.PUBLIC_LOCALE || 'en';
 ---
 
 <!doctype html>
-<html lang="en" class="motion-safe:scroll-smooth">
+<html lang={language} class="motion-safe:scroll-smooth">
   <head>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,24 +36,24 @@ const { title, noHeader = false } = Astro.props;
     <meta name="generator" content={Astro.generator} />
 
     <!-- Open Graph meta tags -->
-    <meta property="og:url" content="https://marcusbillman.com" />
+    <meta property="og:url" content={t('common.baseUrl')} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={t('seo.title')} />
     <meta property="og:description" content={t('seo.description')} />
     <meta
       property="og:image"
-      content="https://marcusbillman.com/assets/images/social-embed.jpg"
+      content={`${t('common.baseUrl')}/assets/images/social-embed-${language}.jpg`}
     />
 
     <!-- Twitter meta tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content="marcusbillman.com" />
-    <meta property="twitter:url" content="https://marcusbillman.com" />
+    <meta property="twitter:domain" content={t('common.domain')} />
+    <meta property="twitter:url" content={t('common.baseUrl')} />
     <meta name="twitter:title" content={t('seo.title')} />
     <meta name="twitter:description" content={t('seo.description')} />
     <meta
       name="twitter:image"
-      content="https://marcusbillman.com/assets/images/social-embed.jpg"
+      content={`${t('common.baseUrl')}/assets/images/social-embed-${language}.jpg`}
     />
 
     <!-- Theme script -->
