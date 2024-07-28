@@ -3,6 +3,8 @@ import type {
   GalleryBlock,
   ImageWithAlt,
   MetadataBlock,
+  MetadataField,
+  MetadataLink,
   Project,
   RichText,
   TextBlock,
@@ -64,9 +66,9 @@ function GalleryBlockComponent({
 }: PortableTextComponentProps<GalleryBlock>) {
   return (
     <div className="flex flex-wrap justify-stretch gap-4 px-4 lg:gap-8 lg:px-16">
-      {value.images!.map((image) => (
+      {value.images!.map((image: ImageWithAlt) => (
         <ImageWithAltComponent
-          key={image._key}
+          key={image.asset?._ref}
           imageWithAlt={image}
           className="flex-grow basis-256"
         />
@@ -95,17 +97,17 @@ function MetadataBlockComponent({
             <dd className="flex-grow">{projectDate}</dd>
           </div>
         )}
-        {value.metadataFields?.map((field) => (
+        {(value.metadataFields as MetadataField[]).map((field) => (
           <div key={field.key} className="flex gap-4 p-4">
             <dt className="block w-32 max-w-[25vw] flex-shrink-0 font-serif font-medium italic text-subtle">
               {field.key}
             </dt>
             <dd className="flex-grow">
               <ul className="">
-                {field.values?.map((value, index) => (
+                {(field.values as string[]).map((value, index) => (
                   <li key={value} className="inline">
                     {value}
-                    {field.values?.length &&
+                    {field.values.length &&
                       index < field.values.length - 1 &&
                       ' • '}
                   </li>
@@ -117,7 +119,7 @@ function MetadataBlockComponent({
       </dl>
       {value.metadataLinks && (
         <div className="relative isolate mx-auto flex max-w-4xl flex-wrap justify-center gap-4 rounded-2xl border p-8 lg:p-16">
-          {value.metadataLinks.map((link, index) => (
+          {(value.metadataLinks as MetadataLink[]).map((link, index) => (
             <Button
               key={link.url}
               text={link.text!}
