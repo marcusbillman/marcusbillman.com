@@ -88,6 +88,18 @@ export type TextBlock = {
 
 export type RichText = Array;
 
+export type MetadataLink = {
+  _type: 'metadataLink';
+  text?: string;
+  url?: string;
+};
+
+export type MetadataField = {
+  _type: 'metadataField';
+  key?: string;
+  values?: Array;
+};
+
 export type MetadataBlock = {
   _type: 'metadataBlock';
   title?: string;
@@ -241,6 +253,8 @@ export type AllSanitySchemaTypes =
   | NewsBanner
   | TextBlock
   | RichText
+  | MetadataLink
+  | MetadataField
   | MetadataBlock
   | SanityImageCrop
   | SanityImageHotspot
