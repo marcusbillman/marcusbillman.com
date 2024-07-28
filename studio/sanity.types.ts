@@ -14,254 +14,223 @@
 
 // Source: schema.json
 export type SanityImagePaletteSwatch = {
-  _type: 'sanity.imagePaletteSwatch'
-  background?: string
-  foreground?: string
-  population?: number
-  title?: string
-}
+  _type: 'sanity.imagePaletteSwatch';
+  background?: string;
+  foreground?: string;
+  population?: number;
+  title?: string;
+};
 
 export type SanityImagePalette = {
-  _type: 'sanity.imagePalette'
-  darkMuted?: SanityImagePaletteSwatch
-  lightVibrant?: SanityImagePaletteSwatch
-  darkVibrant?: SanityImagePaletteSwatch
-  vibrant?: SanityImagePaletteSwatch
-  dominant?: SanityImagePaletteSwatch
-  lightMuted?: SanityImagePaletteSwatch
-  muted?: SanityImagePaletteSwatch
-}
+  _type: 'sanity.imagePalette';
+  darkMuted?: SanityImagePaletteSwatch;
+  lightVibrant?: SanityImagePaletteSwatch;
+  darkVibrant?: SanityImagePaletteSwatch;
+  vibrant?: SanityImagePaletteSwatch;
+  dominant?: SanityImagePaletteSwatch;
+  lightMuted?: SanityImagePaletteSwatch;
+  muted?: SanityImagePaletteSwatch;
+};
 
 export type SanityImageDimensions = {
-  _type: 'sanity.imageDimensions'
-  height?: number
-  width?: number
-  aspectRatio?: number
-}
+  _type: 'sanity.imageDimensions';
+  height?: number;
+  width?: number;
+  aspectRatio?: number;
+};
 
 export type SanityFileAsset = {
-  _id: string
-  _type: 'sanity.fileAsset'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  originalFilename?: string
-  label?: string
-  title?: string
-  description?: string
-  altText?: string
-  sha1hash?: string
-  extension?: string
-  mimeType?: string
-  size?: number
-  assetId?: string
-  uploadId?: string
-  path?: string
-  url?: string
-  source?: SanityAssetSourceData
-}
+  _id: string;
+  _type: 'sanity.fileAsset';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  originalFilename?: string;
+  label?: string;
+  title?: string;
+  description?: string;
+  altText?: string;
+  sha1hash?: string;
+  extension?: string;
+  mimeType?: string;
+  size?: number;
+  assetId?: string;
+  uploadId?: string;
+  path?: string;
+  url?: string;
+  source?: SanityAssetSourceData;
+};
 
 export type Geopoint = {
-  _type: 'geopoint'
-  lat?: number
-  lng?: number
-  alt?: number
-}
+  _type: 'geopoint';
+  lat?: number;
+  lng?: number;
+  alt?: number;
+};
 
-export type SanityImageCrop = {
-  _type: 'sanity.imageCrop'
-  top?: number
-  bottom?: number
-  left?: number
-  right?: number
-}
-
-export type SanityImageHotspot = {
-  _type: 'sanity.imageHotspot'
-  x?: number
-  y?: number
-  height?: number
-  width?: number
-}
-
-export type SanityImageAsset = {
-  _id: string
-  _type: 'sanity.imageAsset'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  originalFilename?: string
-  label?: string
-  title?: string
-  description?: string
-  altText?: string
-  sha1hash?: string
-  extension?: string
-  mimeType?: string
-  size?: number
-  assetId?: string
-  uploadId?: string
-  path?: string
-  url?: string
-  metadata?: SanityImageMetadata
-  source?: SanityAssetSourceData
-}
-
-export type SanityAssetSourceData = {
-  _type: 'sanity.assetSourceData'
-  name?: string
-  id?: string
-  url?: string
-}
-
-export type SanityImageMetadata = {
-  _type: 'sanity.imageMetadata'
-  location?: Geopoint
-  dimensions?: SanityImageDimensions
-  palette?: SanityImagePalette
-  lqip?: string
-  blurHash?: string
-  hasAlpha?: boolean
-  isOpaque?: boolean
-}
-
-export type RichText = Array<
-  | {
-      children?: Array<{
-        marks?: Array<string>
-        text?: string
-        _type: 'span'
-        _key: string
-      }>
-      style?: 'normal' | 'h1' | 'h2'
-      listItem?: 'bullet' | 'number'
-      markDefs?: Array<{
-        href?: string
-        _type: 'link'
-        _key: string
-      }>
-      level?: number
-      _type: 'Block'
-      _key: string
-    }
-  | {
-      asset?: {
-        _ref: string
-        _type: 'reference'
-        _weak?: boolean
-        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-      }
-      hotspot?: SanityImageHotspot
-      crop?: SanityImageCrop
-      alt?: string
-      caption?: string
-      _type: 'imageWithAlt'
-      _key: string
-    }
->
-
-export type MetadataBlock = {
-  _type: 'metadataBlock'
-  title?: string
-  metadataFields?: Array<{
-    key?: string
-    values?: Array<string>
-    _type: 'metadataField'
-    _key: string
-  }>
-  metadataLinks?: Array<{
-    text?: string
-    url?: string
-    _type: 'metadataLink'
-    _key: string
-  }>
-}
-
-export type GalleryBlock = {
-  _type: 'galleryBlock'
-  title?: string
-  images?: Array<{
-    asset?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-    }
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    alt?: string
-    caption?: string
-    _type: 'imageWithAlt'
-    _key: string
-  }>
-}
+export type NewsBanner = {
+  _id: string;
+  _type: 'newsBanner';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  enabled?: boolean;
+  text?: string;
+  linkUrl?: string;
+  language?: string;
+};
 
 export type TextBlock = {
-  _type: 'textBlock'
-  title?: string
-  text?: RichText
-}
+  _type: 'textBlock';
+  title?: string;
+  text?: Array;
+};
+
+export type RichText = Array;
+
+export type MetadataBlock = {
+  _type: 'metadataBlock';
+  title?: string;
+  metadataFields?: Array;
+  metadataLinks?: Array;
+};
+
+export type SanityImageCrop = {
+  _type: 'sanity.imageCrop';
+  top?: number;
+  bottom?: number;
+  left?: number;
+  right?: number;
+};
+
+export type SanityImageHotspot = {
+  _type: 'sanity.imageHotspot';
+  x?: number;
+  y?: number;
+  height?: number;
+  width?: number;
+};
+
+export type SanityImageAsset = {
+  _id: string;
+  _type: 'sanity.imageAsset';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  originalFilename?: string;
+  label?: string;
+  title?: string;
+  description?: string;
+  altText?: string;
+  sha1hash?: string;
+  extension?: string;
+  mimeType?: string;
+  size?: number;
+  assetId?: string;
+  uploadId?: string;
+  path?: string;
+  url?: string;
+  metadata?: SanityImageMetadata;
+  source?: SanityAssetSourceData;
+};
+
+export type SanityAssetSourceData = {
+  _type: 'sanity.assetSourceData';
+  name?: string;
+  id?: string;
+  url?: string;
+};
+
+export type SanityImageMetadata = {
+  _type: 'sanity.imageMetadata';
+  location?: Geopoint;
+  dimensions?: SanityImageDimensions;
+  palette?: SanityImagePalette;
+  lqip?: string;
+  blurHash?: string;
+  hasAlpha?: boolean;
+  isOpaque?: boolean;
+};
+
+export type GalleryBlock = {
+  _type: 'galleryBlock';
+  title?: string;
+  images?: Array;
+};
+
+export type TranslationMetadata = {
+  _id: string;
+  _type: 'translation.metadata';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  translations?: Array;
+  schemaTypes?: Array;
+};
+
+export type InternationalizedArrayReferenceValue = {
+  _type: 'internationalizedArrayReferenceValue';
+  value?: {
+    _ref: string;
+    _type: 'reference';
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: 'project';
+  };
+};
 
 export type Project = {
-  _id: string
-  _type: 'project'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  name?: string
-  slug?: Slug
-  headline?: string
-  preamble?: string
-  featured?: boolean
-  date?: string
+  _id: string;
+  _type: 'project';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  slug?: Slug;
+  headline?: string;
+  date?: string;
   coverImage?: {
     asset?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-    }
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    alt?: string
-    caption?: string
-    _type: 'imageWithAlt'
-  }
-  type?: 'CASE_STUDY' | 'SIDE_PROJECT'
-  caseStudyBlocks?: Array<
-    | ({
-        _key: string
-      } & TextBlock)
-    | ({
-        _key: string
-      } & GalleryBlock)
-    | ({
-        _key: string
-      } & MetadataBlock)
-  >
-  linkUrl?: string
-  orderRank?: string
-}
+      _ref: string;
+      _type: 'reference';
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    caption?: string;
+    _type: 'imageWithAlt';
+  };
+  featured?: boolean;
+  type?: 'CASE_STUDY' | 'SIDE_PROJECT';
+  preamble?: string;
+  caseStudyBlocks?: Array;
+  linkUrl?: string;
+  language?: string;
+  orderRank?: string;
+};
 
 export type ImageWithAlt = {
-  _type: 'imageWithAlt'
+  _type: 'imageWithAlt';
   asset?: {
-    _ref: string
-    _type: 'reference'
-    _weak?: boolean
-    [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-  }
-  hotspot?: SanityImageHotspot
-  crop?: SanityImageCrop
-  alt?: string
-  caption?: string
-}
+    _ref: string;
+    _type: 'reference';
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+  };
+  hotspot?: SanityImageHotspot;
+  crop?: SanityImageCrop;
+  alt?: string;
+  caption?: string;
+};
 
 export type Slug = {
-  _type: 'slug'
-  current?: string
-  source?: string
-}
+  _type: 'slug';
+  current?: string;
+  source?: string;
+};
+
+export type InternationalizedArrayReference = Array;
 
 export type AllSanitySchemaTypes =
   | SanityImagePaletteSwatch
@@ -269,16 +238,20 @@ export type AllSanitySchemaTypes =
   | SanityImageDimensions
   | SanityFileAsset
   | Geopoint
+  | NewsBanner
+  | TextBlock
+  | RichText
+  | MetadataBlock
   | SanityImageCrop
   | SanityImageHotspot
   | SanityImageAsset
   | SanityAssetSourceData
   | SanityImageMetadata
-  | RichText
-  | MetadataBlock
   | GalleryBlock
-  | TextBlock
+  | TranslationMetadata
+  | InternationalizedArrayReferenceValue
   | Project
   | ImageWithAlt
   | Slug
-export declare const internalGroqTypeReferenceTo: unique symbol
+  | InternationalizedArrayReference;
+export declare const internalGroqTypeReferenceTo: unique symbol;

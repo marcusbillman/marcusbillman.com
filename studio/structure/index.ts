@@ -1,6 +1,6 @@
 import type { StructureResolver } from 'sanity/structure';
 
-import { ImagesIcon } from '@sanity/icons';
+import { BellIcon, ImagesIcon } from '@sanity/icons';
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 
 export const structure: StructureResolver = (S, context) =>
@@ -33,4 +33,29 @@ export const structure: StructureResolver = (S, context) =>
         S,
         context,
       }),
+      S.divider(),
+      S.listItem()
+        .id('newsBanner-en')
+        .schemaType('newsBanner')
+        .title('News Banner (EN)')
+        .icon(BellIcon)
+        .child(
+          S.editor()
+            .id('newsBanner-en')
+            .schemaType('newsBanner')
+            .documentId('newsBanner-en')
+            .title('News Banner (EN)'),
+        ),
+      S.listItem()
+        .id('newsBanner-sv')
+        .schemaType('newsBanner')
+        .title('News Banner (SV)')
+        .icon(BellIcon)
+        .child(
+          S.editor()
+            .id('newsBanner-sv')
+            .schemaType('newsBanner')
+            .documentId('newsBanner-sv')
+            .title('News Banner (SV)'),
+        ),
     ]);
