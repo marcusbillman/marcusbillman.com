@@ -1,5 +1,5 @@
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
-import type { Project } from '@studio/sanity.types';
+import type { NewsBanner, Project } from '@studio/sanity.types';
 
 import imageUrlBuilder from '@sanity/image-url';
 import { sanityClient } from 'sanity:client';
@@ -27,5 +27,14 @@ export async function fetchFeaturedProjects() {
       featured == true &&
       (language == "${language}" || !defined(language))
     ] | order(orderRank asc)`,
+  );
+}
+
+export async function fetchNewsBanner() {
+  return await sanityClient.fetch<NewsBanner>(
+    `*[
+      _type == "newsBanner" &&
+      (language == "${language}" || !defined(language))
+    ] [0]`,
   );
 }
