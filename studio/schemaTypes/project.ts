@@ -8,23 +8,12 @@ export default {
   name: 'project',
   title: 'Project',
   type: 'document',
-  groups: [
-    {
-      name: 'main',
-      title: 'Main info',
-    },
-    {
-      name: 'meta',
-      title: 'Metadata',
-    },
-  ],
   fields: [
     {
       name: 'name',
       title: 'Name',
       type: 'string',
       description: 'Short, descriptive project name — just a few words',
-      group: 'main',
       validation: (Rule: Rule) => Rule.required().max(50),
     },
     {
@@ -37,7 +26,6 @@ export default {
         maxLength: 64,
         isUnique: isUniqueForLanguage,
       },
-      group: 'meta',
       validation: (Rule: Rule) => Rule.required(),
     },
     {
@@ -45,39 +33,26 @@ export default {
       title: 'Headline',
       type: 'string',
       description: 'Impactful, attention-grabbing statement — one sentence',
-      group: 'main',
       validation: (Rule: Rule) => Rule.required().max(100),
-    },
-    {
-      name: 'preamble',
-      title: 'Preamble',
-      type: 'text',
-      description:
-        'Introductory paragraph summarizing the project — a few sentences',
-      rows: 4,
-      group: 'main',
-    },
-    {
-      name: 'featured',
-      title: 'Featured',
-      type: 'boolean',
-      description: 'Show this project on the Home page',
-      group: 'meta',
-      validation: (Rule: Rule) => Rule.required(),
     },
     {
       name: 'date',
       title: 'Date',
       type: 'string',
       description: "E.g. '2021' or 'Nov 2020–Feb 2021'",
-      group: 'meta',
       validation: (Rule: Rule) => Rule.max(25),
     },
     {
       name: 'coverImage',
       title: 'Cover image',
       type: 'imageWithAlt',
-      group: 'main',
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
+      name: 'featured',
+      title: 'Featured',
+      type: 'boolean',
+      description: 'Show this project on the Home page',
       validation: (Rule: Rule) => Rule.required(),
     },
     {
@@ -92,8 +67,17 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
-      group: 'main',
       validation: (Rule: Rule) => Rule.required(),
+    },
+    {
+      name: 'preamble',
+      title: 'Preamble',
+      type: 'text',
+      description:
+        'Introductory paragraph summarizing the project — a few sentences',
+      rows: 4,
+      hidden: ({ document }: { document: SanityDocument }) =>
+        document?.type !== 'CASE_STUDY',
     },
     {
       name: 'caseStudyBlocks',
@@ -104,7 +88,6 @@ export default {
         { type: 'galleryBlock' },
         { type: 'metadataBlock' },
       ],
-      group: 'main',
       hidden: ({ document }: { document: SanityDocument }) =>
         document?.type !== 'CASE_STUDY',
     },
@@ -113,7 +96,6 @@ export default {
       title: 'Link URL',
       type: 'url',
       description: 'URL to the live app, project repository, etc.',
-      group: 'main',
       hidden: ({ document }: { document: SanityDocument }) =>
         document?.type !== 'SIDE_PROJECT',
     },
