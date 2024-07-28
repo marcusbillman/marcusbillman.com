@@ -29,7 +29,9 @@ const language = import.meta.env.PUBLIC_LOCALE || 'en';
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
 
     <!-- HTML meta tags -->
-    <title>{title && title + ' | ' + t('common.fullName')}</title>
+    <title>
+      {title ? `${title} | ${t('common.fullName')}` : t('common.fullName')}
+    </title>
     <meta name="description" content={t('seo.description')} />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
