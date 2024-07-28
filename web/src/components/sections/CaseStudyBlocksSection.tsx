@@ -24,12 +24,8 @@ export default function CaseStudyBlocksSection({
 }: CaseStudyBlocksSectionProps) {
   return (
     <article className="space-y-16 lg:space-y-24">
-      {project.coverImage?.asset && (
-        <img
-          src={sanityImageUrl(project.coverImage?.asset).url()}
-          alt={project.coverImage?.alt}
-          className="block min-h-[50vh] w-full rounded-4xl object-cover object-center lg:rounded-6xl"
-        />
+      {project.coverImage && (
+        <ImageWithAltComponent imageWithAlt={project.coverImage} />
       )}
       <PortableText
         value={project.caseStudyBlocks!}
