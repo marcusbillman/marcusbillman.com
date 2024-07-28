@@ -6,13 +6,14 @@ import HeroSection from '@/components/sections/HeroSection';
 import MoreThingsSection from '@/components/sections/MoreThingsSection';
 import SeparatorSection from '@/components/sections/SeparatorSection';
 import Layout from '@/layouts/Layout.astro';
-import { fetchFeaturedProjects } from '@/utils/sanity';
+import { fetchFeaturedProjects, fetchNewsBanner } from '@/utils/sanity';
 
 const featuredProjects = await fetchFeaturedProjects();
+const newsBanner = await fetchNewsBanner();
 ---
 
 <Layout>
-  <HeroSection slot="header" client:idle />
+  <HeroSection slot="header" client:idle newsBanner={newsBanner} />
   <BioSection />
   <SeparatorSection />
   <FeaturedProjectsSection projects={featuredProjects} />

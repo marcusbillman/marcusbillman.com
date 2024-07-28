@@ -1,6 +1,12 @@
+import type { NewsBanner } from '@studio/sanity.types';
 import type { AnimationProps } from 'framer-motion';
 
 import { useEffect, useRef } from 'react';
+import {
+  ArrowRight,
+  ArrowUpRight,
+  BellRinging,
+} from '@phosphor-icons/react/dist/ssr';
 import { getImage } from 'astro:assets';
 import { motion, useReducedMotion } from 'framer-motion';
 
@@ -24,13 +30,18 @@ import {
 } from '@/components/illustrations';
 import WaveLine from '@/components/WaveLine.tsx';
 import { useIntersectionObserverSelector } from '@/hooks';
+import { isExternalUrl } from '@/utils';
 import t from '@/utils/i18n';
 import { TIMING_FUNCTIONS } from '@/utils/tailwind';
 
 const optimizedBg = await getImage({ src: bg });
 const optimizedProfilePicture = await getImage({ src: profilePicture });
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  newsBanner: NewsBanner;
+}
+
+export default function HeroSection({ newsBanner }: HeroSectionProps) {
   // Observe when the hero has been covered by the main container being scrolled to the top of the viewport
   const isCovered = useIntersectionObserverSelector('#main', {
     rootMargin: '0% 0% -100% 0%',
@@ -49,7 +60,7 @@ export default function HeroSection() {
 
   const shouldReduceMotion = useReducedMotion();
 
-  function slideAnimationWithDelay(delay: number): AnimationProps {
+  function cropSlideWithDelay(delay: number): AnimationProps {
     return {
       initial: {
         opacity: shouldReduceMotion ? 0 : 1,
@@ -76,17 +87,17 @@ export default function HeroSection() {
       {/* Content */}
       <div className="z-10 max-w-7xl">
         <h1 className="flex flex-wrap justify-center gap-x-[0.33ch] text-5xl md:text-7xl lg:justify-start lg:text-left lg:text-9xl">
-          <motion.span {...slideAnimationWithDelay(0)}>
+          <motion.span {...cropSlideWithDelay(0)}>
             {t('home.hero.word1')}
           </motion.span>
-          <motion.span {...slideAnimationWithDelay(0.5)}>
+          <motion.span {...cropSlideWithDelay(0.5)}>
             {t('home.hero.word2')}
           </motion.span>
-          <motion.span {...slideAnimationWithDelay(1)}>
+          <motion.span {...cropSlideWithDelay(1)}>
             {t('home.hero.word3')}
           </motion.span>
           <span className="relative flex flex-col gap-1 lg:gap-2">
-            <motion.span {...slideAnimationWithDelay(1.2)}>
+            <motion.span {...cropSlideWithDelay(1.2)}>
               {t('home.hero.word4')}
             </motion.span>
             <motion.span
@@ -117,7 +128,7 @@ export default function HeroSection() {
               alt={t('home.alt.profilePicture')}
               className="size-12 rounded-full md:size-20 lg:size-32"
               aria-hidden
-              {...slideAnimationWithDelay(1.6)}
+              {...cropSlideWithDelay(1.6)}
             />
           </span>
         </h1>
@@ -332,6 +343,28 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
+      {/* News banner */}
+      {newsBanner && newsBanner.enabled && (
+        <motion.div
+          className="absolute bottom-32 left-0 right-0 z-50 flex justify-center px-4 lg:bottom-32"
+          initial={{
+            opacity: 0,
+            y: shouldReduceMotion ? 0 : '200%',
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            delay: 2.5,
+            duration: 0.75,
+            ease: TIMING_FUNCTIONS.SMOOTH,
+          }}
+        >
+          <NewsBanner text={newsBanner.text} href={newsBanner.linkUrl} />
+        </motion.div>
+      )}
+
       {/* Backgrounds */}
       <DotGrid dim="default" />
       <motion.div
@@ -352,5 +385,49 @@ export default function HeroSection() {
         ></video>
       </motion.div>
     </header>
+  );
+}
+
+interface NewsBannerProps {
+  text?: string;
+  href?: string;
+}
+
+function NewsBanner({ text, href }: NewsBannerProps) {
+  let ArrowIconComponent;
+
+  if (href) {
+    ArrowIconComponent = isExternalUrl(href) ? ArrowUpRight : ArrowRight;
+  }
+
+  return (
+    <a
+      href={href}
+      target={isExternalUrl(href || '') ? '_blank' : '_self'}
+      aria-label="News banner"
+      className={`${href ? '' : 'pointer-events-none'} group flex w-fit max-w-full items-center gap-2 rounded-full bg-default px-4 py-3 shadow-lg transition-all hover:bg-primary hover:text-on-primary active:opacity-50 motion-safe:active:scale-75 lg:px-6 lg:py-4 dark:border`}
+    >
+      <BellRinging
+        size={16}
+        className="flex-shrink-0 text-primary transition-colors group-hover:text-on-primary lg:hidden"
+      />
+      <BellRinging
+        size={20}
+        className="hidden flex-shrink-0 text-primary transition-colors group-hover:text-on-primary lg:inline"
+      />
+      <span className="font-medium lg:text-xl">{text}</span>
+      {ArrowIconComponent && (
+        <>
+          <ArrowIconComponent
+            size={16}
+            className="flex-shrink-0 text-subtle transition-colors group-hover:text-on-primary lg:hidden"
+          />
+          <ArrowIconComponent
+            size={20}
+            className="hidden flex-shrink-0 text-subtle transition-colors group-hover:text-on-primary lg:inline"
+          />
+        </>
+      )}
+    </a>
   );
 }
