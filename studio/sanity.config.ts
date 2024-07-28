@@ -10,8 +10,8 @@ import { structure } from './structure';
 export default defineConfig({
   name: 'default',
   title: 'marcusbillman.com-2024',
-  projectId: '2l3afo6f',
-  dataset: 'production',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID as string,
+  dataset: process.env.SANITY_STUDIO_DATASET as string,
   plugins: [
     structureTool({ structure }),
     dashboardTool({
@@ -29,4 +29,5 @@ export default defineConfig({
   schema: {
     types: schemaTypes as SchemaTypeDefinition[],
   },
+  tasks: { enabled: false },
 });
