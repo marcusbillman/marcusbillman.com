@@ -100,7 +100,6 @@ export default {
       animation: {
         float: 'float 2s ease-in-out infinite',
         wiggle: 'wiggle 1s ease-in-out infinite',
-        'wave-line': 'wave-line 1s linear infinite',
       },
       keyframes: {
         float: {
@@ -110,10 +109,6 @@ export default {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-10deg)' },
           '50%': { transform: 'rotate(10deg)' },
-        },
-        'wave-line': {
-          '0%': { maskPosition: '0 0' },
-          '100%': { maskPosition: '-2.38rem 0' },
         },
       },
       transitionTimingFunction: {

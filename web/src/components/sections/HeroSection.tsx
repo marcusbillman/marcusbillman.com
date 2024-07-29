@@ -117,7 +117,13 @@ export default function HeroSection({ newsBanner }: HeroSectionProps) {
               }}
             >
               <WaveLine
-                className="text-primary"
+                size="small"
+                className="text-primary lg:hidden"
+                style={animationPlayStateStyle}
+              />
+              <WaveLine
+                size="medium"
+                className="hidden text-primary lg:block"
                 style={animationPlayStateStyle}
               />
             </motion.span>
