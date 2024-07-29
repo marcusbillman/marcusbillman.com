@@ -1,8 +1,7 @@
 ---
-import { Toaster } from 'sonner';
-
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/sections/FooterSection';
+import ToasterWrapper from '@/components/ToasterWrapper';
 import t from '@/utils/i18n';
 
 interface Props {
@@ -96,25 +95,7 @@ const language = import.meta.env.PUBLIC_LOCALE || 'en';
       </main>
     </div>
     <Footer client:visible />
-    <Toaster
-      client:idle
-      position="bottom-center"
-      gap={8}
-      toastOptions={{
-        duration: 3000,
-        unstyled: true,
-        classNames: {
-          toast:
-            'flex w-full gap-1 rounded-4xl border bg-default px-6 py-4 font-sans text-lg shadow-xl',
-          success: 'text-primary',
-          warning: 'text-orange-500',
-          error: 'text-orange-500',
-          title: 'font-bold',
-          description: 'text-subtle',
-          icon: 'mt-[0.5ch]',
-        },
-      }}
-    />
+    <ToasterWrapper client:idle />
     <script src="@/scripts/console-greeting"></script>
   </body>
 </html>
