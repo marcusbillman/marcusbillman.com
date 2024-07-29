@@ -14,6 +14,11 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const resolvedTailwindConfig = useTailwindConfig();
 
+  function toggleMenu() {
+    setIsMenuOpen(!isMenuOpen);
+    navigator.vibrate(100);
+  }
+
   const isDesktop = useMediaQuery(
     `(min-width: ${resolvedTailwindConfig.theme.screens.lg})`,
   );
@@ -27,14 +32,11 @@ export default function Navigation() {
       >
         <AnimatePresence initial={false}>
           {(isDesktop || !isMenuOpen) && (
-            <Navbar
-              isMenuOpen={isMenuOpen}
-              onClickMenuButton={() => setIsMenuOpen(!isMenuOpen)}
-            />
+            <Navbar isMenuOpen={isMenuOpen} onClickMenuButton={toggleMenu} />
           )}
         </AnimatePresence>
         <AnimatePresence>
-          {isMenuOpen && <Menu onClose={() => setIsMenuOpen(!isMenuOpen)} />}
+          {isMenuOpen && <Menu onClose={toggleMenu} />}
         </AnimatePresence>
       </nav>
     </FocusOn>

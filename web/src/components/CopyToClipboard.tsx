@@ -20,6 +20,7 @@ export default function CopyToClipboard({ text, children }: Props) {
     copy(text)
       .then(() => {
         toast.success(t('common.toastCopySuccess'));
+        navigator.vibrate(10);
         confetti({
           origin: {
             x: event.clientX / window.innerWidth || undefined,

@@ -16,6 +16,11 @@ import t from '@/utils/i18n';
 export default function ContactSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  function toggleMenu() {
+    setIsModalOpen(!isModalOpen);
+    navigator.vibrate(100);
+  }
+
   return (
     <section className="flex flex-col items-center md:px-4 md:pb-4 lg:px-16 lg:pb-40">
       <div className="relative isolate flex w-full flex-col items-center gap-12 overflow-hidden rounded-2xl bg-subtle px-4 py-16 shadow-lg lg:w-fit lg:rotate-3 lg:gap-16 lg:p-16">
@@ -27,12 +32,10 @@ export default function ContactSection() {
             text={t('contact.openForm')}
             icon={ChatsCircle}
             style="primary"
-            onClick={() => setIsModalOpen(true)}
+            onClick={toggleMenu}
           />
           <AnimatePresence>
-            {isModalOpen && (
-              <ContactFormModal onClose={() => setIsModalOpen(false)} />
-            )}
+            {isModalOpen && <ContactFormModal onClose={toggleMenu} />}
           </AnimatePresence>
           <div className="text-xl text-subtle lg:text-2xl">
             {t('contact.or')}
