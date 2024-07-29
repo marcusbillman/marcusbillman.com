@@ -29,4 +29,7 @@ export default defineConfig({
       enabled: true,
     },
   }),
+  devToolbar: {
+    enabled: false,
+  },
 });
