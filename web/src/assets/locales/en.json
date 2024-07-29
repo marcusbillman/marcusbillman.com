@@ -199,7 +199,7 @@
   "contact": {
     "title": "Contact",
     "heading": "Let's get in touch! 💬",
-    "openForm": "Open contact form",
+    "openForm": "Open form",
     "or": "or",
     "emailCopy": "Copy",
     "emailOpen": "Open",
@@ -212,7 +212,7 @@
       "emailPlaceholder": "super.cool@email.com",
       "message": "Message",
       "messagePlaceholder": "Hi! I've got this cool idea...",
-      "send": "Send message",
+      "send": "Send",
       "sending": "Sending...",
       "toastSuccess": "Message sent! 🚀",
       "toastErrorTitle": "Failed to send 😢",

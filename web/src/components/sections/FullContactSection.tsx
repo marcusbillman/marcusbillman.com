@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import {
+  ChatsCircle,
   Copy,
   EnvelopeSimple,
-  PaperPlaneTilt,
 } from '@phosphor-icons/react/dist/ssr';
 import { AnimatePresence } from 'framer-motion';
 
@@ -24,7 +24,7 @@ export default function FullContactSection() {
       </h1>
       <Button
         text={t('contact.openForm')}
-        icon={PaperPlaneTilt}
+        icon={ChatsCircle}
         style="primary"
         className="mt-16"
         onClick={() => setIsModalOpen(true)}

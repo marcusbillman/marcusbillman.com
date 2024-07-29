@@ -131,6 +131,7 @@ export default function ContactFormModal({ onClose }: Props) {
         <Button
           text={t('contact.form.send')}
           icon={PaperPlaneTilt}
+          iconSide="right"
           style="primary"
           type="submit"
           disabled={state.submitting}

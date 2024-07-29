@@ -199,7 +199,7 @@
   "contact": {
     "title": "Kontakt",
     "heading": "Hör gärna av dig! 💬",
-    "openForm": "Öppna kontaktformulär",
+    "openForm": "Öppna formulär",
     "or": "eller",
     "emailCopy": "Kopiera",
     "emailOpen": "Öppna",
@@ -212,7 +212,7 @@
       "emailPlaceholder": "supercool@epost.se",
       "message": "Meddelande",
       "messagePlaceholder": "Hej! Jag har en cool idé...",
-      "send": "Skicka meddelande",
+      "send": "Skicka",
       "sending": "Skickar...",
       "toastSuccess": "Meddelande skickat! 🚀",
       "toastErrorTitle": "Kunde inte skicka 😢",
