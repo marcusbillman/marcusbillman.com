@@ -248,6 +248,7 @@ function PortfolioItemCard({ portfolioItem }: PortfolioItemCardProps) {
   return (
     <motion.li
       key={portfolioItem.id}
+      lang={(portfolioItem.data as Project).language || 'en'}
       layout={!shouldReduceMotion}
       initial={{
         opacity: 0,

@@ -44,7 +44,10 @@ function FeaturedProject({ project }: FeaturedProjectProps) {
   return (
     <li className="flex flex-col-reverse gap-6 bg-default py-6 lg:flex-row lg:items-center lg:gap-0 lg:bg-transparent lg:py-0 2xl:items-start">
       <div className="top-16 flex h-fit flex-col gap-6 bg-default lg:w-full lg:gap-8 lg:py-8 lg:pr-16 2xl:py-16 motion-safe:2xl:sticky">
-        <div className="flex flex-col gap-2 lg:gap-6">
+        <div
+          lang={project.language || 'en'}
+          className="flex flex-col gap-2 lg:gap-6"
+        >
           <h3 className="font-serif text-xl font-medium text-primary lg:text-3xl">
             {project.name}
           </h3>
@@ -62,6 +65,7 @@ function FeaturedProject({ project }: FeaturedProjectProps) {
           src={sanityImageUrl(project.coverImage?.asset).width(1200).url()}
           alt={project.coverImage?.alt || project.name}
           loading="lazy"
+          lang={project.language || 'en'}
           className="aspect-photo rounded-2xl object-cover lg:w-1/2"
         ></img>
       )}
