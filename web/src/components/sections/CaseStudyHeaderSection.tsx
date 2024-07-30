@@ -5,6 +5,7 @@ import { ArrowLeft } from '@phosphor-icons/react/dist/ssr';
 import Button from '@/components/Button';
 import DotGrid from '@/components/DotGrid';
 import Glow from '@/components/Glow';
+import t from '@/utils/i18n';
 
 interface Props {
   project: Project;
@@ -16,7 +17,7 @@ export default function CaseStudyHeaderSection({ project }: Props) {
       <div className="mx-auto w-full max-w-7xl space-y-6 lg:space-y-12">
         <div className="flex items-center gap-4">
           <Button
-            text="Portfolio"
+            text={t('caseStudy.back')}
             icon={ArrowLeft}
             iconSide="left"
             size="small"

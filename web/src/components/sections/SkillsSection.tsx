@@ -102,7 +102,7 @@ export default function SkillsSection() {
           <DotGrid />
           <img
             src={optimizedTechLogos.src}
-            alt="Grid of web technology logos"
+            alt={t('about.alt.techLogos')}
             loading="lazy"
             className="absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 rotate-[30deg]"
           />

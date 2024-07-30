@@ -66,7 +66,7 @@ export default function FooterSection() {
             >
               {t('footer.fineprint.part4')}
             </a>
-            .
+            {t('footer.fineprint.part5')}
           </p>
         </div>
         <SocialLinks forceDark />

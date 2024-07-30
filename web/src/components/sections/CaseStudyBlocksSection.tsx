@@ -58,9 +58,9 @@ export default function CaseStudyBlocksSection({
           },
         }}
       />
-      <div className="flex flex-col items-center px-4 lg:px-16">
+      <div lang={language} className="flex flex-col items-center px-4 lg:px-16">
         <Button
-          text="All projects"
+          text={t('caseStudy.back')}
           icon={ArrowLeft}
           iconSide="left"
           href="/portfolio"

@@ -59,7 +59,9 @@ export default function Menu({ onClose }: MenuProps) {
         className="fixed bottom-0 left-0 right-0 z-40 flex max-h-[95vh] flex-col gap-4 rounded-t-4xl bg-default p-4 shadow-lg lg:bottom-auto lg:top-0 lg:h-[564px] lg:flex-row lg:gap-8 lg:rounded-b-4xl lg:rounded-t-none lg:p-8 lg:pt-24"
       >
         <div className="flex items-center justify-between lg:hidden">
-          <h2 className="font-serif text-xl font-medium italic">Menu</h2>
+          <h2 className="font-serif text-xl font-medium italic">
+            {t('navigation.menu')}
+          </h2>
           <Button
             text={t('common.close')}
             icon={X}
