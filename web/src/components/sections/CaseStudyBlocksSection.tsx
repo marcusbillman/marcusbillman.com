@@ -10,12 +10,15 @@ import type {
   TextBlock,
 } from '@studio/sanity.types';
 
-import { ArrowLeft } from '@phosphor-icons/react/dist/ssr';
+import { ArrowLeft, Info } from '@phosphor-icons/react/dist/ssr';
 import { PortableText } from '@portabletext/react';
 
 import Button from '@/components/Button';
 import DotGrid from '@/components/DotGrid';
+import t from '@/utils/i18n';
 import { sanityImageUrl } from '@/utils/sanity';
+
+const language = import.meta.env.PUBLIC_LOCALE;
 
 interface CaseStudyBlocksSectionProps {
   project: Project;
@@ -25,9 +28,23 @@ export default function CaseStudyBlocksSection({
   project,
 }: CaseStudyBlocksSectionProps) {
   return (
-    <article className="space-y-16 lg:space-y-24">
+    <article
+      lang={project.language || 'en'}
+      className="space-y-16 lg:space-y-24"
+    >
       {project.coverImage && (
         <ImageWithAltComponent imageWithAlt={project.coverImage} />
+      )}
+      {language === 'sv' && project.language !== 'sv' && (
+        <div className="mb-6 px-4 lg:mb-8">
+          <div className="mx-auto flex max-w-4xl gap-2 rounded-2xl bg-subtle p-4">
+            <Info
+              size={20}
+              className="mt-[0.25em] flex-shrink-0 text-primary"
+            />
+            <p className="text-xl">{t('caseStudy.missingTranslation')}</p>
+          </div>
+        </div>
       )}
       <PortableText
         value={project.caseStudyBlocks!}
