@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { twJoin } from 'tailwind-merge';
 
 interface Props {
   /** The state of the switch when it is initially rendered. Use when you do not need to control its state. */
@@ -38,7 +39,11 @@ export default function Switch({
 
   return (
     <div
-      className={`relative inline-block rounded-full transition-colors duration-300 ease-smooth focus-within:ring focus-within:ring-offset-4 ${size === 'small' ? 'h-8 w-14' : 'h-10 w-[72px]'} ${isChecked ? 'bg-primary' : 'border border-strong bg-default'}`}
+      className={twJoin(
+        'relative inline-block rounded-full transition-colors duration-300 ease-smooth focus-within:ring focus-within:ring-offset-4',
+        size === 'small' ? 'h-8 w-14' : 'h-10 w-[72px]',
+        isChecked ? 'bg-primary' : 'border border-strong bg-default',
+      )}
     >
       <input
         type="checkbox"
@@ -48,7 +53,10 @@ export default function Switch({
         className="absolute inset-0 z-10 cursor-pointer opacity-0"
       />
       <span
-        className={`absolute bottom-1 left-1 top-1 aspect-square rounded-full transition-all duration-300 ease-smooth ${isChecked ? 'translate-x-full bg-default' : 'bg-gray-400'}`}
+        className={twJoin(
+          'absolute bottom-1 left-1 top-1 aspect-square rounded-full transition-all duration-300 ease-smooth',
+          isChecked ? 'translate-x-full bg-default' : 'bg-gray-400',
+        )}
       ></span>
     </div>
   );

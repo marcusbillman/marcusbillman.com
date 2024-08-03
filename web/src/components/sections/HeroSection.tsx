@@ -9,6 +9,7 @@ import {
 } from '@phosphor-icons/react/dist/ssr';
 import { getImage } from 'astro:assets';
 import { motion, useReducedMotion } from 'framer-motion';
+import { twJoin } from 'tailwind-merge';
 
 import bg from '@/assets/images/hero-bg-still.jpg';
 import profilePicture from '@/assets/images/profile-picture.jpg';
@@ -411,7 +412,10 @@ function NewsBanner({ text, href }: NewsBannerProps) {
       href={href}
       target={isExternalUrl(href || '') ? '_blank' : '_self'}
       aria-label="News banner"
-      className={`${href ? '' : 'pointer-events-none'} group flex w-fit max-w-full items-center gap-2 rounded-full bg-default px-4 py-3 shadow-lg transition-all hover:bg-primary hover:text-on-primary active:opacity-50 motion-safe:active:scale-75 lg:px-6 lg:py-4 dark:border`}
+      className={twJoin(
+        'group flex w-fit max-w-full items-center gap-2 rounded-full bg-default px-4 py-3 shadow-lg transition-all hover:bg-primary hover:text-on-primary active:opacity-50 motion-safe:active:scale-75 lg:px-6 lg:py-4 dark:border',
+        !href && 'pointer-events-none',
+      )}
     >
       <BellRinging
         size={16}

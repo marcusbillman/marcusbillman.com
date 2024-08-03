@@ -3,6 +3,7 @@ import type { Icon } from '@phosphor-icons/react/dist/lib/types';
 import { useEffect } from 'react';
 import { ArrowsClockwise, Moon, Sun } from '@phosphor-icons/react/dist/ssr';
 import { toast } from 'sonner';
+import { twJoin } from 'tailwind-merge';
 import { useLocalStorage } from 'usehooks-ts';
 
 import t from '@/utils/i18n';
@@ -76,7 +77,10 @@ function SwitchSegment({
 }: SwitchSegmentProps) {
   return (
     <div
-      className={`${isSelected ? 'bg-default' : 'text-subtle'} relative grid size-12 place-items-center rounded-full transition-colors focus-within:ring hover:text-default`}
+      className={twJoin(
+        'relative grid size-12 place-items-center rounded-full transition-colors focus-within:ring hover:text-default',
+        isSelected ? 'bg-default' : 'text-subtle',
+      )}
     >
       <input
         type="radio"
@@ -85,7 +89,10 @@ function SwitchSegment({
         checked={isSelected}
         title={label}
         aria-label={label}
-        className={`${isSelected ? 'pointer-events-none' : ''} absolute inset-0 cursor-pointer opacity-0`}
+        className={twJoin(
+          'absolute inset-0 cursor-pointer opacity-0',
+          isSelected && 'pointer-events-none',
+        )}
         onChange={onChange}
       />
       <IconComponent size={24} />

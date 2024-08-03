@@ -1,4 +1,5 @@
 import { ArrowUpRight, Copy } from '@phosphor-icons/react/dist/ssr';
+import { twJoin } from 'tailwind-merge';
 
 import CopyToClipboard from '@/components/CopyToClipboard';
 import t from '@/utils/i18n';
@@ -16,7 +17,10 @@ export default function SocialLinks({
 }: Props) {
   return (
     <ul
-      className={`${compactOnMobile ? 'gap-y-3 lg:gap-y-6' : 'gap-y-6'} grid flex-1 grid-cols-2`}
+      className={twJoin(
+        'grid flex-1 grid-cols-2',
+        compactOnMobile ? 'gap-y-3 lg:gap-y-6' : 'gap-y-6',
+      )}
     >
       <SocialLink
         primaryText={t('common.socials.linkedin')}
@@ -48,22 +52,38 @@ export default function SocialLinks({
       />
       <li className="col-span-2">
         <span
-          className={`${forceDark ? 'text-gray-400' : 'text-subtle'} ${compactOnMobile ? 'hidden lg:inline' : ''} font-medium`}
+          className={twJoin(
+            'font-medium',
+            compactOnMobile && 'hidden lg:inline',
+            forceDark ? 'text-gray-400' : 'text-subtle',
+          )}
         >
           {t('common.socials.emailDescription')}
         </span>
         <CopyToClipboard text={t('common.socials.emailAddress')}>
           <button className="group mt-1 flex cursor-pointer items-center gap-1">
-            <span className={`${compactOnMobile ? 'lg:text-xl' : 'text-xl'}`}>
+            <span className={compactOnMobile ? 'lg:text-xl' : 'text-xl'}>
               {t('common.socials.emailAddress')}
             </span>
             <Copy
               size={16}
-              className={`${compactOnMobile ? 'lg:hidden' : 'hidden'} ${forceDark ? 'text-gray-400 group-hover:text-gray-100' : 'text-subtle group-hover:text-default'} transition-all duration-500 ease-smooth group-hover:rotate-180`}
+              className={twJoin(
+                'transition-all duration-500 ease-smooth group-hover:rotate-180',
+                compactOnMobile ? 'lg:hidden' : 'hidden',
+                forceDark
+                  ? 'text-gray-400 group-hover:text-gray-100'
+                  : 'text-subtle group-hover:text-default',
+              )}
             />
             <Copy
               size={24}
-              className={`${compactOnMobile ? 'hidden lg:block' : ''} ${forceDark ? 'text-gray-400 group-hover:text-gray-100' : 'text-subtle group-hover:text-default'} transition-all duration-500 ease-smooth group-hover:rotate-180`}
+              className={twJoin(
+                'transition-all duration-500 ease-smooth group-hover:rotate-180',
+                compactOnMobile && 'hidden lg:block',
+                forceDark
+                  ? 'text-gray-400 group-hover:text-gray-100'
+                  : 'text-subtle group-hover:text-default',
+              )}
             />
           </button>
         </CopyToClipboard>
@@ -92,7 +112,11 @@ function SocialLink({
   return (
     <li>
       <span
-        className={`${forceDark ? 'text-gray-400' : 'text-subtle'} ${compactOnMobile ? 'hidden lg:inline' : ''} font-medium`}
+        className={twJoin(
+          'font-medium',
+          compactOnMobile && 'hidden lg:inline',
+          forceDark ? 'text-gray-400' : 'text-subtle',
+        )}
       >
         {secondaryText}
       </span>
@@ -101,16 +125,28 @@ function SocialLink({
         target="_blank"
         className="group mt-1 flex items-center gap-1"
       >
-        <span className={`${compactOnMobile ? 'lg:text-xl' : 'text-xl'}`}>
+        <span className={compactOnMobile ? 'lg:text-xl' : 'text-xl'}>
           {primaryText}
         </span>
         <ArrowUpRight
           size={16}
-          className={`${compactOnMobile ? 'lg:hidden' : 'hidden'} ${forceDark ? 'text-gray-400 group-hover:text-gray-100' : 'text-subtle group-hover:text-default'} transition-all duration-500 ease-smooth group-hover:-translate-y-[20%] group-hover:translate-x-[20%]`}
+          className={twJoin(
+            'transition-all duration-500 ease-smooth group-hover:-translate-y-[20%] group-hover:translate-x-[20%]',
+            compactOnMobile ? 'lg:hidden' : 'hidden',
+            forceDark
+              ? 'text-gray-400 group-hover:text-gray-100'
+              : 'text-subtle group-hover:text-default',
+          )}
         />
         <ArrowUpRight
           size={24}
-          className={`${compactOnMobile ? 'hidden lg:block' : ''} ${forceDark ? 'text-gray-400 group-hover:text-gray-100' : 'text-subtle group-hover:text-default'} transition-all duration-500 ease-smooth group-hover:-translate-y-[20%] group-hover:translate-x-[20%]`}
+          className={twJoin(
+            'transition-all duration-500 ease-smooth group-hover:-translate-y-[20%] group-hover:translate-x-[20%]',
+            compactOnMobile && 'hidden lg:block',
+            forceDark
+              ? 'text-gray-400 group-hover:text-gray-100'
+              : 'text-subtle group-hover:text-default',
+          )}
         />
       </a>
     </li>

@@ -1,3 +1,5 @@
+import { twMerge } from 'tailwind-merge';
+
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   size?: 'small' | 'medium' | 'large';
 }
@@ -38,7 +40,10 @@ export default function WaveLine({
         }
       `}</style>
       <div
-        className={`${className} bg-current [mask-image:url('/assets/images/wave-tile.svg')] [mask-size:contain]`}
+        className={twMerge(
+          "bg-current [mask-image:url('/assets/images/wave-tile.svg')] [mask-size:contain]",
+          className,
+        )}
         style={{
           ...style,
           height: `${height()}px`,

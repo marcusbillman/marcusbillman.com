@@ -10,6 +10,7 @@ import {
   X,
 } from '@phosphor-icons/react/dist/ssr';
 import { motion, useReducedMotion } from 'framer-motion';
+import { twJoin } from 'tailwind-merge';
 
 import Button from '@/components/Button';
 import t from '@/utils/i18n';
@@ -38,7 +39,10 @@ export default function Navbar({ isMenuOpen, onClickMenuButton }: NavbarProps) {
     >
       <a
         href="/"
-        className={`pointer-events-auto flex items-center gap-1 rounded-full bg-default px-4 font-medium transition-all hover:bg-primary hover:text-on-primary active:opacity-50 motion-safe:active:scale-75 lg:px-6 dark:border ${isMenuOpen ? '' : 'shadow-lg'}`}
+        className={twJoin(
+          'pointer-events-auto flex items-center gap-1 rounded-full bg-default px-4 font-medium transition-all hover:bg-primary hover:text-on-primary active:opacity-50 motion-safe:active:scale-75 lg:px-6 dark:border',
+          !isMenuOpen && 'shadow-lg',
+        )}
       >
         <span>{t('common.firstName')}</span>
         <span className="font-serif italic">{t('common.lastName')}</span>
@@ -46,7 +50,10 @@ export default function Navbar({ isMenuOpen, onClickMenuButton }: NavbarProps) {
       <motion.div
         // Animation for hiding or showing navbar links as the menu is opened or closed
         layout={shouldReduceMotion ? false : 'position'}
-        className={`pointer-events-auto flex items-center gap-6 rounded-full bg-default lg:p-2 ${isMenuOpen ? '' : 'shadow-lg lg:pl-6 dark:border'}`}
+        className={twJoin(
+          'pointer-events-auto flex items-center gap-6 rounded-full bg-default lg:p-2',
+          !isMenuOpen && 'shadow-lg lg:pl-6 dark:border',
+        )}
       >
         {!isMenuOpen && (
           <motion.ul className={`hidden gap-6 lg:flex lg:items-center`}>
@@ -95,7 +102,10 @@ function NavbarLink({ text, url, icon }: NavbarLinkProps) {
     <li>
       <a
         href={url}
-        className={`flex items-center gap-1 transition-all hover:text-default active:opacity-50 motion-safe:active:scale-75 ${isActive ? 'font-bold text-default' : 'text-subtle'}`}
+        className={twJoin(
+          'flex items-center gap-1 transition-all hover:text-default active:opacity-50 motion-safe:active:scale-75',
+          isActive ? 'font-bold text-default' : 'text-subtle',
+        )}
         aria-current={isActive ? 'page' : undefined}
       >
         <IconComponent weight={isActive ? 'fill' : 'regular'} />

@@ -3,6 +3,7 @@ import type { ReactElement } from 'react';
 
 import React, { useEffect, useRef, useState } from 'react';
 import { useReducedMotion, useSpring, useTransform } from 'framer-motion';
+import { twMerge } from 'tailwind-merge';
 
 import { randomInt } from '@/utils';
 import { TIMING_FUNCTIONS } from '@/utils/tailwind';
@@ -98,7 +99,7 @@ export default function Sandbox({
   return (
     <div
       ref={constraintsRef}
-      className={`${className} pointer-events-none`}
+      className={twMerge('pointer-events-none', className)}
       {...props}
     >
       {React.Children.map(children, (child, index) => {
@@ -108,7 +109,10 @@ export default function Sandbox({
             {
               ...child.props,
               key: index,
-              className: `${child.props.className} absolute pointer-events-auto motion-safe:cursor-move`,
+              className: twMerge(
+                'absolute pointer-events-auto motion-safe:cursor-move',
+                child.props.className,
+              ),
               initial: {
                 opacity: 0,
                 scale: shouldReduceMotion ? 1 : 0.8,

@@ -1,3 +1,5 @@
+import { twJoin } from 'tailwind-merge';
+
 import t from '@/utils/i18n';
 
 export default function ThemeSwitch() {
@@ -43,11 +45,17 @@ function SwitchSegment({ icon, label, isSelected, href }: SwitchSegmentProps) {
       aria-label={label}
       aria-hidden={isSelected}
       tabIndex={isSelected ? -1 : 0}
-      className={`${isSelected ? 'pointer-events-none bg-default' : ''} group grid size-12 place-items-center rounded-full transition-colors focus:ring`}
+      className={twJoin(
+        'group grid size-12 place-items-center rounded-full transition-colors focus:ring',
+        isSelected && 'pointer-events-none bg-default',
+      )}
     >
       <span
-        className={`${isSelected ? '' : 'opacity-50'} text-xl transition-opacity group-hover:opacity-100 group-focus:opacity-100 lg:text-2xl`}
         aria-hidden
+        className={twJoin(
+          'text-xl transition-opacity group-hover:opacity-100 group-focus:opacity-100 lg:text-2xl',
+          !isSelected && 'opacity-50',
+        )}
       >
         {icon}
       </span>

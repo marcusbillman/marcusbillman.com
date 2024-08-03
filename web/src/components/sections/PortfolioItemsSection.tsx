@@ -14,6 +14,7 @@ import {
   Images,
 } from '@phosphor-icons/react/dist/ssr';
 import { motion, useReducedMotion } from 'framer-motion';
+import { twJoin, twMerge } from 'tailwind-merge';
 
 import Switch from '@/components/Switch';
 import { isExternalUrl } from '@/utils';
@@ -276,7 +277,10 @@ function PortfolioItemCard({ portfolioItem }: PortfolioItemCardProps) {
         />
         <div className="mt-6 flex flex-col gap-3">
           <div
-            className={`${!name() ? 'hidden lg:flex' : 'flex'} items-center`}
+            className={twJoin(
+              name() ? 'flex' : 'hidden lg:flex',
+              'items-center',
+            )}
           >
             <div className="flex flex-grow items-center gap-4">
               {name() && (
@@ -316,7 +320,10 @@ function PortfolioItemTag({ label, icon, className }: PortfolioItemTagProps) {
 
   return (
     <div
-      className={`${className} flex items-center gap-1 rounded-lg border px-2 py-1 text-subtle 2xl:px-3 2xl:py-2`}
+      className={twMerge(
+        'flex items-center gap-1 rounded-lg border px-2 py-1 text-subtle 2xl:px-3 2xl:py-2',
+        className,
+      )}
     >
       <span className="2xl:hidden">
         <IconComponent size={16} />
@@ -343,7 +350,10 @@ function FilterOption({ label, icon, isEnabled, onChange }: FilterOptionProps) {
 
   return (
     <div
-      className={`${isEnabled ? 'font-bold text-default' : 'text-subtle'} flex flex-grow cursor-pointer items-center gap-4 transition-all active:opacity-50 motion-safe:active:scale-90 lg:p-6`}
+      className={twJoin(
+        'flex flex-grow cursor-pointer items-center gap-4 transition-all active:opacity-50 motion-safe:active:scale-90 lg:p-6',
+        isEnabled ? 'font-bold text-default' : 'text-subtle',
+      )}
       onClick={onChange}
     >
       <div className="flex flex-grow items-center gap-2">

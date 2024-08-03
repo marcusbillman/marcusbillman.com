@@ -12,6 +12,7 @@ import type {
 
 import { ArrowLeft, Info } from '@phosphor-icons/react/dist/ssr';
 import { PortableText } from '@portabletext/react';
+import { twMerge } from 'tailwind-merge';
 
 import Button from '@/components/Button';
 import DotGrid from '@/components/DotGrid';
@@ -210,7 +211,10 @@ function ImageWithAltComponent({
 }: ImageWithAltComponentProps) {
   return (
     <figure
-      className={`${className} relative max-h-screen flex-col overflow-hidden rounded-2xl lg:rounded-4xl`}
+      className={twMerge(
+        'relative max-h-screen flex-col overflow-hidden rounded-2xl lg:rounded-4xl',
+        className,
+      )}
     >
       <img
         key={imageWithAlt.asset?._ref}

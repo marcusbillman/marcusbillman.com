@@ -1,3 +1,5 @@
+import { twMerge } from 'tailwind-merge';
+
 // These images are not optimized because optimization caused problems with loading in the Menu component.
 import blueberry from '@/assets/images/glow-blueberry.png';
 import orange from '@/assets/images/glow-orange.png';
@@ -17,7 +19,10 @@ export default function Glow({ color, className, style, ...props }: Props) {
 
   return (
     <div
-      className={`${className} absolute -z-10 aspect-square bg-cover bg-center`}
+      className={twMerge(
+        'absolute -z-10 aspect-square bg-cover bg-center',
+        className,
+      )}
       style={{ backgroundImage: `url(${src()})`, ...style }}
       {...props}
     />

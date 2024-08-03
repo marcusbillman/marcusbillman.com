@@ -9,6 +9,7 @@ import {
   X,
 } from '@phosphor-icons/react/dist/ssr';
 import { motion, useReducedMotion } from 'framer-motion';
+import { twJoin } from 'tailwind-merge';
 import { useMediaQuery } from 'usehooks-ts';
 
 // These images are not optimized because optimization caused problems with loading.
@@ -170,17 +171,27 @@ function MenuLink({ text, url, icon, children }: MenuLinkProps) {
 
   return (
     <li
-      className={`group relative isolate block min-w-64 flex-1 overflow-clip rounded-2xl border px-5 py-4 transition-all active:opacity-50 group-hover:border-primary motion-safe:active:scale-90 ${isActive ? 'border-primary' : ''}`}
+      className={twJoin(
+        'group relative isolate block min-w-64 flex-1 overflow-clip rounded-2xl border px-5 py-4 transition-all active:opacity-50 group-hover:border-primary motion-safe:active:scale-90',
+        isActive && 'border-primary',
+      )}
     >
       <a href={url}>
         <div
-          className={`flex items-center gap-2 text-3xl transition-colors group-hover:text-default ${isActive ? 'text-default' : 'text-subtle'}`}
+          className={twJoin(
+            'flex items-center gap-2 text-3xl transition-colors group-hover:text-default',
+            isActive ? 'text-default' : 'text-subtle',
+          )}
         >
           <IconComponent size={32} weight={isActive ? 'fill' : 'regular'} />
           {text}
         </div>
         <div
-          className={`absolute inset-0 -z-10 transition-opacity ${isActive ? '' : 'opacity-0 group-focus-within:opacity-100 group-hover:opacity-100'}`}
+          // prettier-ignore
+          className={twJoin(
+            'absolute inset-0 -z-10 transition-opacity',
+            !isActive && 'opacity-0 group-focus-within:opacity-100 group-hover:opacity-100',
+          )}
         >
           {children}
         </div>

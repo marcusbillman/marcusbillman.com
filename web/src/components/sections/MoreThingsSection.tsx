@@ -8,6 +8,7 @@ import {
   Flask,
 } from '@phosphor-icons/react/dist/ssr';
 import { getImage } from 'astro:assets';
+import { twMerge } from 'tailwind-merge';
 
 import designBg from '@/assets/images/designer-desk.jpg';
 import musicBg from '@/assets/images/music-flatlay.jpg';
@@ -128,7 +129,10 @@ function BentoCard({
 
   return (
     <li
-      className={`${className} group relative isolate overflow-hidden rounded-2xl bg-subtle transition-all focus-within:z-10 focus-within:ring hover:z-10 hover:shadow-lg motion-safe:duration-500 motion-safe:ease-smooth motion-safe:focus-within:scale-105 motion-safe:hover:scale-105`}
+      className={twMerge(
+        'group relative isolate overflow-hidden rounded-2xl bg-subtle transition-all focus-within:z-10 focus-within:ring hover:z-10 hover:shadow-lg motion-safe:duration-500 motion-safe:ease-smooth motion-safe:focus-within:scale-105 motion-safe:hover:scale-105',
+        className,
+      )}
       {...props}
     >
       <a
