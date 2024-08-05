@@ -221,7 +221,7 @@ function ImageWithAltComponent({
         src={sanityImageUrl(imageWithAlt.asset!).url()}
         alt={imageWithAlt.alt}
         loading="lazy"
-        className="h-full w-full object-cover"
+        className="h-full w-full object-cover lg:rounded-6xl"
       />
       {imageWithAlt.caption && (
         <figcaption className="absolute inset-0 top-auto bg-gradient-to-b from-black/0 to-black/50 p-4 font-serif italic text-gray-100 lg:p-6">

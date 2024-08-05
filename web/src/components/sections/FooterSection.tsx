@@ -12,7 +12,7 @@ export default function FooterSection() {
   return (
     <footer className="relative z-10 -mt-8 bg-black px-4 pb-8 pt-16 text-gray-100 lg:-mt-16 lg:px-16 lg:pb-16 lg:pt-32">
       <div
-        className="relative isolate grid h-96 place-items-center rounded-2xl bg-cover bg-center lg:h-[40vw]"
+        className="relative isolate grid h-96 place-items-center rounded-2xl bg-cover bg-center lg:h-[40vw] lg:rounded-4xl"
         style={{ backgroundImage: `url(${optimizedToyboxBg.src})` }}
       >
         <div className="text-center text-3xl text-gray-100/60 lg:text-4xl 2xl:text-6xl">
