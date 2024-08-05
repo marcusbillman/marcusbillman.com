@@ -2,7 +2,9 @@
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   darkMode: [
+    // Use the 'variant' dark mode strategy
     'variant',
+    // Override the default selector to support both automatic and manual theme switching
     [
       '@media (prefers-color-scheme: dark) { &:not(.light *) }',
       '&:is(.dark *)',
@@ -80,9 +82,9 @@ export default {
         primary: 'var(--border-primary)',
       },
       spacing: {
-        128: '32rem',
-        192: '48rem',
-        256: '64rem',
+        128: '32rem', // 512px
+        192: '48rem', // 768px
+        256: '64rem', // 1024px
       },
       aspectRatio: {
         photo: '3/2',
