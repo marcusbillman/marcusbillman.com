@@ -7,9 +7,11 @@ import MoreThingsSection from '@/components/sections/MoreThingsSection';
 import SeparatorSection from '@/components/sections/SeparatorSection';
 import Layout from '@/layouts/Layout.astro';
 import { fetchFeaturedProjects, fetchNewsBanner } from '@/utils/sanity';
+import { fetchSoundcloudTracks } from '@/utils/soundcloud';
 
 const featuredProjects = await fetchFeaturedProjects();
 const newsBanner = await fetchNewsBanner();
+const soundcloudTracks = await fetchSoundcloudTracks(2);
 ---
 
 <Layout>
@@ -18,7 +20,7 @@ const newsBanner = await fetchNewsBanner();
   <SeparatorSection />
   <FeaturedProjectsSection projects={featuredProjects} />
   <SeparatorSection />
-  <MoreThingsSection />
+  <MoreThingsSection soundcloudTracks={soundcloudTracks} />
   <SeparatorSection />
   <ContactSection client:visible />
 </Layout>

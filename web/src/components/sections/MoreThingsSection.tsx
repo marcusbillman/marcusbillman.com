@@ -1,4 +1,5 @@
 import type { CustomIcon } from '@/components/icons';
+import type { SoundcloudTrack } from '@/utils/soundcloud';
 import type { Icon as PhosphorIcon } from '@phosphor-icons/react/dist/lib/types';
 import type React from 'react';
 
@@ -33,7 +34,13 @@ const optimizedSideProjectsScreen2 = await getImage({
   src: sideProjectsScreen2,
 });
 
-export default function MoreThingsSection() {
+interface MoreThingsSectionProps {
+  soundcloudTracks: SoundcloudTrack[];
+}
+
+export default function MoreThingsSection({
+  soundcloudTracks,
+}: MoreThingsSectionProps) {
   return (
     <section className="px-4 lg:px-16">
       <h2 className="text-4xl font-medium lg:text-6xl">
@@ -85,6 +92,28 @@ export default function MoreThingsSection() {
           style={{ backgroundImage: `url(${optimizedMusicBg.src})` }}
         >
           <div className="absolute inset-0 isolate bg-gradient-to-b from-[#FF5722CC] to-[#FF5722]">
+            {soundcloudTracks?.length >= 2 && (
+              <>
+                <iframe
+                  width="384"
+                  height="33%"
+                  allow="autoplay"
+                  src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${soundcloudTracks[0].id}&auto_play=false&hide_related=true`}
+                  aria-hidden
+                  tabIndex={-1}
+                  className="absolute left-[35%] top-[45%] z-10 origin-left -rotate-3 shadow-xl transition-transform duration-500 ease-smooth group-hover:rotate-6"
+                ></iframe>
+                <iframe
+                  width="384"
+                  height="33%"
+                  allow="autoplay"
+                  src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${soundcloudTracks[1].id}&auto_play=false&hide_related=true`}
+                  aria-hidden
+                  tabIndex={-1}
+                  className="absolute left-[30%] top-[25%] origin-left rotate-6 shadow-xl transition-transform duration-500 ease-smooth group-hover:-rotate-6"
+                ></iframe>
+              </>
+            )}
             <DotGrid />
           </div>
         </BentoCard>
@@ -130,7 +159,7 @@ function BentoCard({
   return (
     <li
       className={twMerge(
-        'group relative isolate overflow-hidden rounded-2xl bg-subtle transition-all focus-within:z-10 focus-within:ring hover:z-10 hover:shadow-lg motion-safe:duration-500 motion-safe:ease-smooth motion-safe:focus-within:scale-105 motion-safe:hover:scale-105',
+        'group relative overflow-hidden rounded-2xl bg-subtle transition-all focus-within:z-10 focus-within:ring hover:z-10 hover:shadow-lg motion-safe:duration-500 motion-safe:ease-smooth motion-safe:focus-within:scale-105 motion-safe:hover:scale-105',
         className,
       )}
       {...props}
@@ -138,7 +167,7 @@ function BentoCard({
       <a
         href={href}
         target={isExternalUrl(href) ? '_blank' : '_self'}
-        className="flex h-full flex-col justify-between gap-3 p-4"
+        className="isolate flex h-full flex-col justify-between gap-3 p-4"
       >
         <div className="flex w-fit origin-top-left items-center gap-2 rounded-2xl bg-default p-4 transition-all duration-500 ease-smooth motion-safe:group-hover:scale-95">
           {LeftIconComponent && <LeftIconComponent className="text-primary" />}
