@@ -95,22 +95,18 @@ export default function MoreThingsSection({
             {soundcloudTracks?.length >= 2 && (
               <>
                 <iframe
-                  width="384"
-                  height="33%"
                   allow="autoplay"
                   src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${soundcloudTracks[0].id}&auto_play=false&hide_related=true`}
                   aria-hidden
                   tabIndex={-1}
-                  className="absolute left-[35%] top-[45%] z-10 origin-left -rotate-3 shadow-xl transition-transform duration-500 ease-smooth group-hover:rotate-6"
+                  className="absolute left-[35%] top-[45%] z-10 h-40 w-1/2 min-w-96 origin-left -rotate-3 shadow-xl transition-transform group-hover:rotate-6 motion-safe:duration-500 motion-safe:ease-smooth"
                 ></iframe>
                 <iframe
-                  width="384"
-                  height="33%"
                   allow="autoplay"
                   src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${soundcloudTracks[1].id}&auto_play=false&hide_related=true`}
                   aria-hidden
                   tabIndex={-1}
-                  className="absolute left-[30%] top-[25%] origin-left rotate-6 shadow-xl transition-transform duration-500 ease-smooth group-hover:-rotate-6"
+                  className="absolute left-[30%] top-[25%] h-40 w-1/2 min-w-96 origin-left rotate-6 shadow-xl transition-transform group-hover:-rotate-6 motion-safe:duration-500 motion-safe:ease-smooth"
                 ></iframe>
               </>
             )}
