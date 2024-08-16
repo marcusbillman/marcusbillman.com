@@ -90,7 +90,7 @@ function SwitchSegment({
         title={label}
         aria-label={label}
         className={twJoin(
-          'absolute inset-0 cursor-pointer opacity-0',
+          'absolute inset-0 h-full w-full cursor-pointer opacity-0',
           isSelected && 'pointer-events-none',
         )}
         onChange={onChange}
