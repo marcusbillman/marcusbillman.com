@@ -34,7 +34,10 @@ export default function CaseStudyBlocksSection({
       className="space-y-16 lg:space-y-24"
     >
       {project.coverImage && (
-        <ImageWithAltComponent imageWithAlt={project.coverImage} />
+        <ImageWithAltComponent
+          imageWithAlt={project.coverImage}
+          className="lg:rounded-6xl"
+        />
       )}
       {language === 'sv' && project.language !== 'sv' && (
         <div className="mb-6 px-4 lg:mb-8">
@@ -221,7 +224,7 @@ function ImageWithAltComponent({
         src={sanityImageUrl(imageWithAlt.asset!).url()}
         alt={imageWithAlt.alt}
         loading="lazy"
-        className="h-full w-full object-cover lg:rounded-6xl"
+        className="h-full w-full object-cover"
       />
       {imageWithAlt.caption && (
         <figcaption className="absolute inset-0 top-auto bg-gradient-to-b from-black/0 to-black/50 p-4 font-serif italic text-gray-100 lg:p-6">
