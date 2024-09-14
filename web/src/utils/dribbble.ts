@@ -2,7 +2,13 @@ export async function fetchDribbbleShots(count: number) {
   const { DRIBBBLE_ACCESS_TOKEN } = import.meta.env;
   const DRIBBBLE_URL = `https://api.dribbble.com/v2/user/shots?access_token=${DRIBBBLE_ACCESS_TOKEN}&per_page=${count}`;
 
-  const rawShots: DribbbleShotRaw[] = await (await fetch(DRIBBBLE_URL)).json();
+  const response = await fetch(DRIBBBLE_URL);
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch Dribbble shots: ${response.statusText}`);
+  }
+
+  const rawShots: DribbbleShotRaw[] = await response.json();
 
   const parsedShots: DribbbleShot[] = rawShots.map((rawShot) => ({
     description: rawShot.description,
