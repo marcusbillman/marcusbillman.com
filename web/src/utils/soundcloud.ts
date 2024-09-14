@@ -2,11 +2,17 @@ export async function fetchSoundcloudTracks(count: number) {
   const { SOUNDCLOUD_CLIENT_ID } = import.meta.env;
   const SOUNDCLOUD_URL = `https://api-v2.soundcloud.com/users/24249114/tracks?client_id=${SOUNDCLOUD_CLIENT_ID}&limit=${count}`;
 
-  const response: SoundcloudTracksResponseRaw = await (
-    await fetch(SOUNDCLOUD_URL)
-  ).json();
+  const response = await fetch(SOUNDCLOUD_URL);
 
-  const parsedTracks: SoundcloudTrack[] = response.collection.map(
+  if (!response.ok) {
+    throw new Error(
+      `Failed to fetch SoundCloud tracks: ${response.statusText}`,
+    );
+  }
+
+  const rawTracks: SoundcloudTracksRaw = await response.json();
+
+  const parsedTracks: SoundcloudTrack[] = rawTracks.collection.map(
     (rawTrack) => ({
       artwork_url: rawTrack.artwork_url,
       created_at: new Date(rawTrack.created_at),
@@ -27,7 +33,7 @@ export async function fetchSoundcloudTracks(count: number) {
   return parsedTracks;
 }
 
-type SoundcloudTracksResponseRaw = {
+type SoundcloudTracksRaw = {
   collection: SoundcloudTrackRaw[];
   next_href: string;
   query_urn: string | null;
