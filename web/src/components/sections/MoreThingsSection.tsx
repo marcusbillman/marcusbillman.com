@@ -35,7 +35,7 @@ const optimizedSideProjectsScreen2 = await getImage({
 });
 
 interface MoreThingsSectionProps {
-  soundcloudTracks: SoundcloudTrack[];
+  soundcloudTracks?: SoundcloudTrack[];
 }
 
 export default function MoreThingsSection({
@@ -92,7 +92,7 @@ export default function MoreThingsSection({
           style={{ backgroundImage: `url(${optimizedMusicBg.src})` }}
         >
           <div className="absolute inset-0 isolate bg-gradient-to-b from-[#FF5722CC] to-[#FF5722]">
-            {soundcloudTracks?.length >= 2 && (
+            {soundcloudTracks && soundcloudTracks?.length >= 2 && (
               <>
                 <iframe
                   allow="autoplay"

@@ -224,6 +224,51 @@
     "back": "Alla projekt",
     "missingTranslation": "Detta case är tyvärr inte tillgängligt på svenska. Det kommer att visas på engelska istället."
   },
+  "melodiesToy": {
+    "tab": {
+      "melody": "Melodi",
+      "drums": "Trummor"
+    },
+    "tempo": {
+      "title": "Tempo",
+      "metronome": "Metronom"
+    },
+    "scale": {
+      "title": "Skala",
+      "scaleRoot": "Grundton",
+      "scaleType": "Typ av skala",
+      "major": "Dur",
+      "naturalMinor": "Moll",
+      "majorPentatonic": "Dur pentatonisk",
+      "minorPentatonic": "Moll pentatonisk",
+      "blues": "Blues"
+    },
+    "toolbar": {
+      "play": "Spela",
+      "stop": "Stoppa",
+      "shape": "Synt",
+      "effect": "Effekt",
+      "scramblePitch": "Slumpa tonhöjd",
+      "scrambleRhythm": "Slumpa rytm",
+      "generate": "Generera",
+      "clear": "Rensa"
+    },
+    "drumSample": {
+      "kick": "Bas",
+      "snare": "Virvel",
+      "clap": "Klapp",
+      "hatClosed": "Stängd hi-hat",
+      "hatOpen": "Öppen hi-hat",
+      "crash": "Crash"
+    },
+    "about": {
+      "title": "Melodies",
+      "subtitle": "En slumpbaserad musikleksak",
+      "paragraph1": "Klicka i det stora rutnätet för att skapa melodier och trumkomp. Använd knapparna längst ner för att ändra och slumpa.",
+      "paragraph2": "Lek runt och hör vad som händer – du kanske får oväntade lyckträffar!",
+      "paragraph3": "Vissa funktioner finns bara på dator."
+    }
+  },
   "misc": {
     "consoleGreeting": {
       "heading": "Hej! 👋",

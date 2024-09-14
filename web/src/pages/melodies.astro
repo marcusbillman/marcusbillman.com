@@ -1,0 +1,11 @@
+---
+import MelodiesToy from '@/components/MelodiesToy';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import t from '@/utils/i18n';
+---
+
+<BaseLayout title={t('melodiesToy.about.title')}>
+  <main class="grid h-dvh place-items-center bg-primary">
+    <MelodiesToy client:load />
+  </main>
+</BaseLayout>

@@ -1,5 +1,12 @@
 {
-  "cSpell.words": ["hidpi"],
+  "cSpell.words": [
+    "amsine",
+    "amsquare",
+    "fmsine",
+    "fmsquare",
+    "fmtriangle",
+    "hidpi"
+  ],
   "css.lint.unknownAtRules": "ignore",
   "i18n-ally.localesPaths": ["web/src/assets/locales"],
   "i18n-ally.keystyle": "nested",

@@ -1,3 +1,5 @@
+import formsPlugin from '@tailwindcss/forms';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -102,6 +104,9 @@ export default {
       animation: {
         float: 'float 2s ease-in-out infinite',
         wiggle: 'wiggle 1s ease-in-out infinite',
+        'step-play': 'step-play 0.2s',
+        'popover-in': 'popover-in 0.2s',
+        'popover-out': 'popover-out 0.2s',
       },
       keyframes: {
         float: {
@@ -111,6 +116,18 @@ export default {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-10deg)' },
           '50%': { transform: 'rotate(10deg)' },
+        },
+        'step-play': {
+          '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+          '50%': { transform: 'scale(0.8)', opacity: '0.5' },
+        },
+        'popover-in': {
+          '0%': { opacity: '0', scale: '0.8' },
+          '100%': { opacity: '1', scale: '1' },
+        },
+        'popover-out': {
+          '0%': { opacity: '1', scale: '1' },
+          '100%': { opacity: '0', scale: '0.8' },
         },
       },
       transitionTimingFunction: {
@@ -132,4 +149,5 @@ export default {
       },
     },
   },
+  plugins: [formsPlugin],
 };

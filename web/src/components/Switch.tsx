@@ -18,7 +18,7 @@ export default function Switch({
   id,
   onChange,
 }: Props) {
-  const [isChecked, setIsChecked] = useState(defaultChecked);
+  const [isChecked, setIsChecked] = useState(checked || defaultChecked);
 
   useEffect(() => {
     if (checked !== undefined) {
@@ -33,7 +33,7 @@ export default function Switch({
       setIsChecked(newValue);
       if (onChange) onChange(newValue);
     } else {
-      if (onChange) onChange();
+      if (onChange) onChange(!checked);
     }
   };
 
@@ -50,7 +50,7 @@ export default function Switch({
         checked={isChecked}
         id={id}
         onChange={handleToggle}
-        className="absolute inset-0 z-10 cursor-pointer opacity-0"
+        className="absolute inset-0 z-10 size-full cursor-pointer opacity-0"
       />
       <span
         className={twJoin(

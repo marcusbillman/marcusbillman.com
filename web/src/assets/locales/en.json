@@ -224,6 +224,51 @@
     "back": "All projects",
     "missingTranslation": "This case study is unfortunately not available in English. It will be displayed in Swedish instead."
   },
+  "melodiesToy": {
+    "tab": {
+      "melody": "Melody",
+      "drums": "Drums"
+    },
+    "tempo": {
+      "title": "Tempo",
+      "metronome": "Metronome"
+    },
+    "scale": {
+      "title": "Scale",
+      "scaleRoot": "Root note",
+      "scaleType": "Scale type",
+      "major": "Major",
+      "naturalMinor": "Minor",
+      "majorPentatonic": "Major pentatonic",
+      "minorPentatonic": "Minor pentatonic",
+      "blues": "Blues"
+    },
+    "toolbar": {
+      "play": "Play",
+      "stop": "Stop",
+      "shape": "Synth",
+      "effect": "Effect",
+      "scramblePitch": "Scramble pitch",
+      "scrambleRhythm": "Scramble rhythm",
+      "generate": "Generate",
+      "clear": "Clear"
+    },
+    "drumSample": {
+      "kick": "Kick",
+      "snare": "Snare",
+      "clap": "Clap",
+      "hatClosed": "Closed hi-hat",
+      "hatOpen": "Open hi-hat",
+      "crash": "Crash"
+    },
+    "about": {
+      "title": "Melodies",
+      "subtitle": "A generative music toy",
+      "paragraph1": "Click the big grid to create melodies and drum beats. Use the buttons at the bottom to modify and randomise.",
+      "paragraph2": "Play around and hear what happens — you might find happy accidents!",
+      "paragraph3": "Some features are only available on a computer."
+    }
+  },
   "misc": {
     "consoleGreeting": {
       "paragraph1": "Fancy seeing you here, Inspector Element! 🕵️",
